@@ -1,0 +1,79 @@
+import React from 'react';
+import CountUp from 'react-countup';
+import { FcPositiveDynamic } from 'react-icons/fc'; 
+import { FcGraduationCap } from 'react-icons/fc';  
+import { FcWorkflow } from 'react-icons/fc';  
+import { FcServices } from 'react-icons/fc';  
+const VideoSection = () => {
+    return (
+        <div>
+           {/* <!-- ======= video Section ======= --> */}
+  <section id="services" className="video mb-52">
+    <div className="container">
+      <div className="video-box">
+        <div className="video-box-img">
+          <img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=944&q=80" alt=""/>
+        </div>
+        <div className="video-box-color flex items-center justify-center">
+          <div>
+            <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" className="glightbox play-btn mb-4"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* <!-- ======= counter-up Section ======= --> */}
+  <section className="counter_up">
+    <div className="container">
+      <div className="flex flex-wrap">
+        <div className="xl:w-1/4 md:w-1/2 ">
+          <div className="counter-box flex justify-center flex-col">
+        <div>
+        <FcPositiveDynamic className='counterIcon' />
+        </div>
+            <p className='my-3'>App Rate</p>
+         <CountUp
+         end={400}
+         duration={5}
+         />
+          </div>
+        </div>
+        <div className="xl:w-1/4 md:w-1/2 ">
+          <div className="counter-box">
+          <FcGraduationCap className='counterIcon' />
+            <p className='my-3'>Happy Client</p>
+            <CountUp
+         end={600}
+         duration={5}
+         />
+          </div>
+        </div>
+        <div className="xl:w-1/4 md:w-1/2 ">
+          <div className="counter-box">
+          <FcWorkflow className='counterIcon' />
+            <p className='my-3'>Active Accounts</p>
+            <CountUp
+         end={100}
+         duration={5}
+         />
+          </div>
+        </div>
+        <div className="xl:w-1/4 md:w-1/2 ">
+          <div className="counter-box">
+          <FcServices className='counterIcon' />
+            <p className='my-3'>Total Active Apps</p>
+            <CountUp
+         end={9900}
+         duration={5}
+         />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+        </div>
+    );
+};
+
+export default VideoSection;
