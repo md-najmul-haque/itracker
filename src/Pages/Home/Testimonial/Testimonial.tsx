@@ -44,7 +44,7 @@ const Testimonial = () => {
                 </div></SwiperSlide>
                 <SwiperSlide><div className="slider">
                     <div className="firstSlider">
-                        <img className='imgSize' src="https://i.ibb.co/R9sFBNW/tamara-bellis-e-DVQw-VMLMg-U-unsplash-removebg-preview.png" alt="" />
+                        <img className='imgSize' src="https://i.ibb.co/px9x2gP/alexander-hipp-i-EEBWg-Y-6l-A-unsplash-removebg-preview.png" alt="" />
                         
                     </div>
                    
@@ -64,7 +64,7 @@ const Testimonial = () => {
                 </div></SwiperSlide>
                 <SwiperSlide><div className="slider">
                     <div className="firstSlider">
-                        <img className='imgSize' src="https://i.ibb.co/R9sFBNW/tamara-bellis-e-DVQw-VMLMg-U-unsplash-removebg-preview.png" alt="" />
+                        <img className='imgSize' src="https://i.ibb.co/VVxDKvr/christopher-campbell-r-DEOVt-E7v-Os-unsplash-removebg-preview.png" alt="" />
                         
                     </div>
                    
@@ -84,7 +84,7 @@ const Testimonial = () => {
                 </div></SwiperSlide>
                 <SwiperSlide><div className="slider">
                     <div className="firstSlider">
-                        <img className='imgSize' src="https://i.ibb.co/R9sFBNW/tamara-bellis-e-DVQw-VMLMg-U-unsplash-removebg-preview.png" alt="" />
+                        <img className='imgSize' src="https://i.ibb.co/zmSGHPR/taras-shypka-QEg-HL8-NN7n-M-unsplash-removebg-preview.png" alt="" />
                         
                     </div>
                    
