@@ -1,0 +1,8 @@
+.slider{
+    display: flex;
+    background-color: #EEEBEA;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
