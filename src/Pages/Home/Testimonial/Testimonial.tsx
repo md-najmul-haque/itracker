@@ -2,7 +2,7 @@ import React from 'react';
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import './Testimonial.css'
 import { Swiper, SwiperSlide } from 'swiper/react';
-
+import logsvg from '../../../assets/testimonial-img/logo-classpass.svg'
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -24,11 +24,23 @@ const Testimonial = () => {
     >
                 <SwiperSlide><div className="slider">
                     <div className="firstSlider">
-                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" alt="" />
+                        <img className='imgSize' src="https://i.ibb.co/R9sFBNW/tamara-bellis-e-DVQw-VMLMg-U-unsplash-removebg-preview.png" alt="" />
+                        
                     </div>
+                   
+                   
                     <div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa natus sit odit eum? Fugiat sed quaerat eius itaque saepe nesciunt officiis, labore voluptates iusto veritatis in vero temporibus rem ad officia facere accusamus eos ducimus, ipsam tempore blanditiis expedita. Labore.</p>
-                    </div>
+                        <h4><hr />
+                            <img src={logsvg} alt="" />
+                        </h4>
+                    <div className='text'>
+                       
+                       <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br /> Culpa natus sit odit eum? Fugiat sed quaerat eius itaque <br /> saepe nesciunt officiis, labore voluptates iusto veritatis in <br /> vero temporibus rem ad officia facere accusamus eos <br /> ducimus, ipsam tempore blanditiis expedita. Labore.</p>
+                            
+                        </div>
+                        <div className='text2'><blockquote>-- Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt veniam et voluptatum fugiat aperiam corporis explicabo nostrum ducimus ex.</blockquote></div>
+                  </div>
                 </div></SwiperSlide>
     
       ...
