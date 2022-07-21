@@ -1,10 +1,10 @@
 import React from 'react';
+import ProcessManagement from '../ProcessManagement/ProcessManagement';
 
 const Home = () => {
     return (
         <div>
-            <h2>Hello</h2>
-            <h2>Git huv</h2>
+            <ProcessManagement/>
         </div>
     );
 };
