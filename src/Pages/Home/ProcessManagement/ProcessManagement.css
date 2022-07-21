@@ -31,6 +31,10 @@
     .text-container{
         margin: auto;
     }
+    .image-container{
+        margin: auto;
+        margin-top: 20px;
+    }
     .image-container img{
         width: 250px;
         height: 200px;
@@ -46,5 +50,9 @@
     }
     .text-container{
         margin: auto;
+    }
+    .image-container{
+        margin: auto;
+        margin-top: 40px;
     }
 }

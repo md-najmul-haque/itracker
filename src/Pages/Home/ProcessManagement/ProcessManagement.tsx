@@ -5,7 +5,7 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
-import { ExpandCircleDownRounded } from '@mui/icons-material';
+
 import './ProcessManagement.css'
 import img1 from '../../../img/img1.png'
 import img2 from '../../../img/img2.png'
