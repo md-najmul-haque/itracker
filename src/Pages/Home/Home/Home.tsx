@@ -1,9 +1,11 @@
 import React from 'react';
+import Teamwork from '../Teamwork/Teamwork';
 
 const Home = () => {
     return (
         <div>
-            <h2>Hello</h2>
+            
+            <Teamwork/>
         </div>
     );
 };
