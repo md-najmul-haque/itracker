@@ -40,7 +40,7 @@ const Navbar = () => {
         <AppBar position="static">
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
-                    <img style={{ width: '100px' }} src={logo} alt="logo" />
+
                     <Typography
                         variant="h6"
                         noWrap
@@ -56,7 +56,7 @@ const Navbar = () => {
                             textDecoration: 'none',
                         }}
                     >
-
+                        <img style={{ width: '100px' }} src={logo} alt="logo" />
                     </Typography>
 
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -95,7 +95,7 @@ const Navbar = () => {
                             ))}
                         </Menu>
                     </Box>
-                    <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+
                     <Typography
                         variant="h5"
                         noWrap
@@ -112,7 +112,7 @@ const Navbar = () => {
                             textDecoration: 'none',
                         }}
                     >
-                        LOGO
+                        <img style={{ width: '100px' }} src={logo} alt="logo" />
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                         {pages.map((page) => (
