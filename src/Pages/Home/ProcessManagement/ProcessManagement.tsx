@@ -34,8 +34,7 @@ const ProcessManagement = () => {
                             </AccordionSummary>
                             <AccordionDetails sx={{ backgroundColor: "black", color: "white" }}>
                                 <Typography sx={{ textAlign: "justify" }}>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                                    malesuada lacus ex, sit amet blandit leo lobortis eget.
+                                Get a project overview to at a Glance to track your issue more in effective way. ITracker helps you to save your time.
                                 </Typography>
                             </AccordionDetails>
                         </Accordion>
@@ -45,7 +44,7 @@ const ProcessManagement = () => {
                                 aria-controls="panel2a-content"
                                 id="panel2a-header"
                             >
-                                <Typography>Rules</Typography>
+                                <Typography>Add Issue</Typography>
                             </AccordionSummary>
                             <AccordionDetails sx={{ backgroundColor: "black", color: "white" }}>
                                 <Typography sx={{ textAlign: "justify" }}>
@@ -60,7 +59,7 @@ const ProcessManagement = () => {
                                 aria-controls="panel2a-content"
                                 id="panel2a-header"
                             >
-                                <Typography >Forms</Typography>
+                                <Typography >Set Deadline</Typography>
                             </AccordionSummary>
                             <AccordionDetails sx={{ backgroundColor: "black", color: "white" }}>
                                 <Typography sx={{ textAlign: "justify" }}>
@@ -75,7 +74,7 @@ const ProcessManagement = () => {
                                 aria-controls="panel2a-content"
                                 id="panel2a-header"
                             >
-                                <Typography >Templates</Typography>
+                                <Typography >Track Issue</Typography>
                             </AccordionSummary>
                             <AccordionDetails sx={{ backgroundColor: "black", color: "white" }}>
                                 <Typography sx={{ textAlign: "justify" }}>
