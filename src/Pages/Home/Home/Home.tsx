@@ -5,6 +5,7 @@ import VideoSection from '../components/VideoSection';
 
 import Bugsearch from '../Bugsearch/Bugsearch';
 import Teamwork from '../Teamwork/Teamwork';
+import ProcessManagement from '../ProcessManagement/ProcessManagement';
 
 const Home = () => {
     return (
@@ -13,6 +14,7 @@ const Home = () => {
          <VideoSection/>
             <Bugsearch/>
             <Teamwork/>
+            <ProcessManagement/>
         </div>
     );
 };
