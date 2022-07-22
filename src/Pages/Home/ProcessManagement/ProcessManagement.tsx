@@ -82,12 +82,13 @@ const ProcessManagement = () => {
                         </AccordionDetails>
                     </Accordion>
 
+                    </div>
+                </div>
+                <div className='image-container'>
+                    <img src={imageUri} alt="" />
                 </div>
             </div>
-            <div className='image-container'>
-                <img src={imageUri} alt="" />
-            </div>
-        </div>
+
     );
 };
 

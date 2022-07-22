@@ -1,11 +1,9 @@
 .side-container {
     display: grid;
     grid-template-columns: 2fr 3fr;
-    column-gap: 100px;
-    background: black;
+    column-gap: 70px;
     padding-top: 30px;
     padding-bottom: 30px;
-
 }
 
 .image-container img {
@@ -15,7 +13,6 @@
 
 .text-container {
     margin-top: 20px;
-    margin-left: 40px;
 }
 
 .title {
@@ -32,6 +29,7 @@
         display: grid;
         grid-template-columns: 1fr;
         background: black;
+        margin:auto;
     }
 
     .text-container {
@@ -55,6 +53,7 @@
         display: grid;
         grid-template-columns: 1fr;
         background: black;
+        margin:auto;
     }
 
     .text-container {
