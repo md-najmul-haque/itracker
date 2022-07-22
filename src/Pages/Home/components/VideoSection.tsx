@@ -1,12 +1,25 @@
-import React from 'react';
+import * as React from 'react';
 import CountUp from 'react-countup';
 import { FcPositiveDynamic } from 'react-icons/fc'; 
 import { FcGraduationCap } from 'react-icons/fc';  
 import { FcWorkflow } from 'react-icons/fc';  
 import { FcServices } from 'react-icons/fc';  
+
+
+
+
+
 const VideoSection = () => {
     return (
-        <div>
+        <div className='my-20'>
+
+        {/* MUI */}
+
+
+
+
+
+
            {/* <!-- ======= video Section ======= --> */}
   <section id="services" className="video mb-52">
     <div className="container">
@@ -25,9 +38,9 @@ const VideoSection = () => {
 
   {/* <!-- ======= counter-up Section ======= --> */}
   <section className="counter_up">
-    <div className="container">
-      <div className="flex flex-wrap">
-        <div className="xl:w-1/4 md:w-1/2 ">
+    <div className="">
+      <div className="flex flex-col md:flex-row justify-around">
+        <div className=" ">
           <div className="counter-box flex justify-center flex-col">
         <div>
         <FcPositiveDynamic className='counterIcon' />
@@ -39,7 +52,7 @@ const VideoSection = () => {
          />
           </div>
         </div>
-        <div className="xl:w-1/4 md:w-1/2 ">
+        <div className="">
           <div className="counter-box">
           <FcGraduationCap className='counterIcon' />
             <p className='my-3'>Happy Client</p>
@@ -49,7 +62,7 @@ const VideoSection = () => {
          />
           </div>
         </div>
-        <div className="xl:w-1/4 md:w-1/2 ">
+        <div className="">
           <div className="counter-box">
           <FcWorkflow className='counterIcon' />
             <p className='my-3'>Active Accounts</p>
@@ -59,7 +72,7 @@ const VideoSection = () => {
          />
           </div>
         </div>
-        <div className="xl:w-1/4 md:w-1/2 ">
+        <div className=" ">
           <div className="counter-box">
           <FcServices className='counterIcon' />
             <p className='my-3'>Total Active Apps</p>
