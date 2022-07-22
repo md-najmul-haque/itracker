@@ -5,12 +5,11 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
-
 import './ProcessManagement.css'
-import img1 from '../../../img/img1.png'
-import img2 from '../../../img/img2.png'
-import img3 from '../../../img/img3.jpg'
-import img4 from '../../../img/img4.png'
+import img1 from '../../../assets/ProcessManagement/img1.png'
+import img2 from '../../../assets/ProcessManagement/img2.png'
+import img3 from '../../../assets/ProcessManagement/img3.jpg'
+import img4 from '../../../assets/ProcessManagement/img4.png'
 const ProcessManagement = () => {
     const [expanded, setExpanded] = useState<string | false>(false)
     const handealChange = (isExpanded: boolean, panal: string) => {
@@ -32,9 +31,8 @@ const ProcessManagement = () => {
                             <Typography>Project Overview</Typography>
                         </AccordionSummary>
                         <AccordionDetails sx={{ backgroundColor: "black", color: "white" }}>
-                            <Typography sx={{ textAlign:"justify" }}>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                                malesuada lacus ex, sit amet blandit leo lobortis eget.
+                            <Typography sx={{ textAlign: "justify" }}>
+                                Get a project overview to at a Glance to track your issue more in effective way. ITracker helps you to save your time.
                             </Typography>
                         </AccordionDetails>
                     </Accordion>
@@ -44,25 +42,25 @@ const ProcessManagement = () => {
                             aria-controls="panel2a-content"
                             id="panel2a-header"
                         >
-                            <Typography>Rules</Typography>
+                            <Typography>Add Issue</Typography>
                         </AccordionSummary>
                         <AccordionDetails sx={{ backgroundColor: "black", color: "white" }}>
-                            <Typography sx={{ textAlign:"justify" }}>
+                            <Typography sx={{ textAlign: "justify" }}>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
                                 malesuada lacus ex, sit amet blandit leo lobortis eget.
                             </Typography>
                         </AccordionDetails>
                     </Accordion>
                     <Accordion expanded={expanded === 'panal3'} onChange={(event, isExpanded) => handealChange(isExpanded, 'panal3')} onClick={() => setImageUri(`${img3}`)}>
-                        <AccordionSummary sx={{ backgroundColor: "black", color: "white", borderTop: "2px solid gray"}}
+                        <AccordionSummary sx={{ backgroundColor: "black", color: "white", borderTop: "2px solid gray" }}
                             expandIcon={<ExpandMoreIcon sx={{ backgroundColor: "black", color: "white" }} />}
                             aria-controls="panel2a-content"
                             id="panel2a-header"
                         >
-                            <Typography >Forms</Typography>
+                            <Typography >Set Deadline</Typography>
                         </AccordionSummary>
                         <AccordionDetails sx={{ backgroundColor: "black", color: "white" }}>
-                            <Typography sx={{ textAlign:"justify" }}>
+                            <Typography sx={{ textAlign: "justify" }}>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
                                 malesuada lacus ex, sit amet blandit leo lobortis eget.
                             </Typography>
@@ -74,10 +72,10 @@ const ProcessManagement = () => {
                             aria-controls="panel2a-content"
                             id="panel2a-header"
                         >
-                            <Typography >Templates</Typography>
+                            <Typography >Track Issue</Typography>
                         </AccordionSummary>
                         <AccordionDetails sx={{ backgroundColor: "black", color: "white" }}>
-                            <Typography sx={{ textAlign:"justify" }}>
+                            <Typography sx={{ textAlign: "justify" }}>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
                                 malesuada lacus ex, sit amet blandit leo lobortis eget.
                             </Typography>
