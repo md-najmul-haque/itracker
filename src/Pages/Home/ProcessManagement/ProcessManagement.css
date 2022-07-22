@@ -1,10 +1,13 @@
+.Process-container{
+    background-color: black;
+}
 .side-container{
     display: grid;
     grid-template-columns: 2fr 3fr;
-    column-gap: 100px;
-    background: black;
+    column-gap: 70px;
     padding-top: 30px;
     padding-bottom: 30px;
+    margin-left: 130px;
 }
 .image-container img{
     width: 600px;
@@ -12,7 +15,6 @@
 }
 .text-container{
     margin-top: 20px;
-    margin-left: 40px;
 }
 .title{
     color: wheat;
@@ -27,6 +29,7 @@
         display: grid;
         grid-template-columns: 1fr;
         background: black;
+        margin:auto;
     }
     .text-container{
         margin: auto;
@@ -47,6 +50,7 @@
         display: grid;
         grid-template-columns: 1fr;
         background: black;
+        margin:auto;
     }
     .text-container{
         margin: auto;
