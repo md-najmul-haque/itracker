@@ -1,6 +1,7 @@
 import React from 'react';
-import { Avatar, Grid, Paper } from '@mui/material';
+import { Avatar, Checkbox, FormControlLabel, Grid, Paper, TextField } from '@mui/material';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import { Label } from '@mui/icons-material';
 
 
 const SingIn = () => {
@@ -12,13 +13,25 @@ const SingIn = () => {
         margin: '80px auto'
 
     }
+    const avatarStyle = {
+        backgroundColor: '#00ADB5',
+    }
 
     return (
         <div>
             <Grid>
                 <Paper elevation={10} style={paperStyle}>
-                    <Avatar><LockOutlinedIcon /></Avatar>
-                    Sign In
+                    <Grid alignContent="center">
+                        <Avatar style={avatarStyle} ><LockOutlinedIcon /></Avatar>
+                        <h2>Sign In</h2>
+                        <TextField id="standard-basic" label="Enter Your Email ID" variant="standard" fullWidth required />
+                        <TextField id="standard-basic" label="Enter Your Password" variant="standard" fullWidth required />
+                        <FormControlLabel
+                            control={<Checkbox />}
+                            label="Remember me"
+                        />
+
+                    </Grid>
                 </Paper>
             </Grid>
         </div>
