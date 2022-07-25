@@ -1,5 +1,5 @@
 import React from 'react';
-import { Avatar, Checkbox, FormControlLabel, Grid, Paper, TextField } from '@mui/material';
+import { Avatar, Button, Checkbox, FormControlLabel, Grid, Link, Paper, TextField, Typography } from '@mui/material';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import { Label } from '@mui/icons-material';
 
@@ -17,6 +17,10 @@ const SingIn = () => {
         backgroundColor: '#00ADB5',
     }
 
+    const btnStyle = {
+        margin: '10px auto'
+    }
+
     return (
         <div>
             <Grid>
@@ -30,7 +34,19 @@ const SingIn = () => {
                             control={<Checkbox />}
                             label="Remember me"
                         />
-
+                        <Button type='submit' variant="contained" color="primary" fullWidth style={btnStyle}>Sign In</Button>
+                        <Typography>
+                            Forgot Password?
+                            <Link href="#" underline="hover" color='#0000EE' marginBottom={3} >
+                                {'Reset Now'}
+                            </Link>
+                        </Typography>
+                        <Typography>
+                            Don't have an account?
+                            <Link href="#" underline="hover">
+                                {'Sign Up'}
+                            </Link>
+                        </Typography>
                     </Grid>
                 </Paper>
             </Grid>
