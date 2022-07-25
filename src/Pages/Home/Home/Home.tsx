@@ -1,7 +1,5 @@
 import React from 'react';
-import Bugsearch from '../Bugsearch/Bugsearch';
-import Teamwork from '../Teamwork/Teamwork';
-import IndexSlider from '../components/Slider/IndexSlider';
+// import IndexSlider from '../../Home/components/slider/IndexSlider';
 import VideoSection from '../components/VideoSection';
 import Bugsearch from '../Bugsearch/Bugsearch';
 import Teamwork from '../Teamwork/Teamwork';
@@ -13,12 +11,9 @@ const Home = () => {
         <div>
             <Bugsearch />
             <Teamwork />
-            <IndexSlider />
+            {/* <IndexSlider /> */}
             <VideoSection />
-            <Bugsearch />
-            <Teamwork />
             <ProcessManagement />
-
             <Testimonial></Testimonial>
         </div>
     );
