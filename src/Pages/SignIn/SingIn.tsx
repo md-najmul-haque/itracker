@@ -1,5 +1,5 @@
 import React from 'react';
-import { Avatar, Button, Checkbox, FormControlLabel, Grid, Link, Paper, TextField, Typography } from '@mui/material';
+import { Avatar, Button, Checkbox, Chip, Divider, FormControlLabel, Grid, Link, Paper, TextField, Typography } from '@mui/material';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import { Label } from '@mui/icons-material';
 
@@ -8,7 +8,7 @@ const SingIn = () => {
 
     const paperStyle = {
         padding: 20,
-        height: '70vh',
+        height: '65vh',
         width: 280,
         margin: '80px auto'
 
@@ -21,6 +21,9 @@ const SingIn = () => {
         margin: '10px auto'
     }
 
+    const socialButtonStyle = {
+        margin: '5px auto'
+    }
     return (
         <div>
             <Grid>
@@ -47,6 +50,13 @@ const SingIn = () => {
                                 {'Sign Up'}
                             </Link>
                         </Typography>
+                        <Divider>
+                            <Chip label="or" />
+                        </Divider>
+                        <Button type='submit' variant="outlined" color="primary" fullWidth style={socialButtonStyle}>Sign In with Google</Button>
+                        <Button type='submit' variant="outlined" color="primary" fullWidth style={socialButtonStyle}>Sign In with Github</Button>
+                        <Button type='submit' variant="outlined" color="primary" fullWidth style={socialButtonStyle}>Sign In with Facebook</Button>
+
                     </Grid>
                 </Paper>
             </Grid>
