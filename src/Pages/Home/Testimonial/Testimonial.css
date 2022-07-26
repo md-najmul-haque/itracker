@@ -5,6 +5,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 
 .imgSize{
@@ -28,4 +29,19 @@
     align-items: center;
   
     padding-left: 8%;
+}
+
+
+@media only screen and (max-width: 688px) {
+    .slider, .text2{
+        width: 100%;
+        background-color: green;
+        flex-direction: column;
+        padding: 5px;
+        
+        
+     
+        
+
+    }
 }
