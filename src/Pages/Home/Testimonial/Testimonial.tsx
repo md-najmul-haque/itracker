@@ -82,7 +82,7 @@ const Testimonial = () => {
                 </div></SwiperSlide>
                 <SwiperSlide><div className="slider">
                     <div className="firstSlider">
-                        <img className='imgSize' src="https://i.ibb.co/zmSGHPR/taras-shypka-QEg-HL8-NN7n-M-unsplash-removebg-preview.png" alt="" />
+                        <img className='imgSize' src="https://i.ibb.co/LQrrC44/stefanscherzer-sp-1-256x300-removebg-preview.png" alt="" />
                         
                     </div>
                    
