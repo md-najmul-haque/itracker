@@ -77,7 +77,7 @@ const VideoSection = () => {
           <FcServices className='counterIcon' />
             <p className='my-3'>Total Active Apps</p>
             <CountUp
-         end={9900}
+         end={9800}
          duration={5}
          />
           </div>
