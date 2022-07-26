@@ -47,7 +47,7 @@ const VideoSection = () => {
         </div>
             <p className='my-3'>App Rate</p>
          <CountUp
-         end={900}
+         end={500}
          duration={5}
          />
           </div>
