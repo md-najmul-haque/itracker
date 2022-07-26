@@ -5,6 +5,7 @@ import Home from './Pages/Home/Home/Home';
 import Footer from './Pages/Shared/Footer';
 
 import Navbar from './Pages/Shared/Navbar/Navbar';
+import SingIn from './Pages/SignIn/SingIn';
 
 function App() {
   return (
@@ -13,7 +14,10 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
       </Routes>
-    <Footer/>
+      <Routes>
+        <Route path="/singin" element={<SingIn />} />
+      </Routes>
+      <Footer />
     </div>
   );
 }
