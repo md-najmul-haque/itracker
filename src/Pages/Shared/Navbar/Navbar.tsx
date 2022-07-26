@@ -13,7 +13,7 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import logo from '../../../assets/logo/logo.png'
 
-const pages = ['Home', 'Feature', 'Blog', 'About'];
+const pages = ['Home', 'Feature', 'Blog', 'About', 'Sing In'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const Navbar = () => {
