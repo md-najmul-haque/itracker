@@ -13,12 +13,11 @@ const Testimonial = () => {
         <div>
             <Swiper
       // install Swiper modules
-      modules={[Navigation, Pagination, Scrollbar, A11y]}
+      modules={[ Pagination, A11y]}
       spaceBetween={50}
       slidesPerView={1}
-      navigation
+
       pagination={{ clickable: true }}
-      scrollbar={{ draggable: true }}
       onSwiper={(swiper) => console.log(swiper)}
       onSlideChange={() => console.log('slide change')}
     >
@@ -36,10 +35,10 @@ const Testimonial = () => {
                     <div className='text'>
                        
                        <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br /> Culpa natus sit odit eum? Fugiat sed quaerat eius itaque <br /> saepe nesciunt officiis, labore voluptates iusto veritatis in <br /> vero temporibus rem ad officia facere accusamus eos <br /> ducimus, ipsam tempore blanditiis expedita. Labore.</p>
-                            
+                       New employees can look at the Creative Requests <br /> board, and immediately understand what  the <br /> entire  marketing team is working on without having to ask.</p>
                         </div>
-                        <div className='text2'><blockquote>-- Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt veniam et voluptatum fugiat aperiam corporis explicabo nostrum ducimus ex.</blockquote></div>
+                        <q>Kerry Hoffman // Head of Global Project Management & Ops, Marketing, ClassPass</q>
+                        
                   </div>
                 </div></SwiperSlide>
                 <SwiperSlide><div className="slider">
@@ -56,10 +55,10 @@ const Testimonial = () => {
                     <div className='text'>
                        
                        <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br /> Culpa natus sit odit eum? Fugiat sed quaerat eius itaque <br /> saepe nesciunt officiis, labore voluptates iusto veritatis in <br /> vero temporibus rem ad officia facere accusamus eos <br /> ducimus, ipsam tempore blanditiis expedita. Labore.</p>
+                       I cannot stress how important it is to have all of <br /> our information in one central place.  We  use  Asana <br /> to capture all of our  documents,   notes, and  next steps so  we keep consistency.</p>
                             
                         </div>
-                        <div className='text2'><blockquote>-- Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt veniam et voluptatum fugiat aperiam corporis explicabo nostrum ducimus ex.</blockquote></div>
+                        <div className='text2'><q>Ashlee George // Associate Director at Impact Justice</q></div>
                   </div>
                 </div></SwiperSlide>
                 <SwiperSlide><div className="slider">
@@ -75,16 +74,15 @@ const Testimonial = () => {
                         </h4>
                     <div className='text'>
                        
-                       <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br /> Culpa natus sit odit eum? Fugiat sed quaerat eius itaque <br /> saepe nesciunt officiis, labore voluptates iusto veritatis in <br /> vero temporibus rem ad officia facere accusamus eos <br /> ducimus, ipsam tempore blanditiis expedita. Labore.</p>
+                       <p>We wouldn’t have such a great connection  with <br /> different departments if it weren’t  for Asana. I can <br /> interact with engineers directly and establish  working <br /> relationships,and that collaboration has been extremely valuable.</p>
                             
                         </div>
-                        <div className='text2'><blockquote>-- Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt veniam et voluptatum fugiat aperiam corporis explicabo nostrum ducimus ex.</blockquote></div>
+                        <div className='text2'><q>Kyler Rose // Marketing Services Manager</q></div>
                   </div>
                 </div></SwiperSlide>
                 <SwiperSlide><div className="slider">
                     <div className="firstSlider">
-                        <img className='imgSize' src="https://i.ibb.co/zmSGHPR/taras-shypka-QEg-HL8-NN7n-M-unsplash-removebg-preview.png" alt="" />
+                        <img className='imgSize' src="https://i.ibb.co/LQrrC44/stefanscherzer-sp-1-256x300-removebg-preview.png" alt="" />
                         
                     </div>
                    
@@ -96,10 +94,10 @@ const Testimonial = () => {
                     <div className='text'>
                        
                        <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br /> Culpa natus sit odit eum? Fugiat sed quaerat eius itaque <br /> saepe nesciunt officiis, labore voluptates iusto veritatis in <br /> vero temporibus rem ad officia facere accusamus eos <br /> ducimus, ipsam tempore blanditiis expedita. Labore.</p>
+                       With Asana, we save an estimated 50 hours <br />  per week that used to  be  spent answering email and attending check-in meetings.</p>
                             
                         </div>
-                        <div className='text2'><blockquote>-- Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt veniam et voluptatum fugiat aperiam corporis explicabo nostrum ducimus ex.</blockquote></div>
+                        <div className='text2'><q>Jamie Chappell // Creative Director</q></div>
                   </div>
                 </div></SwiperSlide>
     
