@@ -36,7 +36,7 @@ const Navbar = () => {
     };
 
     return (
-        <AppBar position="static">
+        <AppBar id="back-to-top-anchor" position="static">
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
 
