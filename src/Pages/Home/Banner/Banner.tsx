@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 
+
 const Banner = () => {
 
     const [menu, setMenu] = useState<boolean>(false);
@@ -86,6 +87,7 @@ const Banner = () => {
                             <button className="btn btn-outline btn-primary">Get Started</button>
                         </div>
                     </div>
+
                 </div>
             </div>
         </section>
