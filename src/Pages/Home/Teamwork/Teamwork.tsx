@@ -4,6 +4,7 @@ import CardMedia from '@mui/material/CardMedia';
 import teamwork from '../../../Assets/teamwork.gif';
 
 const Teamwork = () => {
+  
     return (
         <Container fixed>
       <Box sx={{ my: 5 }}>
