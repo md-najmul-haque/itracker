@@ -98,7 +98,7 @@ const ProcessMangements = () => {
                     </div>
                 </div>
                 <div>
-                    <img className='w-full  h-[400px]' src={imageUri} alt="" />
+                    <img className='w-full  h-[400px] rounded-3xl' src={imageUri} alt="" />
                 </div>
             </div>
         </div>
