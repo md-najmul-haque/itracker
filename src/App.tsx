@@ -6,6 +6,7 @@ import Footer from './Pages/Shared/Footer';
 
 import Navbar from './Pages/Shared/Navbar/Navbar';
 import SingIn from './Pages/SignIn/SingIn';
+import TestRoute from './Pages/TestRoute/TestRoute';
 
 function App() {
   return (
@@ -16,6 +17,9 @@ function App() {
       </Routes>
       <Routes>
         <Route path="/singin" element={<SingIn />} />
+      </Routes>
+      <Routes>
+        <Route path='/test' element={<TestRoute/>}/>
       </Routes>
       <Footer />
     </div>

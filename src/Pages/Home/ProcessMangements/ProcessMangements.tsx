@@ -8,6 +8,9 @@ import img1 from '../../../assets/ProcessManagement/img1.png'
 import img2 from '../../../assets/ProcessManagement/img2.png'
 import img3 from '../../../assets/ProcessManagement/img3.jpg'
 import img4 from '../../../assets/ProcessManagement/img4.png'
+import { Link } from 'react-router-dom';
+import { BsArrowRight } from 'react-icons/bs';
+import { Box } from '@mui/material';
 const ProcessMangements = () => {
     const [expanded, setExpanded] = useState<string | false>(false)
     const handealChange = (isExpanded: boolean, panal: string) => {
@@ -15,9 +18,10 @@ const ProcessMangements = () => {
     }
     const [imageUri, setImageUri] = useState(`${img1}`);
     return (
-        <div className='grid lg:grid-cols-2 md:grid-cols-1  gap-12 lg:mx-20 md:mx-16 my-12'>
+        <div className='p-5'>
+            <div className='grid lg:grid-cols-2 md:grid-cols-1  gap-12 lg:mx-20 md:mx-16 my-12 '>
                 <div className='text-container lg:mt-20'>
-                  
+
                     <div>
                         <Accordion expanded={expanded === 'panal1'} onChange={(event, isExpanded) => handealChange(isExpanded, 'panal1')} onClick={() => setImageUri(`${img1}`)}>
                             <AccordionSummary sx={{ backgroundColor: "#EEEEEE", color: "black", borderTop: "2px solid Chocolate" }}
@@ -29,8 +33,11 @@ const ProcessMangements = () => {
                             </AccordionSummary>
                             <AccordionDetails sx={{ backgroundColor: "#EEEEEE", color: "#222831" }}>
                                 <Typography sx={{ textAlign: "justify" }}>
-                                Get a project overview to at a Glance to track your issue more in effective way. ITracker helps you to save your time.
+                                    Get a project overview to at a Glance to track your issue more in effective way. ITracker helps you to save your time.
                                 </Typography>
+                                <Box>
+                                    <Link className='flex justify-end items-center gap-2 text-[#00ADB5] text-xl font-bold  ' to='/test'>Click <BsArrowRight /></Link>
+                                </Box>
                             </AccordionDetails>
                         </Accordion>
                         <Accordion expanded={expanded === 'panal2'} onChange={(event, isExpanded) => handealChange(isExpanded, 'panal2')} onClick={() => setImageUri(`${img2}`)}>
@@ -46,6 +53,9 @@ const ProcessMangements = () => {
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
                                     malesuada lacus ex, sit amet blandit leo lobortis eget.
                                 </Typography>
+                                <Box>
+                                    <Link className='flex justify-end items-center gap-2 text-[#00ADB5] text-xl font-bold  ' to='/test'>Click <BsArrowRight /></Link>
+                                </Box>
                             </AccordionDetails>
                         </Accordion>
                         <Accordion expanded={expanded === 'panal3'} onChange={(event, isExpanded) => handealChange(isExpanded, 'panal3')} onClick={() => setImageUri(`${img3}`)}>
@@ -61,10 +71,13 @@ const ProcessMangements = () => {
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
                                     malesuada lacus ex, sit amet blandit leo lobortis eget.
                                 </Typography>
+                                <Box>
+                                    <Link className='flex justify-end items-center gap-2 text-[#00ADB5] text-xl font-bold  ' to='/test'>Click <BsArrowRight /></Link>
+                                </Box>
                             </AccordionDetails>
                         </Accordion>
                         <Accordion expanded={expanded === 'panal4'} onChange={(event, isExpanded) => handealChange(isExpanded, 'panal4')} onClick={() => setImageUri(`${img4}`)}>
-                            <AccordionSummary sx={{ backgroundColor: "#EEEEEE", color: "#222831", borderTop: "2px solid BurlyWood"}}
+                            <AccordionSummary sx={{ backgroundColor: "#EEEEEE", color: "#222831", borderTop: "2px solid BurlyWood" }}
                                 expandIcon={<ExpandMoreIcon sx={{ backgroundColor: "#EEEEEE", color: "#222831" }} />}
                                 aria-controls="panel2a-content"
                                 id="panel2a-header"
@@ -76,14 +89,18 @@ const ProcessMangements = () => {
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
                                     malesuada lacus ex, sit amet blandit leo lobortis eget.
                                 </Typography>
+                                <Box>
+                                    <Link className='flex justify-end items-center gap-2 text-[#00ADB5] text-xl font-bold  ' to='/test'>Click <BsArrowRight /></Link>
+                                </Box>
                             </AccordionDetails>
                         </Accordion>
 
                     </div>
                 </div>
                 <div>
-                    <img className='w-full  h-[400px]'  src={imageUri} alt="" />
+                    <img className='w-full  h-[400px]' src={imageUri} alt="" />
                 </div>
+            </div>
         </div>
     );
 };
