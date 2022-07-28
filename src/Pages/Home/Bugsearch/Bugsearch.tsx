@@ -5,7 +5,7 @@ import issue from "../../../Assets/monitoring.gif";
 const Bugsearch = () => {
   
     return (
-        <Grid container>
+        <Grid container className='bg-white'>
       <Grid xs={12} sm={12} md={6}>
         <Box sx={{px:9,py:15}}>
           <Typography variant="h3" sx={{ pt: 5}}>
@@ -15,7 +15,7 @@ const Bugsearch = () => {
             A simple, fast and scalable bug tracking system that helps you
             manage bugs easily and deliver great products on time.
           </Typography>
-          <Button variant="contained" color="primary">SIGN UP FOR FREE</Button>
+          <button className="btn btn-primary text-white">SIGN UP FOR FREE</button>
         </Box>
       </Grid>
       <Grid xs={12} sm={12} md={6}>

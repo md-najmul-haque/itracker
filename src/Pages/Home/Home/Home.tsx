@@ -1,14 +1,20 @@
 import React from 'react';
-import Notfound from '../../Shared/Notfound/Notfound';
+import VideoSection from '../components/VideoSection';
 import Bugsearch from '../Bugsearch/Bugsearch';
 import Teamwork from '../Teamwork/Teamwork';
+import ProcessManagement from '../ProcessManagement/ProcessManagement';
+import Testimonial from '../Testimonial/Testimonial';
+import Banner from '../Banner/Banner';
 
 const Home = () => {
     return (
-        <div>
-            <Notfound/>
+        <div>       
+            <Banner />
             <Bugsearch/>
-            <Teamwork/>         
+            <Teamwork />
+            <VideoSection />
+            <ProcessManagement />
+            <Testimonial></Testimonial>
         </div>
     );
 };
