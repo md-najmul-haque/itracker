@@ -1,17 +1,21 @@
 import { useQuery } from '@tanstack/react-query';
 import React from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 interface IFormInput {
     name: string;
     email: string;
     password: string;
+    user: string;
 }
 
 function SIgnUp() {
 
-    const { register, formState: { errors }, handleSubmit } = useForm<IFormInput>();
+    const navigate = useNavigate()
+
+    const { register, formState: { errors }, handleSubmit, reset } = useForm<IFormInput>();
     const onSubmit: SubmitHandler<IFormInput> = data => {
 
         const { data: user, isLoading, error } = useQuery(['user'], () =>
@@ -21,12 +25,15 @@ function SIgnUp() {
                     headers: {
                         'content-type': 'application/json'
                     },
-                    body: JSON.stringify()
+                    body: JSON.stringify(user)
                 })
                 .then(res => {
-                    console.log(data);
+                    console.log();
                     return res.json()
                 }))
+        toast('You have successfully create your account')
+        reset()
+        navigate('/')
 
     }
 
