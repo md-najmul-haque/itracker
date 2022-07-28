@@ -3,6 +3,7 @@ import { SubmitHandler, useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 
 interface IFormInput {
+    name: string;
     email: string;
     password: string;
 }
@@ -24,20 +25,20 @@ function SIgnUp() {
                                 type="text"
                                 placeholder="Enter Name"
                                 className="input input-bordered bg-slate-50 w-full max-w-xs"
-                                {...register("email", {
+                                {...register("name", {
                                     required: {
                                         value: true,
-                                        message: 'Email is required'
+                                        message: 'Name is required'
                                     },
 
-                                    pattern: {
-                                        value: /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,20}$/,
-                                        message: 'Please enter valid email address'
+                                    minLength: {
+                                        value: 3,
+                                        message: 'error message'
                                     }
                                 })} />
                             <label className="label label-text-alt">
-                                {errors.email?.type === 'required' && <span className='text-red-600'>{errors.email.message}</span>}
-                                {errors.email?.type === 'pattern' && <span className='text-red-600'>{errors.email.message}</span>}
+                                {errors.name?.type === 'required' && <span className='text-red-600'>{errors.name.message}</span>}
+                                {errors.name?.type === 'minLength' && <span className='text-red-600'>{errors.name.message}</span>}
                             </label>
                         </div>
 
