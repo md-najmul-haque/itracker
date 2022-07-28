@@ -1,3 +1,4 @@
+import { useQuery } from '@tanstack/react-query';
 import React from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
@@ -11,7 +12,23 @@ interface IFormInput {
 function SIgnUp() {
 
     const { register, formState: { errors }, handleSubmit } = useForm<IFormInput>();
-    const onSubmit: SubmitHandler<IFormInput> = data => { console.log(data); }
+    const onSubmit: SubmitHandler<IFormInput> = data => {
+
+        const { data: user, isLoading, error } = useQuery(['user'], () =>
+            fetch('http://localhost:5000/',
+                {
+                    method: "POST",
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: 'JSON.stringify'
+                })
+                .then(res => {
+                    console.log(data);
+                    return res.json()
+                }))
+
+    }
 
     return (
         <div className='h-screen bg-slate-50 flex justify-center items-center'>
