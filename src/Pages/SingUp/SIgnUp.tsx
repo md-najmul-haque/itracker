@@ -13,8 +13,8 @@ function SIgnUp() {
     const onSubmit: SubmitHandler<IFormInput> = data => { console.log(data); }
 
     return (
-        <div className='h-screen flex justify-center items-center'>
-            <div className="card w-96 bg-base-100 shadow-2xl">
+        <div className='h-screen bg-slate-50 flex justify-center items-center'>
+            <div className="card w-96 bg-white shadow-2xl">
                 <div className="card-body">
                     <h2 className='text-center text-3xl pb-3'>Sing Up</h2>
                     <form onSubmit={handleSubmit(onSubmit)}>
@@ -23,7 +23,7 @@ function SIgnUp() {
                             <input
                                 type="text"
                                 placeholder="Enter Name"
-                                className="input input-bordered w-full max-w-xs"
+                                className="input input-bordered bg-slate-50 w-full max-w-xs"
                                 {...register("email", {
                                     required: {
                                         value: true,
@@ -45,7 +45,7 @@ function SIgnUp() {
                             <input
                                 type="text"
                                 placeholder="Enter Email"
-                                className="input input-bordered w-full max-w-xs"
+                                className="input input-bordered bg-slate-50 w-full max-w-xs"
                                 {...register("email", {
                                     required: {
                                         value: true,
@@ -67,7 +67,7 @@ function SIgnUp() {
                             <input
                                 type="password"
                                 placeholder="Enter Password"
-                                className="input input-bordered w-full max-w-xs"
+                                className="input input-bordered bg-slate-50 w-full max-w-xs"
                                 {...register("password", {
                                     required: {
                                         value: true,
