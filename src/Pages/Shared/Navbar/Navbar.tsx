@@ -6,11 +6,10 @@ const Navbar = () => {
   const menuItem =
     <>
       <li><Link to='/'>Home</Link></li>
-      <li><Link to='/project'>Project</Link></li>
-      <li><Link to='/'>Blog</Link></li>
+      <li><Link to='/project'>Features</Link></li>
       <li><Link to='/contact'>Contact</Link></li>
-      <li><Link to='/contact'>Register</Link></li>
-      <li><Link to='/contact'>Login</Link></li>
+      <li><Link to='/register'>Register</Link></li>
+      <li><Link to='/signin'>Sign In</Link></li>
     </>
 
   return (
