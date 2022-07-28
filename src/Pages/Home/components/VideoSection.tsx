@@ -32,8 +32,27 @@ const VideoSection = () => {
         </div>
       </section>
 
+<<<<<<< HEAD
+  {/* <!-- ======= counter-up Section ======= --> */}
+  <section className="counter_up">
+    <div className="">
+      <div className="flex flex-col md:flex-row justify-around">
+        <div className=" ">
+          <div className="counter-box flex justify-center flex-col">
+        <div>
+        <FcPositiveDynamic className='counterIcon' />
+        </div>
+            <p className='my-3'>App Rate</p>
+         <CountUp
+         end={500}
+         duration={5}
+         />
+          </div>
+        </div>
+=======
       {/* <!-- ======= counter-up Section ======= --> */}
       <section className="counter_up">
+>>>>>>> origin/development
         <div className="">
           <div className="flex flex-col md:flex-row justify-around">
             <div className=" ">
@@ -80,7 +99,31 @@ const VideoSection = () => {
             </div>
           </div>
         </div>
+<<<<<<< HEAD
+        <div className="">
+          <div className="counter-box">
+          <FcWorkflow className='counterIcon' />
+            <p className='my-3'>Active Accounts</p>
+            <CountUp
+         end={100}
+         duration={5}
+         />
+          </div>
+        </div>
+        <div className=" ">
+          <div className="counter-box">
+          <FcServices className='counterIcon' />
+            <p className='my-3'>Total Active Apps</p>
+            <CountUp
+         end={9800}
+         duration={5}
+         />
+          </div>
+        </div>
+      </div>
+=======
       </section>
+>>>>>>> origin/development
     </div>
   );
 };

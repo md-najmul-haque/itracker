@@ -17,6 +17,7 @@ const Home = () => {
           
             <ProcessMangements/>
             <Testimonial></Testimonial>
+
         </div>
     );
 };
