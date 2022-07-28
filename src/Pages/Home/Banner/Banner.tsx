@@ -1,17 +1,14 @@
 import React, { useState } from "react";
 
-
-
 const Banner = () => {
 
     const [menu, setMenu] = useState<boolean>(false);
 
     return (
-
         <section>
             <div className="w-full h-screen relative pb-10 px-6 xl:px-0">
                 <img className="absolute w-full inset-0 h-full" src="https://i.ibb.co/GckN6y6/hero2-bg.png" alt="we care family" />
-                <div className="pt-32 lg:flex lg:flex-row-reverse items-center relative z-10 container mx-auto">
+                <div className="pt-32 lg:flex lg:flex-row-reverse items-center justify-center relative z-10 container mx-auto">
                     <div className="w-full lg:w-1/2 h-full lg:pr-10 xl:pr-0">
                         <img aria-label="people smiling" className="mx-auto" src="https://cdn.tuk.dev/assets/templates/weCare/hero2-left.png" alt="people smiling" />
                     </div>
