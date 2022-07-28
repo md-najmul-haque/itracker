@@ -14,15 +14,8 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/singin" element={<SingIn />} />
+        <Route path="/signin" element={<SingIn />} />
         <Route path='*' element={<Notfound />} />
-      </Routes>
-
-
-
-
-      <Routes>
-        <Route path='/test' element={<TestRoute />} />
       </Routes>
       <Footer />
     </div>

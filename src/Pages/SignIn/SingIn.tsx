@@ -1,8 +1,6 @@
 import React from 'react';
-import { Avatar, Button, Checkbox, Chip, Divider, FormControlLabel, Grid, Link, Paper, TextField, Typography } from '@mui/material';
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import { Label } from '@mui/icons-material';
 import { SubmitHandler, useForm } from 'react-hook-form';
+import { Link } from 'react-router-dom';
 
 interface IFormInput {
     email: string;
@@ -11,76 +9,71 @@ interface IFormInput {
 
 const SingIn = () => {
 
-    const { register, handleSubmit } = useForm<IFormInput>();
+    const { register, formState: { errors }, handleSubmit } = useForm<IFormInput>();
     const onSubmit: SubmitHandler<IFormInput> = data => { console.log(data); }
-
-    const paperStyle = {
-        padding: 20,
-        height: '65vh',
-        width: 280,
-        margin: '80px auto'
-
-    }
-    const avatarStyle = {
-        backgroundColor: '#00ADB5',
-        margin: '5 auto'
-    }
-
-    const btnStyle = {
-        margin: '10px auto'
-    }
-
-    const socialButtonStyle = {
-        margin: '5px auto'
-    }
 
     return (
 
-        <Grid>
-            <Paper elevation={10} style={paperStyle}>
-                <Grid>
-                    <Avatar style={avatarStyle} ><LockOutlinedIcon /></Avatar>
-                    <h2 style={{ textAlign: 'center' }}>Sign In</h2>
-
+        <div className='h-screen flex justify-center items-center'>
+            <div className="card w-96 bg-base-100 shadow-2xl">
+                <div className="card-body">
+                    <h2 className='text-center text-3xl pb-3'>Login</h2>
                     <form onSubmit={handleSubmit(onSubmit)}>
-                        {/* <input {...register("firstName", { required: true, maxLength: 20 })} />
-                        <input {...register("lastName", { pattern: /^[A-Za-z]+$/i })} /> */}
 
-                        <TextField label="Enter Your Email ID" variant="standard" fullWidth {...register("email", { required: true, maxLength: 2 })} />
-                        <TextField label="Enter Your Password" variant="standard" fullWidth {...register("password", { pattern: /^[A-Za-z]+$/i })} />
+                        <div className="form-control w-full max-w-xs">
+                            <input
+                                type="text"
+                                placeholder="Enter Email"
+                                className="input input-bordered w-full max-w-xs"
+                                {...register("email", {
+                                    required: {
+                                        value: true,
+                                        message: 'Email is required'
+                                    },
 
-                        <FormControlLabel
-                            control={<Checkbox />}
-                            label="Remember me"
-                        />
-                        <Button type='submit' variant="contained" color="primary" fullWidth style={btnStyle}>Sign In</Button>
-                        <input type="submit" value='Sing In' />
+                                    pattern: {
+                                        value: /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,20}$/,
+                                        message: 'Please enter valid email address'
+                                    }
+                                })} />
+                            <label className="label label-text-alt">
+                                {errors.email?.type === 'required' && <span className='text-red-600'>{errors.email.message}</span>}
+                                {errors.email?.type === 'pattern' && <span className='text-red-600'>{errors.email.message}</span>}
+                            </label>
+                        </div>
 
+                        <div className="form-control w-full max-w-xs">
+                            <input
+                                type="password"
+                                placeholder="Enter Password"
+                                className="input input-bordered w-full max-w-xs"
+                                {...register("password", {
+                                    required: {
+                                        value: true,
+                                        message: 'Password is required'
+                                    },
+
+                                    minLength: {
+                                        value: 6,
+                                        message: 'Password minimum length should be six characters'
+                                    }
+                                })} />
+                            <label className="label label-text-alt">
+                                {errors.password?.type === 'required' && <span className='text-red-600'>{errors.password.message}</span>}
+                                {errors.password?.type === 'minLength' && <span className='text-red-600'>{errors.password.message}</span>}
+                            </label>
+                        </div>
+
+                        <input type="submit" className="btn btn-primary w-full max-w-xs text-white mb-2" value='Login' />
+                        <small>New in iTracker?<Link to='/signup' className="text-blue-600 pl-2">Create New Account</Link></small>
                     </form>
 
-
-                    <Typography>
-                        Forgot Password?
-                        <Link href="#" underline="hover" color='#0000EE' marginBottom={3} >
-                            {'Reset Now'}
-                        </Link>
-                    </Typography>
-                    <Typography>
-                        Don't have an account?
-                        <Link href="#" underline="hover">
-                            {'Sign Up'}
-                        </Link>
-                    </Typography>
-                    <Divider>
-                        <Chip label="or" />
-                    </Divider>
-                    <Button type='submit' variant="outlined" color="primary" fullWidth style={socialButtonStyle}>Sign In with Google</Button>
-                    <Button type='submit' variant="outlined" color="primary" fullWidth style={socialButtonStyle}>Sign In with Github</Button>
-                    <Button type='submit' variant="outlined" color="primary" fullWidth style={socialButtonStyle}>Sign In with Facebook</Button>
-
-                </Grid>
-            </Paper>
-        </Grid>
+                    <div className="divider">or</div>
+                    <button className="btn btn-primary text-white">Continue with Google</button>
+                    <button className="btn btn-primary text-white">Continue with Github</button>
+                </div>
+            </div>
+        </div>
 
     );
 };
