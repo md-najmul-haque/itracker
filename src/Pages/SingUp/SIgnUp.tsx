@@ -21,7 +21,7 @@ function SIgnUp() {
                     headers: {
                         'content-type': 'application/json'
                     },
-                    body: 'JSON.stringify'
+                    body: JSON.stringify()
                 })
                 .then(res => {
                     console.log(data);
