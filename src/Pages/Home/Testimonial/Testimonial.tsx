@@ -2,7 +2,7 @@ import React from 'react';
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import './Testimonial.css'
 import { Swiper, SwiperSlide } from 'swiper/react';
-import logsvg from '../../../assets/testimonial-img/logo-classpass.svg'
+import logsvg from '../../../Assets/testimonial-img/logo-classpass.svg'
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
