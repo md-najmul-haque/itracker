@@ -3,7 +3,7 @@ import notfound from "../../../Assets/notfound.jpg";
 
 const Notfound = () => {
   return (
-        <div className="flex items-center justify-center bg-white">
+        <div className="flex items-center justify-center bg-white h-screen">
             <div className="bg-base  flex items-center justify-center mx-4 md:w-2/3">
                 <div className="flex flex-col items-center">
                     <img className="px-4 py-2 hidden md:block w-full rounded-lg" src="https://www.ursindia.com/image/404.jpg" />
