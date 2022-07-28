@@ -9,13 +9,12 @@ import ProcessMangements from '../ProcessMangements/ProcessMangements';
 
 const Home = () => {
     return (
-        <div>       
+        <div>
             <Banner />
-            <Bugsearch/>
+            <Bugsearch />
             <Teamwork />
             <VideoSection />
-          
-            <ProcessMangements/>
+            <ProcessMangements />
             <Testimonial></Testimonial>
         </div>
     );

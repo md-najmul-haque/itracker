@@ -4,10 +4,10 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import img1 from '../../../assets/ProcessManagement/img1.png'
-import img2 from '../../../assets/ProcessManagement/img2.png'
-import img3 from '../../../assets/ProcessManagement/img3.jpg'
-import img4 from '../../../assets/ProcessManagement/img4.png'
+import img1 from '../../../Assets/ProcessManagement/img1.png'
+import img2 from '../../../Assets/ProcessManagement/img2.png'
+import img3 from '../../../Assets/ProcessManagement/img3.jpg'
+import img4 from '../../../Assets/ProcessManagement/img4.png'
 import { Link } from 'react-router-dom';
 import { BsArrowRight } from 'react-icons/bs';
 import { Box } from '@mui/material';
