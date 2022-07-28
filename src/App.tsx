@@ -6,16 +6,16 @@ import Footer from './Pages/Shared/Footer';
 
 import Navbar from './Pages/Shared/Navbar/Navbar';
 import SingIn from './Pages/SignIn/SingIn';
+import Notfound from './Pages/Shared/Notfound/Notfound';
 
 function App() {
   return (
-    <div className="">
+    <div>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-      </Routes>
-      <Routes>
         <Route path="/singin" element={<SingIn />} />
+        <Route path='*' element={<Notfound/>}/>
       </Routes>
       <Footer />
     </div>
