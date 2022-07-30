@@ -14,9 +14,10 @@ const Banner = () => {
                     </div>
                     <div role="contentinfo" className="w-full lg:w-1/2 h-full">
                         <p className="uppercase text-4xl lg:text-6xl mb-4">The easiest way to track your issue</p>
-                        <p className="mb-8 text-3xl">You’ve arrived at the central place for work—add team members, drop your work in Asana, start collaborating. Yep, it’s that easy.</p>
+                        <p className="mb-8 text-3xl">We help to track your issue, add your issue in iTracker, then add and assign your team member and track this issue. Yep, it’s very easy to use.</p>
                         <div className="flex justify-center">
-                            <Link to='/signup' className="btn btn-outline btn-primary">Get Started</Link>
+                            <Link to='/signup' className="btn  btn-primary">Get Started</Link>
+                            <Link to='/singin' className="btn ml-5 btn-primary">Sing In</Link>
                         </div>
                     </div>
 
