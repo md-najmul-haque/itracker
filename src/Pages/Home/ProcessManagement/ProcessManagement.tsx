@@ -6,10 +6,10 @@ import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 import './ProcessManagement.css'
-import img1 from '../../../assets/ProcessManagement/img1.png'
-import img2 from '../../../assets/ProcessManagement/img2.png'
-import img3 from '../../../assets/ProcessManagement/img3.jpg'
-import img4 from '../../../assets/ProcessManagement/img4.png'
+import img1 from '../../../Assets/ProcessManagement/img1.png'
+import img2 from '../../../Assets/ProcessManagement/img2.png'
+import img3 from '../../../Assets/ProcessManagement/img3.jpg'
+import img4 from '../../../Assets/ProcessManagement/img4.png'
 const ProcessManagement = () => {
     const [expanded, setExpanded] = useState<string | false>(false)
     const handealChange = (isExpanded: boolean, panal: string) => {

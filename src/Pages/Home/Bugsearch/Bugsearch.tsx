@@ -1,32 +1,30 @@
 import React from 'react';
 import { Box,Button,CardMedia,Grid,Typography} from "@mui/material";
+import issue from "../../../Assets/monitoring.gif";
 
 const Bugsearch = () => {
+  
     return (
-        <Grid container sx={{ backgroundColor:"#f0e6dc"}}>
-      <Grid xs={12} sm={12} md={6} sx={{backgroundColor:"#f0e6dc"}}>
-        <Box sx={{px:10,py:15}}>
+        <Grid container className='bg-white'>
+      <Grid xs={12} sm={12} md={6}>
+        <Box sx={{px:9,py:15}}>
           <Typography variant="h3" sx={{ pt: 5}}>
-            Ship great software with <br /> automated bugtracking
+            Ship great software with <br /> automated issuetracking
           </Typography>
-          <Typography component="p" variant="h6" sx={{ py: 4, }}>
+          <Typography component="p" variant="h6" sx={{ py: 3 }}>
             A simple, fast and scalable bug tracking system that helps you
             manage bugs easily and deliver great products on time.
           </Typography>
-          <Button variant="contained" color="error" >SIGN UP FOR FREE</Button>
+          <button className="btn btn-primary text-white">SIGN UP FOR FREE</button>
         </Box>
       </Grid>
-      <Grid xs={12} sm={12} md={6} sx={{backgroundColor:"#f0e6dc"}}>
-        <Box>
+      <Grid xs={12} sm={12} md={6}>
+        <Box sx={{py:8}}>
           <CardMedia
-          muted
-          loop
-          autoPlay
-          component="video"
-          src="https://www.zohowebstatic.com/sites/default/files/bugtracker/home/bugtracker-header.mp4"
+          component="img"
+          src={issue}
           >
           </CardMedia>
-          
         </Box>
       </Grid>
     </Grid>

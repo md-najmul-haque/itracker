@@ -1,22 +1,21 @@
 import React from 'react';
-import IndexSlider from '../components/Slider/IndexSlider';
 import VideoSection from '../components/VideoSection';
-
-
 import Bugsearch from '../Bugsearch/Bugsearch';
 import Teamwork from '../Teamwork/Teamwork';
 import ProcessManagement from '../ProcessManagement/ProcessManagement';
 import Testimonial from '../Testimonial/Testimonial';
+import Banner from '../Banner/Banner';
+import ProcessMangements from '../ProcessMangements/ProcessMangements';
 
 const Home = () => {
     return (
-        <div>
-            <IndexSlider/>
-         <VideoSection/>
+        <div>       
+            <Banner />
             <Bugsearch/>
-            <Teamwork/>
-            <ProcessManagement/>
-           
+            <Teamwork />
+            <VideoSection />
+          
+            <ProcessMangements/>
             <Testimonial></Testimonial>
 
         </div>
