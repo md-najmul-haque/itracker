@@ -6,14 +6,14 @@ import Banner from '../Banner/Banner';
 import ProcessMangements from '../ProcessMangements/ProcessMangements';
 
 const Home = () => {
+
     return (
         <div>
             <Banner />
             <Bugsearch />
             <Teamwork />
             <ProcessMangements />
-            <Testimonial></Testimonial>
-
+            <Testimonial />
         </div>
     );
 };

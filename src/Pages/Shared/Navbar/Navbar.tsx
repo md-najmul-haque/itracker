@@ -8,12 +8,12 @@ const Navbar = () => {
             <li><Link to='/'>Home</Link></li>
             <li><Link to='/project'>Features</Link></li>
             <li><Link to='/contact'>Contact</Link></li>
-            <li><Link to='/register'>Register</Link></li>
             <li><Link to='/signin'>Sign In</Link></li>
+            <li><Link to='/signup'>Get Started</Link></li>
         </>
 
     return (
-        <div className="navbar absolute top-0 z-10">
+        <div className="navbar max-w-screen-2xl mx-auto absolute top-0 z-10">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label className="btn btn-ghost lg:hidden">
