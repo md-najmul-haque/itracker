@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Banner = () => {
 
@@ -16,7 +17,7 @@ const Banner = () => {
                         <p className="uppercase text-4xl lg:text-6xl mb-4">The easiest way to track your issue</p>
                         <p className="mb-8 text-3xl">You’ve arrived at the central place for work—add team members, drop your work in Asana, start collaborating. Yep, it’s that easy.</p>
                         <div className="flex justify-center">
-                            <button className="btn btn-outline btn-primary">Get Started</button>
+                            <Link to='/signup' className="btn btn-outline btn-primary">Get Started</Link>
                         </div>
                     </div>
 
