@@ -1,6 +1,6 @@
 import React from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import { useSignInWithGoogle, useSignInWithGithub } from 'react-firebase-hooks/auth';
 import Loading from '../Shared/Loading/Loading';
@@ -16,6 +16,8 @@ const SingIn = () => {
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
     const [signInWithGithub, gitUser, gitLoading, gitError] = useSignInWithGithub(auth);
 
+    const navigate = useNavigate()
+
     const onSubmit: SubmitHandler<IFormInput> = data => { console.log(data); }
 
     if (gError || gitError) {
@@ -27,6 +29,10 @@ const SingIn = () => {
 
     if (gLoading || gitLoading) {
         return <Loading />
+    }
+
+    if (gUser || gitUser) {
+        navigate('/')
     }
 
     return (
