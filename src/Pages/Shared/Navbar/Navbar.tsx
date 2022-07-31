@@ -1,15 +1,29 @@
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
+import auth from '../../../firebase.init';
+import Loading from '../Loading/Loading';
 
 const Navbar = () => {
+
+    const [user, loading, error] = useAuthState(auth)
+
+    if (loading) {
+        return <Loading />
+    }
 
     const menuItem =
         <>
             <li><Link to='/'>Home</Link></li>
             <li><Link to='/feature'>Features</Link></li>
             <li><Link to='/contact'>Contact</Link></li>
-            <li><Link to='/signin'>Sign In</Link></li>
-            <li><Link to='/signup'>Get Started</Link></li>
+            {
+                user ? <li><Link to='/signin'>Sign Out</Link></li> : <>
+                    <li><Link to='/signin'>Sign In</Link></li>
+                    <li><Link to='/signup'>Get Started</Link></li>
+                </>
+            }
+
         </>
 
     return (
