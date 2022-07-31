@@ -29,8 +29,8 @@ const Navbar = () => {
 
     return (
 
-        <div id='back-to-top-ancor' className="navbar bg-primary mx-auto sticky top-0 z-50">
-            <div className='container mx-auto'>
+        <div id='back-to-top-anchor' className="navbar bg-primary mx-auto sticky top-0 z-50">
+            <div className='container mx-auto'>git
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label className="btn btn-ghost lg:hidden">
