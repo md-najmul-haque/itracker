@@ -8,6 +8,7 @@ import ScrollToTop from './Pages/Shared/ScrollToTop/ScrollToTop';
 import SingIn from './Pages/SignIn/SingIn';
 import Notfound from './Pages/Shared/Notfound/Notfound';
 import SignUp from './Pages/SignUp/SignUp';
+import Dashboard from './Pages/Dashboard/Dashboard';
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/dashboard" element={<Dashboard/>} ></Route>
         <Route path="/signin" element={<SingIn />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path='*' element={<Notfound />} />

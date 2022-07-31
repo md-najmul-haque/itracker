@@ -15,7 +15,6 @@ const Bugsearch = () => {
             A simple, fast and scalable bug tracking system that helps you
             manage bugs easily and deliver great products on time.
           </Typography>
-
         </Box>
       </Grid>
       <Grid xs={12} sm={12} md={6}>
