@@ -8,7 +8,7 @@ interface IFormInput {
     name: string;
     email: string;
     password: string;
-    user: string;
+    isLoading: boolean;
 }
 
 function SignUp() {
@@ -16,21 +16,25 @@ function SignUp() {
     const navigate = useNavigate()
 
     const { register, formState: { errors }, handleSubmit, reset } = useForm<IFormInput>();
+
     const onSubmit: SubmitHandler<IFormInput> = data => {
 
-        // const { data: user, isLoading, error } = useQuery(['user'], () =>
-        //     fetch('http://localhost:5000/',
-        //         {
-        //             method: "POST",
-        //             headers: {
-        //                 'content-type': 'application/json'
-        //             },
-        //             body: JSON.stringify(user)
-        //         })
-        //         .then(res => {
-        //             console.log();
-        //             return res.json()
-        //         }))
+        const user = {
+            name: data.name,
+            email: data.email,
+            password: data.password
+        }
+        console.log(user);
+
+        fetch('http://localhost:5000/user',
+            {
+                method: "POST",
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(user)
+            })
+            .then(res => res.json())
         toast('You have successfully create your account')
         reset()
         navigate('/')
