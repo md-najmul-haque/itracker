@@ -1,6 +1,9 @@
 import React from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
+import auth from '../../firebase.init';
+import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import Loading from '../Shared/Loading/Loading';
 
 interface IFormInput {
     email: string;
@@ -10,14 +13,20 @@ interface IFormInput {
 const SingIn = () => {
 
     const { register, formState: { errors }, handleSubmit } = useForm<IFormInput>();
+    const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+
     const onSubmit: SubmitHandler<IFormInput> = data => { console.log(data); }
+
+    if (loading) {
+        return <Loading />
+    }
 
     return (
 
         <div className='h-screen bg-slate-50 flex justify-center items-center'>
             <div className="card w-96 bg-white shadow-2xl">
                 <div className="card-body">
-                    <h2 className='text-center text-3xl pb-3'>Login</h2>
+                    <h2 className='text-center text-3xl pb-3'>Sign In</h2>
                     <form onSubmit={handleSubmit(onSubmit)}>
 
                         <div className="form-control w-full max-w-xs">
@@ -69,7 +78,7 @@ const SingIn = () => {
                     </form>
 
                     <div className="divider">or</div>
-                    <button className="btn btn-primary text-white">Continue with Google</button>
+                    <button onClick={() => signInWithGoogle()} className="btn btn-primary text-white">Continue with Google</button>
                     <button className="btn btn-primary text-white">Continue with Github</button>
                 </div>
             </div>
