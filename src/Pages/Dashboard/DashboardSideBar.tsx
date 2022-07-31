@@ -23,7 +23,7 @@ const DashboardSideBar = ({ children, ...other}: MyComponentProps) => {
                         <Link className='bg-transparent text-white' to='/dashboard'> <AiFillHome/>HOME</Link>
                     </li>
                     <li className='lg:ml-5'>
-                        <Link className='bg-transparent text-white' to="/dashboard/myTask"><MdOutlineTaskAlt/> My Task</Link>
+                        <Link className='bg-transparent text-white' to="/dashboard/myTask/addTask"><MdOutlineTaskAlt/> My Task</Link>
                     </li>
                     
                 </ul>
