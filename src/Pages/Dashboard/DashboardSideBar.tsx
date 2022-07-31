@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { BsFillPersonFill } from 'react-icons/bs';
 import { AiFillRead } from 'react-icons/ai';
-import { BsFillCalendarEventFill } from 'react-icons/bs';
+import {MdOutlineTaskAlt } from 'react-icons/md';
 import {FaMoneyCheckAlt } from 'react-icons/fa';
 import {AiFillHome } from 'react-icons/ai';
 type MyComponentProps = React.PropsWithChildren<{}>;
@@ -16,23 +16,16 @@ const DashboardSideBar = ({ children, ...other}: MyComponentProps) => {
             </div>
             <div className="drawer-side">
                 <label form="my-drawer-2" className="drawer-overlay"></label>
-                <ul className="menu p-4 overflow-y-auto w-48 bg-[#5433FF] text-base-content">
-                    <h1 className='mb-4 text-center text-white font-bold text-2xl'>Acadomi</h1>
+                <ul className="menu p-4 overflow-y-auto w-60 bg-[#1e1f21] text-base-content">
+                    <h1 className='mb-4 text-center text-white font-bold text-2xl'>ITRACKER</h1>
                     {/*   Sidebar content here */}
-                    <li className='bg-white rounded-3xl w-52'>
-                        <Link className='bg-transparent text-[#5433FF]' to='/dashboard'> <AiFillHome/>DESHBOARD</Link>
+                    <li className='lg:ml-5'>
+                        <Link className='bg-transparent text-white' to='/dashboard'> <AiFillHome/>HOME</Link>
                     </li>
-                    <li><Link className='bg-transparent text-white' to="/dashboard/student"><BsFillPersonFill/> Students</Link></li>
-                    <li>
-                        <Link className='bg-transparent text-white' to="/dashboard/teacher"><BsFillPersonFill/>Teachers</Link>
+                    <li className='lg:ml-5'>
+                        <Link className='bg-transparent text-white' to="/dashboard/myTask"><MdOutlineTaskAlt/> My Task</Link>
                     </li>
                     
-                    <li>
-                        <Link className='bg-transparent text-white' to="/dashboard/finance"><FaMoneyCheckAlt/>Finance</Link>
-                    </li>
-                    <li>
-                        <Link className='bg-transparent text-white' to="/dashboard/tests/Personal"><FaMoneyCheckAlt/>Test</Link>
-                    </li>
                 </ul>
 
             </div>

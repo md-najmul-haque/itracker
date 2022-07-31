@@ -9,6 +9,8 @@ import SingIn from './Pages/SignIn/SingIn';
 import Notfound from './Pages/Shared/Notfound/Notfound';
 import SignUp from './Pages/SignUp/SignUp';
 import Dashboard from './Pages/Dashboard/Dashboard';
+import DashboardHomePage from './Pages/Dashboard/DashboardHomePage/DashboardHomePage';
+import MyTask from './Pages/Dashboard/MyTask/MyTask';
 
 
 function App() {
@@ -22,7 +24,11 @@ function App() {
         <Route path='*' element={<Notfound />} />
 
         <Route path='/dashboard' element={<Dashboard />}>
-          
+        <Route path='/dashboard' element={<DashboardHomePage/>} />
+        
+        <Route path='myTask' element={<MyTask/>}>
+            
+        </Route>
 
         </Route>
       </Routes>
