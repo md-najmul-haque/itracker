@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import { useSignInWithGoogle, useSignInWithGithub } from 'react-firebase-hooks/auth';
 import Loading from '../Shared/Loading/Loading';
+import { BiLock } from 'react-icons/bi';
 
 interface IFormInput {
     email: string;
@@ -40,6 +41,9 @@ const SingIn = () => {
         <div className='h-screen bg-slate-50 flex justify-center items-center'>
             <div className="card w-96 bg-white shadow-2xl">
                 <div className="card-body">
+                    <div className='flex justify-center item-center '>
+                        < BiLock className='text-white w-12 h-12 bg-primary rounded-full' />
+                    </div>
                     <h2 className='text-center text-3xl pb-3'>Sign In</h2>
                     <form onSubmit={handleSubmit(onSubmit)}>
 
