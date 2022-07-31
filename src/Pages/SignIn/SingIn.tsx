@@ -2,7 +2,7 @@ import React from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 import auth from '../../firebase.init';
-import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useSignInWithGoogle, useSignInWithGithub } from 'react-firebase-hooks/auth';
 import Loading from '../Shared/Loading/Loading';
 
 interface IFormInput {
@@ -13,11 +13,19 @@ interface IFormInput {
 const SingIn = () => {
 
     const { register, formState: { errors }, handleSubmit } = useForm<IFormInput>();
-    const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+    const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
+    const [signInWithGithub, gitUser, gitLoading, gitError] = useSignInWithGithub(auth);
 
     const onSubmit: SubmitHandler<IFormInput> = data => { console.log(data); }
 
-    if (loading) {
+    if (gError || gitError) {
+        return (
+            <div>
+                <p>Error: {gError?.message} {gitError?.message}</p>
+            </div>)
+    }
+
+    if (gLoading || gitLoading) {
         return <Loading />
     }
 
@@ -79,7 +87,7 @@ const SingIn = () => {
 
                     <div className="divider">or</div>
                     <button onClick={() => signInWithGoogle()} className="btn btn-primary text-white">Continue with Google</button>
-                    <button className="btn btn-primary text-white">Continue with Github</button>
+                    <button onClick={() => signInWithGithub()} className="btn btn-primary text-white">Continue with Github</button>
                 </div>
             </div>
         </div>
