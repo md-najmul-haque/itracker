@@ -10,6 +10,7 @@ const Navbar = () => {
             <li><Link to='/contact'>Contact</Link></li>
             <li><Link to='/signin'>Sign In</Link></li>
             <li><Link to='/signup'>Get Started</Link></li>
+            <li><Link to='/dashboard'>Dashboard</Link></li>
         </>
     const { pathname } = useLocation()
     return (
