@@ -1,7 +1,17 @@
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { signOut } from 'firebase/auth';
 import { Link } from 'react-router-dom';
+import auth from '../../../firebase.init';
+import Loading from '../Loading/Loading';
 
 const Navbar = () => {
+
+    const [user, loading, error] = useAuthState(auth)
+
+    if (loading) {
+        return <Loading />
+    }
 
     const menuItem =
         <>
@@ -9,14 +19,19 @@ const Navbar = () => {
             <li><Link to='/feature'>Features</Link></li>
             <li><Link to='/contact'>Contact</Link></li>
             <li><Link to='/dashboard'>Dashboard</Link></li>
-            <li><Link to='/signin'>Sign In</Link></li>
-            <li><Link to='/signup'>Get Started</Link></li>
+            {
+                user ? <li><Link onClick={() => signOut(auth)} to='/'>Sign Out</Link></li> : <>
+                    <li><Link to='/signin'>Sign In</Link></li>
+                    <li><Link to='/signup'>Get Started</Link></li>
+                </>
+            }
+
         </>
 
     return (
 
         <div className="navbar bg-primary mx-auto sticky top-0 z-50">
-            <div className='container mx-auto'>
+            <div className='container mx-auto'>git
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label className="btn btn-ghost lg:hidden">
