@@ -1,40 +1,62 @@
-import { useQuery } from '@tanstack/react-query';
 import React from 'react';
+import { useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import auth from '../../firebase.init';
+import Loading from '../Shared/Loading/Loading';
 
 interface IFormInput {
     name: string;
     email: string;
     password: string;
-    user: string;
+    isLoading: boolean;
 }
 
 function SignUp() {
 
+    const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
+    const [signInWithGithub, gitUser, gitLoading, gitError] = useSignInWithGithub(auth);
     const navigate = useNavigate()
 
     const { register, formState: { errors }, handleSubmit, reset } = useForm<IFormInput>();
+
     const onSubmit: SubmitHandler<IFormInput> = data => {
 
-        // const { data: user, isLoading, error } = useQuery(['user'], () =>
-        //     fetch('http://localhost:5000/',
-        //         {
-        //             method: "POST",
-        //             headers: {
-        //                 'content-type': 'application/json'
-        //             },
-        //             body: JSON.stringify(user)
-        //         })
-        //         .then(res => {
-        //             console.log();
-        //             return res.json()
-        //         }))
+        const user = {
+            name: data.name,
+            email: data.email,
+            password: data.password
+        }
+        console.log(user);
+
+        fetch('http://localhost:5000/signup',
+            {
+                method: "POST",
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(user)
+            })
+            .then(res => res.json())
         toast('You have successfully create your account')
         reset()
         navigate('/')
 
+    }
+    if (gError || gitError) {
+        return (
+            <div>
+                <p>Error: {gError?.message} {gitError?.message}</p>
+            </div>)
+    }
+
+    if (gLoading || gitLoading) {
+        return <Loading />
+    }
+
+    if (gUser || gitUser) {
+        navigate('/')
     }
 
     return (
@@ -115,8 +137,8 @@ function SignUp() {
                     </form>
 
                     <div className="divider">or</div>
-                    <button className="btn btn-primary text-white">Continue with Google</button>
-                    <button className="btn btn-primary text-white">Continue with Github</button>
+                    <button onClick={() => signInWithGoogle()} className="btn btn-primary text-white">Continue with Google</button>
+                    <button onClick={() => signInWithGithub()} className="btn btn-primary text-white">Continue with Github</button>
                 </div>
             </div>
         </div>
