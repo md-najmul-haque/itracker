@@ -19,7 +19,9 @@ const SingIn = () => {
 
     const navigate = useNavigate()
 
-    const onSubmit: SubmitHandler<IFormInput> = data => { console.log(data); }
+    const onSubmit: SubmitHandler<IFormInput> = data => {
+        console.log(data);
+    }
 
     if (gError || gitError) {
         return (
@@ -91,7 +93,7 @@ const SingIn = () => {
                             </label>
                         </div>
 
-                        <input type="submit" className="btn btn-primary w-full max-w-xs text-white mb-2" value='Login' />
+                        <input type="submit" className="btn btn-primary w-full max-w-xs text-white mb-2" value='Sign In' />
                         <small>New in iTracker?<Link to='/signup' className="text-blue-600 pl-2">Create New Account</Link></small>
                     </form>
 

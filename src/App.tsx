@@ -9,6 +9,8 @@ import SingIn from './Pages/SignIn/SingIn';
 import Notfound from './Pages/Shared/Notfound/Notfound';
 import SignUp from './Pages/SignUp/SignUp';
 import Dashboard from './Pages/Dashboard/Dashboard';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 function App() {
@@ -17,13 +19,14 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/dashboard" element={<Dashboard/>} ></Route>
+        <Route path="/dashboard" element={<Dashboard />} ></Route>
         <Route path="/signin" element={<SingIn />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path='*' element={<Notfound />} />
       </Routes>
       <Footer />
       <ScrollToTop />
+      <ToastContainer />
     </div>
   );
 }
