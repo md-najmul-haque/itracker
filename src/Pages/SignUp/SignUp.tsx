@@ -30,7 +30,7 @@ function SignUp() {
         }
         console.log(user);
 
-        fetch('http://localhost:5000/user',
+        fetch('http://localhost:5000/signup',
             {
                 method: "POST",
                 headers: {
