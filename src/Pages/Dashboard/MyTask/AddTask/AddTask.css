@@ -1,0 +1,83 @@
+.task-container {
+    position: relative;
+    margin: -4rem auto;
+    padding: 40px;
+    box-sizing: border-box;
+    border-radius: 30px; 
+  }
+  
+  .login-title {
+    text-align: center;
+    margin-top: 10px;
+    font-weight: 900;
+    font-size: 1.8rem;
+    color: black;
+    letter-spacing: 1px;
+    font-family: "Sansita Swashed", cursive;
+  }
+  
+  .task-form {
+    text-align: left;
+    margin-top: 30px;
+  }
+  .task-container label,
+  .task-container input,
+  .task-container select,
+  .task-container button {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+  }
+  .task-container label {
+    margin-bottom: 4px;
+    color: #003973;
+    margin: 15px 0 5px 5px;
+  
+  }
+  .task-container input::placeholder {
+    color:#3a6073;
+  }
+  
+  .task-container input, select{
+    background: #ecf0f3;
+    margin: 15px 0 0 0;
+    padding: 10px;
+    padding-left: 20px;
+    height: 50px;
+    font-size: 14px;
+    border-radius: 50px;
+    box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px #656565;
+  }
+  .task-container textarea{
+    background: #ecf0f3;
+    margin: 15px 0 0 0;
+    padding: 10px;
+    padding-left: 20px;
+    height: 70px;
+    width: 270px;
+    font-size: 14px;
+    border-radius: 20px;
+    box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px #656565;
+  }
+  .task-container button {
+    color: white;
+    margin-top: 20px;
+    background: #2F4F4F;
+    height: 40px;
+    width: 200px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 900;
+    box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white;
+    transition: 0.5s;
+    margin:10px  auto;
+  }
+  
+  .ltask-container button:hover {
+    box-shadow: none;
+  }
+  
+  

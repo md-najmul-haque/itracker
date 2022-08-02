@@ -1,21 +1,14 @@
 import React from 'react';
-import { Outlet } from 'react-router-dom';
+import { Outlet} from 'react-router-dom';
+import DashboardSideBar from './DashboardSideBar';
 
 const Dashboard = () => {
-
+ 
     return (
-        <div className="drawer drawer-mobile">
-            <input id="dashboard-sidebar" type="checkbox" className="drawer-toggle" />
-            <div className="drawer-content">
-                <h1 className='text-center text-4xl'>Wellcome Dashboard</h1>
+        <div>
+            <DashboardSideBar> 
                 <Outlet></Outlet>
-            </div>
-            <div className="drawer-side">
-                <label htmlFor="dashboard-sidebar" className="drawer-overlay"></label>
-                <ul className="menu p-4 overflow-y-auto w-48 bg-base-100 text-base-content">
-                    <li><a>Dashboard</a></li>          
-                </ul>
-            </div>
+            </DashboardSideBar>
         </div>
     );
 };
