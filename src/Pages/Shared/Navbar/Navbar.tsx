@@ -1,7 +1,11 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
+
+  
+
 const Navbar = () => {
+    
     const menuItem =
         <>
 
@@ -12,7 +16,10 @@ const Navbar = () => {
             <li><Link to='/signup'>Get Started</Link></li>
             <li><Link to='/dashboard'>Dashboard</Link></li>
         </>
-    const { pathname } = useLocation()
+    
+    const { pathname } = useLocation();
+    console.log(pathname)
+    
     return (
 
         <div className="navbar bg-primary mx-auto sticky top-0 z-50">
