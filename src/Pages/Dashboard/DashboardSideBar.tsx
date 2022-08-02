@@ -8,7 +8,7 @@ import {AiFillHome } from 'react-icons/ai';
 type MyComponentProps = React.PropsWithChildren<{}>;
 const DashboardSideBar = ({ children, ...other}: MyComponentProps) => {
     return (
-        <div className="drawer drawer-mobile bg-base-200">
+        <div className="drawer drawer-mobile bg-white">
             <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
             <div className="drawer-content ">
                 {/*  <!-- Page content here --> */}
