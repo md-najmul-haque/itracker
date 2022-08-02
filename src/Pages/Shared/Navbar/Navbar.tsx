@@ -1,12 +1,12 @@
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { signOut } from 'firebase/auth';
-import { Link, useLocation} from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import Loading from '../Loading/Loading';
 
 const Navbar = () => {
-
+    const { pathname } = useLocation();
     const [user, loading, error] = useAuthState(auth)
 
     if (loading) {
@@ -28,14 +28,17 @@ const Navbar = () => {
             }
 
         </>
-    
-    
-    
+
+
+
     return (
 
         <div className="navbar bg-primary mx-auto sticky top-0 z-50">
             <div className='container mx-auto'>
-                
+                {/* {pathname.includes('dashboard') && <label form="my-drawer-2" className="btn btn-ghost btn-circle drawer-button lg:hidden drawer-side">
+                    <svg style={{color:'red'}} xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" /></svg>
+
+                </label>} */}
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -53,7 +56,10 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end  md:hidden flex">
-                    <label htmlFor="dashboard-sidebar" className="btn btn-primary drawer-button lg:hidden"><svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg></label>
+                    <label form="my-drawer-2" className="btn btn-ghost btn-circle drawer-button lg:hidden drawer-side">
+                        <svg style={{ color: 'red' }} xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" /></svg>
+
+                    </label>
                 </div>
             </div>
         </div>
