@@ -15,6 +15,7 @@ import DashboardHomePage from './Pages/Dashboard/DashboardHomePage/DashboardHome
 import Task from './Pages/Dashboard/MyTask/Task';
 import AddTask from './Pages/Dashboard/MyTask/AddTask/AddTask';
 import CurrentIssue from './Pages/Dashboard/MyTask/CurrentIssue/CurrentIssue';
+import ContactUs from './Pages/ContactUs/ContactUs';
 
 
 function App() {
@@ -23,19 +24,16 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/dashboard" element={<Dashboard />} ></Route>
+        <Route path="/contact" element={<ContactUs/>} />
         <Route path="/signin" element={<SingIn />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path='*' element={<Notfound />} />
-
         <Route path='/dashboard' element={<Dashboard />}>
           <Route path='/dashboard' element={<DashboardHomePage />} />
-
           <Route path='myTask' element={<Task/>}>
             <Route path='addTask' element={<AddTask/>} />
             <Route path='currentIssue' element={<CurrentIssue/>} />
           </Route>
-
         </Route>
       </Routes>
       <Footer />
