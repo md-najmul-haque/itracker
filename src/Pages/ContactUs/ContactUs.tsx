@@ -1,6 +1,22 @@
 import React from 'react'
+// import emailjs from '@emailjs/browser';
 
 const ContactUs = () => {
+  // const form=useRef<HTMLFormElement>(null)
+
+  // const sendEmail = (e:any) => {
+  //   e.preventDefault();
+
+  //   emailjs.sendForm('service_d3mn69j', 'template_bovssme', form.current, 'bC3daaJCpTsOQkKTT')
+  //     .then((result) => {
+  //         console.log(result.text);
+  //         alert("Thanks for the your email");
+  //         // e.target.reset();
+  //     }, (error) => {
+  //         console.log(error.text);
+  //     });
+  // };
+
   return (
     <section className="max-w-full">
       <div className="flex justify-center items-center my-10 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2">

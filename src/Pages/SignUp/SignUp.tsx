@@ -30,7 +30,7 @@ function SignUp() {
         }
         console.log(user);
 
-        fetch('http://localhost:5000/user',
+        fetch('http://localhost:5000/signup',
             {
                 method: "POST",
                 headers: {
@@ -132,8 +132,8 @@ function SignUp() {
                             </label>
                         </div>
 
-                        <input type="submit" className="btn btn-primary w-full max-w-xs text-white mb-2" value='Login' />
-                        <small>Already have an account?<Link to='/signin' className="text-blue-600 pl-2">Sign in</Link></small>
+                        <input type="submit" className="btn btn-primary w-full max-w-xs text-white mb-2" value='Sing Up' />
+                        <small>Already have an account?<Link to='/signin' className="text-blue-600 pl-2">Sign In</Link></small>
                     </form>
 
                     <div className="divider">or</div>
