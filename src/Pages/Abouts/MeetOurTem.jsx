@@ -15,10 +15,10 @@ const MeetOurTem = ({ team }) => {
     <h2 className="card-title name"> {name} </h2>
     <p> {Position} </p>
     <div className='icon'>
-    <i className="fa-brands fa-facebook"></i>
-    <i className="fa-brands ml-3 fa-github"></i>
-    <i className="fa-solid ml-3 fa-envelope"></i>
-    <i class="fa-brands ml-3 fa-linkedin"></i>
+    <a href="#"><i className="fa-brands fa-facebook"></i></a>
+   <a href="#"> <i className="fa-brands ml-3 fa-github"></i></a>
+   <a href="#"> <i className="fa-solid ml-3 fa-envelope"></i></a>
+   <a href="#"> <i class="fa-brands ml-3 fa-linkedin"></i></a>
    </div>
     
     
