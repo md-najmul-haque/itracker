@@ -21,7 +21,7 @@ const ReportCard = () => {
             <div className='hover:border-2 hover:rounded-lg hover:border-slate-500 shadow-md'>
                 <div className='text-center py-8'>
                     <p className='mb-5 text-2xl font-bold'>Overdue Task</p>
-                    <p className='mb-5 font-medium'><Link to=''>4</Link></p>
+                    <p className='mb-5 font-medium'><Link to='/dashboard/overdueTasks'>4</Link></p>
                 </div>
             </div>
             <div className='hover:border-2 hover:rounded-lg hover:border-slate-500 shadow-md'>

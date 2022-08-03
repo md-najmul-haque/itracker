@@ -12,6 +12,7 @@ import Dashboard from './Pages/Dashboard/Dashboard';
 import Reporting from './Pages/Dashboard/Reporting/Reporting';
 import CompletedTasks from './Pages/Dashboard/Reporting/CompletedTasks';
 import IncompleteTasks from './Pages/Dashboard/Reporting/IncompleteTasks';
+import OverdueTasks from './Pages/Dashboard/Reporting/OverdueTasks';
 
 
 
@@ -29,6 +30,7 @@ function App() {
           <Route path='repoting' element={<Reporting />} />
           <Route path='completedTasks' element={<CompletedTasks/>} />
           <Route path='incompleteTasks' element={<IncompleteTasks/>} />
+          <Route path='overdueTasks' element={<OverdueTasks/>} />
 
 
         </Route>
