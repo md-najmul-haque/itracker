@@ -1,0 +1,56 @@
+[
+    {
+        "id": "1",
+        "img": "https://i.ibb.co/7vKK1q3/download-1.png",
+        "name": "Abdul Rahim",
+        "Position": "Web developer",
+        "Facebook": "Facebookicon",
+        "Email": "Emailicon",
+        "github": "Githubicon"
+    },
+    {
+        "id": "2",
+        "img": "https://i.ibb.co/7vKK1q3/download-1.png",
+        "name": "kabul islam",
+        "Position": "Web developer",
+        "Facebook": "Facebookicon",
+        "Email": "Emailicon",
+        "github": "Githubicon"
+    },
+    {
+        "id": "3",
+        "img": "https://i.ibb.co/7vKK1q3/download-1.png",
+        "name": "Rahim islam",
+        "Position": "Web developer",
+        "Facebook": "Facebookicon",
+        "Email": "Emailicon",
+        "github": "Githubicon"
+    },
+    {
+        "id": "4",
+        "img": "https://i.ibb.co/7vKK1q3/download-1.png",
+        "name": "karim islam",
+        "Position": "Web developer",
+        "Facebook": "Facebookicon",
+        "Email": "Emailicon",
+        "github": "Githubicon"
+    },
+    {
+        "id": "5",
+        "img": "https://i.ibb.co/7vKK1q3/download-1.png",
+        "name": "Babul islam",
+        "Position": "Web developer",
+        "Facebook": "Facebookicon",
+        "Email": "Emailicon",
+        "github": "Githubicon"
+    },
+    {
+        "id": "6",
+        "img": "https://i.ibb.co/7vKK1q3/download-1.png",
+        "name": "Kabul islam",
+        "Position": "Web developer",
+        "Facebook": "Facebookicon",
+        "Email": "Emailicon",
+        "github": "Githubicon"
+    }
+]

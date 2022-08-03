@@ -1,0 +1,13 @@
+.teamCard{
+  
+    grid-template-columns: repeat(3, 1fr);
+    
+}
+
+.memberImg{
+
+  margin-left: 100px;
+}
+.name{
+    margin-left: 100px;
+}
