@@ -14,6 +14,8 @@ import CompletedTasks from './Pages/Dashboard/Reporting/CompletedTasks';
 import IncompleteTasks from './Pages/Dashboard/Reporting/IncompleteTasks';
 import OverdueTasks from './Pages/Dashboard/Reporting/OverdueTasks';
 import TotalTasks from './Pages/Dashboard/Reporting/TotalTasks';
+import ContactUs from './Pages/ContactUs/ContactUs';
+import { ToastContainer } from 'react-toastify';
 
 
 
@@ -23,11 +25,12 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/contact" element={<ContactUs/>} />
         <Route path="/signin" element={<SingIn />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path='*' element={<Notfound />} />
-
         <Route path='/dashboard' element={<Dashboard />}>
+         
           <Route path='repoting' element={<Reporting />} />
           <Route path='completedTasks' element={<CompletedTasks/>} />
           <Route path='incompleteTasks' element={<IncompleteTasks/>} />
@@ -39,6 +42,7 @@ function App() {
       </Routes>
       <Footer />
       <ScrollToTop />
+      <ToastContainer />
     </div>
   );
 }

@@ -1,6 +1,10 @@
 import React from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import auth from '../../firebase.init';
+import { useSignInWithGoogle, useSignInWithGithub } from 'react-firebase-hooks/auth';
+import Loading from '../Shared/Loading/Loading';
+import { BiLock } from 'react-icons/bi';
 
 interface IFormInput {
     email: string;
@@ -10,14 +14,39 @@ interface IFormInput {
 const SingIn = () => {
 
     const { register, formState: { errors }, handleSubmit } = useForm<IFormInput>();
-    const onSubmit: SubmitHandler<IFormInput> = data => { console.log(data); }
+    const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
+    const [signInWithGithub, gitUser, gitLoading, gitError] = useSignInWithGithub(auth);
+
+    const navigate = useNavigate()
+
+    const onSubmit: SubmitHandler<IFormInput> = data => {
+        console.log(data);
+    }
+
+    if (gError || gitError) {
+        return (
+            <div>
+                <p>Error: {gError?.message} {gitError?.message}</p>
+            </div>)
+    }
+
+    if (gLoading || gitLoading) {
+        return <Loading />
+    }
+
+    if (gUser || gitUser) {
+        navigate('/')
+    }
 
     return (
 
         <div className='h-screen bg-slate-50 flex justify-center items-center'>
             <div className="card w-96 bg-white shadow-2xl">
                 <div className="card-body">
-                    <h2 className='text-center text-3xl pb-3'>Login</h2>
+                    <div className='flex justify-center item-center '>
+                        < BiLock className='text-white w-12 h-12 bg-primary rounded-full' />
+                    </div>
+                    <h2 className='text-center text-3xl pb-3'>Sign In</h2>
                     <form onSubmit={handleSubmit(onSubmit)}>
 
                         <div className="form-control w-full max-w-xs">
@@ -64,13 +93,13 @@ const SingIn = () => {
                             </label>
                         </div>
 
-                        <input type="submit" className="btn btn-primary w-full max-w-xs text-white mb-2" value='Login' />
+                        <input type="submit" className="btn btn-primary w-full max-w-xs text-white mb-2" value='Sign In' />
                         <small>New in iTracker?<Link to='/signup' className="text-blue-600 pl-2">Create New Account</Link></small>
                     </form>
 
                     <div className="divider">or</div>
-                    <button className="btn btn-primary text-white">Continue with Google</button>
-                    <button className="btn btn-primary text-white">Continue with Github</button>
+                    <button onClick={() => signInWithGoogle()} className="btn btn-primary text-white">Continue with Google</button>
+                    <button onClick={() => signInWithGithub()} className="btn btn-primary text-white">Continue with Github</button>
                 </div>
             </div>
         </div>
