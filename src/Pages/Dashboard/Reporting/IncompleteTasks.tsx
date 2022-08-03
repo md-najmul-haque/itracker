@@ -4,7 +4,7 @@ const IncompleteTasks = () => {
     return (
         <div className='overflow-x-auto'>
             <div className='my-5'>
-                <p className='mx-2 font-medium text-2xl'>Incomplete Tasks</p>
+                <p className='mx-2 font-medium text-3xl'>Incomplete Tasks</p>
             </div>
             <div className='lg:mx-6'>
                 <table className="table w-full">
