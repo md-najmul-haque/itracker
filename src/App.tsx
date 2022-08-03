@@ -9,11 +9,8 @@ import SingIn from './Pages/SignIn/SingIn';
 import Notfound from './Pages/Shared/Notfound/Notfound';
 import SignUp from './Pages/SignUp/SignUp';
 import Dashboard from './Pages/Dashboard/Dashboard';
-
-import Task from './Pages/Dashboard/MyTask/Task';
-import AddTask from './Pages/Dashboard/MyTask/AddTask/AddTask';
-import CurrentIssue from './Pages/Dashboard/MyTask/CurrentIssue/CurrentIssue';
 import Reporting from './Pages/Dashboard/Reporting/Reporting';
+import CompletedTasks from './Pages/Dashboard/Reporting/CompletedTasks';
 
 
 
@@ -28,13 +25,9 @@ function App() {
         <Route path='*' element={<Notfound />} />
 
         <Route path='/dashboard' element={<Dashboard />}>
-        <Route path='repoting' element={<Reporting/>}/>
-          {/* <Route path='/dashboard' element={<DashboardHomePage />} /> */}
+          <Route path='repoting' element={<Reporting />} />
+          <Route path='completedTasks' element={<CompletedTasks/>} />
 
-          <Route path='myTask' element={<Task />}>
-            <Route path='addTask' element={<AddTask/>} />
-            <Route path='currentIssue' element={<CurrentIssue/>} />
-          </Route>
 
         </Route>
       </Routes>
