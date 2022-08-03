@@ -6,7 +6,7 @@ import teamwork from '../../../Assets/teamwork.gif';
 const Teamwork = () => {
 
   return (
-  <Container fixed sx={{pb:5}}>
+    <Container fixed>
       <Box sx={{ my: 5 }}>
         <Typography align="center" variant="h5" sx={{ fontWeight: "bold" }}>
           Work on team project work

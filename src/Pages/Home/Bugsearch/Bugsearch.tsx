@@ -1,22 +1,33 @@
 import React from 'react';
+import { Box, Button, CardMedia, Grid, Typography } from "@mui/material";
 import issue from "../../../Assets/monitoring.gif";
 
 const Bugsearch = () => {
 
   return (
-  
-<section className="max-w-full bg-white px-10 py-20">
-      <div className="flex justify-center items-center my-10 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
-     <div>
-     <h1 className="text-5xl font-bold">Ship great software with <br /> automated issuetracking</h1>
-      <p className="py-6 font-bold">A simple, fast and scalable bug tracking system that helps you manage bugs <br />  easily and deliver great products on time.</p>
-     </div>
-        <div className="flex justify-center content-center">
-          <img  className="w-full" src={issue} alt=""
-          />
-        </div>
-      </div>
-    </section>
+    <Grid container className='bg-white'>
+      <Grid xs={12} sm={12} md={6}>
+        <Box sx={{ px: 9, py: 15 }}>
+          <Typography variant="h3" sx={{ pt: 5 }}>
+            Ship great software with <br /> automated issuetracking
+          </Typography>
+          <Typography component="p" variant="h6" sx={{ py: 3 }}>
+            A simple, fast and scalable bug tracking system that helps you
+            manage bugs easily and deliver great products on time.
+          </Typography>
+
+        </Box>
+      </Grid>
+      <Grid xs={12} sm={12} md={6}>
+        <Box sx={{ py: 8 }}>
+          <CardMedia
+            component="img"
+            src={issue}
+          >
+          </CardMedia>
+        </Box>
+      </Grid>
+    </Grid>
   );
 };
 
