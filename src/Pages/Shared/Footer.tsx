@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <>
       {/* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#1E293B" fill-opacity="1" d="M0,224L120,229.3C240,235,480,245,720,224C960,203,1200,149,1320,122.7L1440,96L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path></svg> */}
-      <footer className="footer pt-20 pb-9 bg-secondary text-base-content">
+      <footer className="footer pt-20 mt-10 pb-9 bg-secondary text-base-content">
         <div className='pl-0 lg:pl-40'>
           <span className="footer-title">Services</span>
           <a className="link link-hover">Branding</a>

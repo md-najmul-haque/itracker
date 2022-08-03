@@ -17,7 +17,7 @@ import './Testimonial.css'
 import { Pagination } from "swiper";
 const Testimonial = () => {
   return (
-    <div className="background">
+    <div className="background bg-[#0d0e10]">
     <h1 className="text-center text-4xl text-white testimonialHeading p-3">Our Testimonial</h1>
       <div>
         <Swiper 
@@ -30,15 +30,15 @@ const Testimonial = () => {
                 }}
                 breakpoints={{
                   640: {
-                    slidesPerView: 2,
+                    slidesPerView: 1,
                     spaceBetween: 20,
                   },
                   768: {
-                    slidesPerView: 3,
+                    slidesPerView: 2,
                     spaceBetween: 40,
                   },
                   1024: {
-                    slidesPerView: 4,
+                    slidesPerView: 3,
                     spaceBetween: 50,
                   },
                 }}
@@ -55,7 +55,7 @@ const Testimonial = () => {
                 <div className="description1">
                   <h1 className="text-4xl">Contact With <br /> Other Members</h1>
               <p className="mt-10">Keep an eye on your team's progress and workload. Get real-time charts and other visual highlights to share status, spot potential problems, and keep work on track.</p>
-              <button className="btn mt-5 btn-primary text-white">Contact Now</button>
+              <button className="btn mt-5 btn-primary text-white bg-accent hover:bg-accent-focus">Contact Now</button>
               <div>
                
              </div>

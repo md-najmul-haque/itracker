@@ -7,7 +7,13 @@
     padding: 2%;
     
   }
-  
+
+  .swiper-pagination-bullet {
+    background: #fff;
+}
+.swiper-android .swiper-slide, .swiper-wrapper {
+  margin-bottom: 46px;
+}
   .swiper-slide {
   
     font-size: 18px;
