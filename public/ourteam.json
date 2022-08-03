@@ -31,12 +31,13 @@
     },
     {
         "id": "4",
-        "img": "https://i.ibb.co/7vKK1q3/download-1.png",
-        "name": "Shuvo Gosh",
+        "img": " https://i.ibb.co/hHb5q0Y/author-action.jpg",
+        "name": "Hamed Hasan",
         "position": "Web developer",
-        "facebook": "Facebookicon",
-        "email": "Emailicon",
-        "github": "Githubicon"
+        "facebook": "https://www.facebook.com/hamed.y.hasan0/",
+        "email": "hamedhasan422421@gmail.com",
+        "linkedin": "https://www.linkedin.com/in/hamed-hasan/",
+        "github": "https://github.com/Hamed-Hasan"
     },
     {
         "id": "5",
