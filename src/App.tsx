@@ -9,13 +9,14 @@ import SingIn from './Pages/SignIn/SingIn';
 import Notfound from './Pages/Shared/Notfound/Notfound';
 import SignUp from './Pages/SignUp/SignUp';
 import Dashboard from './Pages/Dashboard/Dashboard';
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import DashboardHomePage from './Pages/Dashboard/DashboardHomePage/DashboardHomePage';
-import Task from './Pages/Dashboard/MyTask/Task';
-import AddTask from './Pages/Dashboard/MyTask/AddTask/AddTask';
-import CurrentIssue from './Pages/Dashboard/MyTask/CurrentIssue/CurrentIssue';
+import Reporting from './Pages/Dashboard/Reporting/Reporting';
+import CompletedTasks from './Pages/Dashboard/Reporting/CompletedTasks';
+import IncompleteTasks from './Pages/Dashboard/Reporting/IncompleteTasks';
+import OverdueTasks from './Pages/Dashboard/Reporting/OverdueTasks';
+import TotalTasks from './Pages/Dashboard/Reporting/TotalTasks';
 import ContactUs from './Pages/ContactUs/ContactUs';
+import { ToastContainer } from 'react-toastify';
+
 
 
 function App() {
@@ -29,11 +30,14 @@ function App() {
         <Route path="/signup" element={<SignUp />} />
         <Route path='*' element={<Notfound />} />
         <Route path='/dashboard' element={<Dashboard />}>
-          <Route path='/dashboard' element={<DashboardHomePage />} />
-          <Route path='myTask' element={<Task/>}>
-            <Route path='addTask' element={<AddTask/>} />
-            <Route path='currentIssue' element={<CurrentIssue/>} />
-          </Route>
+         
+          <Route path='repoting' element={<Reporting />} />
+          <Route path='completedTasks' element={<CompletedTasks/>} />
+          <Route path='incompleteTasks' element={<IncompleteTasks/>} />
+          <Route path='overdueTasks' element={<OverdueTasks/>} />
+          <Route path='totalTasks' element={<TotalTasks/>} />
+
+
         </Route>
       </Routes>
       <Footer />
