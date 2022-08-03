@@ -1,10 +1,10 @@
 import React from 'react';
 import { FaGreaterThan } from 'react-icons/fa';
-const OverdueTasks = () => {
+const TotalTasks = () => {
     return (
         <div className='overflow-x-auto'>
             <div className='my-5'>
-                <p className='mx-2 font-medium text-2xl'>Overdue Tasks</p>
+                <p className='mx-2 font-medium text-2xl'>Total Tasks</p>
             </div>
             <div className='lg:mx-6'>
                 <table className="table w-full">
@@ -48,4 +48,4 @@ const OverdueTasks = () => {
     );
 };
 
-export default OverdueTasks;
+export default TotalTasks;

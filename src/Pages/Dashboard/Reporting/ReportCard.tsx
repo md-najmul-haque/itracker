@@ -27,7 +27,7 @@ const ReportCard = () => {
             <div className='hover:border-2 hover:rounded-lg hover:border-slate-500 shadow-md'>
                 <div className='text-center py-8'>
                     <p className='mb-5 text-2xl font-bold'>Total Tasks</p>
-                    <p className='mb-5 font-medium'><Link to=''>14</Link></p>
+                    <p className='mb-5 font-medium'><Link to='/dashboard/totalTasks'>14</Link></p>
                 </div>
             </div>
         </div>
