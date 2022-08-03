@@ -4,10 +4,10 @@ import Iprocesses from '../Iprocesses/Iprocesses';
 
 const Features = () => {
     return (
-        <div>
+        <>
             <Iprocesses/>
             <Charts/>
-        </div>
+        </>
     );
 };
 
