@@ -16,8 +16,8 @@ const Banner = () => {
                         <p className="uppercase text-4xl lg:text-6xl mb-4">The easiest way to track your issue</p>
                         <p className="mb-8 text-3xl">We help to track your issue, add your issue in iTracker, then add and assign your team member and track this issue. Yep, it’s very easy to use.</p>
                         <div className="flex justify-center">
-                            <Link to='/signup' className="btn  btn-primary">Get Started</Link>
-                            <Link to='/signin' className="btn ml-5 btn-primary">Sing In</Link>
+                            <Link to='/signup' className="btn text-white btn-secondary">Get Started</Link>
+                            <Link to='/signin' className="btn ml-5 text-white px-8 btn-secondary">Sing In</Link>
                         </div>
                     </div>
 
