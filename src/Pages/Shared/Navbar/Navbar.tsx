@@ -6,8 +6,8 @@ import auth from '../../../firebase.init';
 import Loading from '../Loading/Loading';
 import useNav from '../../../hooks/useNav';
 
-
 const Navbar = () => {
+    const { pathname } = useLocation()
     const [user, loading, error] = useAuthState(auth)
     const { navbar } = useNav();
 
@@ -66,11 +66,13 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end block md:hidden flex">
-                <label htmlFor='my-drawer-2' tabIndex={1} className="btn btn-ghost lg:hidden">
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
-                        </label>
-                
-            </div>
+                    {pathname.includes('dashboard') && <label htmlFor="my-drawer-2" className="btn btn-ghost btn-circle drawer-button lg:hidden">
+
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" /></svg>
+
+                    </label>}
+
+                </div>
             </div>
         </div>
 
