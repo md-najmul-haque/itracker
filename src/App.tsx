@@ -5,9 +5,9 @@ import Home from './Pages/Home/Home/Home';
 import Footer from './Pages/Shared/Footer';
 import Navbar from './Pages/Shared/Navbar/Navbar';
 import ScrollToTop from './Pages/Shared/ScrollToTop/ScrollToTop';
-import SingIn from './Pages/SignIn/SingIn';
+
 import Notfound from './Pages/Shared/Notfound/Notfound';
-import SignUp from './Pages/SignUp/SignUp';
+
 import Dashboard from './Pages/Dashboard/Dashboard';
 import Reporting from './Pages/Dashboard/Reporting/Reporting';
 import CompletedTasks from './Pages/Dashboard/Reporting/CompletedTasks';
@@ -19,6 +19,8 @@ import { ToastContainer } from 'react-toastify';
 
 import Features from './Pages/Features/Features/Features';
 import AddReviews from './Pages/Dashboard/AddReviews/AddReviews';
+import SingIn from './Pages/Authentication/SignIn/SingIn';
+import SignUp from './Pages/Authentication/SignUp/SignUp';
 
 
 function App() {

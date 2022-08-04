@@ -33,7 +33,7 @@ const Footer = () => {
             </label>
             <div className="relative">
               <input type="text" placeholder="username@site.com" className="input  w-full pr-16" />
-              <button className="btn bg-neutral absolute top-0 right-0 rounded-l-none">Subscribe</button>
+              <button className="btn bg-accent hover:bg-accent-focus absolute top-0 right-0 rounded-l-none">Subscribe</button>
             </div>
           </div>
         </div>
