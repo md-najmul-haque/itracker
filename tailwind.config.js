@@ -3,18 +3,15 @@ module.exports = {
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
-  theme: {
-    extend: {},
-  },
   daisyui: {
     themes: [
       {
         mytheme: {
           primary: "#00ADB5",
-          secondary: "#222831",
-          accent: "#393E46",
+          secondary: "#0d0e10",
+          accent: "#E23E57",
           neutral: "#3d4451",
-          "base-100": "#EEEEEE",
+          "base-100": "#F5F5F5",
         },
       },
       "dark",

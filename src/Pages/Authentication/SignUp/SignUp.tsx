@@ -3,8 +3,10 @@ import { useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/a
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import auth from '../../firebase.init';
-import Loading from '../Shared/Loading/Loading';
+
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import auth from '../../../firebase.init';
+import Loading from '../../Shared/Loading/Loading';
 
 interface IFormInput {
     name: string;
@@ -14,6 +16,10 @@ interface IFormInput {
 }
 
 function SignUp() {
+    const [email, setEmail] = React.useState<string>('');
+    const [password, setPassword] = React.useState<string>('');
+
+    const [createUserWithEmailAndPassword, user, loading, error] = useCreateUserWithEmailAndPassword(auth);
 
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
     const [signInWithGithub, gitUser, gitLoading, gitError] = useSignInWithGithub(auth);
@@ -23,12 +29,15 @@ function SignUp() {
 
     const onSubmit: SubmitHandler<IFormInput> = data => {
 
-        const user = {
+        const email = data.email
+        const password = data.password
+        createUserWithEmailAndPassword(email, password);
+
+        const createUser = {
             name: data.name,
             email: data.email,
             password: data.password
         }
-        console.log(user);
 
         fetch('http://localhost:5000/signup',
             {
@@ -36,26 +45,28 @@ function SignUp() {
                 headers: {
                     'content-type': 'application/json'
                 },
-                body: JSON.stringify(user)
+                body: JSON.stringify(createUser)
             })
             .then(res => res.json())
+
         toast('You have successfully create your account')
         reset()
         navigate('/')
 
     }
-    if (gError || gitError) {
+    if (error || gError || gitError) {
         return (
             <div>
                 <p>Error: {gError?.message} {gitError?.message}</p>
             </div>)
     }
 
-    if (gLoading || gitLoading) {
+    if (loading || gLoading || gitLoading) {
         return <Loading />
     }
 
-    if (gUser || gitUser) {
+    if (user || gUser || gitUser) {
+        console.log(user)
         navigate('/')
     }
 

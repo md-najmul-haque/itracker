@@ -85,7 +85,7 @@ const { register, handleSubmit } = useForm();
 
           placeholder="Please Your Feedback..."
           ></textarea>
-          <input type="submit" className='btn btn-primary' value='Add Review' />
+          <input type="submit" className='btn btn-primary' value='Add Review' disabled={!rating} />
         </form>
 
         </div>

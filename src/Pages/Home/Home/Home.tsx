@@ -14,8 +14,8 @@ const Home = () => {
             <Teamwork />
             <VideoSection/>
             <Bugsearch />
-            <ProcessMangements />
             <Testimonial />
+            <ProcessMangements />
         </div>
     );
 };
