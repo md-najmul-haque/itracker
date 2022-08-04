@@ -5,6 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 import Loading from '../Shared/Loading/Loading';
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 
 interface IFormInput {
     name: string;
@@ -14,6 +15,10 @@ interface IFormInput {
 }
 
 function SignUp() {
+    const [email, setEmail] = React.useState<string>('');
+    const [password, setPassword] = React.useState<string>('');
+
+    const [createUserWithEmailAndPassword, user, loading, error] = useCreateUserWithEmailAndPassword(auth);
 
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
     const [signInWithGithub, gitUser, gitLoading, gitError] = useSignInWithGithub(auth);
@@ -39,23 +44,24 @@ function SignUp() {
                 body: JSON.stringify(user)
             })
             .then(res => res.json())
+        createUserWithEmailAndPassword(email, password);
         toast('You have successfully create your account')
         reset()
         navigate('/')
 
     }
-    if (gError || gitError) {
+    if (error || gError || gitError) {
         return (
             <div>
                 <p>Error: {gError?.message} {gitError?.message}</p>
             </div>)
     }
 
-    if (gLoading || gitLoading) {
+    if (loading || gLoading || gitLoading) {
         return <Loading />
     }
 
-    if (gUser || gitUser) {
+    if (user || gUser || gitUser) {
         navigate('/')
     }
 

@@ -13,6 +13,20 @@ const Navbar = () => {
         return <Loading />
     }
 
+
+    if (user) {
+        fetch('http://localhost:5000/singup',
+            {
+                method: "POST",
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(user)
+            })
+            .then(res => res.json())
+    }
+
+
     const menuItem =
         <>
             <li><Link to='/'>Home</Link></li>
