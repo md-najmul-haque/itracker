@@ -4,7 +4,6 @@ import teamwork from '../../../Assets/teamwork.gif';
 const Teamwork = () => {
 
   return (
-  <>
     <div className="hero  bg-neutral text-white">
   <div className="hero-content text-center">
     <div className='lg:w-4/6'>
@@ -12,11 +11,10 @@ const Teamwork = () => {
       <p className="py-6 font-semibold"> With Backlog, you can keep bug and issue tracking under one roof.
           Developer can  easily collaborate on and release code, tracking each step via pull-requests right in issues. Git and Subversion
           repositories keep teams connected through it all.</p>
-      <img src={teamwork} alt="" className="w-full" />
+      <img src={teamwork} alt="" className="w-full pb-4" />
     </div>
   </div>
 </div>
-    </>
   );
 };
 
