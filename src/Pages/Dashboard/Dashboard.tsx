@@ -7,8 +7,9 @@ const Dashboard = () => {
     return (
         <div>
             <DashboardSideBar> 
-                <Outlet></Outlet>
+            <Outlet></Outlet>  
             </DashboardSideBar>
+          
         </div>
     );
 };
