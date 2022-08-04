@@ -13,9 +13,10 @@ const Home = () => {
             <Banner />
             <Teamwork />
             <Bugsearch />
+
             <ProcessMangements />
+            
             <Testimonial />
-           
         </div>
     );
 };
