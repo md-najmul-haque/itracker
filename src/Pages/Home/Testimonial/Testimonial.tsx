@@ -17,7 +17,7 @@ import './Testimonial.css'
 import { Pagination } from "swiper";
 const Testimonial = () => {
   return (
-    <div className="background bg-[#0d0e10]">
+    <div className="mb-0 lg:mb-28 background bg-[#0d0e10]">
     <h1 className="text-center text-4xl text-white testimonialHeading p-3">Our Testimonial</h1>
       <div>
         <Swiper 
