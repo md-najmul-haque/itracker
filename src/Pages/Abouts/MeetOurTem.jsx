@@ -14,11 +14,13 @@ const MeetOurTem = ({ team }) => {
 </div>
     <h2 className="card-title name"> {name} </h2>
     <p> {position} </p>
-    <div className='icon'>
-    <a href={facebook}><i className="fa-brands fa-facebook"></i></a>
-   <a href={github}> <i className="fa-brands ml-3 fa-github"></i></a>
-   <a href={email}> <i className="fa-solid ml-3 fa-envelope"></i></a>
-   <a href={linkedin}> <i class="fa-brands ml-3 fa-linkedin"></i></a>
+            <div className='icon'>
+            <a href={facebook} target="_blank"><i className="fa-brands  fa-facebook"></i></a>
+              <a href={linkedin} target="_blank"> <i class="fa-brands ml-3  fa-linkedin"></i></a>
+              <a href={email} target="_blank"> <i className="fa-solid ml-3 fa-envelope"></i></a>
+              <a href={github} target="_blank"> <i className="fa-brands ml-3 fa-github"></i></a>
+   
+   
    </div>
     
     
