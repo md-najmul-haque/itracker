@@ -5,6 +5,7 @@ import Testimonial from '../Testimonial/Testimonial';
 import Banner from '../Banner/Banner';
 import ProcessMangements from '../ProcessMangements/ProcessMangements';
 
+
 const Home = () => {
 
     return (
@@ -14,6 +15,7 @@ const Home = () => {
             <Bugsearch />
             <ProcessMangements />
             <Testimonial />
+           
         </div>
     );
 };
