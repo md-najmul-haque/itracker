@@ -19,13 +19,12 @@ const { register, handleSubmit } = useForm();
 
     const [rating, setRating] = useState(0);
     const [hoverValue, setHoverValue] = useState(undefined);
-    const [maxLength, setMaxLength] = useState('');
+
     const stars = Array(5).fill(0);
 
-//   const handleMaxLength = (e: any) => {
-//     const limit = 10
-//     setMaxLength(e.target.value.slice(0, limit))
-//   }
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+
+
     const handleClick = (value: any) => {
         setRating(value);
     }
@@ -41,11 +40,16 @@ const { register, handleSubmit } = useForm();
     }
 
     const onSubmit = (data: any) => {
-        console.log(data)
+       const email = user?.email;
+       const photoURL = user?.photoURL;
+       const displayName = user?.displayName;
+       const review = { ...data, rating, email, photoURL, displayName}
+       console.log(review);
     }
     return (
         <div className='w-full p-10 lg:w-1/2 mx-auto'>
      add reviews
+     
         <form onSubmit={handleSubmit(onSubmit)} className='card-body pb-0'>
         <div className="avatar mx-auto flex-col items-center gap-3">
           <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
@@ -78,7 +82,7 @@ const { register, handleSubmit } = useForm();
           <textarea 
           {...register("review", { required: false, maxLength:  500 })}
           className="textarea textarea-primary h-40 my-3 w-full"
-        //   onChange={handleMaxLength}
+
           placeholder="Please Your Feedback..."
           ></textarea>
           <input type="submit" className='btn btn-primary' value='Add Review' />
