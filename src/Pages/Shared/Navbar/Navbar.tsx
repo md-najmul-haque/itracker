@@ -4,19 +4,34 @@ import { signOut } from 'firebase/auth';
 import { Link, useLocation } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import Loading from '../Loading/Loading';
+import useNav from '../../../hooks/useNav';
 
 
 const Navbar = () => {
     const [user, loading, error] = useAuthState(auth)
+    const { navbar } = useNav();
 
     if (loading) {
         return <Loading />
     }
 
+    if (user) {
+        fetch('http://localhost:5000/singup',
+            {
+                method: "POST",
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(user)
+            })
+            .then(res => res.json())
+    }
+
+
     const menuItem =
         <>
             <li><Link to='/'>Home</Link></li>
-            <li><Link to='/feature'>Features</Link></li>
+            <li><Link to='/features'>Features</Link></li>
             <li><Link to='/contact'>Contact</Link></li>
             <li><Link to='/dashboard'>Dashboard</Link></li>
             {
@@ -32,14 +47,14 @@ const Navbar = () => {
 
     return (
 
-        <div className="navbar bg-primary mx-auto sticky top-0 z-50">
+        <div className="navbar bg-white mx-auto sticky top-0 z-50">
             <div className='container mx-auto'>
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                         </label>
-                        <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+                        <ul tabIndex={0} className="menu bg-secondary menu-compact dropdown-content mt-3 p-2 shadow rounded-box w-52">
                             {menuItem}
                         </ul>
                     </div>
