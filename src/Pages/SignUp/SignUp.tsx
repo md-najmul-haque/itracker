@@ -30,23 +30,24 @@ function SignUp() {
 
         const email = data.email
         const password = data.password
-
-        // const createUser = {
-        //     name: data.name,
-        //     email: data.email,
-        //     password: data.password
-        // }
-
-        // fetch('http://localhost:5000/signup',
-        //     {
-        //         method: "POST",
-        //         headers: {
-        //             'content-type': 'application/json'
-        //         },
-        //         body: JSON.stringify(createUser)
-        //     })
-        //     .then(res => res.json())
         createUserWithEmailAndPassword(email, password);
+
+        const createUser = {
+            name: data.name,
+            email: data.email,
+            password: data.password
+        }
+
+        fetch('http://localhost:5000/signup',
+            {
+                method: "POST",
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(createUser)
+            })
+            .then(res => res.json())
+
         toast('You have successfully create your account')
         reset()
         navigate('/')
