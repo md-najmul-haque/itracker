@@ -1,69 +1,41 @@
-import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import CssBaseline from '@mui/material/CssBaseline';
-import useScrollTrigger from '@mui/material/useScrollTrigger';
-import Box from '@mui/material/Box';
-import Container from '@mui/material/Container';
-import Fab from '@mui/material/Fab';
-import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
-import Fade from '@mui/material/Fade';
+import { useState } from 'react';
+import './ScrollToTop.css';
 
-interface Props {
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
-  window?: () => Window;
-  children?: React.ReactElement;
-}
+const ScrollToTop = () => {
 
-function ScrollToTop(props: Props) {
-  const { children, window } = props;
-  // Note that you normally won't need to set the window ref as useScrollTrigger
-  // will default to window.
-  // This is only being set here because the demo is in an iframe.
-  const trigger = useScrollTrigger({
-    target: window ? window() : undefined,
-    disableHysteresis: true,
-    threshold: 100,
-  });
-
-  const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
-    const anchor = (
-      (event.target as HTMLDivElement).ownerDocument || document
-    ).querySelector('#back-to-top-anchor');
-
-    if (anchor) {
-      anchor.scrollIntoView({
-        block: 'center',
-      });
+  const [visible, setVisible] = useState(false)
+  
+  const toggleVisible = () => {
+    const scrolled = document.documentElement.scrollTop;
+    if (scrolled > 300){
+      setVisible(true)
+    } 
+    else if (scrolled <= 300){
+      setVisible(false)
     }
   };
+  
+  const scrollToTop = () =>{
+    window.scrollTo({
+      top: 0, 
+      behavior: 'smooth'
+ 
+    });
+  };
+  
+  window.addEventListener('scroll', toggleVisible);
+
+
 
   return (
-    <Fade in={trigger}>
-      <Box
-        className="relative z-50"
-        onClick={handleClick}
-        role="presentation"
-        sx={{ position: 'fixed', bottom: 16, right: 16}}
-      >
-        {children}
-      </Box>
-    </Fade>
+    <div>
+      <button onClick={scrollToTop} style={{display: visible ? 'inline' : 'none'}}  type="button" className="scroll-button bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br first-line:focus:ring-blue-300  shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 text-white bg-primary-700 hover:bg-blue-800 focus:ring-0 focus:outline-none focus:ring-blue-0 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+<svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+  <path strokeLinecap="round" strokeLinejoin="round" d="M5 15l7-7 7 7" />
+</svg>
+</button>
+    </div>
   );
-}
+};
 
-export default function BackToTop(props: Props) {
-  return (
-    <React.Fragment>
-      <ScrollToTop {...props} >
-        <Fab size="small" aria-label="scroll back to top">
-          <KeyboardArrowUpIcon />
-        </Fab>
-      </ScrollToTop>
-    </React.Fragment>
-  );
-}
+export default ScrollToTop;
