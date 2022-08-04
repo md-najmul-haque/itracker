@@ -2,7 +2,7 @@ import React from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
-import { useSignInWithGoogle, useSignInWithGithub } from 'react-firebase-hooks/auth';
+import { useSignInWithGoogle, useSignInWithGithub, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import Loading from '../Shared/Loading/Loading';
 import { BiLock } from 'react-icons/bi';
 
@@ -12,29 +12,34 @@ interface IFormInput {
 }
 
 const SingIn = () => {
-
+    const [email, setEmail] = React.useState<string>('');
+    const [password, setPassword] = React.useState<string>('');
     const { register, formState: { errors }, handleSubmit } = useForm<IFormInput>();
+    const [signInWithEmailAndPassword, user, loading, error,] = useSignInWithEmailAndPassword(auth);
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
     const [signInWithGithub, gitUser, gitLoading, gitError] = useSignInWithGithub(auth);
 
     const navigate = useNavigate()
 
     const onSubmit: SubmitHandler<IFormInput> = data => {
-        console.log(data);
+        const email = data.email;
+        const password = data.password;
+
+        signInWithEmailAndPassword(email, password)
     }
 
-    if (gError || gitError) {
+    if (error || gError || gitError) {
         return (
             <div>
                 <p>Error: {gError?.message} {gitError?.message}</p>
             </div>)
     }
 
-    if (gLoading || gitLoading) {
+    if (loading || gLoading || gitLoading) {
         return <Loading />
     }
 
-    if (gUser || gitUser) {
+    if (user || gUser || gitUser) {
         navigate('/')
     }
 

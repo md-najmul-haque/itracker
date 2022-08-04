@@ -28,22 +28,24 @@ function SignUp() {
 
     const onSubmit: SubmitHandler<IFormInput> = data => {
 
-        const user = {
-            name: data.name,
-            email: data.email,
-            password: data.password
-        }
-        console.log(user);
+        const email = data.email
+        const password = data.password
 
-        fetch('http://localhost:5000/signup',
-            {
-                method: "POST",
-                headers: {
-                    'content-type': 'application/json'
-                },
-                body: JSON.stringify(user)
-            })
-            .then(res => res.json())
+        // const createUser = {
+        //     name: data.name,
+        //     email: data.email,
+        //     password: data.password
+        // }
+
+        // fetch('http://localhost:5000/signup',
+        //     {
+        //         method: "POST",
+        //         headers: {
+        //             'content-type': 'application/json'
+        //         },
+        //         body: JSON.stringify(createUser)
+        //     })
+        //     .then(res => res.json())
         createUserWithEmailAndPassword(email, password);
         toast('You have successfully create your account')
         reset()
@@ -62,6 +64,7 @@ function SignUp() {
     }
 
     if (user || gUser || gitUser) {
+        console.log(user)
         navigate('/')
     }
 
