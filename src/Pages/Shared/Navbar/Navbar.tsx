@@ -15,7 +15,6 @@ const Navbar = () => {
         return <Loading />
     }
 
-
     if (user) {
         fetch('http://localhost:5000/singup',
             {
@@ -48,7 +47,7 @@ const Navbar = () => {
 
     return (
 
-        <div className="navbar bg-secondary text-white mx-auto sticky top-0 z-50">
+        <div className="navbar bg-white mx-auto sticky top-0 z-50">
             <div className='container mx-auto'>
                 {/* {pathname.includes('dashboard') && <label form="my-drawer-2" className="btn btn-ghost btn-circle drawer-button lg:hidden drawer-side">
                     <svg style={{color:'red'}} xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" /></svg>
