@@ -2,9 +2,9 @@
   padding: 2%;
 }
 
-.swiper-pagination-bullet {
+/* .swiper-pagination-bullet {
   background: #fff;
-}
+} */
 
 .swiper-android .swiper-slide,
 .swiper-wrapper {
@@ -38,10 +38,4 @@
 
 .arrow {
   width: 15px;
-}
-
-.testimonialHeading {
-  color: white;
-  padding-top: 3%;
-
 }

@@ -4,7 +4,7 @@ import teamwork from '../../../Assets/teamwork.gif';
 const Teamwork = () => {
 
   return (
-    <div className="hero bg-secondary text-white">
+    <div className="hero bg-secondary">
       <div className="hero-content text-center">
         <div className='lg:w-4/6'>
           <h1 className="text-3xl font-bold py-3">Work on team project work</h1>

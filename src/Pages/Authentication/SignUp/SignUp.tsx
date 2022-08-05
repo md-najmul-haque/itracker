@@ -51,7 +51,7 @@ function SignUp() {
 
         toast('You have successfully create your account')
         reset()
-        navigate('/')
+
 
     }
     if (error || gError || gitError) {
@@ -66,7 +66,7 @@ function SignUp() {
     }
 
     if (user || gUser || gitUser) {
-        console.log(user)
+        console.log(user || gUser || gitUser)
         navigate('/')
     }
 
