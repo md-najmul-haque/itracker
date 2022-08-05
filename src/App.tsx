@@ -20,6 +20,7 @@ import { ToastContainer } from 'react-toastify';
 import Features from './Pages/Features/Features/Features';
 import SingIn from './Pages/Authentication/SignIn/SingIn';
 import SignUp from './Pages/Authentication/SignUp/SignUp';
+import Abouts from './Pages/Abouts/Abouts';
 
 
 function App() {
@@ -32,7 +33,7 @@ function App() {
         <Route path="/features" element={<Features />} />
         <Route path="/signin" element={<SingIn />} />
         <Route path="/signup" element={<SignUp />} />
-        <Route path='*' element={<Notfound />} />
+        <Route path='/about' element={<Abouts/>}></Route>
         <Route path='/dashboard' element={<Dashboard />}>
 
           <Route path='repoting' element={<Reporting />} />

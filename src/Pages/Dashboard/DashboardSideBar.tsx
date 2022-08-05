@@ -26,6 +26,9 @@ const DashboardSideBar = ({ children, ...other}: MyComponentProps) => {
                     <li className='lg:ml-5'>
                         <Link className='bg-transparent text-white' to="/dashboard/repoting"><MdOutlineTaskAlt/> Repoting</Link>
                     </li>
+                    <li className='lg:ml-5'>
+                        <Link className='bg-transparent text-white' to="/dashboard/myTask/calendar"><MdOutlineTaskAlt/> Calendar</Link>
+                    </li>
                     
                 </ul>
 

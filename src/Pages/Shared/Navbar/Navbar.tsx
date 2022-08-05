@@ -34,6 +34,7 @@ const Navbar = () => {
             <li><Link to='/features'>Features</Link></li>
             <li><Link to='/contact'>Contact</Link></li>
             <li><Link to='/dashboard'>Dashboard</Link></li>
+            <li><Link to='/about'>About</Link></li>
             {
                 user ? <li><Link onClick={() => signOut(auth)} to='/'>Sign Out</Link></li> : <>
                     <li><Link to='/signin'>Sign In</Link></li>

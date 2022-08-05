@@ -1,0 +1,17 @@
+.teamCard{
+   
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4px;
+    row-gap: 30px;
+    padding-bottom: 4%;
+    margin-left: 40px;
+       
+}
+
+@media only screen and (max-width: 600px){
+    .teamCard{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
