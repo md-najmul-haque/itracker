@@ -18,7 +18,7 @@ const ProcessMangements = () => {
     }
     const [imageUri, setImageUri] = useState(`${img1}`);
     return (
-        <div className='p-5'>
+        <div className='p-5 bg-secondary'>
             <div className='grid lg:grid-cols-2 md:grid-cols-1  gap-12 lg:mx-20 md:mx-16 my-12 '>
                 <div className='text-container lg:mt-20'>
 
