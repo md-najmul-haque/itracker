@@ -57,7 +57,7 @@ const Navbar = () => {
                     </ul>
                 </div>
 
-                <div className="dropdown dropdown-end">
+                {/* <div className="dropdown dropdown-end">
                     <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                         <div className="w-10 rounded-full">
                             <img src={`${user?.photoURL}` || 'https://i.ibb.co/1fcM35N/default-User.png'} alt='user-img' />
@@ -72,7 +72,7 @@ const Navbar = () => {
                         <li><Link to='/updateProfile'>Update Profile</Link></li>
                         <li><Link onClick={() => signOut(auth)} to='/'>Sign Out</Link></li>
                     </ul>
-                </div>
+                </div> */}
 
                 <div className="navbar-end block md:hidden flex">
                     {pathname.includes('dashboard') && <label htmlFor="my-drawer-2" className="btn btn-ghost btn-circle drawer-button lg:hidden">
