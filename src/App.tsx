@@ -18,6 +18,7 @@ import ContactUs from './Pages/ContactUs/ContactUs';
 import { ToastContainer } from 'react-toastify';
 
 import Features from './Pages/Features/Features/Features';
+import AddReviews from './Pages/Dashboard/AddReviews/AddReviews';
 import SingIn from './Pages/Authentication/SignIn/SingIn';
 import SignUp from './Pages/Authentication/SignUp/SignUp';
 import Abouts from './Pages/Abouts/Abouts';
@@ -37,6 +38,7 @@ function App() {
         <Route path='/dashboard' element={<Dashboard />}>
 
           <Route path='repoting' element={<Reporting />} />
+          <Route path='add-reviews' element={<AddReviews />} />
           <Route path='completedTasks' element={<CompletedTasks />} />
           <Route path='incompleteTasks' element={<IncompleteTasks />} />
           <Route path='overdueTasks' element={<OverdueTasks />} />

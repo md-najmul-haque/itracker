@@ -17,8 +17,13 @@ import img5 from '../../../Assets/testimonial-img/img5.jpg'
 import { Pagination } from "swiper";
 const Testimonial = () => {
   return (
+<<<<<<< HEAD
     <div className="background py-7 max-h-fit bg-secondary">
       <h1 className="text-center text-4xl font-samibold p-3">Our Testimonial</h1>
+=======
+    <div className="mb-0 lg:mb-28 background bg-[#0d0e10]">
+    <h1 className="text-center text-4xl text-white testimonialHeading p-3">Our Testimonial</h1>
+>>>>>>> Hamed-Hasan-main
       <div>
         <Swiper
 
