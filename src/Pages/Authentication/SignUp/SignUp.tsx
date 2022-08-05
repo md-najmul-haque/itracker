@@ -84,8 +84,6 @@ function SignUp() {
     }
 
     if (user || gUser || gitUser) {
-        console.log(user || gUser || gitUser)
-        console.log(gUser?.user.displayName)
         navigate('/')
     }
 
