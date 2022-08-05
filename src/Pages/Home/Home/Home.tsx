@@ -4,6 +4,7 @@ import Teamwork from '../Teamwork/Teamwork';
 import Testimonial from '../Testimonial/Testimonial';
 import Banner from '../Banner/Banner';
 import ProcessMangements from '../ProcessMangements/ProcessMangements';
+import TrustedCompany from '../TrustedCompany/TrustedCompany';
 
 
 
@@ -14,6 +15,7 @@ const Home = () => {
             <Banner />
             <Teamwork />
             <Bugsearch />
+            <TrustedCompany/>
             <Testimonial />
             <ProcessMangements />
         </div>
