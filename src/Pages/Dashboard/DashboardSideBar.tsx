@@ -15,7 +15,7 @@ const DashboardSideBar = ({ children, ...other }: MyComponentProps) => {
                 {/*  <!-- Page content here --> */}
                 {children}
             </div>
-            <div className="drawer-side">
+            <div className="drawer-side ">
                 <label form="my-drawer-2" className="drawer-overlay"></label>
                 <ul className="menu p-4 overflow-y-auto w-60 bg-[#1e1f21] text-base-content">
                     <h1 className='mb-4 text-center text-white font-bold text-2xl'>ITRACKER</h1>

@@ -15,25 +15,14 @@ const Navbar = () => {
         return <Loading />
     }
 
-    if (user) {
-        fetch('http://localhost:5000/singup',
-            {
-                method: "POST",
-                headers: {
-                    'content-type': 'application/json'
-                },
-                body: JSON.stringify(user)
-            })
-            .then(res => res.json())
-    }
-
-
     const menuItem =
         <>
             <li><Link to='/'>Home</Link></li>
             <li><Link to='/features'>Features</Link></li>
             <li><Link to='/contact'>Contact</Link></li>
-            <li><Link to='/dashboard'>Dashboard</Link></li>
+            {
+                user ? <li><Link to='/dashboard'>Dashboard</Link></li> : ''
+            }
             <li><Link to='/about'>About</Link></li>
             {
                 user ? <li><Link onClick={() => signOut(auth)} to='/'>Sign Out</Link></li> : <>
@@ -48,7 +37,7 @@ const Navbar = () => {
 
     return (
 
-        <div className='navbar bg-white font-semibold sticky top-0 z-10'>
+        <div className='navbar bg-white absolute font-semibold top-0 z-50'>
             <div className='container mx-auto'>
                 <div className="navbar-start">
                     <div className="dropdown">
