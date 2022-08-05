@@ -3,15 +3,15 @@ import emailjs from '@emailjs/browser';
 
 const ContactUs = () => {
 
-  const sendEmail = (event:any) => {
+  const sendEmail = (event: any) => {
     event.preventDefault();
 
     emailjs.sendForm('service_d3mn69j', 'template_bovssme', event.target, 'bC3daaJCpTsOQkKTT')
       .then((result) => {
-          alert("Thanks for the your email");
-          event.target.reset();
+        alert("Thanks for the your email");
+        event.target.reset();
       }, (error) => {
-          console.log(error.text);
+        console.log(error.text);
       });
   };
 
