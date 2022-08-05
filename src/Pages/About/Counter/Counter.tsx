@@ -26,7 +26,16 @@ const Counter = () => {
 </div>
 </div>
 </div>
-   
+        <div className="card w-96 bg-base-100 shadow-xl bg-orange-400 text-white hover:bg-sky-700 hover:text-white ease-in duration-300">
+            <div className="card-body">
+                <h1 className='text-center text-3xl'>Feedback</h1>
+<h2 className="card-title counter ml-24"></h2>
+
+<div className="card-actions justify-end">
+ 
+</div>
+</div>
+</div>
     
 
     </div>
