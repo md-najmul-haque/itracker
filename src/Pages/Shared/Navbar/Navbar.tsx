@@ -9,7 +9,6 @@ import useNav from '../../../hooks/useNav';
 const Navbar = () => {
     const { pathname } = useLocation()
     const [user, loading, error] = useAuthState(auth)
-    const { navbar } = useNav();
 
     if (loading) {
         return <Loading />
@@ -39,7 +38,7 @@ const Navbar = () => {
 
     return (
 
-        <div className='navbar bg-white absolute font-semibold top-0 z-50'>
+        <div className='navbar bg-white sticky lg:absolute font-semibold top-0 z-50'>
             <div className='container mx-auto'>
                 <div className="navbar-start">
                     <div className="dropdown">
