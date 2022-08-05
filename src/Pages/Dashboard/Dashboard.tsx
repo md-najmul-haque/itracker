@@ -6,9 +6,10 @@ const Dashboard = () => {
  
     return (
         <div>
-            <DashboardSideBar> 
-                <Outlet></Outlet>
-            </DashboardSideBar>
+            <DashboardSideBar>  
+            <Outlet></Outlet>  
+            </DashboardSideBar>  
+         
         </div>
     );
 };

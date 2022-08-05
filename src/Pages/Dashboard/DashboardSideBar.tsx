@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { BsFillPersonFill } from 'react-icons/bs';
+import { BsCalendarDate, BsFillPersonFill } from 'react-icons/bs';
 import { AiFillRead } from 'react-icons/ai';
-import {MdOutlineTaskAlt } from 'react-icons/md';
-import {FaMoneyCheckAlt } from 'react-icons/fa';
-import {AiFillHome } from 'react-icons/ai';
-import {RiUserStarLine } from 'react-icons/ri';
+import { MdOutlineTaskAlt } from 'react-icons/md';
+import { FaMoneyCheckAlt } from 'react-icons/fa';
+import { AiFillHome } from 'react-icons/ai';
+import { RiUserStarLine } from 'react-icons/ri';
 type MyComponentProps = React.PropsWithChildren<{}>;
-const DashboardSideBar = ({ children, ...other}: MyComponentProps) => {
+const DashboardSideBar = ({ children, ...other }: MyComponentProps) => {
     return (
         <div className="drawer drawer-mobile bg-white">
             <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
@@ -15,22 +15,22 @@ const DashboardSideBar = ({ children, ...other}: MyComponentProps) => {
                 {/*  <!-- Page content here --> */}
                 {children}
             </div>
-            <div className="drawer-side">
+            <div className="drawer-side ">
                 <label form="my-drawer-2" className="drawer-overlay"></label>
                 <ul className="menu p-4 overflow-y-auto w-60 bg-[#1e1f21] text-base-content">
                     <h1 className='mb-4 text-center text-white font-bold text-2xl'>ITRACKER</h1>
                     {/*   Sidebar content here */}
                     <li className=' hover:bg-slate-600 transition-all rounded-lg'>
-                        <Link className='bg-transparent text-white' to='/dashboard'> <AiFillHome/>HOME</Link>
+                        <Link className='bg-transparent text-white' to='/dashboard'> <AiFillHome />HOME</Link>
                     </li>
-                    
+
                     <li className=' hover:bg-slate-600 transition-all rounded-lg'>
-                        <Link className='bg-transparent text-white' to="/dashboard/repoting"><MdOutlineTaskAlt/> Repoting</Link>
+                        <Link className='bg-transparent text-white' to="/dashboard/repoting"><MdOutlineTaskAlt /> Repoting</Link>
                     </li>
                     <li className=' hover:bg-slate-600 transition-all rounded-lg'>
-                        <Link className='bg-transparent text-white' to="/dashboard/add-reviews"><RiUserStarLine/> Add Reviews</Link>
+                        <Link className='bg-transparent text-white' to="/dashboard/add-reviews"><RiUserStarLine /> Add Reviews</Link>
                     </li>
-                    
+
                 </ul>
 
             </div>

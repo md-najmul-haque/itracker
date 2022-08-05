@@ -4,7 +4,8 @@ import Teamwork from '../Teamwork/Teamwork';
 import Testimonial from '../Testimonial/Testimonial';
 import Banner from '../Banner/Banner';
 import ProcessMangements from '../ProcessMangements/ProcessMangements';
-import VideoSection from '../VideoSection/VideoSection';
+
+
 
 const Home = () => {
 
@@ -12,7 +13,6 @@ const Home = () => {
         <div>
             <Banner />
             <Teamwork />
-            <VideoSection/>
             <Bugsearch />
             <Testimonial />
             <ProcessMangements />

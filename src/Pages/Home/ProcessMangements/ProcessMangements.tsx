@@ -18,9 +18,9 @@ const ProcessMangements = () => {
     }
     const [imageUri, setImageUri] = useState(`${img1}`);
     return (
-        <div className='p-5'>
-            <div className='grid lg:grid-cols-2 md:grid-cols-1  gap-12 lg:mx-20 md:mx-16 my-12 '>
-                <div className='text-container lg:mt-20'>
+        <div className='p-5 bg-white'>
+            <div className='grid lg:grid-cols-2 my-10 md:grid-cols-1 container mx-auto gap-12'>
+                <div className='text-container'>
 
                     <div>
                         <Accordion expanded={expanded === 'panal1'} onChange={(event, isExpanded) => handealChange(isExpanded, 'panal1')} onClick={() => setImageUri(`${img1}`)}>

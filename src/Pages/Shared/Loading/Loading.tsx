@@ -11,7 +11,7 @@ const Loading = () => {
             color="#00ADB5"
             ariaLabel="bars-loading"
             wrapperStyle={{}}
-            wrapperClass=""
+            // wrapperclassName=""
             visible={true}
            />
         </div>
