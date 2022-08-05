@@ -34,9 +34,8 @@ function SignUp() {
         createUserWithEmailAndPassword(email, password);
 
         const createUser = {
-            name: data.name,
-            email: data.email,
-            password: data.password
+            userName: data.name,
+            email: email
         }
 
         fetch('http://localhost:5000/signup',
@@ -65,8 +64,28 @@ function SignUp() {
         return <Loading />
     }
 
+    if (gUser || gitUser) {
+
+        const createUser = {
+            userName: gUser?.user.displayName || gitUser?.user.displayName,
+            email: gUser?.user.email || gitUser?.user.email,
+        }
+
+        fetch('http://localhost:5000/signup',
+            {
+                method: "POST",
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(createUser)
+            })
+            .then(res => res.json())
+
+    }
+
     if (user || gUser || gitUser) {
         console.log(user || gUser || gitUser)
+        console.log(gUser?.user.displayName)
         navigate('/')
     }
 
