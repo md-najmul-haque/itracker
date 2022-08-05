@@ -2,10 +2,10 @@ import React from 'react'
 import issue from '../../../Assets/monitoring.gif'
 
 const Bugsearch = () => {
-  
+
   return (
     <section className="max-w-full bg-white px-10 py-20">
-      <div className="flex justify-center items-center my-10 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
+      <div className="flex justify-center items-center my-10 container mx-auto grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
         <div>
           <h1 className="text-5xl font-bold">
             Ship great software with <br /> automated issuetracking

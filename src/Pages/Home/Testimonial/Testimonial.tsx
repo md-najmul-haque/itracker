@@ -17,8 +17,8 @@ import img5 from '../../../Assets/testimonial-img/img5.jpg'
 import { Pagination } from "swiper";
 const Testimonial = () => {
   return (
-    <div className="background py-7 max-h-fit bg-secondary">
-      <h1 className="text-center text-4xl text-white testimonialHeading p-3">Our Testimonial</h1>
+    <div className="background container mx-auto py-7 max-h-fit bg-secondary">
+      <h1 className="text-center text-4xl font-samibold p-3">Our Testimonial</h1>
       <div>
         <Swiper
 
@@ -52,10 +52,10 @@ const Testimonial = () => {
           <SwiperSlide>
 
 
-            <div className="bg-secondary text-white">
+            <div className="bg-secondary ">
               <h1 className="text-4xl">Contact With <br /> Other Members</h1>
               <p className="mt-10">Keep an eye on your team's progress and workload. Get real-time charts and other visual highlights to share status, spot potential problems, and keep work on track.</p>
-              <button className="btn mt-5 border-none btn-primary text-white bg-accent hover:bg-accent-focus">Contact Now</button>
+              <button className="btn mt-5 border-none btn-primary text-white">Contact Now</button>
               <div>
 
               </div>

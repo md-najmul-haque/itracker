@@ -3,29 +3,28 @@ import '../../main.css'
 const Footer = () => {
   return (
     <>
-      {/* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#1E293B" fill-opacity="1" d="M0,224L120,229.3C240,235,480,245,720,224C960,203,1200,149,1320,122.7L1440,96L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path></svg> */}
-      <footer className="footer mt-10 p-10 bg-secondary text-base-content">
+      <footer className="footer p-10 bg-primary text-base-content">
         <div className='pl-0 lg:pl-40'>
-          <span className="footer-title">Services</span>
+          <span className="footer-title text-whit">Services</span>
           <a className="link link-hover">Branding</a>
           <a className="link link-hover">Design</a>
           <a className="link link-hover">Marketing</a>
           <a className="link link-hover">Advertisement</a>
         </div>
-        <div>
+        <div className='pl-12 lg:pl-0'>
           <span className="footer-title">Company</span>
           <a className="link link-hover">About us</a>
           <a className="link link-hover">Contact</a>
           <a className="link link-hover">Jobs</a>
           <a className="link link-hover">Press kit</a>
         </div>
-        <div>
+        <div className='pl-12 lg:pl-0'>
           <span className="footer-title">Legal</span>
           <a className="link link-hover">Terms of use</a>
           <a className="link link-hover">Privacy policy</a>
           <a className="link link-hover">Cookie policy</a>
         </div>
-        <div>
+        <div className='pl-12 lg:pl-0'>
           <span className="footer-title">Newsletter</span>
           <div className="form-control w-80">
             <label className="label">

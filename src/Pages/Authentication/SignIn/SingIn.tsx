@@ -41,6 +41,25 @@ const SingIn = () => {
         return <Loading />
     }
 
+    if (gUser || gitUser) {
+
+        const createUser = {
+            userName: gUser?.user.displayName || gitUser?.user.displayName,
+            email: gUser?.user.email || gitUser?.user.email,
+        }
+
+        fetch('http://localhost:5000/signup',
+            {
+                method: "POST",
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(createUser)
+            })
+            .then(res => res.json())
+
+    }
+
     if (user || gUser || gitUser) {
         navigate('/')
     }
