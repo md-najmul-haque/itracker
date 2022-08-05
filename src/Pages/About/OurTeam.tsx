@@ -1,4 +1,6 @@
 import React from 'react';
+import Counter from './Counter/Counter';
+
 const OurTeam = ({ team }: any) => {
 
     const { name, position, img, facebook, github, linkedin, email } = team;
@@ -21,7 +23,9 @@ const OurTeam = ({ team }: any) => {
               <a href={github} rel='noreferrer'> <i className="fa-brands ml-3 ease-in duration-300  fa-github"></i></a>
       </div>
     </div>
-  </div>
+        </div>
+      
+   
  </div>
     );
 };
