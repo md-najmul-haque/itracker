@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { BsFillPersonFill } from 'react-icons/bs';
+import { BsCalendarDate, BsFillPersonFill } from 'react-icons/bs';
 import { AiFillRead } from 'react-icons/ai';
 import { MdOutlineTaskAlt } from 'react-icons/md';
 import { FaMoneyCheckAlt } from 'react-icons/fa';
