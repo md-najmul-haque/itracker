@@ -6,6 +6,8 @@ import Banner from '../Banner/Banner';
 import ProcessMangements from '../ProcessMangements/ProcessMangements';
 import TrustedCompany from '../TrustedCompany/TrustedCompany';
 
+
+
 const Home = () => {
 
     return (

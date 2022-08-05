@@ -7,33 +7,26 @@ import Loading from '../Loading/Loading';
 import useNav from '../../../hooks/useNav';
 
 const Navbar = () => {
-    const { pathname } = useLocation();
+    const { pathname } = useLocation()
     const [user, loading, error] = useAuthState(auth)
-    const { navbar } = useNav();
 
     if (loading) {
         return <Loading />
     }
 
     if (user) {
-        fetch('http://localhost:5000/singup',
-            {
-                method: "POST",
-                headers: {
-                    'content-type': 'application/json'
-                },
-                body: JSON.stringify(user)
-            })
-            .then(res => res.json())
+        console.log(user)
     }
-
 
     const menuItem =
         <>
             <li><Link to='/'>Home</Link></li>
             <li><Link to='/features'>Features</Link></li>
             <li><Link to='/contact'>Contact</Link></li>
-            <li><Link to='/dashboard'>Dashboard</Link></li>
+            {
+                user ? <li><Link to='/dashboard'>Dashboard</Link></li> : ''
+            }
+            <li><Link to='/about'>About</Link></li>
             {
                 user ? <li><Link onClick={() => signOut(auth)} to='/'>Sign Out</Link></li> : <>
                     <li><Link to='/signin'>Sign In</Link></li>
@@ -43,16 +36,10 @@ const Navbar = () => {
 
         </>
 
-
-
     return (
 
-        <div className="navbar bg-white mx-auto sticky top-0 z-50">
+        <div className='navbar bg-white sticky lg:absolute font-semibold top-0 z-50'>
             <div className='container mx-auto'>
-                {/* {pathname.includes('dashboard') && <label form="my-drawer-2" className="btn btn-ghost btn-circle drawer-button lg:hidden drawer-side">
-                    <svg style={{color:'red'}} xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" /></svg>
-
-                </label>} */}
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -69,14 +56,34 @@ const Navbar = () => {
                         {menuItem}
                     </ul>
                 </div>
-                <div className="navbar-end  md:hidden flex">
-                    <label form="my-drawer-2" className="btn btn-ghost btn-circle drawer-button lg:hidden drawer-side">
-                        <svg style={{ color: 'red' }} xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" /></svg>
 
+                <div className="dropdown dropdown-end">
+                    <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                        <div className="w-10 rounded-full">
+                            <img src={`${user?.photoURL}` || 'https://i.ibb.co/1fcM35N/default-User.png'} alt='user-img' />
+                        </div>
                     </label>
+                    <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+                        <li>
+                            <Link to='/viewProfile' className="justify-between">
+                                View Profile
+                            </Link>
+                        </li>
+                        <li><Link to='/updateProfile'>Update Profile</Link></li>
+                        <li><Link onClick={() => signOut(auth)} to='/'>Sign Out</Link></li>
+                    </ul>
+                </div>
+
+                <div className="navbar-end block md:hidden flex">
+                    {pathname.includes('dashboard') && <label htmlFor="my-drawer-2" className="btn btn-ghost btn-circle drawer-button lg:hidden">
+
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" /></svg>
+
+                    </label>}
+
                 </div>
             </div>
-        </div>
+        </div >
 
     );
 };

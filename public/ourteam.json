@@ -1,0 +1,52 @@
+[
+    {
+        "id": "1",
+        "img": " https://i.ibb.co/9yHsWkM/najmul.jpg",
+        "name": "Md Nazmul Haque",
+        "position": "Web developer",
+        "facebook": "https://www.facebook.com/najmulhaque06",
+        "linkedin": "https://www.linkedin.com/in/md-najmul-haque/",
+        "email": " najmulhaque008@gmail.com",
+        "github": "https://github.com/md-najmul-haque"
+    },
+    {
+        "id": "2",
+        "img": "https://i.ibb.co/HFh0wTs/pobarulislam.png",
+        "name": "Md Pobarul islam",
+        "position": "Web developer",
+        "facebook": "https://www.facebook.com/Pobarulislam10/",
+        "linkedin": "https://www.linkedin.com/in/md-pobarul-islam-04bb2b1b8/",
+        "email": "pobarul.islam10@gmail.com",
+        "github": "https://github.com/Pobarul-islam"
+    },
+    {
+        "id": "3",
+        "img": "https://media.discordapp.net/attachments/995005925884690513/1004350325899145237/20220803_173704.jpg?width=417&height=473",
+        "name": "Md Mirjul Alam",
+        "position": "Web developer",
+        "facebook": "https://www.facebook.com/mdmirajul.alam.7",
+        "linkedin": "https://www.linkedin.com/in/mirajul-alam-alif-19025b241/",
+        "email": "gmail: alifmirajulalam@gmail.com",
+        "github": "https://github.com/mirajulalam"
+    },
+    {
+        "id": "4",
+        "img": " https://i.ibb.co/hHb5q0Y/author-action.jpg",
+        "name": "Hamed Hasan",
+        "position": "Web developer",
+        "facebook": "https://www.facebook.com/hamed.y.hasan0/",
+        "email": "hamedhasan422421@gmail.com",
+        "linkedin": "https://www.linkedin.com/in/hamed-hasan/",
+        "github": "https://github.com/Hamed-Hasan"
+    },
+    {
+        "id": "5",
+        "img": "https://images-ext-2.discordapp.net/external/cTMLPaFE9cpoW0s4I8ehQECDSF04Er_6qLMZYfwyQNc/%3Fv%3D4%3Fs%3D400/https/avatars.githubusercontent.com/u/96811328",
+        "name": "Shuvo Gosh",
+        "position": "Web developer",
+        "facebook": "https://www.facebook.com/shuvo.gosh.5/",
+        "email": "shuvogosh111@gmail.com",
+        "linkedin": "https://www.linkedin.com/in/shuvogosh/",
+        "github": "https://github.com/Shuvoghosh7"
+    }
+]
