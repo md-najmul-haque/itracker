@@ -19,7 +19,8 @@ import AddReviews from './Pages/Dashboard/AddReviews/AddReviews';
 import SingIn from './Pages/Authentication/SignIn/SingIn';
 import SignUp from './Pages/Authentication/SignUp/SignUp';
 import RequireAuth from './Pages/Authentication/RequireAuth/RequireAuth';
-import Abouts from './Pages/Abouts/Abouts';
+import About from './Pages/Abouts/About';
+
 
 
 
@@ -33,7 +34,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/features" element={<Features />} />
-        <Route path="/abouts" element={<Abouts />} />
+        <Route path="/abouts" element={<About />} />
         <Route path="/signin" element={<SingIn />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path='/dashboard' element={
