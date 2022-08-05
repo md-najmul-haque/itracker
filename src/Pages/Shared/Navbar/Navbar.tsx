@@ -15,6 +15,10 @@ const Navbar = () => {
         return <Loading />
     }
 
+    if (user) {
+        console.log(user)
+    }
+
     const menuItem =
         <>
             <li><Link to='/'>Home</Link></li>
@@ -32,8 +36,6 @@ const Navbar = () => {
             }
 
         </>
-
-
 
     return (
 
@@ -55,6 +57,24 @@ const Navbar = () => {
                         {menuItem}
                     </ul>
                 </div>
+
+                <div className="dropdown dropdown-end">
+                    <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                        <div className="w-10 rounded-full">
+                            <img src={`${user?.photoURL}` || 'https://i.ibb.co/1fcM35N/default-User.png'} alt='user-img' />
+                        </div>
+                    </label>
+                    <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+                        <li>
+                            <Link to='/viewProfile' className="justify-between">
+                                View Profile
+                            </Link>
+                        </li>
+                        <li><Link to='/updateProfile'>Update Profile</Link></li>
+                        <li><Link onClick={() => signOut(auth)} to='/'>Sign Out</Link></li>
+                    </ul>
+                </div>
+
                 <div className="navbar-end block md:hidden flex">
                     {pathname.includes('dashboard') && <label htmlFor="my-drawer-2" className="btn btn-ghost btn-circle drawer-button lg:hidden">
 
