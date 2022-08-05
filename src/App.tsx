@@ -23,6 +23,8 @@ import SignUp from './Pages/Authentication/SignUp/SignUp';
 import Abouts from './Pages/Abouts/Abouts';
 
 
+
+
 function App() {
   return (
     <div>
@@ -35,7 +37,7 @@ function App() {
         <Route path="/signup" element={<SignUp />} />
         <Route path='/about' element={<Abouts/>}></Route>
         <Route path='/dashboard' element={<Dashboard />}>
-
+          
           <Route path='repoting' element={<Reporting />} />
           <Route path='completedTasks' element={<CompletedTasks />} />
           <Route path='incompleteTasks' element={<IncompleteTasks />} />

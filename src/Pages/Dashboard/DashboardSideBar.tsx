@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { BsFillPersonFill } from 'react-icons/bs';
+import { BsCalendarDate, BsFillPersonFill } from 'react-icons/bs';
 import { AiFillRead } from 'react-icons/ai';
 import {MdOutlineTaskAlt } from 'react-icons/md';
-import {FaMoneyCheckAlt } from 'react-icons/fa';
+import { FaMoneyCheckAlt } from 'react-icons/fa';
+
 import {AiFillHome } from 'react-icons/ai';
 type MyComponentProps = React.PropsWithChildren<{}>;
 const DashboardSideBar = ({ children, ...other}: MyComponentProps) => {
@@ -27,7 +28,7 @@ const DashboardSideBar = ({ children, ...other}: MyComponentProps) => {
                         <Link className='bg-transparent text-white' to="/dashboard/repoting"><MdOutlineTaskAlt/> Repoting</Link>
                     </li>
                     <li className='lg:ml-5'>
-                        <Link className='bg-transparent text-white' to="/dashboard/myTask/calendar"><MdOutlineTaskAlt/> Calendar</Link>
+                        <Link className='bg-transparent text-white' to="/dashboard/calendar"><BsCalendarDate/> Calendar</Link>
                     </li>
                     
                 </ul>
