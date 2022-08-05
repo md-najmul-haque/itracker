@@ -1,14 +1,15 @@
 import React from 'react';
 import './MeetOurTeam.css'
-const MeetOurTem = ({ team }) => {
+const MeetOurTem = ({ team }: any) => {
+
     const { name, position, img, facebook, github, linkedin, email } = team;
     return (
         <div className='text-center'>
 <div className="card w-96 bg-white shadow-xl">
     
                 <div className="card-body">
-                <div class="avatar avatarimg">
-  <div class="w-24 memberImg rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                <div className="avatar avatarimg">
+  <div className="w-24 memberImg rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
     <img src={img} />
   </div>
 </div>
@@ -16,7 +17,7 @@ const MeetOurTem = ({ team }) => {
     <p> {position} </p>
             <div className='icon'>
             <a href={facebook} target="_blank"><i className="fa-brands  fa-facebook"></i></a>
-              <a href={linkedin} target="_blank"> <i class="fa-brands ml-3  fa-linkedin"></i></a>
+              <a href={linkedin} target="_blank"> <i className="fa-brands ml-3  fa-linkedin"></i></a>
               <a href={email} target="_blank"> <i className="fa-solid ml-3 fa-envelope"></i></a>
               <a href={github} target="_blank"> <i className="fa-brands ml-3 fa-github"></i></a>
    

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import MeetOurTem from './MeetOurTem';
 import './MeetOurTeams.css'
+import MeetOurTem from './MeetOurTem';
+
 const MeetOurTeam = () => {
     const [teams, setTeams] = useState([])
     useEffect(() => {
