@@ -18,12 +18,9 @@ import Features from './Pages/Features/Features/Features';
 import AddReviews from './Pages/Dashboard/AddReviews/AddReviews';
 import SingIn from './Pages/Authentication/SignIn/SingIn';
 import SignUp from './Pages/Authentication/SignUp/SignUp';
-<<<<<<< HEAD
-import Abouts from './Pages/Abouts/About';
-=======
 import RequireAuth from './Pages/Authentication/RequireAuth/RequireAuth';
-import Abouts from './Pages/Abouts/Abouts';
->>>>>>> 91241881fc5d7a2161d6fca64f34a5c2c499ccc3
+import About from './Pages/Abouts/About';
+
 
 
 
@@ -37,7 +34,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/features" element={<Features />} />
-        <Route path="/abouts" element={<Abouts />} />
+        <Route path="/abouts" element={<About />} />
         <Route path="/signin" element={<SingIn />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path='/dashboard' element={
