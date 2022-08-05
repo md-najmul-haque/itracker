@@ -1,24 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import MeetOurTem from './MeetOurTem';
-
-
-
-
-
-
-const Abouts = () => {
+import MeetOurTem from './OurTeam';
+const About = () => {
   const [teams, setTeams] = useState([])
   useEffect(() => {
       fetch("ourteam.json")
           .then(res => res.json())
-      .then(data=>setTeams(data))
+          .then(data=>setTeams(data))
   },[])
     return (
         <div>
     <div className="hero min-h-screen bg-base-10 ">
   <div className="hero-content flex-col lg:flex-row-reverse">
       <div>
-            <img src="https://i.ibb.co/MDZh73c/785104-removebg-preview.png" className="max-w-sm rounded-lg " />
+            <img src="https://i.ibb.co/MDZh73c/785104-removebg-preview.png" className="max-w-sm rounded-lg" alt='' />
     </div>
     <div style={{width:"50%"}}>
       <h1 className="text-5xl font-bold">What is iTracker ?</h1>
@@ -26,12 +20,11 @@ const Abouts = () => {
       <button className="btn btn-primary">Explore</button>
             </div>
             
-          </div>
-          
-          
-</div>
+       </div>   
+    </div>
+        
       <h1 className='text-center text-primary text-4xl font-bold'>Meet Our Team</h1>
-        <div className='flex grid md:grid-cols-2 lg:grid-cols-3 gap-4 ml-10 gap-y-10 mt-5 '>
+        <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-4 ml-10 gap-y-10 mt-5 '>
         {
           teams.map(team => <MeetOurTem
             key={team}
@@ -43,4 +36,4 @@ const Abouts = () => {
     );
 };
 
-export default Abouts;
+export default About;

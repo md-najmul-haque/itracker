@@ -20,7 +20,7 @@ import { ToastContainer } from 'react-toastify';
 import Features from './Pages/Features/Features/Features';
 import SingIn from './Pages/Authentication/SignIn/SingIn';
 import SignUp from './Pages/Authentication/SignUp/SignUp';
-import Abouts from './Pages/Abouts/Abouts';
+import Abouts from './Pages/Abouts/About';
 
 
 
