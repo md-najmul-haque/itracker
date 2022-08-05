@@ -8,7 +8,7 @@ const MeetOurTem = ({ team }: any) => {
 <div className="card w-96 bg-white shadow-xl">
     
                 <div className="card-body">
-                <div className="avatar avatarimg">
+                <div className="avatar">
   <div className="w-24 memberImg rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
     <img src={img} />
   </div>
