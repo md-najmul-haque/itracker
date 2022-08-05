@@ -45,6 +45,18 @@ const { register, handleSubmit } = useForm();
        const displayName = user?.displayName;
        const review = { ...data, rating, email, photoURL, displayName}
        console.log(review);
+
+       fetch("http://localhost:5000/add-review", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(review)
+       })
+       .then((res) => res.json())
+       .then((data) => {
+        console.log(data)
+       })
     }
     return (
         <div className='w-full p-10 lg:w-1/2 mx-auto'>

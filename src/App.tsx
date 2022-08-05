@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
+import {MessengerCustomerChat} from "typescript-react-facebook-messenger";
 import Home from './Pages/Home/Home/Home';
 import Footer from './Pages/Shared/Footer';
 import Navbar from './Pages/Shared/Navbar/Navbar';
@@ -52,6 +53,7 @@ function App() {
         <Route path="*" element={<Notfound />} />
       </Routes>
       <Footer />
+      <MessengerCustomerChat  pageId="158654895069572" appId="553013519763702"/>
       <ScrollToTop />
       <ToastContainer />
     </div>
