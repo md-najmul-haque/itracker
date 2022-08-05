@@ -1,21 +1,19 @@
 import React from 'react'
-// import emailjs from '@emailjs/browser';
+import emailjs from '@emailjs/browser';
 
 const ContactUs = () => {
-  // const form=useRef<HTMLFormElement>(null)
 
-  // const sendEmail = (e:any) => {
-  //   e.preventDefault();
+  const sendEmail = (event:any) => {
+    event.preventDefault();
 
-  //   emailjs.sendForm('service_d3mn69j', 'template_bovssme', form.current, 'bC3daaJCpTsOQkKTT')
-  //     .then((result) => {
-  //         console.log(result.text);
-  //         alert("Thanks for the your email");
-  //         // e.target.reset();
-  //     }, (error) => {
-  //         console.log(error.text);
-  //     });
-  // };
+    emailjs.sendForm('service_d3mn69j', 'template_bovssme', event.target, 'bC3daaJCpTsOQkKTT')
+      .then((result) => {
+          alert("Thanks for the your email");
+          event.target.reset();
+      }, (error) => {
+          console.log(error.text);
+      });
+  };
 
   return (
     <section className="max-w-full">
@@ -23,7 +21,7 @@ const ContactUs = () => {
         <div className="flex justify-center items-center">
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
             <div className="card-body">
-              <form>
+              <form onSubmit={sendEmail}>
                 <div className="form-control">
                   <label className="label">
                     <span className="label-text">Your name</span>
