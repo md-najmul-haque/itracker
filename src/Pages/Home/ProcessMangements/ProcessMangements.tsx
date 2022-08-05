@@ -13,7 +13,7 @@ import ContactUs from '../../ContactUs/ContactUs';
 
 const ProcessMangements = () => {
     return (
-        <div >
+        <div>
             <div className='grid lg:grid-cols-2 gap-8 lg:mx-12 mx-8'>
                 <div className='lg:mt-28 mt-12'>
                     <Accordion allowZeroExpanded>

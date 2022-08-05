@@ -1,5 +1,6 @@
 import React from 'react';
 import Charts from '../Charts/Charts';
+import Fixissue from '../Fixissue/Fixissue';
 import Iprocesses from '../Iprocesses/Iprocesses';
 
 const Features = () => {
@@ -7,6 +8,7 @@ const Features = () => {
         <>
             <Iprocesses/>
             <Charts/>
+            <Fixissue/>
         </>
     );
 };
