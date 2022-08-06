@@ -15,7 +15,11 @@ import img5 from '../../../Assets/testimonial-img/img5.jpg'
 
 // import required modules
 import { Pagination } from "swiper";
+import useReviews from "../../../hooks/useReviews";
 const Testimonial = () => {
+
+  const [reviews, setReviews] = useReviews()
+// console.log(reviews.result)
   return (
     <div className="mb-0 lg:mb-28 background bg-[#0d0e10]">
     <h1 className="text-center text-4xl text-white testimonialHeading p-3">Our Testimonial</h1>

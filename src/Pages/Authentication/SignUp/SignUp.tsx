@@ -48,7 +48,9 @@ function SignUp() {
                 body: JSON.stringify(createUser)
             })
             .then(res => res.json())
-
+            .then(data => {
+                console.log(data)
+            })
         toast('You have successfully create your account')
         reset()
         navigate('/')
