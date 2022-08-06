@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
-import {MessengerCustomerChat} from "typescript-react-facebook-messenger";
+import { MessengerCustomerChat } from "typescript-react-facebook-messenger";
 import Home from './Pages/Home/Home/Home';
 import Footer from './Pages/Shared/Footer';
 import Navbar from './Pages/Shared/Navbar/Navbar';
@@ -21,13 +21,16 @@ import SingIn from './Pages/Authentication/SignIn/SingIn';
 import SignUp from './Pages/Authentication/SignUp/SignUp';
 import RequireAuth from './Pages/Authentication/RequireAuth/RequireAuth';
 import About from './Pages/About/About';
+import ITrackerList from './Pages/Board/ITrackerList/ITrackerList';
+import { connect } from 'react-redux'
 
-
-
-
+type stateProps = {
+  lists: any
+}
 
 
 function App() {
+
   return (
     <div>
       <Navbar />
@@ -38,6 +41,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/signin" element={<SingIn />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/itrackerlist" element={<ITrackerList />} />
         <Route path='/dashboard' element={
           <RequireAuth>
             <Dashboard />
@@ -53,11 +57,16 @@ function App() {
         <Route path="*" element={<Notfound />} />
       </Routes>
       <Footer />
-      <MessengerCustomerChat  pageId="158654895069572" appId="553013519763702"/>
+      <MessengerCustomerChat pageId="158654895069572" appId="553013519763702" />
       <ScrollToTop />
       <ToastContainer />
     </div>
   );
 }
 
-export default App;
+
+const mapStateToProps = (state: stateProps) => ({
+  lists: state.lists
+})
+
+export default connect(mapStateToProps)(App);
