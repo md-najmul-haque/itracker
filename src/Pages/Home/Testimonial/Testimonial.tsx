@@ -19,7 +19,7 @@ const Testimonial = () => {
   return (
     <div className="background  py-7 max-h-fit bg-secondary">
       <div className="container mx-auto">
-        <h1 className="text-center text-4xl font-samibold p-3">Our Testimonial</h1>
+        <h1 className="uppercase text-3xl px-5 lg:px-0 font-bold text-center lg:text-4xl">Our Testimonial</h1>
         <div>
           <Swiper
 
@@ -54,9 +54,11 @@ const Testimonial = () => {
 
 
               <div className="bg-secondary ">
-                <h1 className="text-4xl">Contact With <br /> Other Members</h1>
-                <p className="mt-10">Keep an eye on your team's progress and workload. Get real-time charts and other visual highlights to share status, spot potential problems, and keep work on track.</p>
-                <button className="btn mt-5 border-none btn-primary text-white">Contact Now</button>
+                <h1 className="text-2xl text-center lg:text-4xl lg:text-left">Contact With <br /> Other Members</h1>
+                <p className="mt-10 p-5 lg:p-0 lg:text-left">Keep an eye on your team's progress and workload. Get real-time charts and other visual highlights to share status, spot potential problems, and keep work on track.</p>
+                <div className="p-5 lg:p-0">
+                  <button className="btn mt-5 border-none btn-primary text-white">Contact Now</button>
+                </div>
                 <div>
 
                 </div>

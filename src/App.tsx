@@ -19,13 +19,16 @@ import SingIn from './Pages/Authentication/SignIn/SingIn';
 import SignUp from './Pages/Authentication/SignUp/SignUp';
 import RequireAuth from './Pages/Authentication/RequireAuth/RequireAuth';
 import About from './Pages/About/About';
+import ITrackerList from './Pages/Board/ITrackerList/ITrackerList';
+import { connect } from 'react-redux'
 
-
-
-
+type stateProps = {
+  lists: any
+}
 
 
 function App() {
+
   return (
     <div>
       <Navbar />
@@ -36,6 +39,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/signin" element={<SingIn />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/itrackerlist" element={<ITrackerList />} />
         <Route path='/dashboard' element={
           <RequireAuth>
             <Dashboard />
@@ -57,4 +61,9 @@ function App() {
   );
 }
 
-export default App;
+
+const mapStateToProps = (state: stateProps) => ({
+  lists: state.lists
+})
+
+export default connect(mapStateToProps)(App);

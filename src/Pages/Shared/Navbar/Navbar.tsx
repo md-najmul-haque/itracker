@@ -9,7 +9,6 @@ import useNav from '../../../hooks/useNav';
 const Navbar = () => {
     const { pathname } = useLocation()
     const [user, loading, error] = useAuthState(auth)
-    const { navbar } = useNav();
 
     if (loading) {
         return <Loading />
@@ -39,7 +38,7 @@ const Navbar = () => {
 
     return (
 
-        <div className='navbar bg-white absolute font-semibold top-0 z-50'>
+        <div className='navbar bg-white sticky lg:absolute font-semibold top-0 z-50'>
             <div className='container mx-auto'>
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -58,7 +57,7 @@ const Navbar = () => {
                     </ul>
                 </div>
 
-                <div className="dropdown dropdown-end">
+                {/* <div className="dropdown dropdown-end">
                     <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                         <div className="w-10 rounded-full">
                             <img src={`${user?.photoURL}` || 'https://i.ibb.co/1fcM35N/default-User.png'} alt='user-img' />
@@ -73,7 +72,7 @@ const Navbar = () => {
                         <li><Link to='/updateProfile'>Update Profile</Link></li>
                         <li><Link onClick={() => signOut(auth)} to='/'>Sign Out</Link></li>
                     </ul>
-                </div>
+                </div> */}
 
                 <div className="navbar-end block md:hidden flex">
                     {pathname.includes('dashboard') && <label htmlFor="my-drawer-2" className="btn btn-ghost btn-circle drawer-button lg:hidden">
