@@ -12,7 +12,6 @@ import CompletedTasks from './Pages/Dashboard/Reporting/CompletedTasks';
 import IncompleteTasks from './Pages/Dashboard/Reporting/IncompleteTasks';
 import OverdueTasks from './Pages/Dashboard/Reporting/OverdueTasks';
 import TotalTasks from './Pages/Dashboard/Reporting/TotalTasks';
-import ContactUs from './Pages/ContactUs/ContactUs';
 import { ToastContainer } from 'react-toastify';
 import Features from './Pages/Features/Features/Features';
 import AddReviews from './Pages/Dashboard/AddReviews/AddReviews';
@@ -32,7 +31,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/contact" element={<ContactUs />} />
+       
         <Route path="/features" element={<Features />} />
         <Route path="/about" element={<About />} />
         <Route path="/signin" element={<SingIn />} />

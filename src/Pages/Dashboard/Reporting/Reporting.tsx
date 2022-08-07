@@ -4,7 +4,7 @@ import ReportChart from './ReportChart';
 
 const Reporting = () => {
     return (
-        <div className='m-5'>
+        <div className=' mt-20 mx-5'>
             <ReportCard />
             <ReportChart/>
         </div>
