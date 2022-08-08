@@ -1,9 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { BsCalendarDate, BsFillPersonFill } from 'react-icons/bs';
-import { AiFillRead } from 'react-icons/ai';
+import { BsCalendar2Date, BsCalendarDate, BsFillCalendarDayFill, BsFillPersonFill } from 'react-icons/bs';
 import { MdOutlineTaskAlt } from 'react-icons/md';
-import { FaMoneyCheckAlt } from 'react-icons/fa';
 import { AiFillHome } from 'react-icons/ai';
 import { RiUserStarLine } from 'react-icons/ri';
 type MyComponentProps = React.PropsWithChildren<{}>;
@@ -29,6 +27,9 @@ const DashboardSideBar = ({ children, ...other }: MyComponentProps) => {
                     </li>
                     <li className=' hover:bg-slate-600 transition-all rounded-lg'>
                         <Link className='bg-transparent text-white' to="/dashboard/add-reviews"><RiUserStarLine /> Add Reviews</Link>
+                    </li>
+                    <li className=' hover:bg-slate-600 transition-all rounded-lg'>
+                        <Link className='bg-transparent text-white' to="/dashboard/calendar"><BsCalendar2Date />Calendar</Link>
                     </li>
 
                 </ul>

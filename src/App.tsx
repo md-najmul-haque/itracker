@@ -20,6 +20,7 @@ import SingIn from './Pages/Authentication/SignIn/SingIn';
 import SignUp from './Pages/Authentication/SignUp/SignUp';
 import RequireAuth from './Pages/Authentication/RequireAuth/RequireAuth';
 import About from './Pages/About/About';
+import Calendar from './Pages/Dashboard/Calendar/Calendar';
 function App() {
   return (
     <div>
@@ -38,10 +39,12 @@ function App() {
         }>
           <Route path='repoting' element={<Reporting />} />
           <Route path='add-reviews' element={<AddReviews />} />
+          <Route path='calendar' element={<Calendar />} />
           <Route path='completedTasks' element={<CompletedTasks />} />
           <Route path='incompleteTasks' element={<IncompleteTasks />} />
           <Route path='overdueTasks' element={<OverdueTasks />} />
           <Route path='totalTasks' element={<TotalTasks />} />
+      
         </Route>
         <Route path="*" element={<Notfound />} />
       </Routes>

@@ -35,7 +35,7 @@ const About = () => {
         
         </div>
      
-        <Counter/>
+        <Counter />
         </div>
     );
 };

@@ -9,7 +9,7 @@ const OurTeam = ({ team }: any) => {
 <div className="card w-96 bg-white shadow-xl">
     
   <div className="card-body  hover:bg-sky-700 hover:text-white ease-in duration-300 " >
-  <div className="avatar">
+  <div className="avatar">  
   <div className="w-24 ml-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
     <img src={img} alt='' />
   </div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Outlet} from 'react-router-dom';
+import Calendar from './Calendar/Calendar';
 import DashboardSideBar from './DashboardSideBar';
 
 const Dashboard = () => {
@@ -9,6 +10,7 @@ const Dashboard = () => {
             <DashboardSideBar>  
             <Outlet></Outlet>  
             </DashboardSideBar>  
+          
          
         </div>
     );
