@@ -1,10 +1,10 @@
 import React from 'react';
-import {
+import { 
     Accordion,
-    AccordionItem,
-    AccordionItemHeading,
+    AccordionItem, 
     AccordionItemButton,
-    AccordionItemPanel,
+    AccordionItemHeading,
+    AccordionItemPanel 
 } from 'react-accessible-accordion';
 
 // Demo styles, see 'Styles' section below for some notes on use.

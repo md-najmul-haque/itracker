@@ -2,6 +2,7 @@ import React from 'react';
 import Charts from '../Charts/Charts';
 import Fixissue from '../Fixissue/Fixissue';
 import Iprocesses from '../Iprocesses/Iprocesses';
+import Views from '../Views/Views';
 
 const Features = () => {
     return (
@@ -9,6 +10,7 @@ const Features = () => {
             <Iprocesses/>
             <Charts/>
             <Fixissue/>
+            <Views/>
         </>
     );
 };
