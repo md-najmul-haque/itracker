@@ -21,6 +21,8 @@ import RequireAuth from './Pages/Authentication/RequireAuth/RequireAuth';
 import About from './Pages/About/About';
 import ITrackerList from './Pages/Board/ITrackerList/ITrackerList';
 import { connect } from 'react-redux'
+import Projects from './Pages/Dashboard/Projects/Projects';
+import AddProjects from './Pages/Dashboard/Projects/AddProjects';
 
 type stateProps = {
   lists: any
@@ -51,6 +53,9 @@ function App() {
           <Route path='incompleteTasks' element={<IncompleteTasks />} />
           <Route path='overdueTasks' element={<OverdueTasks />} />
           <Route path='totalTasks' element={<TotalTasks />} />
+          <Route path='project' element={<Projects/>} />
+          <Route path='addProject' element={<AddProjects />} />
+
         </Route>
         <Route path="*" element={<Notfound />} />
       </Routes>
