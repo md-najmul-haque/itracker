@@ -30,6 +30,12 @@ const initialData: EventInput[] = [
         description: "Your Description", 
         start: "2022-08-03",
         amount: 10
+    },
+    {
+        title: "Pen",
+        description: "Your Description", 
+        start: "2022-08-06",
+        amount: 10
     }
 ]
 
