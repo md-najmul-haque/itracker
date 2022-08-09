@@ -15,7 +15,11 @@ import img5 from '../../../Assets/testimonial-img/img5.jpg'
 
 // import required modules
 import { Pagination } from "swiper";
+import useReviews from "../../../hooks/useReviews";
 const Testimonial = () => {
+
+  const [reviews, setReviews] = useReviews()
+// console.log(reviews.result)
   return (
     <div className="background  py-7 max-h-fit bg-secondary">
       <div className="container mx-auto">
