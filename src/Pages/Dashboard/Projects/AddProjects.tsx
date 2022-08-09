@@ -7,8 +7,8 @@ const AddProjects = () => {
         console.log(data)
     }
     return (
-        <div className='mt-20 mx-8'>
-            <form onSubmit={handleSubmit(onSubmit)}>
+        <div className='lg:mt-32 mt-10 mx-8'>
+            <form onSubmit={handleSubmit(onSubmit)} className="bg-[#F0EABE] lg:w-[400px] md:w-[400px] mx-auto p-5 rounded-lg shadow-md">
                 <div className="form-control w-full max-w-xs mx-auto">
                     <label className="label">
                         <span className="label-text">Project Name</span>
@@ -17,7 +17,7 @@ const AddProjects = () => {
                         type="name"
                         placeholder="Project Name"
                         className="input input-bordered w-full max-w-xs"
-                        {...register("name", {
+                        {...register("ProjectName", {
                             required: {
                                 value: true,
                                 message: "name is required"
@@ -28,13 +28,30 @@ const AddProjects = () => {
                 </div>
                 <div className="form-control w-full max-w-xs mx-auto">
                     <label className="label">
-                        <span className="label-text">Timeline</span>
+                        <span className="label-text">Starting Date</span>
                     </label>
                     <input
                         type="date"
                         placeholder="Your Name"
                         className="input input-bordered w-full max-w-xs"
-                        {...register("timeline", {
+                        {...register("startingDate", {
+                            required: {
+                                value: true,
+                                message: "name is required"
+
+                            }
+                        })}
+                    />
+                </div>
+                <div className="form-control w-full max-w-xs mx-auto">
+                    <label className="label">
+                        <span className="label-text">End Of Date</span>
+                    </label>
+                    <input
+                        type="date"
+                        placeholder="Your Name"
+                        className="input input-bordered w-full max-w-xs"
+                        {...register("endDatae", {
                             required: {
                                 value: true,
                                 message: "name is required"
