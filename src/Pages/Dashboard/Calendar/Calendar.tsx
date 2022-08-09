@@ -1,23 +1,26 @@
 import React, { useEffect, useState } from 'react';
-import FullCalendar, { EventInput } from '@fullcalendar/react'
+import FullCalendar, { EventContentArg, EventInput } from '@fullcalendar/react'
 import interactionPlugin, { DateClickArg } from '@fullcalendar/interaction'
 import dayGridPlugin from '@fullcalendar/daygrid';
 import AddEvent from './AddEvent';
 
-const Data: EventInput[] = [
+const initialData: EventInput[] = [
     {
         title: "Developer Title",
-        start: "2022-08-01"
+        start: "2022-08-01",
+        amount: 100
 
     },
     {
         title: "End Game",
-        start: "2022-08-03"
+        start: "2022-08-03",
+        amount: 10
     }
 ]
 
 const Calendar = () => {
-    const [data, setData] = useState<EventInput[]>();
+  
+    const [data, setData] = useState<EventInput[]>(initialData);
     const[show, setShow] = useState(false)
    const [selected, setSelected]= useState(new Date())
 
@@ -48,14 +51,25 @@ const Calendar = () => {
 
     const handleAdd = (data:any) => {
         const event: EventInput = { start: selected, ...data };
+        setData(old => [...old, event]);
        
     }
+
+    const renderEvent = (e: EventContentArg) => {
+        return <>
+            <span>{e.event.title} </span>
+            <span>${e.event.extendedProps.amount} </span>
+        </>
+    }
     return <>
-      {show && <AddEvent handleAdd={handleAdd} handleClose={()=>setShow(false)}/>}
-             <div className='mt-20'>
+       
+        {show && <AddEvent handleAdd={handleAdd} handleClose={() => setShow(false)} />}
         
-        <FullCalendar
-            events={Data}
+        <div className='mt-20'>
+            
+            <FullCalendar
+            eventContent={renderEvent}
+            events={data}
             plugins={[dayGridPlugin, interactionPlugin]}
             dateClick = {handleDateClick}
         />
