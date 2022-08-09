@@ -1,19 +1,22 @@
 import { Dialog, DialogActions, DialogContent, DialogTitle, TextField } from '@mui/material';
-import React from 'react';
+import React, { FC } from 'react';
+interface Props{
+    handleClose: () => any;
+}
 
-const Event = () => {
+const AddEvent:FC<Props> = (Props) => {
     return (
-        <Dialog open={true}>
+        <Dialog open={true} onClose={Props.handleClose}>
             <DialogTitle>Add Event</DialogTitle>
             <div>
                 <form>
                     <DialogContent>
-                        <TextField placeholder='Title'></TextField>
+                        <TextField placeholder='Title'></TextField> <br />
                         <TextField placeholder='Description'></TextField>
                     </DialogContent>
                     <DialogActions>
-                        <button>Add</button>
-                        <button>Cancel</button>
+                        <button className='btn'>Add</button>
+                        <button className='btn'  onClick={Props.handleClose}>Cancel</button>
                     </DialogActions>
                 </form>
             </div>
@@ -21,4 +24,4 @@ const Event = () => {
     );
 };
 
-export default Event;
+export default AddEvent;

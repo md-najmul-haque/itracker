@@ -4,16 +4,9 @@ import interactionPlugin, { DateClickArg } from '@fullcalendar/interaction'
 import dayGridPlugin from '@fullcalendar/daygrid';
 import AddEvent from './AddEvent';
 
-
-
 const Calendar = () => {
     const[show, setShow] = useState(false)
     const [data, setData] = useState<any[]>([]);
-
-    
-    // const handleDateClick = (dateClickInfo:any) => {
-    //     alert(dateClickInfo.dateStr)
-    // }
 
     let clicks = 0;
     let timer = setTimeout(() => { }, 200);
@@ -40,7 +33,7 @@ const Calendar = () => {
         }
 
     return <>
-      {show && <AddEvent/>}
+      {show && <AddEvent handleClose={()=>setShow(false)}/>}
              <div className='mt-20'>
         
         <FullCalendar
