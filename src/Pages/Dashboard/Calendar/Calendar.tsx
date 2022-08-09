@@ -4,8 +4,17 @@ import interactionPlugin, { DateClickArg } from '@fullcalendar/interaction'
 import dayGridPlugin from '@fullcalendar/daygrid';
 import AddEvent from './AddEvent';
 
+const Data: EventInput[] = [
+    {
+        title: "Developer Title",
+        start: "2022-08-01"
 
-
+    },
+    {
+        title: "End Game",
+        start: "2022-08-03"
+    }
+]
 
 const Calendar = () => {
     const [data, setData] = useState<EventInput[]>();
@@ -46,7 +55,7 @@ const Calendar = () => {
              <div className='mt-20'>
         
         <FullCalendar
-            events={data}
+            events={Data}
             plugins={[dayGridPlugin, interactionPlugin]}
             dateClick = {handleDateClick}
         />
