@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import AddProject from './AddProject';
 import ShowProjectData from './ShowProjectData';
 
 const Projects = () => {
     const [projects, setProject] = useState([])
+    const [modal, setModal] = useState(false)
 
 
     useEffect(() => {
@@ -15,12 +16,9 @@ const Projects = () => {
 
     return (
         <div className='mt-20 mx-10'>
-
             <div className='flex justify-between'>
                 <h3 className='font-bold text-2xl text-primary'>New Project</h3>
-                <div className='flex justify-end'>
-                    <Link to='/dashboard/addProject' className='btn bg-accent hover:bg-accent-focus text-white'>+ Create Projects</Link>
-                </div>
+                <label htmlFor="add-project" onClick={() => setModal(true)} className='btn bg-accent hover:bg-accent-focus text-white'>+ Create Projects</label>
             </div>
 
 
@@ -29,6 +27,12 @@ const Projects = () => {
                     projects?.map(project => <ShowProjectData
                         project={project}
                     />)
+                }
+            </div>
+
+            <div>
+                {
+                    modal && <AddProject />
                 }
             </div>
         </div>

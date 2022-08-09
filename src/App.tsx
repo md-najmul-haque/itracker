@@ -21,7 +21,8 @@ import RequireAuth from './Pages/Authentication/RequireAuth/RequireAuth';
 import About from './Pages/About/About';
 import { connect } from 'react-redux'
 import Projects from './Pages/Dashboard/Projects/Projects';
-import AddProjects from './Pages/Dashboard/Projects/AddProjects';
+
+
 
 
 type stateProps = {
@@ -36,7 +37,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-       
+
         <Route path="/features" element={<Features />} />
         <Route path="/about" element={<About />} />
         <Route path="/signin" element={<SingIn />} />
@@ -53,8 +54,8 @@ function App() {
           <Route path='incompleteTasks' element={<IncompleteTasks />} />
           <Route path='overdueTasks' element={<OverdueTasks />} />
           <Route path='totalTasks' element={<TotalTasks />} />
-          <Route path='project' element={<Projects/>} />
-          <Route path='addProject' element={<AddProjects />} />
+          <Route path='project' element={<Projects />} />
+
 
         </Route>
         <Route path="*" element={<Notfound />} />
