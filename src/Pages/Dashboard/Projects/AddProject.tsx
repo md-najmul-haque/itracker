@@ -3,6 +3,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import auth from '../../../firebase.init';
 import Loading from '../../Shared/Loading/Loading';
+const axios = require('axios');
 
 interface IFormInput {
     projectName: string,
@@ -17,6 +18,9 @@ const AddProject = () => {
     const onSubmit: SubmitHandler<IFormInput> = data => console.log(data);
 
     const [user, loading] = useAuthState(auth)
+
+
+
 
     if (loading) {
         <Loading />
