@@ -58,7 +58,7 @@ const Calendar = () => {
     const renderEvent = (e: EventContentArg) => {
         return <>
             <span>{e.event.title} </span>
-            <span>${e.event.extendedProps.amount} </span>
+            <span>{e.event.extendedProps.amount} </span>
         </>
     }
     return <>
