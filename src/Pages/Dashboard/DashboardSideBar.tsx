@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { BsCalendar2Date, BsCalendarDate, BsFillCalendarDayFill, BsFillPersonFill } from 'react-icons/bs';
 import { MdOutlineTaskAlt } from 'react-icons/md';
 import { AiFillHome } from 'react-icons/ai';
+import { AiFillProject } from 'react-icons/ai';
 import { RiUserStarLine } from 'react-icons/ri';
 type MyComponentProps = React.PropsWithChildren<{}>;
 const DashboardSideBar = ({ children, ...other }: MyComponentProps) => {
@@ -15,7 +16,7 @@ const DashboardSideBar = ({ children, ...other }: MyComponentProps) => {
             </div>
             <div className="drawer-side ">
                 <label form="my-drawer-2" className="drawer-overlay"></label>
-                <ul className="menu p-4 overflow-y-auto w-60 bg-[#1e1f21] text-base-content">
+                <ul className="menu p-4 overflow-y-auto w-60 bg-accent text-base-content">
                     <h1 className='mb-4 text-center text-white font-bold text-2xl'>ITRACKER</h1>
                     {/*   Sidebar content here */}
                     <li className=' hover:bg-slate-600 transition-all rounded-lg'>
@@ -29,7 +30,10 @@ const DashboardSideBar = ({ children, ...other }: MyComponentProps) => {
                         <Link className='bg-transparent text-white' to="/dashboard/add-reviews"><RiUserStarLine /> Add Reviews</Link>
                     </li>
                     <li className=' hover:bg-slate-600 transition-all rounded-lg'>
-                        <Link className='bg-transparent text-white' to="/dashboard/calendar"><BsCalendar2Date />Calendar</Link>
+                     <Link className='bg-transparent text-white' to="/dashboard/calendar"><BsCalendar2Date />Calendar</Link>
+                    </li>
+                    <li>
+                    <Link className='bg-transparent text-white' to="/dashboard/project"><AiFillProject />Projects</Link>
                     </li>
 
                 </ul>

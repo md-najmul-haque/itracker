@@ -3,9 +3,8 @@ import Bugsearch from '../Bugsearch/Bugsearch';
 import Teamwork from '../Teamwork/Teamwork';
 import Testimonial from '../Testimonial/Testimonial';
 import Banner from '../Banner/Banner';
-import ProcessMangements from '../ProcessMangements/ProcessMangements';
-
-
+import FAQ from '../FAQ/FAQ';
+import TrustedCompany from '../TrustedCompany/TrustedCompany';
 
 const Home = () => {
 
@@ -15,7 +14,8 @@ const Home = () => {
             <Teamwork />
             <Bugsearch />
             <Testimonial />
-            <ProcessMangements />
+            <TrustedCompany />
+            <FAQ />
         </div>
     );
 };

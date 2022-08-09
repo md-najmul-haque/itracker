@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form';
 import auth from '../../../firebase.init';
 import Loading from '../../Shared/Loading/Loading';
 import { FaStar } from "react-icons/fa";
+import { toast } from 'react-toastify';
 
 const colors = {
     orange: '#FFBA5A',
@@ -14,7 +15,7 @@ const AddReviews = () => {
 
 const [user, loading, error] = useAuthState(auth)
 
-const { register, handleSubmit } = useForm();
+const { register, handleSubmit, reset } = useForm();
 
 
     const [rating, setRating] = useState(0);
@@ -45,6 +46,26 @@ const { register, handleSubmit } = useForm();
        const displayName = user?.displayName;
        const review = { ...data, rating, email, photoURL, displayName}
        console.log(review);
+
+       fetch("http://localhost:5000/add-review", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(review)
+       })
+       .then((res) => {
+        res.json()
+        if(res.status === 200){
+          
+          toast(`You Are Adding ${rating} Reviews`)
+        }
+       })
+       .then((data) => {
+        // console.log(data)
+
+       })
+       reset()
     }
     return (
         <div className='w-full p-10 lg:w-1/2 mx-auto'>
@@ -53,7 +74,7 @@ const { register, handleSubmit } = useForm();
         <form onSubmit={handleSubmit(onSubmit)} className='card-body pb-0'>
         <div className="avatar mx-auto flex-col items-center gap-3">
           <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-            <img src={`${user?.photoURL}`} alt={`${user?.displayName}`}  />
+            <img src={`${user?.photoURL ? user?.photoURL : 'https://i.pravatar.cc/300'}`} alt={`${user?.displayName}`}  />
           </div>
           <h2 className="text-2xl font-bold">{user?.displayName}</h2>
         </div>

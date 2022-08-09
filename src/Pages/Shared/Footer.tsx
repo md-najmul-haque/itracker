@@ -4,8 +4,8 @@ const Footer = () => {
   return (
     <>
       <footer className="footer p-10 bg-primary text-base-content">
-        <div className='pl-0 lg:pl-40'>
-          <span className="footer-title text-whit">Services</span>
+        <div className='pl-12 lg:pl-40'>
+          <span className="footer-title text-white">Services</span>
           <a className="link link-hover">Branding</a>
           <a className="link link-hover">Design</a>
           <a className="link link-hover">Marketing</a>
