@@ -4,9 +4,13 @@ import interactionPlugin, { DateClickArg } from '@fullcalendar/interaction'
 import dayGridPlugin from '@fullcalendar/daygrid';
 import AddEvent from './AddEvent';
 
+
+
+
 const Calendar = () => {
+    const [data, setData] = useState<EventInput[]>();
     const[show, setShow] = useState(false)
-    const [data, setData] = useState<any[]>([]);
+   const [selected, setSelected]= useState(new Date())
 
     let clicks = 0;
     let timer = setTimeout(() => { }, 200);
@@ -26,14 +30,19 @@ const Calendar = () => {
             }, 500);
         } else {
             if (dateClicked === e.dateStr) {
+                setSelected(e.date);
                setShow(true)
             }
             reset();
         }
         }
 
+    const handleAdd = (data:any) => {
+        const event: EventInput = { start: selected, ...data };
+       
+    }
     return <>
-      {show && <AddEvent handleClose={()=>setShow(false)}/>}
+      {show && <AddEvent handleAdd={handleAdd} handleClose={()=>setShow(false)}/>}
              <div className='mt-20'>
         
         <FullCalendar
