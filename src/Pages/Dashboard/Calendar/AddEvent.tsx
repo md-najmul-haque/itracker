@@ -24,8 +24,9 @@ const AddEvent: FC<Props> = (Props) => {
             <div>
                 <form onSubmit={handleSubmit(submitData)}>
                     <DialogContent>
-                        <TextField placeholder='Title' {...register('title')}></TextField> <br />
-                        <TextField placeholder='Description'{...register('description')}></TextField>
+                        <TextField placeholder='Title' {...register('title')}></TextField> <br /> 
+                     
+                        <TextField className="mt-2" placeholder='Description'{...register('description')}></TextField>
                     </DialogContent>
                     <DialogActions>
                         <button type='submit' className='btn'>Add</button>

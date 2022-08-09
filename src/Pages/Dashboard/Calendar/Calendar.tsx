@@ -6,13 +6,28 @@ import AddEvent from './AddEvent';
 
 const initialData: EventInput[] = [
     {
-        title: "Developer Title",
+        title: "Elephent",
+        description: "Your Description ",
         start: "2022-08-01",
         amount: 100
 
     },
     {
-        title: "End Game",
+        title: "Cow",
+        description: "Your Description",
+        start: "2022-08-05",
+        amount: 10
+    },
+    {
+        title: "Mango",
+        description: "Your Description",
+        start: "2022-08-03",
+        amount: 100
+
+    },
+    {
+        title: "Pen",
+        description: "Your Description", 
         start: "2022-08-03",
         amount: 10
     }
@@ -37,9 +52,10 @@ const Calendar = () => {
         if (clicks===1) {
             dateClicked = e.dateStr;
             timer = setTimeout(() => {
-                alert(`You Click On Single Calendar ${e.dateStr}`)
+                setSelected(e.date);
+               setShow(true)
                 reset();
-            }, 500);
+            }, .1);
         } else {
             if (dateClicked === e.dateStr) {
                 setSelected(e.date);
@@ -52,26 +68,34 @@ const Calendar = () => {
     const handleAdd = (data:any) => {
         const event: EventInput = { start: selected, ...data };
         setData(old => [...old, event]);
-       
+        setShow(false);
     }
 
     const renderEvent = (e: EventContentArg) => {
         return <>
-            <span>{e.event.title} </span>
-            <span>{e.event.extendedProps.amount} </span>
+            <div className='text-center bg-sky-600 text-white'>
+            <div className='text-2xl'>
+            <h3>{e.event.title} </h3> 
+           </div> <br />    <br />
+            <div className=''>
+            <p>{e.event.extendedProps.description} </p>
+           </div>
+            </div>
         </>
     }
     return <>
        
         {show && <AddEvent handleAdd={handleAdd} handleClose={() => setShow(false)} />}
         
-        <div className='mt-20'>
+        <div className='mt-20 text-red-400'>
             
             <FullCalendar
+            editable={true}
             eventContent={renderEvent}
             events={data}
-            plugins={[dayGridPlugin, interactionPlugin]}
-            dateClick = {handleDateClick}
+            plugins={[dayGridPlugin, interactionPlugin]} 
+                dateClick={handleDateClick}
+      
         />
       
     </div>
