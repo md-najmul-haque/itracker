@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import Home from './Pages/Home/Home/Home';
 import Footer from './Pages/Shared/Footer';
 import Navbar from './Pages/Shared/Navbar/Navbar';
@@ -30,10 +30,11 @@ type stateProps = {
 
 
 function App() {
-
+  const { pathname } = useLocation()
   return (
     <div>
-      <Navbar />
+      {!pathname.includes('dashboard') && <Navbar/>}
+      
       <Routes>
         <Route path="/" element={<Home />} />
        
@@ -59,7 +60,8 @@ function App() {
         </Route>
         <Route path="*" element={<Notfound />} />
       </Routes>
-      <Footer />
+      {!pathname.includes('dashboard') &&<Footer />}
+      
       <ScrollToTop />
       <ToastContainer />
     </div>

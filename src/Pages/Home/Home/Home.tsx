@@ -6,8 +6,9 @@ import Banner from '../Banner/Banner';
 import FAQ from '../FAQ/FAQ';
 import TrustedCompany from '../TrustedCompany/TrustedCompany';
 
-const Home = () => {
 
+const Home = () => {
+    
     return (
         <div>
             <Banner />
