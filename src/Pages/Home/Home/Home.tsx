@@ -15,8 +15,8 @@ const Home = () => {
             <Teamwork />
             <Bugsearch />
             <Testimonial />
-             <FAQ/>
             <TrustedCompany />
+            <FAQ />
         </div>
     );
 };

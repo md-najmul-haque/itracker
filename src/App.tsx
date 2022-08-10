@@ -19,10 +19,11 @@ import SingIn from './Pages/Authentication/SignIn/SingIn';
 import SignUp from './Pages/Authentication/SignUp/SignUp';
 import RequireAuth from './Pages/Authentication/RequireAuth/RequireAuth';
 import About from './Pages/About/About';
-import ITrackerList from './Pages/Board/ITrackerList/ITrackerList';
 import { connect } from 'react-redux'
 import Projects from './Pages/Dashboard/Projects/Projects';
-import AddProjects from './Pages/Dashboard/Projects/AddProjects';
+
+
+
 
 type stateProps = {
   lists: any
@@ -37,12 +38,12 @@ function App() {
       
       <Routes>
         <Route path="/" element={<Home />} />
-       
+
         <Route path="/features" element={<Features />} />
         <Route path="/about" element={<About />} />
         <Route path="/signin" element={<SingIn />} />
         <Route path="/signup" element={<SignUp />} />
-        <Route path="/itrackerlist" element={<ITrackerList />} />
+
         <Route path='/dashboard' element={
           <RequireAuth>
             <Dashboard />
@@ -54,8 +55,8 @@ function App() {
           <Route path='incompleteTasks' element={<IncompleteTasks />} />
           <Route path='overdueTasks' element={<OverdueTasks />} />
           <Route path='totalTasks' element={<TotalTasks />} />
-          <Route path='project' element={<Projects/>} />
-          <Route path='addProject' element={<AddProjects />} />
+          <Route path='project' element={<Projects />} />
+
 
         </Route>
         <Route path="*" element={<Notfound />} />
