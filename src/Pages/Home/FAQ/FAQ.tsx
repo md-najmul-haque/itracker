@@ -26,7 +26,7 @@ const FAQ = () => {
     };
 
     return (
-        <div id='contact'>
+        <div id='contact' className='bg-white p-5'>
             <h1 className='text-center text-3xl font-bold mt-6'>GET IN TOUCh</h1>
             <div className='grid lg:grid-cols-2 gap-12  lg:mx-20  my-16'>
                 <div className=' mt-12'>
@@ -35,11 +35,11 @@ const FAQ = () => {
                     <Accordion allowZeroExpanded className='shadow-md'>
                         <AccordionItem>
                             <AccordionItemHeading >
-                                <AccordionItemButton style={{ backgroundColor: "#F9F5EB", color: "black" }}>
+                                <AccordionItemButton style={{ backgroundColor: "#F1F1F1", color: "black" }}>
                                 What is the best issue tracking software?
                                 </AccordionItemButton>
                             </AccordionItemHeading>
-                            <AccordionItemPanel style={{ backgroundColor: "#F9F5EB", color: "black" }}>
+                            <AccordionItemPanel style={{ backgroundColor: "#F1F1F1", color: "black" }}>
                                 <p>
                                     Exercitation in fugiat est ut ad ea cupidatat ut in
                                     cupidatat occaecat ut occaecat consequat est minim minim
@@ -50,11 +50,11 @@ const FAQ = () => {
                         </AccordionItem>
                         <AccordionItem>
                             <AccordionItemHeading>
-                                <AccordionItemButton style={{ backgroundColor: "#F9F5EB", color: "black" }}>
+                                <AccordionItemButton style={{ backgroundColor: "#F1F1F1", color: "black" }}>
                                 What are the main features of issue tracking system?
                                 </AccordionItemButton>
                             </AccordionItemHeading>
-                            <AccordionItemPanel style={{ backgroundColor: "#F9F5EB", color: "black"}}>
+                            <AccordionItemPanel style={{ backgroundColor: "#F1F1F1", color: "black"}}>
                                 <p>
                                     In ad velit in ex nostrud dolore cupidatat consectetur
                                     ea in ut nostrud velit in irure cillum tempor laboris
@@ -64,11 +64,11 @@ const FAQ = () => {
                         </AccordionItem>
                         <AccordionItem>
                             <AccordionItemHeading>
-                                <AccordionItemButton style={{ backgroundColor: "#F9F5EB", color: "black" }}>
+                                <AccordionItemButton style={{ backgroundColor: "#F1F1F1", color: "black" }}>
                                 What is the usefulness of an issue tracking system?
                                 </AccordionItemButton>
                             </AccordionItemHeading>
-                            <AccordionItemPanel style={{ backgroundColor: "#F9F5EB", color: "black"}}>
+                            <AccordionItemPanel style={{ backgroundColor: "#F1F1F1", color: "black"}}>
                                 <p>
                                     In ad velit in ex nostrud dolore cupidatat consectetur
                                     ea in ut nostrud velit in irure cillum tempor laboris
@@ -78,11 +78,11 @@ const FAQ = () => {
                         </AccordionItem>
                         <AccordionItem>
                             <AccordionItemHeading>
-                                <AccordionItemButton style={{ backgroundColor: "#F9F5EB", color: "black" }}>
+                                <AccordionItemButton style={{ backgroundColor: "#F1F1F1", color: "black" }}>
                                 How do you track project issues?
                                 </AccordionItemButton>
                             </AccordionItemHeading>
-                            <AccordionItemPanel style={{ backgroundColor: "#F9F5EB", color: "black"}}>
+                            <AccordionItemPanel style={{ backgroundColor: "#F1F1F1", color: "black"}}>
                                 <p>
                                     In ad velit in ex nostrud dolore cupidatat consectetur
                                     ea in ut nostrud velit in irure cillum tempor laboris
@@ -95,7 +95,7 @@ const FAQ = () => {
 
                 {/* Contact us form */}
                 <div className='bg-[#F1F1F1] shadow-md lg:h-[430px]'>
-                    <h1 className='mb-3 text-center text-2xl font-bold'>Contuct us</h1>
+                    <h1 className='mb-3 mt-3 text-center text-2xl font-bold'>Contuct us</h1>
                     <form onSubmit={sendEmail} className='lg:ml-16 p-5'>
                         <div className="relative z-0 mb-6 w-full group">
                             <input type="text" name="name" id="floating_email" className="block py-2.5 px-0 lg:w-[450px] w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
