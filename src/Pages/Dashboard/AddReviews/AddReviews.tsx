@@ -20,11 +20,17 @@ const { register, handleSubmit, reset } = useForm();
 
     const [rating, setRating] = useState(0);
     const [hoverValue, setHoverValue] = useState(undefined);
-
+    const [comment, setComment] = useState('');
     const stars = Array(5).fill(0);
 
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
 
+    const handleComment = (e:any) => {
+      const limit = 120;
+  
+      // 👇️ only take 50 characters
+      setComment(e.target.value.slice(0, limit));
+    };
 
     const handleClick = (value: any) => {
         setRating(value);
@@ -69,7 +75,7 @@ const { register, handleSubmit, reset } = useForm();
     }
     return (
         <div className='w-full p-10 lg:w-1/2 mx-auto'>
-     add reviews
+  <h2 className='text-[#00AAB3] text-center text-3xl font-bold'>Add Your Review</h2>
      
         <form onSubmit={handleSubmit(onSubmit)} className='card-body pb-0'>
         <div className="avatar mx-auto flex-col items-center gap-3">
@@ -103,8 +109,9 @@ const { register, handleSubmit, reset } = useForm();
           <textarea 
           {...register("review", { required: false, maxLength:  500 })}
           className="textarea textarea-primary h-40 my-3 w-full"
-
-          placeholder="Please Your Feedback..."
+          value={comment}
+          onChange={handleComment}
+          placeholder="Please Your Feedback only take 120 characters"
           ></textarea>
           <input type="submit" className='btn btn-primary' value='Add Review' disabled={!rating} />
         </form>
