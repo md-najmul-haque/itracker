@@ -1,9 +1,8 @@
-import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import auth from '../../../firebase.init';
 import Loading from '../../Shared/Loading/Loading';
-const axios = require('axios');
+import axios from "axios";
 
 interface IFormInput {
     projectName: string,
@@ -15,20 +14,37 @@ interface IFormInput {
 
 const AddProject = () => {
     const { register, handleSubmit } = useForm<IFormInput>();
-    const onSubmit: SubmitHandler<IFormInput> = data => console.log(data);
+    const onSubmit: SubmitHandler<IFormInput> = async (data) => {
+        const url = "http://localhost:5000";
+
+        const project = {
+            projectName: data.projectName,
+            projectDescription: data.projectDescription,
+            email: data.email,
+            startingDate: data.startingDate,
+            endData: data.endData
+        }
+
+        try {
+            return await axios.post(`'${url}'/addProject`, project)
+        } catch (error) {
+
+            console.log(error)
+
+        }
+
+        // console.log(data)
+    };
 
     const [user, loading] = useAuthState(auth)
-
-
-
 
     if (loading) {
         <Loading />
     }
 
-    if (user) {
-        console.log(user.displayName)
-    }
+    // if (user) {
+    //     console.log(user.displayName)
+    // }
 
     return (
         <div>

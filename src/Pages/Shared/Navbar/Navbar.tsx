@@ -38,7 +38,7 @@ const Navbar = () => {
 
     return (
 
-        <div className='navbar bg-white sticky lg:absolute font-semibold top-0 z-50'>
+        <div className='navbar bg-primary text-white sticky lg:absolute font-semibold top-0 left-0 z-50'>
             <div className='container mx-auto'>
                 <div className="navbar-start">
                     <div className="dropdown">
