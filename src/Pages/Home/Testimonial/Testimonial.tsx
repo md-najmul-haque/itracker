@@ -2,10 +2,54 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import useReviews from "../../../hooks/useReviews";
 import Reviews from "./Reviews";
-
+import { FaStar } from "react-icons/fa";
+import { uniqueNamesGenerator } from 'unique-names-generator';
 
 const Testimonial = () => {
 const [reviews] = useReviews()
+
+const desc = [
+  'Since they’re posted on third-party sites and from real users of your products, consumers view these reviews as a reliab',
+  'many sites where consumers can leave their reviews. These include broad customer review sites, such as Google Reviews, F',
+  'After all, reviews are just as necessary for your business to improve as they are for customers to make informed decisio',
+
+];
+const color = [
+  'Green', 'Red', 'Yellow', 'Black'
+]
+
+const description: string = uniqueNamesGenerator({
+  dictionaries: [color, desc],
+  length: 2,
+  separator: ' '
+}); // Green Luke Skywalker
+
+const starWarsCharacters = [
+  'Han Solo',
+  'Jabba The Hutt',
+  'R2-D2',
+  'Luke Skywalker',
+  'Princess Leia Organa',
+  'Edward',
+  'Jonathan',
+  'Jonathan',
+  'Elizabeth',
+  'Ophelia',
+  'Jonathan',
+];
+const colors = [
+  'Green', 'Red', 'Yellow', 'Black'
+]
+
+const client: string = uniqueNamesGenerator({
+  dictionaries: [colors, starWarsCharacters],
+  length: 2,
+  separator: ' '
+}); // Green Luke Skywalker
+
+
+
+
   return (
     <div className='pt-14 px-10 '>
    
@@ -64,14 +108,28 @@ const [reviews] = useReviews()
     >
      
      <div className=" ">
-                <h1 className="text-2xl text-center lg:text-4xl lg:text-left">Contact With <br /> Other Members</h1>
-                <p className="mt-10 p-5 lg:p-0 lg:text-left">Keep an eye on your team's progress and workload. Get real-time charts and other visual highlights to share status, spot potential problems, and keep work on track.</p>
-                <div className="p-5 lg:p-0">
-                  <button className="btn mt-5 border-none btn-primary text-white">Contact Now</button>
-                </div>
-                <div>
-
-                </div>
+     <div className="card card-compact w-72 h-96 bg-base-100 shadow-xl flex py-10 items-center mx-16 md:mx-28 lg:mx-0">
+        <div className="avatar">
+          <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+            <img src='https://i.pravatar.cc/300' alt='avatar' />
+          </div>
+        </div>
+        <h2 className="card-title text-center my-5">{client}</h2>
+        <div className="flex flex-col items-center justify-center gap-4">
+          <p className={`text-center px-5 pt-3 h-[120px]`} >
+            {description}
+          </p>
+          <div className="flex">
+          
+              <FaStar className="text-orange-400" />
+              <FaStar className="text-orange-400" />
+              <FaStar className="text-orange-400" />
+              <FaStar className="text-orange-400" />
+              <FaStar className="text-orange-400" />
+        
+          </div>
+        </div>
+      </div>
               </div>
               {
       reviews?.result?.map((review: any) => <Reviews onePersonReview={review}/>)
