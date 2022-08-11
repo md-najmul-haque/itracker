@@ -45,7 +45,13 @@ const Calendarr = () => {
         <FullCalendar
           plugins={[dayGridPlugin, interactionPlugin, timeGridPlugin]}
           initialView="dayGridMonth"
-          
+          selectable={true}
+          editable={true}
+                    initialEvents={INITIAL_EVENTS}
+                    firstDay={1}
+                    weekends={true}
+
+                   
                 />
       </div>
     </div>
