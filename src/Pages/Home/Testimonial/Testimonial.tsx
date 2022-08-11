@@ -51,6 +51,7 @@ const client: string = uniqueNamesGenerator({
 
 
   return (
+
     <div className='pt-14 px-10 '>
    
         <div className="w-full lg:w-2/5 mx-auto ">
@@ -59,8 +60,8 @@ const client: string = uniqueNamesGenerator({
             Our Client’s Speak
           </h1>
         </div>
-<div >
-<Carousel       additionalTransfrom={0}
+        <div >
+        <Carousel additionalTransfrom={0}
             arrows
             autoPlaySpeed={4000}
             centerMode={false}
@@ -137,8 +138,10 @@ const client: string = uniqueNamesGenerator({
 
   </Carousel>
 </div>
-    </div>
-  );
+</div>
+
+
+  )
 };
 
 export default Testimonial;
