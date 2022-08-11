@@ -21,6 +21,7 @@ import RequireAuth from './Pages/Authentication/RequireAuth/RequireAuth';
 import About from './Pages/About/About';
 import { connect } from 'react-redux'
 import Projects from './Pages/Dashboard/Projects/Projects';
+import Calendar from './Pages/Dashboard/Calendar/Calendar';
 
 
 
@@ -55,7 +56,7 @@ function App() {
           <Route path='overdueTasks' element={<OverdueTasks />} />
           <Route path='totalTasks' element={<TotalTasks />} />
           <Route path='project' element={<Projects />} />
-
+          <Route path='calendar' element={ <Calendar/>} />
 
         </Route>
         <Route path="*" element={<Notfound />} />

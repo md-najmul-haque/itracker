@@ -34,6 +34,9 @@ const DashboardSideBar = ({ children, ...other }: MyComponentProps) => {
                     <li className=' hover:bg-slate-600 transition-all rounded-lg'>
                         <Link className='bg-transparent text-white' to="/dashboard/project"><AiFillProject />Projects</Link>
                     </li>
+                    <li className=' hover:bg-slate-600 transition-all rounded-lg'>
+                        <Link className='bg-transparent text-white' to="/dashboard/calendar"><AiFillProject />Calendar</Link>
+                    </li>
 
                 </ul>
 
