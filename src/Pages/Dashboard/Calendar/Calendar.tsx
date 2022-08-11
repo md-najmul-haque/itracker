@@ -56,7 +56,18 @@ const Calendarr = () => {
                         left: "dayGridMonth, timeGridWeek, timeGridDay"
                         
                     }}
-                   
+                    buttonText={{
+                        day: "Day",
+                        prev: "Previous",
+                        next: "Next",
+                        week: "Week",
+                        month: "Month",
+                        today: "Today",
+                       
+                    }}
+          eventsSet={handleEvents}
+          select={handleDateSelect}
+          eventClick={handleEventClick}
                 />
       </div>
     </div>
