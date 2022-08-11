@@ -33,60 +33,52 @@ const FAQ = () => {
                     <h1 className='text-2xl font-bold mb-5'>Frequently Asked Questions</h1>
 
                     <Accordion allowZeroExpanded className='shadow-md'>
-                        <AccordionItem>
+                        <AccordionItem style={{ backgroundColor: "#F1F1F1", color: "black" }}>
                             <AccordionItemHeading >
-                                <AccordionItemButton style={{ backgroundColor: "#F1F1F1", color: "black" }}>
-                                What is the best issue tracking software?
+                                <AccordionItemButton>
+                                What is an issue tracking tool?
                                 </AccordionItemButton>
                             </AccordionItemHeading>
-                            <AccordionItemPanel style={{ backgroundColor: "#F1F1F1", color: "black" }}>
+                            <AccordionItemPanel>
                                 <p>
-                                    Exercitation in fugiat est ut ad ea cupidatat ut in
-                                    cupidatat occaecat ut occaecat consequat est minim minim
-                                    esse tempor laborum consequat esse adipisicing eu
-                                    reprehenderit enim.
+                                An issue tracking system is any software application that allows you to record and follow the progress of every customer ticket or "issue" in your inbox until the problem is resolved.
+
                                 </p>
                             </AccordionItemPanel>
                         </AccordionItem>
                         <AccordionItem>
                             <AccordionItemHeading>
-                                <AccordionItemButton style={{ backgroundColor: "#F1F1F1", color: "black" }}>
+                                <AccordionItemButton>
                                 What are the main features of issue tracking system?
                                 </AccordionItemButton>
                             </AccordionItemHeading>
-                            <AccordionItemPanel style={{ backgroundColor: "#F1F1F1", color: "black"}}>
+                            <AccordionItemPanel>
                                 <p>
-                                    In ad velit in ex nostrud dolore cupidatat consectetur
-                                    ea in ut nostrud velit in irure cillum tempor laboris
-                                    sed adipisicing eu esse duis nulla non.
+                                The basic objective of issue tracking system allows teams to identify defects easily, measure their scope, determine their impact, and manage all the steps involved in resolving them, all from a centralized interface. Bug tracking software is commonly used in software development.
                                 </p>
                             </AccordionItemPanel>
                         </AccordionItem>
                         <AccordionItem>
                             <AccordionItemHeading>
-                                <AccordionItemButton style={{ backgroundColor: "#F1F1F1", color: "black" }}>
+                                <AccordionItemButton>
                                 What is the usefulness of an issue tracking system?
                                 </AccordionItemButton>
                             </AccordionItemHeading>
-                            <AccordionItemPanel style={{ backgroundColor: "#F1F1F1", color: "black"}}>
+                            <AccordionItemPanel>
                                 <p>
-                                    In ad velit in ex nostrud dolore cupidatat consectetur
-                                    ea in ut nostrud velit in irure cillum tempor laboris
-                                    sed adipisicing eu esse duis nulla non.
+                                An issue tracking system allows you to rapidly access answers and information and maintain a dashboard for tracking the history of issues and solutions. This makes creating reports, monitoring issues, and sharing information far easier.
                                 </p>
                             </AccordionItemPanel>
                         </AccordionItem>
                         <AccordionItem>
                             <AccordionItemHeading>
-                                <AccordionItemButton style={{ backgroundColor: "#F1F1F1", color: "black" }}>
+                                <AccordionItemButton>
                                 How do you track project issues?
                                 </AccordionItemButton>
                             </AccordionItemHeading>
-                            <AccordionItemPanel style={{ backgroundColor: "#F1F1F1", color: "black"}}>
+                            <AccordionItemPanel>
                                 <p>
-                                    In ad velit in ex nostrud dolore cupidatat consectetur
-                                    ea in ut nostrud velit in irure cillum tempor laboris
-                                    sed adipisicing eu esse duis nulla non.
+                                A method for keeping a record of open problems that, depending on their content, must be solved within the next task, before the next milestone, or before the change effort can be successfully completed.
                                 </p>
                             </AccordionItemPanel>
                         </AccordionItem>
