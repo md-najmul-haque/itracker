@@ -51,6 +51,11 @@ const Calendarr = () => {
                     firstDay={1}
                     weekends={true}
 
+                    headerToolbar={{
+                        center: "title",
+                        left: "dayGridMonth, timeGridWeek, timeGridDay"
+                        
+                    }}
                    
                 />
       </div>
