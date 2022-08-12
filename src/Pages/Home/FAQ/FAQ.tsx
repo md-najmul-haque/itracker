@@ -26,67 +26,59 @@ const FAQ = () => {
     };
 
     return (
-        <div id='contact'>
+        <div id='contact' className='bg-white p-5'>
             <h1 className='text-center text-3xl font-bold mt-6'>GET IN TOUCh</h1>
             <div className='grid lg:grid-cols-2 gap-12  lg:mx-20  my-16'>
                 <div className=' mt-12'>
                     <h1 className='text-2xl font-bold mb-5'>Frequently Asked Questions</h1>
 
                     <Accordion allowZeroExpanded className='shadow-md'>
-                        <AccordionItem>
+                        <AccordionItem style={{ backgroundColor: "#F1F1F1", color: "black" }}>
                             <AccordionItemHeading >
-                                <AccordionItemButton style={{ backgroundColor: "#F9F5EB", color: "black" }}>
-                                What is the best issue tracking software?
+                                <AccordionItemButton>
+                                What is an issue tracking tool?
                                 </AccordionItemButton>
                             </AccordionItemHeading>
-                            <AccordionItemPanel style={{ backgroundColor: "#F9F5EB", color: "black" }}>
+                            <AccordionItemPanel>
                                 <p>
-                                    Exercitation in fugiat est ut ad ea cupidatat ut in
-                                    cupidatat occaecat ut occaecat consequat est minim minim
-                                    esse tempor laborum consequat esse adipisicing eu
-                                    reprehenderit enim.
+                                An issue tracking system is any software application that allows you to record and follow the progress of every customer ticket or "issue" in your inbox until the problem is resolved.
+
                                 </p>
                             </AccordionItemPanel>
                         </AccordionItem>
                         <AccordionItem>
                             <AccordionItemHeading>
-                                <AccordionItemButton style={{ backgroundColor: "#F9F5EB", color: "black" }}>
+                                <AccordionItemButton>
                                 What are the main features of issue tracking system?
                                 </AccordionItemButton>
                             </AccordionItemHeading>
-                            <AccordionItemPanel style={{ backgroundColor: "#F9F5EB", color: "black"}}>
+                            <AccordionItemPanel>
                                 <p>
-                                    In ad velit in ex nostrud dolore cupidatat consectetur
-                                    ea in ut nostrud velit in irure cillum tempor laboris
-                                    sed adipisicing eu esse duis nulla non.
+                                The basic objective of issue tracking system allows teams to identify defects easily, measure their scope, determine their impact, and manage all the steps involved in resolving them, all from a centralized interface. Bug tracking software is commonly used in software development.
                                 </p>
                             </AccordionItemPanel>
                         </AccordionItem>
                         <AccordionItem>
                             <AccordionItemHeading>
-                                <AccordionItemButton style={{ backgroundColor: "#F9F5EB", color: "black" }}>
+                                <AccordionItemButton>
                                 What is the usefulness of an issue tracking system?
                                 </AccordionItemButton>
                             </AccordionItemHeading>
-                            <AccordionItemPanel style={{ backgroundColor: "#F9F5EB", color: "black"}}>
+                            <AccordionItemPanel>
                                 <p>
-                                    In ad velit in ex nostrud dolore cupidatat consectetur
-                                    ea in ut nostrud velit in irure cillum tempor laboris
-                                    sed adipisicing eu esse duis nulla non.
+                                An issue tracking system allows you to rapidly access answers and information and maintain a dashboard for tracking the history of issues and solutions. This makes creating reports, monitoring issues, and sharing information far easier.
                                 </p>
                             </AccordionItemPanel>
                         </AccordionItem>
                         <AccordionItem>
                             <AccordionItemHeading>
-                                <AccordionItemButton style={{ backgroundColor: "#F9F5EB", color: "black" }}>
+                                <AccordionItemButton>
                                 How do you track project issues?
                                 </AccordionItemButton>
                             </AccordionItemHeading>
-                            <AccordionItemPanel style={{ backgroundColor: "#F9F5EB", color: "black"}}>
+                            <AccordionItemPanel>
                                 <p>
-                                    In ad velit in ex nostrud dolore cupidatat consectetur
-                                    ea in ut nostrud velit in irure cillum tempor laboris
-                                    sed adipisicing eu esse duis nulla non.
+                                A method for keeping a record of open problems that, depending on their content, must be solved within the next task, before the next milestone, or before the change effort can be successfully completed.
                                 </p>
                             </AccordionItemPanel>
                         </AccordionItem>
@@ -95,7 +87,7 @@ const FAQ = () => {
 
                 {/* Contact us form */}
                 <div className='bg-[#F1F1F1] shadow-md lg:h-[430px]'>
-                    <h1 className='mb-3 text-center text-2xl font-bold'>Contuct us</h1>
+                    <h1 className='mb-3 mt-3 text-center text-2xl font-bold'>Contuct us</h1>
                     <form onSubmit={sendEmail} className='lg:ml-16 p-5'>
                         <div className="relative z-0 mb-6 w-full group">
                             <input type="text" name="name" id="floating_email" className="block py-2.5 px-0 lg:w-[450px] w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
