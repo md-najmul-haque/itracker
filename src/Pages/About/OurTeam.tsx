@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 const OurTeam = ({ team }: any) => {
 
     const { name, position, img, facebook, github, linkedin, email } = team;
