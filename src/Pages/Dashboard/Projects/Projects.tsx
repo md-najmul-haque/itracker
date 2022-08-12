@@ -1,6 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import { useState } from 'react';
 import Loading from '../../Shared/Loading/Loading';
+import DashboardSideBar from '../DashboardSideBar';
 import AddProject from './AddProject';
 import ShowProject from './ShowProject';
 
@@ -36,9 +37,11 @@ const Projects = () => {
 
             <div className='grid lg:grid-cols-3 md:grid-cols-2 gap-16 mt-5'>
                 {
-                    projects?.map((project: Project) => <ShowProject
-                        project={project}
-                    />)
+                    projects?.map((project: Project) => <>
+
+
+                        <ShowProject project={project} />
+                    </>)
                 }
             </div>
 
