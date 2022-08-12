@@ -5,7 +5,7 @@ import auth from '../../../firebase.init';
 import Loading from '../../Shared/Loading/Loading';
 import { FaStar } from "react-icons/fa";
 import { toast } from 'react-toastify';
-import {Motion, spring} from 'react-motion';
+
 
 const colors = {
     orange: '#FFBA5A',
@@ -116,11 +116,9 @@ const { register, handleSubmit, reset } = useForm();
           ></textarea>
           {/* <input type="submit" className='btn btn-primary' value='Add Review' disabled={!rating} /> */}
     
-        <Motion defaultStyle={{x: 0}} style={{x: spring(10)}}>
-  {value =>  
+    
              <input type="submit" className='btn btn-primary' value='Add Review' disabled={!rating} />
-  }
-</Motion>
+
         </form>
 
         </div>

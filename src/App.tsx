@@ -22,7 +22,7 @@ import About from './Pages/About/About';
 import { connect } from 'react-redux'
 import Projects from './Pages/Dashboard/Projects/Projects';
 import Calendar from './Pages/Dashboard/Calendar/Calendar';
-
+import {MessengerCustomerChat} from "typescript-react-facebook-messenger";
 
 
 
@@ -63,6 +63,7 @@ function App() {
       </Routes>
       <Footer />
       <ScrollToTop />
+      <MessengerCustomerChat pageId="158654895069572" appId="553013519763702"/>
       <ToastContainer />
     </div>
   );
