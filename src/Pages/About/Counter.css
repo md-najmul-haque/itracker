@@ -1,0 +1,16 @@
+.tobBorder {
+    border-top: 2px solid #6366f1;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-width: 5px
+    }
+
+.counterBackground{
+
+    background-image: radial-gradient(rgba(40, 120, 240, 0.2) 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+.counter{
+    
+}

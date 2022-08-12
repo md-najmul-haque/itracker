@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Counter from './Counter';
 import MeetOurTem from './OurTeam';
 const About = () => {
   const [teams, setTeams] = useState([])
@@ -34,7 +35,7 @@ const About = () => {
         
         </div>
      
- 
+          <Counter/>
         </div>
     );
 };
