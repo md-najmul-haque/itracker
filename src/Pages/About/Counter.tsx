@@ -6,9 +6,9 @@ const Counter = () => {
    
    
     return (
-        <div>
-                <h2 className='text-center text-4xl text-primary  font-bold'>Project Completed</h2>
-            <div className='bg-white  p-5 mx-5 mb-10 pb-20 counterBackground'>
+        <div className='mt-20 min-h-screen'>
+            <h2 className='text-center text-4xl text-primary font-bold'>Project Completed</h2>
+            <div className='bg-white mt-5 p-5 mx-5 mb-10 pb-20 counterBackground'>
 
           
             <div className='mb-5 mx-8  grid lg:grid-cols-4 md:grid-cols-2 gap-10 mt-20'>
