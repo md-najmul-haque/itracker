@@ -1,18 +1,30 @@
-import { useEffect, useState } from 'react';
+import { useQuery } from '@tanstack/react-query';
+import { useState } from 'react';
+import Loading from '../../Shared/Loading/Loading';
 import AddProject from './AddProject';
-import ShowProjectData from './ShowProjectData';
+import ShowProject from './ShowProject';
+
+interface Project {
+    projectName: string,
+    projectDescription: string,
+    email: string,
+    startingDate: string,
+    endData: string
+}
 
 const Projects = () => {
-    const [projects, setProject] = useState([])
     const [modal, setModal] = useState(false)
 
-
-    useEffect(() => {
-        fetch('/project.json')
+    const { data: projects, isLoading, error, refetch } = useQuery(['projects'], () =>
+        fetch('http://localhost:5000/getProject')
             .then(res => res.json())
-            .then(data => setProject(data))
+    )
 
-    }, [])
+    if (isLoading) {
+        return <Loading />
+    }
+
+    refetch()
 
     return (
         <div className='mt-20 mx-10'>
@@ -24,7 +36,7 @@ const Projects = () => {
 
             <div className='grid lg:grid-cols-3 md:grid-cols-2 gap-16 mt-5'>
                 {
-                    projects?.map(project => <ShowProjectData
+                    projects?.map((project: Project) => <ShowProject
                         project={project}
                     />)
                 }
