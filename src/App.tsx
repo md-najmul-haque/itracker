@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import Home from './Pages/Home/Home/Home';
@@ -25,7 +25,8 @@ import Calendar from './Pages/Dashboard/Calendar/Calendar';
 
 
 
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 type stateProps = {
   lists: any
 }
@@ -33,6 +34,9 @@ type stateProps = {
 
 function App() {
   const { pathname } = useLocation()
+  useEffect(()=>{
+    AOS.init();
+  })
   return (
     <div>
       {!pathname.includes('dashboard') && <Navbar/>}
