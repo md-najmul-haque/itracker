@@ -29,7 +29,12 @@ const Counter = () => {
             <CountUp className='text-4xl' end={500} duration={5} enableScrollSpy={true} />
             <p className='text-gray-400 '>Total Users</p>
             </div>
-           
+                
+            <div className='card border-solid drop-shadow-lg hover:bg-sky-700 hover:text-white ease-in duration-300 gap-2 pb-3 w-70 h-60 align-center justify-center text-center bg-white   shadow-xl'>
+            <p className='text-violet-300 text-6xl'><i className="fa-solid fa-award"></i></p>
+            <CountUp className='text-4xl' end={50} duration={5} enableScrollSpy={true} />
+            <p className='text-gray-400'>Awards</p>
+            </div>
                 
             </div>
         </div>
