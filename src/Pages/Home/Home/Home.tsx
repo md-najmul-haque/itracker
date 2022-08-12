@@ -6,6 +6,7 @@ import Banner from '../Banner/Banner';
 import FAQ from '../FAQ/FAQ';
 import TrustedCompany from '../TrustedCompany/TrustedCompany';
 import IssueManagement from '../../IssueManagement/IssueManagement';
+import Resources from '../Resources/Resources';
 
 
 
@@ -19,6 +20,7 @@ const Home = () => {
             <Bugsearch />
 
             <TrustedCompany />
+            <Resources/>
             <FAQ />
         </div>
     );

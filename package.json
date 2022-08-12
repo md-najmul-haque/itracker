@@ -24,6 +24,7 @@
     "@types/react": "^18.0.15",
     "@types/react-dom": "^18.0.6",
     "@types/react-motion": "^0.0.33",
+    "aos": "^2.3.4",
     "apexcharts": "^3.35.4",
     "axios": "^0.27.2",
     "daisyui": "^2.20.0",
@@ -80,6 +81,7 @@
     ]
   },
   "devDependencies": {
+    "@types/aos": "^3.0.4",
     "autoprefixer": "^10.4.7",
     "postcss": "^8.4.14",
     "tailwindcss": "^3.1.6"
