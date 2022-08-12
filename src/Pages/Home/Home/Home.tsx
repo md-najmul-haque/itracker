@@ -18,7 +18,6 @@ const Home = () => {
             <Teamwork />
             <IssueManagement />
             <Bugsearch />
-
             <TrustedCompany />
             <Resources/>
             <FAQ />
