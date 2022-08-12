@@ -10,14 +10,14 @@ import IssueManagement from '../../IssueManagement/IssueManagement';
 
 
 const Home = () => {
-    
+
     return (
         <div>
             <Banner />
             <Teamwork />
-          {  <IssueManagement/>}
+            <IssueManagement />
             <Bugsearch />
-            <Testimonial />
+
             <TrustedCompany />
             <FAQ />
         </div>

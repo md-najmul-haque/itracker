@@ -15,7 +15,7 @@ interface IFormInput {
 const AddProject = () => {
     const { register, handleSubmit } = useForm<IFormInput>();
     const onSubmit: SubmitHandler<IFormInput> = async (data) => {
-        const url = "http://localhost:5000";
+
 
         const project = {
             projectName: data.projectName,
@@ -25,13 +25,21 @@ const AddProject = () => {
             endData: data.endData
         }
 
-        try {
-            return await axios.post(`'${url}'/addProject`, project)
-        } catch (error) {
+        fetch('http://localhost:5000/addProject', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(project)
+        })
+            .then(res => res.json())
+            .then(project => console.log(project))
 
-            console.log(error)
-
-        }
+        // try {
+        //     return await axios.post(`http://localhost:5000/addProject`, project)
+        // } catch (error) {
+        //     console.log(error)
+        // }
 
         // console.log(data)
     };

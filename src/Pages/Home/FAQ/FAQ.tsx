@@ -18,7 +18,7 @@ const FAQ = () => {
         emailjs.sendForm('service_xmijzyr', 'template_bzs66yy', event.target, 'iWhbHvlGmFbejUeQ9')
             .then((result) => {
                 alert("Thanks for the your email");
-                
+
                 event.target.reset();
             }, (error) => {
                 console.log(error.text);
@@ -27,7 +27,7 @@ const FAQ = () => {
 
     return (
         <div id='contact' className='bg-white p-5'>
-            <h1 className='text-center text-3xl font-bold mt-6'>GET IN TOUCh</h1>
+            <h1 className='text-center text-3xl font-bold mt-6 uppercase'>GET IN TOUCh</h1>
             <div className='grid lg:grid-cols-2 gap-12  lg:mx-20  my-16'>
                 <div className=' mt-12'>
                     <h1 className='text-2xl font-bold mb-5'>Frequently Asked Questions</h1>
@@ -36,12 +36,12 @@ const FAQ = () => {
                         <AccordionItem style={{ backgroundColor: "#F1F1F1", color: "black" }}>
                             <AccordionItemHeading >
                                 <AccordionItemButton>
-                                What is an issue tracking tool?
+                                    What is an issue tracking tool?
                                 </AccordionItemButton>
                             </AccordionItemHeading>
                             <AccordionItemPanel>
                                 <p>
-                                An issue tracking system is any software application that allows you to record and follow the progress of every customer ticket or "issue" in your inbox until the problem is resolved.
+                                    An issue tracking system is any software application that allows you to record and follow the progress of every customer ticket or "issue" in your inbox until the problem is resolved.
 
                                 </p>
                             </AccordionItemPanel>
@@ -49,36 +49,36 @@ const FAQ = () => {
                         <AccordionItem>
                             <AccordionItemHeading>
                                 <AccordionItemButton>
-                                What are the main features of issue tracking system?
+                                    What are the main features of issue tracking system?
                                 </AccordionItemButton>
                             </AccordionItemHeading>
                             <AccordionItemPanel>
                                 <p>
-                                The basic objective of issue tracking system allows teams to identify defects easily, measure their scope, determine their impact, and manage all the steps involved in resolving them, all from a centralized interface. Bug tracking software is commonly used in software development.
+                                    The basic objective of issue tracking system allows teams to identify defects easily, measure their scope, determine their impact, and manage all the steps involved in resolving them, all from a centralized interface. Bug tracking software is commonly used in software development.
                                 </p>
                             </AccordionItemPanel>
                         </AccordionItem>
                         <AccordionItem>
                             <AccordionItemHeading>
                                 <AccordionItemButton>
-                                What is the usefulness of an issue tracking system?
+                                    What is the usefulness of an issue tracking system?
                                 </AccordionItemButton>
                             </AccordionItemHeading>
                             <AccordionItemPanel>
                                 <p>
-                                An issue tracking system allows you to rapidly access answers and information and maintain a dashboard for tracking the history of issues and solutions. This makes creating reports, monitoring issues, and sharing information far easier.
+                                    An issue tracking system allows you to rapidly access answers and information and maintain a dashboard for tracking the history of issues and solutions. This makes creating reports, monitoring issues, and sharing information far easier.
                                 </p>
                             </AccordionItemPanel>
                         </AccordionItem>
                         <AccordionItem>
                             <AccordionItemHeading>
                                 <AccordionItemButton>
-                                How do you track project issues?
+                                    How do you track project issues?
                                 </AccordionItemButton>
                             </AccordionItemHeading>
                             <AccordionItemPanel>
                                 <p>
-                                A method for keeping a record of open problems that, depending on their content, must be solved within the next task, before the next milestone, or before the change effort can be successfully completed.
+                                    A method for keeping a record of open problems that, depending on their content, must be solved within the next task, before the next milestone, or before the change effort can be successfully completed.
                                 </p>
                             </AccordionItemPanel>
                         </AccordionItem>
