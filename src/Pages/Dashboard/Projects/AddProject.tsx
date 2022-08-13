@@ -143,9 +143,9 @@ const AddProject = () => {
                             />
                         </div>
 
-                        <div className="modal-action w-full mx-auto m-5">
+                        {/* <div className="modal-action w-full mx-auto m-5">
                             <label className='btn btn-accent type="submit" text-white w-full' htmlFor="add-project"> Add </label>
-                        </div>
+                        </div> */}
                         <div className="modal-action w-full mx-auto m-5">
                             <input className='btn btn-accent text-white w-full' type="submit" value="Add Project" />
                         </div>

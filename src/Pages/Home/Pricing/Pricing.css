@@ -1,0 +1,12 @@
+.Basic{
+    border: 2px solid black;
+    padding: 10px;
+}
+.Premium{
+    border: 2px solid blue;
+    padding: 10px;
+}
+.Business{
+    border: 2px solid goldenrod;
+    padding: 10px;
+}

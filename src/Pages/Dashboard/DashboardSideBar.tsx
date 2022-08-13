@@ -35,7 +35,7 @@ const DashboardSideBar = ({ children }: DashboardSideBarProps) => {
                     <h1 className='mb-4 text-center text-white font-bold text-2xl'>ITRACKER</h1>
                     {/*   Sidebar content here */}
                     <li className=' hover:bg-slate-600 transition-all rounded-lg'>
-                        <Link className='bg-transparent text-white' to='/dashboard'> <AiFillHome />HOME</Link>
+                        <Link className='bg-transparent text-white' to='/'> <AiFillHome />HOME</Link>
                     </li>
 
                     <li className=' hover:bg-slate-600 transition-all rounded-lg'>
