@@ -4,11 +4,11 @@ import auth from "../../../firebase.init";
 import Loading from "../../Shared/Loading/Loading";
 
 interface IFormInput {
-    projectName: string,
-    projectDescription: string,
+    meetingTitle: string,
+    meetingAgenda: string,
+    meetingLink: string,
     email: string,
-    startingDate: string,
-    endData: string
+    date: string,
 }
 
 const AddMeeting = () => {
@@ -16,11 +16,11 @@ const AddMeeting = () => {
     const { register, handleSubmit } = useForm<IFormInput>();
     const onSubmit: SubmitHandler<IFormInput> = async (data) => {
         const meeting = {
-            projectName: data.projectName,
-            projectDescription: data.projectDescription,
+            meetingTitle: data.meetingTitle,
+            meetingAgenda: data.meetingAgenda,
+            meetingLink: data.meetingLink,
             email: data.email,
-            startingDate: data.startingDate,
-            endData: data.endData
+            date: data.date,
         }
 
         fetch('http://localhost:5000/addProject', {
@@ -53,13 +53,13 @@ const AddMeeting = () => {
                     <form onSubmit={handleSubmit(onSubmit)} className="bg-secondary mx-auto p-5">
                         <div className="form-control w-full mx-auto">
                             <label className="label">
-                                <span className="label-text">Project Name</span>
+                                <span className="label-text">Meeting Title</span>
                             </label>
                             <input
                                 type="text"
-                                placeholder="Project Name"
+                                placeholder="Meeting Title"
                                 className="input input-bordered bg-white w-full"
-                                {...register("projectName", {
+                                {...register("meetingTitle", {
                                     required: {
                                         value: true,
                                         message: "name is required"
@@ -70,12 +70,29 @@ const AddMeeting = () => {
 
                         <div className="form-control w-full mx-auto">
                             <label className="label">
-                                <span className="label-text">Project Description</span>
+                                <span className="label-text">Meeting Agenda</span>
                             </label>
                             <textarea
-                                placeholder="Project Description"
+                                placeholder="Meeting Agenda"
                                 className="input input-bordered bg-white w-full"
-                                {...register("projectDescription")}
+                                {...register("meetingAgenda")}
+                            />
+                        </div>
+
+                        <div className="form-control w-full mx-auto">
+                            <label className="label">
+                                <span className="label-text">Meeting Link</span>
+                            </label>
+                            <input
+                                type="url"
+                                placeholder="Meeting Link"
+                                className="input input-bordered bg-white w-full"
+                                {...register("meetingLink", {
+                                    required: {
+                                        value: true,
+                                        message: "Meeting link is required"
+                                    }
+                                })}
                             />
                         </div>
 
@@ -89,7 +106,7 @@ const AddMeeting = () => {
                                 className="input input-bordered bg-white w-full"
                                 {...register("email", {
                                     pattern: {
-                                        value: /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,20}$/,
+                                        value: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
                                         message: 'Please enter valid email address'
                                     }
                                 })} />
@@ -103,7 +120,7 @@ const AddMeeting = () => {
                                 type="date"
                                 placeholder="Your Name"
                                 className="input input-bordered bg-white w-full"
-                                {...register("startingDate", {
+                                {...register("date", {
                                     required: {
                                         value: true,
                                         message: "name is required"
@@ -112,23 +129,7 @@ const AddMeeting = () => {
                                 })}
                             />
                         </div>
-                        <div className="form-control w-full mx-auto">
-                            <label className="label">
-                                <span className="label-text">End Date</span>
-                            </label>
-                            <input
-                                type="date"
-                                placeholder="Your Name"
-                                className="input input-bordered bg-white w-full"
-                                {...register("endData", {
-                                    required: {
-                                        value: true,
-                                        message: "name is required"
 
-                                    }
-                                })}
-                            />
-                        </div>
 
                         {/* <div className="modal-action w-full mx-auto m-5">
                         <label className='btn btn-accent type="submit" text-white w-full' htmlFor="add-project"> Add </label>
