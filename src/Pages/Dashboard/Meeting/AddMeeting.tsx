@@ -1,7 +1,7 @@
-import { useAuthState } from 'react-firebase-hooks/auth';
-import { SubmitHandler, useForm } from 'react-hook-form';
-import auth from '../../../firebase.init';
-import Loading from '../../Shared/Loading/Loading';
+import { useAuthState } from "react-firebase-hooks/auth";
+import { useForm, SubmitHandler } from "react-hook-form";
+import auth from "../../../firebase.init";
+import Loading from "../../Shared/Loading/Loading";
 
 interface IFormInput {
     projectName: string,
@@ -11,12 +11,11 @@ interface IFormInput {
     endData: string
 }
 
-const AddProject = () => {
+const AddMeeting = () => {
+
     const { register, handleSubmit } = useForm<IFormInput>();
     const onSubmit: SubmitHandler<IFormInput> = async (data) => {
-
-
-        const project = {
+        const meeting = {
             projectName: data.projectName,
             projectDescription: data.projectDescription,
             email: data.email,
@@ -29,28 +28,25 @@ const AddProject = () => {
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(project)
+            body: JSON.stringify(meeting)
         })
             .then(res => res.json())
-            .then(project => console.log(project))
+            .then(meeting => console.log(meeting))
+
     };
 
     const [user, loading] = useAuthState(auth)
 
     if (loading) {
-        <Loading />
+        return <Loading />
     }
-
-    // if (user) {
-    //     console.log(user.displayName)
-    // }
 
     return (
         <div>
-            <input type="checkbox" id="add-project" className="modal-toggle" />
+            <input type="checkbox" id="add-meeting" className="modal-toggle" />
             <div className="modal modal-bottom sm:modal-middle">
                 <div className="modal-box">
-                    <label htmlFor="add-project" className="btn btn-sm bg-accent text-white btn-square absolute right-2 top-2">✕</label>
+                    <label htmlFor="add-meeting" className="btn btn-sm bg-accent text-white btn-square absolute right-2 top-2">✕</label>
                     <h3 className="font-bold text-lg">Hi {user?.displayName}! Create your new projects.</h3>
 
 
@@ -135,8 +131,8 @@ const AddProject = () => {
                         </div>
 
                         {/* <div className="modal-action w-full mx-auto m-5">
-                            <label className='btn btn-accent type="submit" text-white w-full' htmlFor="add-project"> Add </label>
-                        </div> */}
+                        <label className='btn btn-accent type="submit" text-white w-full' htmlFor="add-project"> Add </label>
+                    </div> */}
                         <div className="modal-action w-full mx-auto m-5">
                             <input className='btn btn-accent text-white w-full' type="submit" value="Add Project" />
                         </div>
@@ -145,8 +141,7 @@ const AddProject = () => {
                 </div>
             </div>
         </div >
-
     );
-};
+}
 
-export default AddProject;
+export default AddMeeting;
