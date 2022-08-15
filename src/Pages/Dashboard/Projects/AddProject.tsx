@@ -88,12 +88,12 @@ const AddProject = () => {
                                 <span className="label-text">Invite Your Team Member</span>
                             </label>
                             <input
-                                type="text"
+                                type="email"
                                 placeholder="Invite Your Team Member"
                                 className="input input-bordered bg-white w-full"
                                 {...register("email", {
                                     pattern: {
-                                        value: /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,20}$/,
+                                        value: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
                                         message: 'Please enter valid email address'
                                     }
                                 })} />

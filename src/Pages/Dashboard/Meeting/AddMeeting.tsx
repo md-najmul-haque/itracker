@@ -101,7 +101,7 @@ const AddMeeting = () => {
                                 <span className="label-text">Invite Your Team Member</span>
                             </label>
                             <input
-                                type="text"
+                                type="email"
                                 placeholder="Invite Your Team Member"
                                 className="input input-bordered bg-white w-full"
                                 {...register("email", {
