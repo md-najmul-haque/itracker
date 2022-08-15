@@ -10,6 +10,7 @@ interface IFormInput {
     meetingLink: string,
     email: string,
     date: string,
+    time: string
 }
 
 const AddMeeting = () => {
@@ -23,6 +24,7 @@ const AddMeeting = () => {
             meetingLink: data.meetingLink,
             email: data.email,
             date: data.date,
+            time: data.time
         }
 
         fetch('http://localhost:5000/addMeeting', {
@@ -73,9 +75,7 @@ const AddMeeting = () => {
                             <label className="label">
                                 <span className="label-text">Project Name</span>
                             </label>
-                            <input
-                                type="text"
-                                placeholder="Project Name"
+                            <select
                                 className="input input-bordered bg-white w-full"
                                 {...register("projectName", {
                                     required: {
@@ -147,12 +147,28 @@ const AddMeeting = () => {
                             />
                         </div>
 
+                        <div className="form-control w-full mx-auto">
+                            <label className="label">
+                                <span className="label-text">Starting Time</span>
+                            </label>
+                            <input
+                                type="time"
+                                className="input input-bordered bg-white w-full"
+                                {...register("time", {
+                                    required: {
+                                        value: true,
+                                        message: "Time is required"
+                                    }
+                                })}
+                            />
+                        </div>
+
 
                         {/* <div className="modal-action w-full mx-auto m-5">
                         <label className='btn btn-accent type="submit" text-white w-full' htmlFor="add-meeting"> Add </label>
                     </div> */}
                         <div className="modal-action w-full mx-auto m-5">
-                            <input className='btn btn-accent text-white w-full' type="submit" value="Add Project" />
+                            <input className='btn btn-accent text-white w-full' type="submit" value="Add Meeting" />
                         </div>
                     </form>
 
