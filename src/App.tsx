@@ -23,6 +23,7 @@ import { connect } from 'react-redux'
 import Projects from './Pages/Dashboard/Projects/Projects';
 import Calendar from './Pages/Dashboard/Calendar/Calendar';
 import {MessengerCustomerChat} from "typescript-react-facebook-messenger";
+import ViewProfile from './Pages/ViewProfile/ViewProfile';
 
 
 
@@ -41,6 +42,8 @@ function App() {
 
         <Route path="/features" element={<Features />} />
         <Route path="/about" element={<About />} />
+        <Route path="/viewProfile" element={<ViewProfile />} />
+
         <Route path="/signin" element={<SingIn />} />
         <Route path="/signup" element={<SignUp />} />
 
