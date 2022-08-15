@@ -31,7 +31,7 @@ const Projects = () => {
         <div className='mt-20 mx-10'>
             <div className='flex justify-between'>
                 <h3 className='font-bold text-2xl text-primary'>New Project</h3>
-                <label htmlFor="add-project" onClick={() => setModal(true)} className='btn bg-accent hover:bg-accent-focus text-white'>+ Create Projects</label>
+                <label htmlFor="add-project" onClick={() => setModal(true)} className='btn bg-accent hover:bg-accent-focus outline-none text-white'>+ Create Projects</label>
             </div>
 
 
