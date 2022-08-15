@@ -27,6 +27,7 @@ import Calendar from './Pages/Dashboard/Calendar/Calendar';
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Meeting from './Pages/Dashboard/Meeting/Meeting';
 type stateProps = {
   lists: any
 }
@@ -34,13 +35,13 @@ type stateProps = {
 
 function App() {
   const { pathname } = useLocation()
-  useEffect(()=>{
+  useEffect(() => {
     AOS.init();
   })
   return (
     <div>
-      {!pathname.includes('dashboard') && <Navbar/>}
-      
+      {!pathname.includes('dashboard') && <Navbar />}
+
       <Routes>
         <Route path="/" element={<Home />} />
 
@@ -61,13 +62,14 @@ function App() {
           <Route path='overdueTasks' element={<OverdueTasks />} />
           <Route path='totalTasks' element={<TotalTasks />} />
           <Route path='project' element={<Projects />} />
-          <Route path='calendar' element={ <Calendar/>} />
+          <Route path='meeting' element={<Meeting />} />
+          <Route path='calendar' element={<Calendar />} />
 
         </Route>
         <Route path="*" element={<Notfound />} />
       </Routes>
-      {!pathname.includes('dashboard') &&<Footer />}
-      
+      {!pathname.includes('dashboard') && <Footer />}
+
       <ScrollToTop />
       <ToastContainer />
     </div>

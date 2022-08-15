@@ -61,7 +61,7 @@ const SingIn = () => {
     }
 
     if (user || gUser || gitUser) {
-        navigate('/')
+        navigate('/dashboard')
     }
 
     return (
