@@ -105,7 +105,6 @@ const AddProject = () => {
                             </label>
                             <input
                                 type="date"
-                                placeholder="Your Name"
                                 className="input input-bordered bg-white w-full"
                                 {...register("startingDate", {
                                     required: {
@@ -122,7 +121,6 @@ const AddProject = () => {
                             </label>
                             <input
                                 type="date"
-                                placeholder="Your Name"
                                 className="input input-bordered bg-white w-full"
                                 {...register("endData", {
                                     required: {

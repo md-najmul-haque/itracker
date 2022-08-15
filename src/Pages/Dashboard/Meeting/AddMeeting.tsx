@@ -5,6 +5,7 @@ import Loading from "../../Shared/Loading/Loading";
 
 interface IFormInput {
     meetingTitle: string,
+    projectName: string,
     meetingAgenda: string,
     meetingLink: string,
     email: string,
@@ -17,13 +18,14 @@ const AddMeeting = () => {
     const onSubmit: SubmitHandler<IFormInput> = async (data) => {
         const meeting = {
             meetingTitle: data.meetingTitle,
+            projectName: data.projectName,
             meetingAgenda: data.meetingAgenda,
             meetingLink: data.meetingLink,
             email: data.email,
             date: data.date,
         }
 
-        fetch('http://localhost:5000/addProject', {
+        fetch('http://localhost:5000/addMeeting', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -47,8 +49,7 @@ const AddMeeting = () => {
             <div className="modal modal-bottom sm:modal-middle">
                 <div className="modal-box">
                     <label htmlFor="add-meeting" className="btn btn-sm bg-accent text-white btn-square absolute right-2 top-2">✕</label>
-                    <h3 className="font-bold text-lg">Hi {user?.displayName}! Create your new projects.</h3>
-
+                    <h3 className="font-bold text-lg">Hi <span className="text-primary">{user?.displayName}</span>! Create your new meeting schedule.</h3>
 
                     <form onSubmit={handleSubmit(onSubmit)} className="bg-secondary mx-auto p-5">
                         <div className="form-control w-full mx-auto">
@@ -63,6 +64,23 @@ const AddMeeting = () => {
                                     required: {
                                         value: true,
                                         message: "name is required"
+                                    }
+                                })}
+                            />
+                        </div>
+
+                        <div className="form-control w-full mx-auto">
+                            <label className="label">
+                                <span className="label-text">Project Name</span>
+                            </label>
+                            <input
+                                type="text"
+                                placeholder="Project Name"
+                                className="input input-bordered bg-white w-full"
+                                {...register("projectName", {
+                                    required: {
+                                        value: true,
+                                        message: "Project name is required"
                                     }
                                 })}
                             />
@@ -118,7 +136,6 @@ const AddMeeting = () => {
                             </label>
                             <input
                                 type="date"
-                                placeholder="Your Name"
                                 className="input input-bordered bg-white w-full"
                                 {...register("date", {
                                     required: {
@@ -132,7 +149,7 @@ const AddMeeting = () => {
 
 
                         {/* <div className="modal-action w-full mx-auto m-5">
-                        <label className='btn btn-accent type="submit" text-white w-full' htmlFor="add-project"> Add </label>
+                        <label className='btn btn-accent type="submit" text-white w-full' htmlFor="add-meeting"> Add </label>
                     </div> */}
                         <div className="modal-action w-full mx-auto m-5">
                             <input className='btn btn-accent text-white w-full' type="submit" value="Add Project" />
