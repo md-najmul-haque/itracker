@@ -29,6 +29,12 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Pricing from './Pages/Home/Pricing/Pricing';
 import Payment from './Pages/Home/Pricing/Payment';
+import MyProject from './Pages/Dashboard/Projects/MyProject';
+import Meeting from './Pages/Dashboard/Meeting/Meeting';
+import MyProjects from './Pages/Dashboard/MyProjects/MyProjects';
+import AAA from './Pages/Dashboard/MyProjects/AAA';
+import BBB from './Pages/Dashboard/MyProjects/BBB';
+
 type stateProps = {
   lists: any
 }
@@ -36,13 +42,13 @@ type stateProps = {
 
 function App() {
   const { pathname } = useLocation()
-  useEffect(()=>{
+  useEffect(() => {
     AOS.init();
   })
   return (
     <div>
-      {!pathname.includes('dashboard') && <Navbar/>}
-      
+      {!pathname.includes('dashboard') && <Navbar />}
+
       <Routes>
         <Route path="/" element={<Home />} />
 
@@ -50,8 +56,8 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/signin" element={<SingIn />} />
         <Route path="/signup" element={<SignUp />} />
-        <Route path="/pricing" element={<Pricing/>} />
-        <Route path="/payment" element={<Payment/>} />
+        <Route path="/pricing" element={<Pricing />} />
+        <Route path="/payment" element={<Payment />} />
 
         <Route path='/dashboard' element={
           <RequireAuth>
@@ -65,13 +71,25 @@ function App() {
           <Route path='overdueTasks' element={<OverdueTasks />} />
           <Route path='totalTasks' element={<TotalTasks />} />
           <Route path='project' element={<Projects />} />
-          <Route path='calendar' element={ <Calendar/>} />
+          <Route path='meeting' element={<Meeting />} />
+          <Route path='calendar' element={<Calendar />} />
+          <Route path='myProject' element={<MyProject />} />
 
+          {/*   nested project route */}
+          <Route path='Projects' element={<MyProjects />} >
+          <Route path='aaa' element={<AAA />} />
+          <Route path='bbb' element={<BBB/>} />
+
+
+            
+          </Route>
         </Route>
+
+
         <Route path="*" element={<Notfound />} />
       </Routes>
-      {!pathname.includes('dashboard') &&<Footer />}
-      
+      {!pathname.includes('dashboard') && <Footer />}
+
       <ScrollToTop />
       <ToastContainer />
     </div>

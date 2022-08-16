@@ -1,69 +1,68 @@
-import { useAuthState } from 'react-firebase-hooks/auth';
-import { SubmitHandler, useForm } from 'react-hook-form';
-import auth from '../../../firebase.init';
-import Loading from '../../Shared/Loading/Loading';
+import { useAuthState } from "react-firebase-hooks/auth";
+import { useForm, SubmitHandler } from "react-hook-form";
+import auth from "../../../firebase.init";
+import Loading from "../../Shared/Loading/Loading";
 
 interface IFormInput {
+    meetingTitle: string,
     projectName: string,
-    projectDescription: string,
+    meetingAgenda: string,
+    meetingLink: string,
     email: string,
-    startingDate: string,
-    endData: string
+    date: Date,
+    time: string,
+    id: number,
 }
 
-const AddProject = () => {
+const AddMeeting = () => {
     const { register, handleSubmit } = useForm<IFormInput>();
-    const onSubmit: SubmitHandler<IFormInput> = async (data) => {
-
-
-        const project = {
+    const onSubmit: SubmitHandler<IFormInput> = async (data, id) => {
+        const meeting = {
+            meetingTitle: data.meetingTitle,
             projectName: data.projectName,
-            projectDescription: data.projectDescription,
+            meetingAgenda: data.meetingAgenda,
+            meetingLink: data.meetingLink,
             email: data.email,
-            startingDate: data.startingDate,
-            endData: data.endData
+            date: data.date,
+            time: data.time
         }
 
-        fetch('http://localhost:5000/addProject', {
-            method: 'POST',
+        fetch(`http://localhost:5000/addMeeting/${id}`, {
+            method: 'PUT',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(project)
+            body: JSON.stringify(meeting)
         })
             .then(res => res.json())
-            .then(project => console.log(project))
+            .then(meeting => console.log(meeting))
+
     };
 
     const [user, loading] = useAuthState(auth)
 
     if (loading) {
-        <Loading />
+        return <Loading />
     }
-
-    // if (user) {
-    //     console.log(user.displayName)
-    // }
 
     return (
         <div>
-            <input type="checkbox" id="add-project" className="modal-toggle" />
+            <input type="checkbox" id="add-meeting" className="modal-toggle" />
             <div className="modal modal-bottom sm:modal-middle">
                 <div className="modal-box">
-                    <label htmlFor="add-project" className="btn btn-sm bg-accent text-white btn-square absolute right-2 top-2">✕</label>
-                    <h3 className="font-bold text-lg">Hi {user?.displayName}! Create your new projects.</h3>
-
+                    <label htmlFor="add-meeting" className="btn btn-sm bg-accent text-white btn-square absolute right-2 top-2">✕</label>
+                    <h3 className="font-bold text-lg">Hi <span className="text-primary">{user?.displayName}</span>! Create your new meeting schedule.</h3>
 
                     <form onSubmit={handleSubmit(onSubmit)} className="bg-secondary mx-auto p-5">
                         <div className="form-control w-full mx-auto">
                             <label className="label">
-                                <span className="label-text">Project Name</span>
+                                <span className="label-text">Meeting Title</span>
                             </label>
                             <input
                                 type="text"
-                                placeholder="Project Name"
+                                placeholder="Meeting Title"
                                 className="input input-bordered bg-white w-full"
-                                {...register("projectName", {
+                                {...register("meetingTitle", {
                                     required: {
                                         value: true,
                                         message: "name is required"
@@ -74,12 +73,44 @@ const AddProject = () => {
 
                         <div className="form-control w-full mx-auto">
                             <label className="label">
-                                <span className="label-text">Project Description</span>
+                                <span className="label-text">Project Name</span>
+                            </label>
+                            <input
+                                className="input input-bordered bg-white w-full"
+                                {...register("projectName", {
+                                    required: {
+                                        value: true,
+                                        message: "Project name is required"
+                                    }
+                                })}
+                            />
+                        </div>
+
+                        <div className="form-control w-full mx-auto">
+                            <label className="label">
+                                <span className="label-text">Meeting Agenda</span>
                             </label>
                             <textarea
-                                placeholder="Project Description"
+                                placeholder="Meeting Agenda"
                                 className="input input-bordered bg-white w-full"
-                                {...register("projectDescription")}
+                                {...register("meetingAgenda")}
+                            />
+                        </div>
+
+                        <div className="form-control w-full mx-auto">
+                            <label className="label">
+                                <span className="label-text">Meeting Link</span>
+                            </label>
+                            <input
+                                type="url"
+                                placeholder="Meeting Link"
+                                className="input input-bordered bg-white w-full"
+                                {...register("meetingLink", {
+                                    required: {
+                                        value: true,
+                                        message: "Meeting link is required"
+                                    }
+                                })}
                             />
                         </div>
 
@@ -106,7 +137,7 @@ const AddProject = () => {
                             <input
                                 type="date"
                                 className="input input-bordered bg-white w-full"
-                                {...register("startingDate", {
+                                {...register("date", {
                                     required: {
                                         value: true,
                                         message: "name is required"
@@ -115,36 +146,36 @@ const AddProject = () => {
                                 })}
                             />
                         </div>
+
                         <div className="form-control w-full mx-auto">
                             <label className="label">
-                                <span className="label-text">End Date</span>
+                                <span className="label-text">Starting Time</span>
                             </label>
                             <input
-                                type="date"
+                                type="time"
                                 className="input input-bordered bg-white w-full"
-                                {...register("endData", {
+                                {...register("time", {
                                     required: {
                                         value: true,
-                                        message: "name is required"
-
+                                        message: "Time is required"
                                     }
                                 })}
                             />
                         </div>
 
+
                         {/* <div className="modal-action w-full mx-auto m-5">
-                            <label className='btn btn-accent type="submit" text-white w-full' htmlFor="add-project"> Add </label>
-                        </div> */}
+                        <label className='btn btn-accent type="submit" text-white w-full' htmlFor="add-meeting"> Add </label>
+                    </div> */}
                         <div className="modal-action w-full mx-auto m-5">
-                            <input className='btn btn-accent text-white w-full' type="submit" value="Add Project" />
+                            <input className='btn btn-accent text-white w-full' type="submit" value="Add Meeting" />
                         </div>
                     </form>
 
                 </div>
             </div>
         </div >
-
     );
-};
+}
 
-export default AddProject;
+export default AddMeeting;
