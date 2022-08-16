@@ -1,6 +1,7 @@
 import React from 'react';
 import './Pricing.css'
 import { BsCheck2 } from 'react-icons/bs';
+import { Link } from 'react-router-dom';
 const Pricing = () => {
     return (
         <div className='my-24 lg:mx-40 mx-5'>
@@ -33,7 +34,7 @@ const Pricing = () => {
                         <h1 className='title'>Premium</h1>
                         <p className='headding'>For individuals or teams just getting started with project management.</p>
                         <p className='text-5xl mt-5 mb-16'>US$20.66</p>
-                        <p className='button2'>Purchase Now</p>
+                        <p className='button2'><Link to="/payment">Purchase Now</Link></p>
                     </div>
                     <div className='mt-12'>
                             <p className='text-xl font-medium'>Track team projects with features and resources like:</p>

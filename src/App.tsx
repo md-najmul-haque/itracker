@@ -28,6 +28,7 @@ import Calendar from './Pages/Dashboard/Calendar/Calendar';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Pricing from './Pages/Home/Pricing/Pricing';
+import Payment from './Pages/Home/Pricing/Payment';
 type stateProps = {
   lists: any
 }
@@ -50,6 +51,7 @@ function App() {
         <Route path="/signin" element={<SingIn />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/pricing" element={<Pricing/>} />
+        <Route path="/payment" element={<Payment/>} />
 
         <Route path='/dashboard' element={
           <RequireAuth>
