@@ -43,12 +43,9 @@ const Projects = () => {
                 </div>
             </div>
 
-
             <div className='grid lg:grid-cols-3 md:grid-cols-2 gap-16 mt-5 px-10'>
                 {
                     projects?.map((project: Project) => <>
-
-
                         <ShowProject project={project} />
                     </>)
                 }

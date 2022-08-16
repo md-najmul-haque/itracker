@@ -9,14 +9,14 @@ interface IFormInput {
     meetingAgenda: string,
     meetingLink: string,
     email: string,
-    date: string,
-    time: string
+    date: Date,
+    time: string,
+    id: number,
 }
 
 const AddMeeting = () => {
-
     const { register, handleSubmit } = useForm<IFormInput>();
-    const onSubmit: SubmitHandler<IFormInput> = async (data) => {
+    const onSubmit: SubmitHandler<IFormInput> = async (data, id) => {
         const meeting = {
             meetingTitle: data.meetingTitle,
             projectName: data.projectName,
@@ -27,8 +27,8 @@ const AddMeeting = () => {
             time: data.time
         }
 
-        fetch('http://localhost:5000/addMeeting', {
-            method: 'POST',
+        fetch(`http://localhost:5000/addMeeting/${id}`, {
+            method: 'PUT',
             headers: {
                 'content-type': 'application/json'
             },
@@ -75,7 +75,7 @@ const AddMeeting = () => {
                             <label className="label">
                                 <span className="label-text">Project Name</span>
                             </label>
-                            <select
+                            <input
                                 className="input input-bordered bg-white w-full"
                                 {...register("projectName", {
                                     required: {

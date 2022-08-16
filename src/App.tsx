@@ -28,6 +28,7 @@ import Calendar from './Pages/Dashboard/Calendar/Calendar';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Meeting from './Pages/Dashboard/Meeting/Meeting';
+import MyProject from './Pages/Dashboard/Projects/MyProject';
 type stateProps = {
   lists: any
 }
@@ -64,8 +65,10 @@ function App() {
           <Route path='project' element={<Projects />} />
           <Route path='meeting' element={<Meeting />} />
           <Route path='calendar' element={<Calendar />} />
-
+          <Route path='myProject' element={<MyProject />} />
         </Route>
+
+
         <Route path="*" element={<Notfound />} />
       </Routes>
       {!pathname.includes('dashboard') && <Footer />}
