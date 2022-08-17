@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Loading from '../../Shared/Loading/Loading';
 import AddMeeting from './AddMeeting'
 import { MeetingType } from './Meeting.type';
+import SelectedMeeting from './SelectedMeeting';
 
 
 const Meeting = () => {
@@ -20,6 +21,10 @@ const Meeting = () => {
             .then(data => console.log(data))
     }
 
+
+    const handleEdit = () => {
+
+    }
     const { data: meetings, isLoading, error, refetch } = useQuery(['meetings'], () =>
         fetch('http://localhost:5000/getMeeting')
             .then(res => res.json())
@@ -95,7 +100,7 @@ const Meeting = () => {
                                     </td>
                                     <td className="pl-20">
                                         <div className="font-medium">
-                                            <button className="btn btn-sm btn-secondary">Edit</button>
+                                            <label htmlFor="selected-meeting" onClick={() => setModal(true)} className="btn btn-sm btn-secondary">Edit</label>
                                             <button onClick={() => { handleDelete(meeting._id) }} className="btn btn-sm btn-secondary ml-2">Delete</button>
                                         </div>
                                     </td>
@@ -112,6 +117,12 @@ const Meeting = () => {
             <div>
                 {
                     modal && <AddMeeting />
+                }
+            </div>
+
+            <div>
+                {
+                    modal && <SelectedMeeting />
                 }
             </div>
 
