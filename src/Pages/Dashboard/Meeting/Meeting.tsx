@@ -1,5 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Loading from '../../Shared/Loading/Loading';
 import AddMeeting from './AddMeeting'
 import { MeetingType } from './Meeting.type';
@@ -42,15 +43,15 @@ const Meeting = () => {
                 <div className="bg-white shadow px-4 md:px-10 pt-4 md:pt-7 pb-5 overflow-y-auto">
                     <table className="w-full whitespace-nowrap">
                         <thead>
-                            <tr className="h-16 w-full text-sm leading-none text-gray-800">
-                                <th className="font-normal text-left pl-4">Meeting Title</th>
-                                <th className="font-normal text-left pl-12">Project Name</th>
-                                <th className="font-normal text-left pl-12">Meeting Agenda</th>
-                                <th className="font-normal text-left pl-20">meetingLink</th>
-                                <th className="font-normal text-left pl-20">Date</th>
-                                <th className="font-normal text-left pl-16">Members</th>
-                                <th className="font-normal text-left pl-20">Time</th>
-                                <th className="font-normal text-left pl-20">Action</th>
+                            <tr className="h-16 w-full font-semibold text-left text-sm leading-none text-gray-800">
+                                <th className="pl-4">Meeting Title</th>
+                                <th className="pl-12">Project Name</th>
+                                <th className="pl-12">Meeting Agenda</th>
+                                <th className="pl-20">Date</th>
+                                <th className="pl-16">Members</th>
+                                <th className="pl-20">Time</th>
+                                <th className="pl-20">Meeting Link</th>
+                                <th className="pl-20">Action</th>
                             </tr>
                         </thead>
 
@@ -67,9 +68,7 @@ const Meeting = () => {
                                     <td className="pl-12">
                                         <p className="font-medium">{meeting.meetingAgenda}</p>
                                     </td>
-                                    <td className="pl-20">
-                                        <p className="font-medium">{meeting.meetingLink}</p>
-                                    </td>
+
                                     <td className="pl-20">
                                         <p className="font-medium">{meeting.date}</p>
                                     </td>
@@ -83,6 +82,9 @@ const Meeting = () => {
                                     </td>
                                     <td className="pl-20">
                                         <p className="font-medium">{meeting.time}</p>
+                                    </td>
+                                    <td className="pl-20">
+                                        <p style={{ color: '#0000EE' }} className="font-medium"><a href={meeting.meetingLink} rel="noreferrer" target="_blank">Join</a></p>
                                     </td>
                                     <td className="pl-20">
                                         <div className="font-medium">
