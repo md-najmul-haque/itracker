@@ -8,5 +8,5 @@ export type MeetingType = {
     email: string,
     date: Date | any,
     time: string,
-    _id: number
+    _id: string
 }

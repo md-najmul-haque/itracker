@@ -9,8 +9,16 @@ import { MeetingType } from './Meeting.type';
 const Meeting = () => {
     const [modal, setModal] = useState(false)
 
-    const handleDelete = (id: number) => {
-        console.log(id)
+    const handleDelete = (_id: string) => {
+        fetch(`http://localhost:5000/deleteMeeting/${_id}`,
+            {
+                method: "DELETE",
+                headers: {
+                    'content-type': 'application/json'
+                }
+            })
+            .then(res => res.json())
+            .then(data => console.log(data))
     }
 
     const { data: meetings, isLoading, error, refetch } = useQuery(['meetings'], () =>
@@ -89,7 +97,7 @@ const Meeting = () => {
                                     <td className="pl-20">
                                         <div className="font-medium">
                                             <button className="btn btn-sm btn-secondary">Edit</button>
-                                            <button className="btn btn-sm btn-secondary ml-2">Delete</button>
+                                            <button onClick={() => { handleDelete(meeting._id) }} className="btn btn-sm btn-secondary ml-2">Delete</button>
                                         </div>
                                     </td>
                                 </tr>
