@@ -1,6 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import Loading from '../../Shared/Loading/Loading';
 import AddMeeting from './AddMeeting'
 import { MeetingType } from './Meeting.type';
@@ -40,8 +39,8 @@ const Meeting = () => {
                     <div className="sm:flex items-center justify-between">
                         <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold leading-normal text-gray-800">Meeting Schedule</p>
                         <div>
-                            <button className="inline-flex sm:ml-3 mt-4 sm:mt-0 items-start justify-start px-6 py-3 bg-accent hover:bg-accent-focus focus:outline-none rounded">
-                                <label htmlFor="add-meeting" onClick={() => setModal(true)} className="text-sm font-medium leading-none text-white">+ Create Meeting </label>
+                            <button className="inline-flex sm:ml-3 mt-4 sm:mt-0 items-start justify-start bg-accent hover:bg-accent-focus focus:outline-none rounded">
+                                <label htmlFor="add-meeting" onClick={() => setModal(true)} className="text-sm px-6 py-3 font-medium leading-none text-white">+ Create Meeting </label>
                             </button>
                         </div>
                     </div>
