@@ -17,7 +17,6 @@ const AddMeeting = () => {
             date: data.date,
             time: data.time
         }
-        // console.log(meeting);
 
         fetch('http://localhost:5000/addMeeting',
             {
@@ -30,6 +29,8 @@ const AddMeeting = () => {
             .then(res => res.json())
             .then(data => console.log(data))
     };
+
+
 
     const [user, loading] = useAuthState(auth)
 

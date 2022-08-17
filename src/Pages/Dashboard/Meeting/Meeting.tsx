@@ -1,4 +1,6 @@
+import { useQuery } from '@tanstack/react-query';
 import React, { useState } from 'react';
+import Loading from '../../Shared/Loading/Loading';
 import AddMeeting from './AddMeeting'
 import { MeetingType } from './Meeting.type';
 
@@ -8,6 +10,17 @@ const Meeting = () => {
 
     const handleDelete = (id: number) => {
         console.log(id)
+    }
+
+    const { data: meetings, isLoading, error, refetch } = useQuery(['meetings'], () =>
+        fetch('http://localhost:5000/getMeeting')
+            .then(res => res.json())
+    )
+
+    refetch()
+
+    if (isLoading) {
+        return <Loading />
     }
 
     return (
