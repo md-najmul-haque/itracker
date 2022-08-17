@@ -1,9 +1,14 @@
 import React, { useState } from 'react';
 import AddMeeting from './AddMeeting'
+import { MeetingType } from './Meeting.type';
 
 
 const Meeting = () => {
     const [modal, setModal] = useState(false)
+
+    const handleDelete = (id: number) => {
+        console.log(id)
+    }
 
     return (
         <div className='mt-20 mx-10'>
@@ -30,6 +35,7 @@ const Meeting = () => {
                                 <th className="font-normal text-left pl-20">Date</th>
                                 <th className="font-normal text-left pl-16">Members</th>
                                 <th className="font-normal text-left pl-20">Time</th>
+                                <th className="font-normal text-left pl-20">Action</th>
                             </tr>
                         </thead>
                         <tbody className="w-full">
@@ -60,6 +66,12 @@ const Meeting = () => {
                                 </td>
                                 <td className="pl-20">
                                     <p className="font-medium">4:00pm</p>
+                                </td>
+                                <td className="pl-20">
+                                    <div className="font-medium">
+                                        <button className="btn btn-sm btn-secondary">Edit</button>
+                                        <button className="btn btn-sm btn-secondary ml-2">Delete</button>
+                                    </div>
                                 </td>
                             </tr>
                         </tbody>

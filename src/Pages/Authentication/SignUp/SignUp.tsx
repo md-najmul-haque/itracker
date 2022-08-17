@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import { useSignInWithGithub, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
-import { toast } from 'react-toastify';
-
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import Loading from '../../Shared/Loading/Loading';
@@ -25,7 +23,7 @@ function SignUp() {
 
     const navigate = useNavigate()
 
-    // const [token] = useToken(user || gUser || gitUser)
+    // const [token] = useToken(user|| gUser || gitUser)
 
     const { register, formState: { errors }, handleSubmit, reset } = useForm<IFormInput>();
 

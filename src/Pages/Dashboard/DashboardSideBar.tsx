@@ -24,6 +24,8 @@ const DashboardSideBar = ({ children }: DashboardSideBarProps) => {
         return <Loading />
     }
 
+    refetch()
+
     return (
 
         <div className="drawer drawer-mobile bg-white">

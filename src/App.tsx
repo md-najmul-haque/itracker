@@ -12,7 +12,6 @@ import CompletedTasks from './Pages/Dashboard/Reporting/CompletedTasks';
 import IncompleteTasks from './Pages/Dashboard/Reporting/IncompleteTasks';
 import OverdueTasks from './Pages/Dashboard/Reporting/OverdueTasks';
 import TotalTasks from './Pages/Dashboard/Reporting/TotalTasks';
-import { ToastContainer } from 'react-toastify';
 import Features from './Pages/Features/Features/Features';
 import AddReviews from './Pages/Dashboard/AddReviews/AddReviews';
 import SingIn from './Pages/Authentication/SignIn/SingIn';
@@ -22,13 +21,12 @@ import About from './Pages/About/About';
 import { connect } from 'react-redux'
 import Projects from './Pages/Dashboard/Projects/Projects';
 import Calendar from './Pages/Dashboard/Calendar/Calendar';
-
-
-
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Meeting from './Pages/Dashboard/Meeting/Meeting';
 import MyProject from './Pages/Dashboard/Projects/MyProject';
+
+
 type stateProps = {
   lists: any
 }
@@ -74,7 +72,6 @@ function App() {
       {!pathname.includes('dashboard') && <Footer />}
 
       <ScrollToTop />
-      <ToastContainer />
     </div>
   );
 }

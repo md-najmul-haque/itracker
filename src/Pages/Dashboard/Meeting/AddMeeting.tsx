@@ -2,21 +2,12 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm, SubmitHandler } from "react-hook-form";
 import auth from "../../../firebase.init";
 import Loading from "../../Shared/Loading/Loading";
+import { MeetingType } from "./Meeting.type";
 
-interface IFormInput {
-    meetingTitle: string,
-    projectName: string,
-    meetingAgenda: string,
-    meetingLink: string,
-    email: string,
-    date: Date,
-    time: string,
-    id: number,
-}
 
 const AddMeeting = () => {
-    const { register, handleSubmit } = useForm<IFormInput>();
-    const onSubmit: SubmitHandler<IFormInput> = async (data, id) => {
+    const { register, handleSubmit } = useForm<MeetingType>();
+    const onSubmit: SubmitHandler<MeetingType> = (data) => {
         const meeting = {
             meetingTitle: data.meetingTitle,
             projectName: data.projectName,
@@ -26,17 +17,18 @@ const AddMeeting = () => {
             date: data.date,
             time: data.time
         }
+        // console.log(meeting);
 
-        fetch(`http://localhost:5000/addMeeting/${id}`, {
-            method: 'PUT',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(meeting)
-        })
+        fetch('http://localhost:5000/addMeeting',
+            {
+                method: "POST",
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(meeting)
+            })
             .then(res => res.json())
-            .then(meeting => console.log(meeting))
-
+            .then(data => console.log(data))
     };
 
     const [user, loading] = useAuthState(auth)
