@@ -37,6 +37,8 @@ const Meeting = () => {
                         </div>
                     </div>
                 </div>
+
+
                 <div className="bg-white shadow px-4 md:px-10 pt-4 md:pt-7 pb-5 overflow-y-auto">
                     <table className="w-full whitespace-nowrap">
                         <thead>
@@ -51,43 +53,49 @@ const Meeting = () => {
                                 <th className="font-normal text-left pl-20">Action</th>
                             </tr>
                         </thead>
-                        <tbody className="w-full">
-                            <tr className="h-20 text-sm leading-none text-gray-800 bg-white hover:bg-gray-100 border-b border-t border-gray-100">
-                                <td className="pl-4 cursor-pointer">
-                                    <p className="font-medium">UX Design</p>
 
-                                </td>
-                                <td className="pl-12">
-                                    <p className="text-sm font-medium leading-none text-gray-800">Create Home Page</p>
-                                </td>
-                                <td className="pl-12">
-                                    <p className="font-medium">About UI Design</p>
-                                </td>
-                                <td className="pl-20">
-                                    <p className="font-medium">$13,000</p>
-                                </td>
-                                <td className="pl-20">
-                                    <p className="font-medium">22.12.21</p>
-                                </td>
-                                <td className="pl-16">
-                                    <div className="flex items-center">
-                                        <img className="shadow-md w-8 h-8 rounded-full" src="https://cdn.tuk.dev/assets/templates/olympus/projects(8).png" alt='' />
-                                        <img className="shadow-md w-8 h-8 rounded-full -ml-2" src="https://cdn.tuk.dev/assets/templates/olympus/projects(9).png" alt='' />
-                                        <img className="shadow-md w-8 h-8 rounded-full -ml-2" src="https://cdn.tuk.dev/assets/templates/olympus/projects(10).png" alt='' />
-                                        <img className="shadow-md w-8 h-8 rounded-full -ml-2" src="https://cdn.tuk.dev/assets/templates/olympus/projects(11).png" alt='' />
-                                    </div>
-                                </td>
-                                <td className="pl-20">
-                                    <p className="font-medium">4:00pm</p>
-                                </td>
-                                <td className="pl-20">
-                                    <div className="font-medium">
-                                        <button className="btn btn-sm btn-secondary">Edit</button>
-                                        <button className="btn btn-sm btn-secondary ml-2">Delete</button>
-                                    </div>
-                                </td>
-                            </tr>
-                        </tbody>
+                        {meetings.map((meeting: MeetingType) => <>
+                            <tbody className="w-full">
+                                <tr className="h-20 text-sm leading-none text-gray-800 bg-white hover:bg-gray-100 border-b border-t border-gray-100">
+                                    <td className="pl-4 cursor-pointer">
+                                        <p className="font-medium">{meeting.meetingTitle}</p>
+
+                                    </td>
+                                    <td className="pl-12">
+                                        <p className="text-sm font-medium leading-none text-gray-800">{meeting.projectName}</p>
+                                    </td>
+                                    <td className="pl-12">
+                                        <p className="font-medium">{meeting.meetingAgenda}</p>
+                                    </td>
+                                    <td className="pl-20">
+                                        <p className="font-medium">{meeting.meetingLink}</p>
+                                    </td>
+                                    <td className="pl-20">
+                                        <p className="font-medium">{meeting.date}</p>
+                                    </td>
+                                    <td className="pl-16">
+                                        <div className="flex items-center">
+                                            <img className="shadow-md w-8 h-8 rounded-full" src="https://cdn.tuk.dev/assets/templates/olympus/projects(8).png" alt='' />
+                                            <img className="shadow-md w-8 h-8 rounded-full -ml-2" src="https://cdn.tuk.dev/assets/templates/olympus/projects(9).png" alt='' />
+                                            <img className="shadow-md w-8 h-8 rounded-full -ml-2" src="https://cdn.tuk.dev/assets/templates/olympus/projects(10).png" alt='' />
+                                            <img className="shadow-md w-8 h-8 rounded-full -ml-2" src="https://cdn.tuk.dev/assets/templates/olympus/projects(11).png" alt='' />
+                                        </div>
+                                    </td>
+                                    <td className="pl-20">
+                                        <p className="font-medium">{meeting.time}</p>
+                                    </td>
+                                    <td className="pl-20">
+                                        <div className="font-medium">
+                                            <button className="btn btn-sm btn-secondary">Edit</button>
+                                            <button className="btn btn-sm btn-secondary ml-2">Delete</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </>)
+                        }
+
+
                     </table>
                 </div>
             </div>
