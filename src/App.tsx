@@ -22,7 +22,7 @@ import { connect } from 'react-redux'
 import Projects from './Pages/Dashboard/Projects/Projects';
 import Calendar from './Pages/Dashboard/Calendar/Calendar';
 
-import {MessengerCustomerChat} from "typescript-react-facebook-messenger";
+import { MessengerCustomerChat } from "typescript-react-facebook-messenger";
 import ViewProfile from './Pages/ViewProfile/ViewProfile';
 
 
@@ -65,7 +65,7 @@ function App() {
         <Route path="/signup" element={<SignUp />} />
 
         <Route path="/viewProfile" element={<ViewProfile />} />
-        
+
 
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/payment" element={<Payment />} />
@@ -83,9 +83,8 @@ function App() {
           <Route path='overdueTasks' element={<OverdueTasks />} />
           <Route path='totalTasks' element={<TotalTasks />} />
           <Route path='project' element={<Projects />} />
-          <Route path='meeting' element={<Meeting />} >
-            <Route path=':id' element={<SelectedMeeting />} />
-          </Route>
+          <Route path='meeting' element={<Meeting />} />
+          <Route path='meeting/:_id' element={<SelectedMeeting />} />
 
           <Route path='calendar' element={<Calendar />} />
           <Route path='myProject' element={<MyProject />} >
@@ -103,7 +102,7 @@ function App() {
 
       <ScrollToTop />
 
-      <MessengerCustomerChat pageId="100457816122808" appId="553013519763702"/>
+      <MessengerCustomerChat pageId="100457816122808" appId="553013519763702" />
       <ToastContainer />
 
     </div>

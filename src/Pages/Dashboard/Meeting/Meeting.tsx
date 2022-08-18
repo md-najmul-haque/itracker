@@ -96,7 +96,7 @@ const Meeting = () => {
                                     </td>
                                     <td className="pl-20">
                                         <div className="font-medium">
-                                            <Link to={`/selectedMeeting/${meeting._id}`} className="btn btn-sm btn-secondary">Edit</Link>
+                                            <Link to={`/dashboard/meeting/${meeting._id}`} className="btn btn-sm btn-secondary">Edit</Link>
                                             <button onClick={() => { handleDelete(meeting._id) }} className="btn btn-sm btn-secondary ml-2">Delete</button>
                                         </div>
                                     </td>
