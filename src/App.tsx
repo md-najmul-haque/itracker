@@ -27,6 +27,8 @@ import ViewProfile from './Pages/ViewProfile/ViewProfile';
 
 
 
+
+
 type stateProps = {
   lists: any
 }
@@ -42,11 +44,11 @@ function App() {
 
         <Route path="/features" element={<Features />} />
         <Route path="/about" element={<About />} />
-        <Route path="/viewProfile" element={<ViewProfile />} />
 
         <Route path="/signin" element={<SingIn />} />
         <Route path="/signup" element={<SignUp />} />
-
+        <Route path="/viewProfile" element={<ViewProfile />} />
+        
         <Route path='/dashboard' element={
           <RequireAuth>
             <Dashboard />
