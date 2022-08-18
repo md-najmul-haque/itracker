@@ -1,32 +1,53 @@
-import { useEffect, useState } from 'react';
+import { useQuery } from '@tanstack/react-query';
+import { useState } from 'react';
+import Loading from '../../Shared/Loading/Loading';
+import DashboardSideBar from '../DashboardSideBar';
 import AddProject from './AddProject';
-import ShowProjectData from './ShowProjectData';
+import ShowProject from './ShowProject';
+
+interface Project {
+    projectName: string,
+    projectDescription: string,
+    email: string,
+    startingDate: string,
+    endData: string
+}
 
 const Projects = () => {
-    const [projects, setProject] = useState([])
     const [modal, setModal] = useState(false)
 
-
-    useEffect(() => {
-        fetch('/project.json')
+    const { data: projects, isLoading, error, refetch } = useQuery(['projects'], () =>
+        fetch('http://localhost:5000/getProject')
             .then(res => res.json())
-            .then(data => setProject(data))
+    )
 
-    }, [])
+    if (isLoading) {
+        return <Loading />
+    }
+
+    refetch()
 
     return (
         <div className='mt-20 mx-10'>
-            <div className='flex justify-between'>
-                <h3 className='font-bold text-2xl text-primary'>New Project</h3>
-                <label htmlFor="add-project" onClick={() => setModal(true)} className='btn bg-accent hover:bg-accent-focus text-white'>+ Create Projects</label>
+
+            <div className="w-full sm:px-6">
+                <div className="md:px-10 py-4 md:py-7 bg-gray-100 rounded-tl-lg rounded-tr-lg">
+                    <div className="sm:flex items-center justify-between">
+                        <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold leading-normal text-accent">New Project</p>
+                        <div>
+                            <button className="inline-flex sm:ml-3 mt-4 sm:mt-0 items-start justify-start bg-accent hover:bg-accent-focus focus:outline-none rounded">
+                                <label htmlFor="add-project" onClick={() => setModal(true)} className="text-sm px-6 py-3 font-medium leading-none text-white">+ Create Projects </label>
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-
-            <div className='grid lg:grid-cols-3 md:grid-cols-2 gap-16 mt-5'>
+            <div className='grid lg:grid-cols-3 md:grid-cols-2 gap-16 mt-5 px-10'>
                 {
-                    projects?.map(project => <ShowProjectData
-                        project={project}
-                    />)
+                    projects?.map((project: Project) => <>
+                        <ShowProject project={project} />
+                    </>)
                 }
             </div>
 

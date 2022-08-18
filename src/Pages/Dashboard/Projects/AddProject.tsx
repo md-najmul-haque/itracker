@@ -2,7 +2,6 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import auth from '../../../firebase.init';
 import Loading from '../../Shared/Loading/Loading';
-import axios from "axios";
 
 interface IFormInput {
     projectName: string,
@@ -15,7 +14,7 @@ interface IFormInput {
 const AddProject = () => {
     const { register, handleSubmit } = useForm<IFormInput>();
     const onSubmit: SubmitHandler<IFormInput> = async (data) => {
-        const url = "http://localhost:5000";
+
 
         const project = {
             projectName: data.projectName,
@@ -25,15 +24,15 @@ const AddProject = () => {
             endData: data.endData
         }
 
-        try {
-            return await axios.post(`'${url}'/addProject`, project)
-        } catch (error) {
-
-            console.log(error)
-
-        }
-
-        // console.log(data)
+        fetch('http://localhost:5000/addProject', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(project)
+        })
+            .then(res => res.json())
+            .then(project => console.log(project))
     };
 
     const [user, loading] = useAuthState(auth)
@@ -89,12 +88,12 @@ const AddProject = () => {
                                 <span className="label-text">Invite Your Team Member</span>
                             </label>
                             <input
-                                type="text"
+                                type="email"
                                 placeholder="Invite Your Team Member"
                                 className="input input-bordered bg-white w-full"
                                 {...register("email", {
                                     pattern: {
-                                        value: /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,20}$/,
+                                        value: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
                                         message: 'Please enter valid email address'
                                     }
                                 })} />
@@ -106,7 +105,6 @@ const AddProject = () => {
                             </label>
                             <input
                                 type="date"
-                                placeholder="Your Name"
                                 className="input input-bordered bg-white w-full"
                                 {...register("startingDate", {
                                     required: {
@@ -123,7 +121,6 @@ const AddProject = () => {
                             </label>
                             <input
                                 type="date"
-                                placeholder="Your Name"
                                 className="input input-bordered bg-white w-full"
                                 {...register("endData", {
                                     required: {
@@ -135,9 +132,9 @@ const AddProject = () => {
                             />
                         </div>
 
-                        <div className="modal-action w-full mx-auto m-5">
+                        {/* <div className="modal-action w-full mx-auto m-5">
                             <label className='btn btn-accent type="submit" text-white w-full' htmlFor="add-project"> Add </label>
-                        </div>
+                        </div> */}
                         <div className="modal-action w-full mx-auto m-5">
                             <input className='btn btn-accent text-white w-full' type="submit" value="Add Project" />
                         </div>

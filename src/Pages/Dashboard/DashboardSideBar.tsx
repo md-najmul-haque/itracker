@@ -1,28 +1,46 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { BsCalendarDate, BsFillPersonFill } from 'react-icons/bs';
-import { AiFillRead } from 'react-icons/ai';
-import { MdOutlineTaskAlt } from 'react-icons/md';
-import { FaMoneyCheckAlt } from 'react-icons/fa';
+import { MdOutlineTaskAlt, MdOutlineVideoCall, MdVideoCall } from 'react-icons/md';
 import { AiFillHome } from 'react-icons/ai';
 import { AiFillProject } from 'react-icons/ai';
 import { RiUserStarLine } from 'react-icons/ri';
-type MyComponentProps = React.PropsWithChildren<{}>;
-const DashboardSideBar = ({ children, ...other }: MyComponentProps) => {
+import Loading from '../Shared/Loading/Loading';
+import { useQuery } from '@tanstack/react-query';
+
+type DashboardSideBarProps = React.PropsWithChildren<{}>;
+
+type Project = {
+    projectName: string,
+}
+
+const DashboardSideBar = ({ children }: DashboardSideBarProps) => {
+
+    const { data: projects, isLoading, error, refetch } = useQuery(['projects'], () =>
+        fetch('http://localhost:5000/getProject')
+            .then(res => res.json())
+    )
+
+    if (isLoading) {
+        return <Loading />
+    }
+
+    refetch()
+
     return (
+
         <div className="drawer drawer-mobile bg-white">
             <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
             <div className="drawer-content ">
                 {/*  <!-- Page content here --> */}
                 {children}
             </div>
-            <div className="drawer-side ">
+            <div className="drawer-side bg-accent">
                 <label form="my-drawer-2" className="drawer-overlay"></label>
-                <ul className="menu p-4 overflow-y-auto w-60 bg-accent text-base-content">
+                <ul className="menu p-4 overflow-y-auto w-60 text-base-content">
                     <h1 className='mb-4 text-center text-white font-bold text-2xl'>ITRACKER</h1>
                     {/*   Sidebar content here */}
                     <li className=' hover:bg-slate-600 transition-all rounded-lg'>
-                        <Link className='bg-transparent text-white' to='/dashboard'> <AiFillHome />HOME</Link>
+                        <Link className='bg-transparent text-white' to='/'> <AiFillHome />HOME</Link>
                     </li>
 
                     <li className=' hover:bg-slate-600 transition-all rounded-lg'>
@@ -32,16 +50,28 @@ const DashboardSideBar = ({ children, ...other }: MyComponentProps) => {
                         <Link className='bg-transparent text-white' to="/dashboard/add-reviews"><RiUserStarLine /> Add Reviews</Link>
                     </li>
                     <li className=' hover:bg-slate-600 transition-all rounded-lg'>
-                        <Link className='bg-transparent text-white' to="/dashboard/project"><AiFillProject />Projects</Link>
-                    </li>
-                    <li className=' hover:bg-slate-600 transition-all rounded-lg'>
                         <Link className='bg-transparent text-white' to="/dashboard/calendar"><AiFillProject />Calendar</Link>
                     </li>
-
+                    <li className=' hover:bg-slate-600 transition-all rounded-lg'>
+                        <Link className='bg-transparent text-white' to="/dashboard/meeting"><MdVideoCall />Meeting</Link>
+                    </li>
+                    <li className=' hover:bg-slate-600 transition-all rounded-lg'>
+                        <Link className='bg-transparent text-white' to="/dashboard/project"><AiFillProject />Projects</Link>
+                    </li>
+                </ul>
+                <ul className='mx-auto'>
+                    <h3 className='text-warning text-xl font-semibold'>My Projects</h3>
+                    {
+                        projects?.map((project: Project) => <ul>
+                            <Link to='/dashboard/myProject' className='hover:bg-slate-600 transition-all py-1 text-secondary'>{project.projectName}</Link>
+                        </ul>)
+                    }
                 </ul>
 
             </div>
+
         </div>
+
     );
 };
 
