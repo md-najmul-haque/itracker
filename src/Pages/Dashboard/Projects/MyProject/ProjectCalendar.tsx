@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Calendar = () => {
+const ProjectCalendar = () => {
     return (
         <div>
             <h2>Calendar</h2>
@@ -8,4 +8,4 @@ const Calendar = () => {
     );
 };
 
-export default Calendar;
+export default ProjectCalendar;

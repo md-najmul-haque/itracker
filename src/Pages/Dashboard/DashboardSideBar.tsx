@@ -58,11 +58,6 @@ const DashboardSideBar = ({ children }: DashboardSideBarProps) => {
                     <li className=' hover:bg-slate-600 transition-all rounded-lg'>
                         <Link className='bg-transparent text-white' to="/dashboard/project"><AiFillProject />Projects</Link>
                     </li>
-
-                     {/*   nested project route */}
-                     <li className=' hover:bg-slate-600 transition-all rounded-lg'>
-                        <Link className='bg-transparent text-white' to="/dashboard/Projects/aaa"><AiFillProject />ABCD</Link>
-                    </li>
                 </ul>
                 <ul className='mx-auto'>
                     <h3 className='text-warning text-xl font-semibold'>My Projects</h3>
