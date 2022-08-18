@@ -23,20 +23,16 @@ import Projects from './Pages/Dashboard/Projects/Projects';
 import Calendar from './Pages/Dashboard/Calendar/Calendar';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import Pricing from './Pages/Home/Pricing/Pricing';
-import Payment from './Pages/Home/Pricing/Payment';
-import MyProject from './Pages/Dashboard/Projects/MyProject';
 import SelectedMeeting from './Pages/Dashboard/Meeting/SelectedMeeting';
 import Meeting from './Pages/Dashboard/Meeting/Meeting';
-import MyProjects from './Pages/Dashboard/MyProjects/MyProjects';
-import AAA from './Pages/Dashboard/MyProjects/AAA';
-import BBB from './Pages/Dashboard/MyProjects/BBB';
-
+import MyProject from './Pages/Dashboard/Projects/MyProject/MyProject';
+import Overview from './Pages/Dashboard/Projects/MyProject/Overview';
+import Pricing from './Pages/Home/Pricing/Pricing';
+import Payment from './Pages/Home/Pricing/Payment';
 
 type stateProps = {
   lists: any
 }
-
 
 function App() {
   const { pathname } = useLocation()
@@ -72,15 +68,11 @@ function App() {
           <Route path='meeting' element={<Meeting />} />
           <Route path='selectedMeeting/:id' element={<SelectedMeeting />} />
           <Route path='calendar' element={<Calendar />} />
-          <Route path='myProject' element={<MyProject />} />
-
-          {/*   nested project route */}
-          <Route path='Projects' element={<MyProjects />} >
-            <Route path='aaa' element={<AAA />} />
-            <Route path='bbb' element={<BBB />} />
-
-
-
+          <Route path='myProject' element={<MyProject />} >
+            <Route path='overview' element={<Overview />} />
+            <Route path='calendar' element={<Calendar />} />
+            <Route path='dashboard' element={<Dashboard />} />
+            <Route path='messages' element={<Messages />} />
           </Route>
         </Route>
 
