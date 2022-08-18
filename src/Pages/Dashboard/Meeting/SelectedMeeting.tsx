@@ -13,7 +13,7 @@ import { MeetingType } from "./Meeting.type";
 
 const SelectedMeeting = () => {
     const [user, loading] = useAuthState(auth)
-    const { id } = useParams()
+    const { id } = useParams<string>()
     const { data: selectedMeeting, isLoading, error, refetch } = useQuery(['selectedMeeting'], () =>
         fetch(`http://localhost:5000/selectedMeeting/${id}`)
             .then(res => res.json())

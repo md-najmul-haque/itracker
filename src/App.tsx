@@ -68,8 +68,10 @@ function App() {
           <Route path='overdueTasks' element={<OverdueTasks />} />
           <Route path='totalTasks' element={<TotalTasks />} />
           <Route path='project' element={<Projects />} />
-          <Route path='meeting' element={<Meeting />} />
-          <Route path='selectedMeeting/:id' element={<SelectedMeeting />} />
+          <Route path='meeting' element={<Meeting />} >
+            <Route path=':id' element={<SelectedMeeting />} />
+          </Route>
+
           <Route path='calendar' element={<Calendar />} />
           <Route path='myProject' element={<MyProject />} >
             <Route path='overview' element={<Overview />} />
