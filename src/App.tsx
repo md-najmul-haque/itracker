@@ -84,7 +84,7 @@ function App() {
           <Route path='totalTasks' element={<TotalTasks />} />
           <Route path='project' element={<Projects />} />
           <Route path='meeting' element={<Meeting />} />
-          <Route path='meeting/:_id' element={<SelectedMeeting />} />
+          <Route path='meeting/:id' element={<SelectedMeeting />} />
 
           <Route path='calendar' element={<Calendar />} />
           <Route path='myProject' element={<MyProject />} >

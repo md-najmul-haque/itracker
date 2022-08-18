@@ -13,10 +13,10 @@ import { MeetingType } from "./Meeting.type";
 
 const SelectedMeeting = () => {
     const [user, loading] = useAuthState(auth)
-    const { _id } = useParams<string>()
-    console.log(_id)
+    const { id } = useParams<string>()
+
     const { data: selectedMeeting, isLoading, error, refetch } = useQuery(['selectedMeeting'], () =>
-        fetch(`http://localhost:5000/selectedMeeting/${_id}`)
+        fetch(`http://localhost:5000/selectedMeeting/${id}`)
             .then(res => res.json())
     )
     const { register, handleSubmit } = useForm<MeetingType>();
@@ -31,7 +31,7 @@ const SelectedMeeting = () => {
             time: data.time
         }
 
-        fetch(`http://localhost:5000/updateMeeting/${_id}`,
+        fetch(`http://localhost:5000/updateMeeting/${id}`,
             {
                 method: "PATCH",
                 headers: {
