@@ -4,8 +4,7 @@ import { useForm } from 'react-hook-form';
 import auth from '../../../firebase.init';
 import Loading from '../../Shared/Loading/Loading';
 import { FaStar } from "react-icons/fa";
-import { toast } from 'react-toastify';
-import {Motion, spring} from 'react-motion';
+import swal from 'sweetalert';
 
 const colors = {
     orange: '#FFBA5A',
@@ -15,7 +14,7 @@ const colors = {
 const AddReviews = () => {
 
 const [user, loading, error] = useAuthState(auth)
-
+const [load, setLoading] = useState(false);
 const { register, handleSubmit, reset } = useForm();
 
 
@@ -26,6 +25,9 @@ const { register, handleSubmit, reset } = useForm();
 
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
 
+    if(load){
+      return <Loading/>
+    }
     const handleComment = (e:any) => {
       const limit = 120;
   
@@ -48,6 +50,7 @@ const { register, handleSubmit, reset } = useForm();
     }
 
     const onSubmit = (data: any) => {
+      setLoading(true);
        const email = user?.email;
        const photoURL = user?.photoURL;
        const displayName = user?.displayName;
@@ -61,16 +64,17 @@ const { register, handleSubmit, reset } = useForm();
         },
         body: JSON.stringify(review)
        })
-       .then((res) => {
-        res.json()
-        if(res.status === 200){
-          
-          toast(`You Are Adding ${rating} Reviews`)
-        }
-       })
+       .then((res) => res.json())
        .then((data) => {
-        // console.log(data)
-
+        setLoading(false);
+        if(data.message === 'review inserted successfully'){
+         swal("Thanks For Your Feedback", `You Are Adding ${rating} Star Reviews`, "success");
+        }else {
+          setLoading(true);
+          swal("You Are Fetching", "server side error", "error");
+          setLoading(false);
+          
+        }
        })
        reset()
     }
@@ -116,11 +120,9 @@ const { register, handleSubmit, reset } = useForm();
           ></textarea>
           {/* <input type="submit" className='btn btn-primary' value='Add Review' disabled={!rating} /> */}
     
-        <Motion defaultStyle={{x: 0}} style={{x: spring(10)}}>
-  {value =>  
+    
              <input type="submit" className='btn btn-primary' value='Add Review' disabled={!rating} />
-  }
-</Motion>
+
         </form>
 
         </div>

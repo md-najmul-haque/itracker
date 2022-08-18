@@ -21,7 +21,14 @@ import About from './Pages/About/About';
 import { connect } from 'react-redux'
 import Projects from './Pages/Dashboard/Projects/Projects';
 import Calendar from './Pages/Dashboard/Calendar/Calendar';
-import AOS from 'aos';
+
+import {MessengerCustomerChat} from "typescript-react-facebook-messenger";
+import ViewProfile from './Pages/ViewProfile/ViewProfile';
+
+
+
+
+// import AOS from 'aos';
 import 'aos/dist/aos.css';
 import SelectedMeeting from './Pages/Dashboard/Meeting/SelectedMeeting';
 import Meeting from './Pages/Dashboard/Meeting/Meeting';
@@ -32,6 +39,8 @@ import Payment from './Pages/Home/Pricing/Payment';
 import Summary from './Pages/Dashboard/Projects/MyProject/Summary';
 import Messages from './Pages/Dashboard/Projects/MyProject/Messages';
 import ProjectCalendar from './Pages/Dashboard/Projects/MyProject/ProjectCalendar';
+import { ToastContainer } from 'react-toastify';
+
 
 type stateProps = {
   lists: any
@@ -40,7 +49,7 @@ type stateProps = {
 function App() {
   const { pathname } = useLocation()
   useEffect(() => {
-    AOS.init();
+    // AOS.init();
   })
   return (
     <div>
@@ -51,10 +60,16 @@ function App() {
 
         <Route path="/features" element={<Features />} />
         <Route path="/about" element={<About />} />
+
         <Route path="/signin" element={<SingIn />} />
         <Route path="/signup" element={<SignUp />} />
+
+        <Route path="/viewProfile" element={<ViewProfile />} />
+        
+
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/payment" element={<Payment />} />
+
 
         <Route path='/dashboard' element={
           <RequireAuth>
@@ -85,6 +100,10 @@ function App() {
       {!pathname.includes('dashboard') && <Footer />}
 
       <ScrollToTop />
+
+      <MessengerCustomerChat pageId="100457816122808" appId="553013519763702"/>
+      <ToastContainer />
+
     </div>
   );
 }
