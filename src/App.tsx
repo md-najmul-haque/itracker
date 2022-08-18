@@ -25,6 +25,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Meeting from './Pages/Dashboard/Meeting/Meeting';
 import MyProject from './Pages/Dashboard/Projects/MyProject';
+import SelectedMeeting from './Pages/Dashboard/Meeting/SelectedMeeting';
 
 
 type stateProps = {
@@ -62,6 +63,7 @@ function App() {
           <Route path='totalTasks' element={<TotalTasks />} />
           <Route path='project' element={<Projects />} />
           <Route path='meeting' element={<Meeting />} />
+          <Route path='selectedMeeting/:id' element={<SelectedMeeting />} />
           <Route path='calendar' element={<Calendar />} />
           <Route path='myProject' element={<MyProject />} />
         </Route>

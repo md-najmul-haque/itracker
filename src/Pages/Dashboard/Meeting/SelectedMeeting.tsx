@@ -1,11 +1,23 @@
+import { useQuery } from "@tanstack/react-query";
+import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { SubmitHandler, useForm } from "react-hook-form";
+import { useParams } from "react-router-dom";
 import auth from "../../../firebase.init";
 import Loading from "../../Shared/Loading/Loading";
 import { MeetingType } from "./Meeting.type";
 
+// type SelectedMeetingProps = {
+//     handleEdit: (event: React.MouseEvent<HTMLButtonElement>) => void
+// }
 
 const SelectedMeeting = () => {
+    const [user, loading] = useAuthState(auth)
+    const { id } = useParams()
+    const { data: selectedMeeting, isLoading, error, refetch } = useQuery(['selectedMeeting'], () =>
+        fetch(`http://localhost:5000/selectedMeeting/${id}`)
+            .then(res => res.json())
+    )
     const { register, handleSubmit } = useForm<MeetingType>();
     const onSubmit: SubmitHandler<MeetingType> = (data) => {
         const meeting = {
@@ -18,9 +30,9 @@ const SelectedMeeting = () => {
             time: data.time
         }
 
-        fetch('http://localhost:5000/addMeeting',
+        fetch(`http://localhost:5000/updateMeeting/${id}`,
             {
-                method: "POST",
+                method: "PATCH",
                 headers: {
                     'content-type': 'application/json'
                 },
@@ -30,11 +42,9 @@ const SelectedMeeting = () => {
             .then(data => console.log(data))
     };
 
+    refetch()
 
-
-    const [user, loading] = useAuthState(auth)
-
-    if (loading) {
+    if (loading || isLoading) {
         return <Loading />
     }
 
@@ -46,6 +56,8 @@ const SelectedMeeting = () => {
                     <label htmlFor="selected-meeting" className="btn btn-sm bg-accent text-white btn-square absolute right-2 top-2">✕</label>
                     <h3 className="font-bold text-lg">Hi <span className="text-primary">{user?.displayName}</span>! Update your meeting.</h3>
 
+
+
                     <form onSubmit={handleSubmit(onSubmit)} className="bg-secondary mx-auto p-5">
                         <div className="form-control w-full mx-auto">
                             <label className="label">
@@ -55,6 +67,7 @@ const SelectedMeeting = () => {
                                 type="text"
                                 placeholder="Meeting Title"
                                 className="input input-bordered bg-white w-full"
+                                value={selectedMeeting.meetingTitle}
                                 {...register("meetingTitle", {
                                     required: {
                                         value: true,
