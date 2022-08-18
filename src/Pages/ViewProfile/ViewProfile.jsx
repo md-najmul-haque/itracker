@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
+import swal from "sweetalert";
 import auth from "../../firebase.init";
 import Loading from "../Shared/Loading/Loading";
 
@@ -59,6 +60,7 @@ const ViewProfile = () => {
         .then((data) => {
           console.log(data);
           // e.target.reset();
+          swal("Update Your Profile", `Successfully`, "success");
           setIsEdit(false);
         });
     }
