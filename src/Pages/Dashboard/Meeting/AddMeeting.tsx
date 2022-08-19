@@ -25,7 +25,7 @@ const AddMeeting = ({ setModal }: addMeetingProps) => {
             time: data.time
         }
 
-        fetch('http://localhost:5000/addMeeting',
+        fetch('https://dry-eyrie-76820.herokuapp.com/addMeeting',
             {
                 method: "POST",
                 headers: {

@@ -18,8 +18,8 @@ import Loading from "../Shared/Loading/Loading";
 //   linkedin?: string;
 //   twitter?: string;
 // }
-// http://localhost:5000/updateProfile/${email}
-// `http://localhost:5000/userInfo/${email}`
+// https://dry-eyrie-76820.herokuapp.com/updateProfile/${email}
+// `https://dry-eyrie-76820.herokuapp.com/userInfo/${email}`
 
 const ViewProfile = () => {
   const [user, loading, error] = useAuthState(auth);
@@ -33,7 +33,7 @@ const ViewProfile = () => {
   }
   if (user) {
     const email = user.email;
-    fetch(`http://localhost:5000/userInfo/${email}`)
+    fetch(`https://dry-eyrie-76820.herokuapp.com/userInfo/${email}`)
       .then((res) => res.json())
       .then((data) => {
         setUserInfo(data);
@@ -49,7 +49,7 @@ const ViewProfile = () => {
     const email = user?.email;
     // send user Info to database
     if (email !== null) {
-      fetch(`http://localhost:5000/updateProfile/${email}`, {
+      fetch(`https://dry-eyrie-76820.herokuapp.com/updateProfile/${email}`, {
         method: "PUT",
         headers: {
           "content-type": "application/json",

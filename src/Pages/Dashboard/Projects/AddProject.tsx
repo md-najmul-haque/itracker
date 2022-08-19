@@ -28,7 +28,7 @@ const AddProject = ({ setModal }: AddProjectProps) => {
             endData: data.endData
         }
 
-        fetch('http://localhost:5000/addProject', {
+        fetch('https://dry-eyrie-76820.herokuapp.com/addProject', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

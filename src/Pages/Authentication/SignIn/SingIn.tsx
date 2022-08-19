@@ -48,7 +48,7 @@ const SingIn = () => {
             email: gUser?.user.email || gitUser?.user.email,
         }
 
-        fetch('http://localhost:5000/signup',
+        fetch('https://dry-eyrie-76820.herokuapp.com/signup',
             {
                 method: "POST",
                 headers: {

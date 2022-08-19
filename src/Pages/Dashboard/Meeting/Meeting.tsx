@@ -15,13 +15,13 @@ const Meeting = () => {
     const [modal, setModal] = useState(false)
 
     const { data: meetings, isLoading, error, refetch } = useQuery(['meetings'], () =>
-        fetch('http://localhost:5000/getMeeting')
+        fetch('https://dry-eyrie-76820.herokuapp.com/getMeeting')
             .then(res => res.json())
     )
     refetch();
 
     const handleDelete = (_id: string) => {
-        fetch(`http://localhost:5000/deleteMeeting/${_id}`,
+        fetch(`https://dry-eyrie-76820.herokuapp.com/deleteMeeting/${_id}`,
             {
                 method: "DELETE",
                 headers: {
