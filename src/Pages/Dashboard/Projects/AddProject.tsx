@@ -1,5 +1,7 @@
+import { Dispatch, SetStateAction } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { SubmitHandler, useForm } from 'react-hook-form';
+import swal from 'sweetalert';
 import auth from '../../../firebase.init';
 import Loading from '../../Shared/Loading/Loading';
 
@@ -11,11 +13,13 @@ interface IFormInput {
     endData: string
 }
 
-const AddProject = () => {
+type AddProjectProps = {
+    setModal: Dispatch<SetStateAction<boolean>>
+}
+
+const AddProject = ({ setModal }: AddProjectProps) => {
     const { register, handleSubmit } = useForm<IFormInput>();
     const onSubmit: SubmitHandler<IFormInput> = async (data) => {
-
-
         const project = {
             projectName: data.projectName,
             projectDescription: data.projectDescription,
@@ -24,7 +28,7 @@ const AddProject = () => {
             endData: data.endData
         }
 
-        fetch('http://localhost:5000/addProject', {
+        fetch('https://dry-eyrie-76820.herokuapp.com/addProject', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -33,6 +37,13 @@ const AddProject = () => {
         })
             .then(res => res.json())
             .then(project => console.log(project))
+        swal({
+            title: "Congrats!",
+            text: "Meeting Updated Successfully!",
+            icon: "success",
+        });
+        setModal(false);
+
     };
 
     const [user, loading] = useAuthState(auth)
@@ -41,18 +52,13 @@ const AddProject = () => {
         <Loading />
     }
 
-    // if (user) {
-    //     console.log(user.displayName)
-    // }
-
     return (
         <div>
             <input type="checkbox" id="add-project" className="modal-toggle" />
             <div className="modal modal-bottom sm:modal-middle">
                 <div className="modal-box">
                     <label htmlFor="add-project" className="btn btn-sm bg-accent text-white btn-square absolute right-2 top-2">✕</label>
-                    <h3 className="font-bold text-lg">Hi {user?.displayName}! Create your new projects.</h3>
-
+                    <h3 className="font-bold text-lg">Hi <span className='text-primary'>{user?.displayName}</span>! Create your new projects.</h3>
 
                     <form onSubmit={handleSubmit(onSubmit)} className="bg-secondary mx-auto p-5">
                         <div className="form-control w-full mx-auto">
@@ -132,18 +138,13 @@ const AddProject = () => {
                             />
                         </div>
 
-                        {/* <div className="modal-action w-full mx-auto m-5">
-                            <label className='btn btn-accent type="submit" text-white w-full' htmlFor="add-project"> Add </label>
-                        </div> */}
                         <div className="modal-action w-full mx-auto m-5">
                             <input className='btn btn-accent text-white w-full' type="submit" value="Add Project" />
                         </div>
                     </form>
-
                 </div>
             </div>
         </div >
-
     );
 };
 

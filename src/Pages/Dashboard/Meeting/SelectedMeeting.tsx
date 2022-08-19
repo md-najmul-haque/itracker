@@ -17,7 +17,7 @@ const SelectedMeeting = () => {
     const navigate = useNavigate()
 
     const { data: selectedMeeting, isLoading, error, refetch } = useQuery(['selectedMeeting'], () =>
-        fetch(`http://localhost:5000/selectedMeeting/${id}`)
+        fetch(`https://dry-eyrie-76820.herokuapp.com/selectedMeeting/${id}`)
             .then(res => res.json())
     )
 
@@ -34,7 +34,7 @@ const SelectedMeeting = () => {
             time: data.time
         }
 
-        fetch(`http://localhost:5000/updateMeeting/${id}`,
+        fetch(`https://dry-eyrie-76820.herokuapp.com/updateMeeting/${id}`,
             {
                 method: "PATCH",
                 headers: {
