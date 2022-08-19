@@ -3,7 +3,7 @@ import chart from '../../../Assets/features/chart1.jpg';
 
 const Charts = () => {
   return (
-    <section className="max-w-full bg-white px-10 py-20">
+    <section className="max-w-full bg-white px-10 py-20 dark:bg-black dark:text-white">
       <div className="flex justify-center items-center my-10 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
         <div className="flex justify-center items-center py-3">
           <img src={chart} alt="" />

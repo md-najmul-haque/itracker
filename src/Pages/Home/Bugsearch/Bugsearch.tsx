@@ -4,7 +4,7 @@ import issue from '../../../Assets/monitoring.gif'
 const Bugsearch = () => {
 
   return (
-    <section className="max-w-full bg-white px-10 py-10">
+    <section className="max-w-full bg-white px-10 py-10 dark:bg-black dark:text-white">
       <div className="flex justify-center items-center my-10 container mx-auto grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
         <div>
           <h1 className="text-4xl uppercase font-bold">
