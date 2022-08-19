@@ -6,10 +6,6 @@ import Loading from '../../Shared/Loading/Loading';
 import AddMeeting from './AddMeeting'
 import { MeetingType } from './Meeting.type';
 
-// type Modal = {
-//     modal: boolean,
-//     setModal: React.Dispatch<React.SetStateAction<boolean>>
-// }
 
 const Meeting = () => {
     const [modal, setModal] = useState(false)
