@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { Link, useNavigate, useParams } from "react-router-dom";
+import swal from "sweetalert";
 import auth from "../../../firebase.init";
 import Loading from "../../Shared/Loading/Loading";
 import { MeetingType } from "./Meeting.type";
@@ -42,6 +43,11 @@ const SelectedMeeting = () => {
                 body: JSON.stringify(meeting)
             })
             .then(res => res.json())
+        swal({
+            title: "Congrats!",
+            text: "Meeting Updated Successfully!",
+            icon: "success",
+        });
         navigate('/dashboard/meeting')
     };
 
