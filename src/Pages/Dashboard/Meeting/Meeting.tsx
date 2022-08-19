@@ -34,7 +34,6 @@ const Meeting = () => {
 
     return (
         <div className='mt-20 mx-10'>
-
             <div className="w-full sm:px-6">
                 <div className="px-4 md:px-10 py-4 md:py-7 bg-gray-100 rounded-tl-lg rounded-tr-lg">
                     <div className="sm:flex items-center justify-between">
