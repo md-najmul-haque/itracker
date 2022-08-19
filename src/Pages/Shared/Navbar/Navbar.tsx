@@ -5,7 +5,9 @@ import { Link, useLocation } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import Loading from '../Loading/Loading';
 import useNav from '../../../hooks/useNav';
-import Indecator from '../../Home/Home/Indecator';
+
+
+
 
 const Navbar = () => {
     const { pathname } = useLocation()
@@ -60,7 +62,7 @@ const Navbar = () => {
     return (
 
        
-        <div>
+      
              <div className='navbar bg-primary text-white sticky  font-semibold top-0 left-0 z-50'>
             <div className='navbar bg-primary text-white fixed font-semibold top-0 left-0 z-50'>
                 <div className="navbar-start">
@@ -91,11 +93,12 @@ const Navbar = () => {
                     </label>}
 
                 </div>
+                
             </div>
-           
+          
             </div >
-            <Indecator/>
-        </div>
+         
+     
     );
 };
 

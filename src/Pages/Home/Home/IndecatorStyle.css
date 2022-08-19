@@ -2,7 +2,7 @@
   
   .header {
     position: fixed;
-    top: 0;
+
     z-index: 1;
     width: 100%;
  
@@ -17,7 +17,7 @@
   
   .progress-bar {
     height: 8px;
-    background: #ff4d00;
+    background: #cc00ff;
     width: 0%;
    
   }

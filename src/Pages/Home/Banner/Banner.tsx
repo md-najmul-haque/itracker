@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
+
 const Banner = () => {
 
     return (
         <section className="relative sm:p-5 bg-white z-2">
+        
             <div className="w-full lg:h-screen flex justify-center items-center relative xl:px-0">
                 <div className="lg:flex lg:flex-row-reverse items-center justify-center relative z-10 container mx-auto">
                     <div className="w-full lg:w-1/2 h-full lg:pr-10 xl:pr-0">

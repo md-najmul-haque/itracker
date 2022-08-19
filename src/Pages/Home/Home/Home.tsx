@@ -6,6 +6,9 @@ import FAQ from '../FAQ/FAQ';
 import TrustedCompany from '../TrustedCompany/TrustedCompany';
 import IssueManagement from '../../IssueManagement/IssueManagement';
 import ScrollingImage from '../ScrollingImage/ScrollingImage';
+import Indecator from './Indecator';
+
+
 
 
 
@@ -13,7 +16,7 @@ const Home = () => {
 
     return (
         <div>
-          
+            <Indecator/>
             <Banner />
             <Teamwork />
             <IssueManagement />
@@ -22,6 +25,7 @@ const Home = () => {
             <Testimonial />
             <TrustedCompany />
             <FAQ />
+          
         </div>
     );
 };
