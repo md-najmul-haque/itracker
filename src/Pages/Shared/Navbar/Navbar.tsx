@@ -16,7 +16,7 @@ const Navbar = () => {
     }
 
     if (user) {
-        console.log(user)
+        // console.log(user)
     }
 
     const menuItem =
@@ -43,7 +43,9 @@ const Navbar = () => {
                                     View Profile
                                 </Link>
                             </li>
-                            <li><Link to='/updateProfile'>Update Profile</Link></li>
+
+                            {/* no need this route */}
+                            {/* <li><Link to='/updateProfile'>Update Profile</Link></li> */}
                             <li><Link onClick={() => signOut(auth)} to='/'>Sign Out</Link></li>
                         </ul>
                     </div>
@@ -57,7 +59,7 @@ const Navbar = () => {
 
     return (
 
-        <div className='navbar bg-primary text-white sticky lg:absolute font-semibold top-0 left-0 z-50 dark:bg-black'>
+        <div className='navbar bg-primary text-white sticky  font-semibold top-0 left-0 z-50 dark:bg-black'>
             <div className='container mx-auto'>
                 <div className="navbar-start">
                     <div className="dropdown">
