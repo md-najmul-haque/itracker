@@ -5,6 +5,7 @@ import { Link, useLocation } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import Loading from '../Loading/Loading';
 import useNav from '../../../hooks/useNav';
+import Indecator from '../../Home/Home/Indecator';
 
 const Navbar = () => {
     const { pathname } = useLocation()
@@ -58,8 +59,10 @@ const Navbar = () => {
 
     return (
 
-        <div className='navbar bg-primary text-white sticky  font-semibold top-0 left-0 z-50'>
-            <div className='container mx-auto'>
+       
+        <div>
+             <div className='navbar bg-primary text-white sticky  font-semibold top-0 left-0 z-50'>
+            <div className='navbar bg-primary text-white fixed font-semibold top-0 left-0 z-50'>
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -75,9 +78,10 @@ const Navbar = () => {
                     <ul className="menu menu-horizontal p-0">
                         {menuItem}
                     </ul>
+                    
                 </div>
-
-
+              
+                
 
                 <div className="navbar-end block md:hidden flex">
                     {pathname.includes('dashboard') && <label htmlFor="my-drawer-2" className="btn btn-ghost btn-circle drawer-button lg:hidden">
@@ -88,8 +92,10 @@ const Navbar = () => {
 
                 </div>
             </div>
-        </div >
-
+           
+            </div >
+            <Indecator/>
+        </div>
     );
 };
 
