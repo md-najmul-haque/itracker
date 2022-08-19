@@ -5,6 +5,7 @@ import Banner from '../Banner/Banner';
 import FAQ from '../FAQ/FAQ';
 import TrustedCompany from '../TrustedCompany/TrustedCompany';
 import IssueManagement from '../../IssueManagement/IssueManagement';
+import ScrollingImage from '../ScrollingImage/ScrollingImage';
 
 
 
@@ -12,10 +13,12 @@ const Home = () => {
 
     return (
         <div>
+          
             <Banner />
             <Teamwork />
             <IssueManagement />
             <Bugsearch />
+            <ScrollingImage/>
             <Testimonial />
             <TrustedCompany />
             <FAQ />
