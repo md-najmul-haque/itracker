@@ -42,7 +42,6 @@ const AddMeeting = ({ setModal }: addMeetingProps) => {
             icon: "success",
         });
         setModal(false);
-        // navigate('/dashboard/meeting')
     };
 
 
@@ -170,10 +169,6 @@ const AddMeeting = ({ setModal }: addMeetingProps) => {
                             />
                         </div>
 
-
-                        {/* <div className="modal-action w-full mx-auto m-5">
-                        <label className='btn btn-accent type="submit" text-white w-full' htmlFor="add-meeting"> Add </label>
-                    </div> */}
                         <div className="w-full mx-auto m-5">
                             <input className='btn btn-accent text-white w-full' type="submit" value="Add Meeting" />
                         </div>

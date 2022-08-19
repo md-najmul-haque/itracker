@@ -53,7 +53,7 @@ const Projects = () => {
 
             <div>
                 {
-                    modal && <AddProject />
+                    modal && <AddProject setModal={setModal} />
                 }
             </div>
         </div>
