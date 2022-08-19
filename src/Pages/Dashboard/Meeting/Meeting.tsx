@@ -1,13 +1,24 @@
 import { useQuery } from '@tanstack/react-query';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import swal from 'sweetalert';
 import Loading from '../../Shared/Loading/Loading';
 import AddMeeting from './AddMeeting'
 import { MeetingType } from './Meeting.type';
 
+// type Modal = {
+//     modal: boolean,
+//     setModal: React.Dispatch<React.SetStateAction<boolean>>
+// }
 
 const Meeting = () => {
     const [modal, setModal] = useState(false)
+
+    const { data: meetings, isLoading, error, refetch } = useQuery(['meetings'], () =>
+        fetch('http://localhost:5000/getMeeting')
+            .then(res => res.json())
+    )
+    refetch();
 
     const handleDelete = (_id: string) => {
         fetch(`http://localhost:5000/deleteMeeting/${_id}`,
@@ -18,15 +29,15 @@ const Meeting = () => {
                 }
             })
             .then(res => res.json())
-            .then(data => console.log(data))
+        swal({
+            title: "Meeting Deleted!",
+            text: "Meeting Deleted Successfully!",
+            icon: "info",
+        });
+
     }
 
-    const { data: meetings, isLoading, error, refetch } = useQuery(['meetings'], () =>
-        fetch('http://localhost:5000/getMeeting')
-            .then(res => res.json())
-    )
 
-    refetch()
 
     if (isLoading) {
         return <Loading />
@@ -111,7 +122,7 @@ const Meeting = () => {
 
             <div>
                 {
-                    modal && <AddMeeting />
+                    modal && <AddMeeting setModal={setModal} />
                 }
             </div>
 

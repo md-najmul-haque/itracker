@@ -1,11 +1,18 @@
+import { Dispatch, SetStateAction } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm, SubmitHandler } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
+import swal from "sweetalert";
 import auth from "../../../firebase.init";
 import Loading from "../../Shared/Loading/Loading";
 import { MeetingType } from "./Meeting.type";
 
+type addMeetingProps = {
+    setModal: Dispatch<SetStateAction<boolean>>
+}
 
-const AddMeeting = () => {
+const AddMeeting = ({ setModal }: addMeetingProps) => {
+    const navigate = useNavigate()
     const { register, handleSubmit } = useForm<MeetingType>();
     const onSubmit: SubmitHandler<MeetingType> = (data) => {
         const meeting = {
@@ -28,8 +35,15 @@ const AddMeeting = () => {
             })
             .then(res => res.json())
             .then(data => console.log(data))
-    };
 
+        swal({
+            title: "Congrats!",
+            text: "Meeting Updated Successfully!",
+            icon: "success",
+        });
+        setModal(false);
+        // navigate('/dashboard/meeting')
+    };
 
 
     const [user, loading] = useAuthState(auth)
@@ -160,7 +174,7 @@ const AddMeeting = () => {
                         {/* <div className="modal-action w-full mx-auto m-5">
                         <label className='btn btn-accent type="submit" text-white w-full' htmlFor="add-meeting"> Add </label>
                     </div> */}
-                        <div className="modal-action w-full mx-auto m-5">
+                        <div className="w-full mx-auto m-5">
                             <input className='btn btn-accent text-white w-full' type="submit" value="Add Meeting" />
                         </div>
                     </form>
