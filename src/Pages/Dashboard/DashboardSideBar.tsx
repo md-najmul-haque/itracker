@@ -16,13 +16,15 @@ type Project = {
 const DashboardSideBar = ({ children }: DashboardSideBarProps) => {
 
     const { data: projects, isLoading, error, refetch } = useQuery(['projects'], () =>
-        fetch('http://localhost:5000/getProject')
+        fetch('https://dry-eyrie-76820.herokuapp.com/getProject')
             .then(res => res.json())
     )
 
     if (isLoading) {
         return <Loading />
     }
+
+    refetch()
 
     return (
 
@@ -55,11 +57,6 @@ const DashboardSideBar = ({ children }: DashboardSideBarProps) => {
                     </li>
                     <li className=' hover:bg-slate-600 transition-all rounded-lg'>
                         <Link className='bg-transparent text-white' to="/dashboard/project"><AiFillProject />Projects</Link>
-                    </li>
-
-                     {/*   nested project route */}
-                     <li className=' hover:bg-slate-600 transition-all rounded-lg'>
-                        <Link className='bg-transparent text-white' to="/dashboard/Projects/aaa"><AiFillProject />ABCD</Link>
                     </li>
                 </ul>
                 <ul className='mx-auto'>

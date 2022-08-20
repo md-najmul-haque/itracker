@@ -17,7 +17,7 @@ const Projects = () => {
     const [modal, setModal] = useState(false)
 
     const { data: projects, isLoading, error, refetch } = useQuery(['projects'], () =>
-        fetch('http://localhost:5000/getProject')
+        fetch('https://dry-eyrie-76820.herokuapp.com/getProject')
             .then(res => res.json())
     )
 
@@ -35,8 +35,8 @@ const Projects = () => {
                     <div className="sm:flex items-center justify-between">
                         <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold leading-normal text-accent">New Project</p>
                         <div>
-                            <button className="inline-flex sm:ml-3 mt-4 sm:mt-0 items-start justify-start px-6 py-3 bg-accent hover:bg-accent-focus focus:outline-none rounded">
-                                <label htmlFor="add-project" onClick={() => setModal(true)} className="text-sm font-medium leading-none text-white">+ Create Projects </label>
+                            <button className="inline-flex sm:ml-3 mt-4 sm:mt-0 items-start justify-start bg-accent hover:bg-accent-focus focus:outline-none rounded">
+                                <label htmlFor="add-project" onClick={() => setModal(true)} className="text-sm px-6 py-3 font-medium leading-none text-white">+ Create Projects </label>
                             </button>
                         </div>
                     </div>
@@ -53,7 +53,7 @@ const Projects = () => {
 
             <div>
                 {
-                    modal && <AddProject />
+                    modal && <AddProject setModal={setModal} />
                 }
             </div>
         </div>

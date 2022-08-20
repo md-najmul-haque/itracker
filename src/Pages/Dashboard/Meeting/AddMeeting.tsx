@@ -1,22 +1,20 @@
+import { Dispatch, SetStateAction } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm, SubmitHandler } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
+import swal from "sweetalert";
 import auth from "../../../firebase.init";
 import Loading from "../../Shared/Loading/Loading";
+import { MeetingType } from "./Meeting.type";
 
-interface IFormInput {
-    meetingTitle: string,
-    projectName: string,
-    meetingAgenda: string,
-    meetingLink: string,
-    email: string,
-    date: Date,
-    time: string,
-    id: number,
+type addMeetingProps = {
+    setModal: Dispatch<SetStateAction<boolean>>
 }
 
-const AddMeeting = () => {
-    const { register, handleSubmit } = useForm<IFormInput>();
-    const onSubmit: SubmitHandler<IFormInput> = async (data, id) => {
+const AddMeeting = ({ setModal }: addMeetingProps) => {
+    const navigate = useNavigate()
+    const { register, handleSubmit } = useForm<MeetingType>();
+    const onSubmit: SubmitHandler<MeetingType> = (data) => {
         const meeting = {
             meetingTitle: data.meetingTitle,
             projectName: data.projectName,
@@ -27,17 +25,25 @@ const AddMeeting = () => {
             time: data.time
         }
 
-        fetch(`http://localhost:5000/addMeeting/${id}`, {
-            method: 'PUT',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(meeting)
-        })
+        fetch('https://dry-eyrie-76820.herokuapp.com/addMeeting',
+            {
+                method: "POST",
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(meeting)
+            })
             .then(res => res.json())
-            .then(meeting => console.log(meeting))
+            .then(data => console.log(data))
 
+        swal({
+            title: "Congrats!",
+            text: "Meeting Updated Successfully!",
+            icon: "success",
+        });
+        setModal(false);
     };
+
 
     const [user, loading] = useAuthState(auth)
 
@@ -163,11 +169,7 @@ const AddMeeting = () => {
                             />
                         </div>
 
-
-                        {/* <div className="modal-action w-full mx-auto m-5">
-                        <label className='btn btn-accent type="submit" text-white w-full' htmlFor="add-meeting"> Add </label>
-                    </div> */}
-                        <div className="modal-action w-full mx-auto m-5">
+                        <div className="w-full mx-auto m-5">
                             <input className='btn btn-accent text-white w-full' type="submit" value="Add Meeting" />
                         </div>
                     </form>

@@ -4,84 +4,88 @@ import { useForm } from 'react-hook-form';
 import auth from '../../../firebase.init';
 import Loading from '../../Shared/Loading/Loading';
 import { FaStar } from "react-icons/fa";
-import { toast } from 'react-toastify';
-import {Motion, spring} from 'react-motion';
+import swal from 'sweetalert';
 
 const colors = {
-    orange: '#FFBA5A',
-    grey: '#a9a9a9',
+  orange: '#FFBA5A',
+  grey: '#a9a9a9',
 }
 
 const AddReviews = () => {
 
-const [user, loading, error] = useAuthState(auth)
+  const [user, loading, error] = useAuthState(auth)
+  const [load, setLoading] = useState(false);
+  const { register, handleSubmit, reset } = useForm();
 
-const { register, handleSubmit, reset } = useForm();
 
+  const [rating, setRating] = useState(0);
+  const [hoverValue, setHoverValue] = useState(undefined);
+  const [comment, setComment] = useState('');
+  const stars = Array(5).fill(0);
 
-    const [rating, setRating] = useState(0);
-    const [hoverValue, setHoverValue] = useState(undefined);
-    const [comment, setComment] = useState('');
-    const stars = Array(5).fill(0);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
 
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  if (load) {
+    return <Loading />
+  }
+  const handleComment = (e: any) => {
+    const limit = 120;
 
-    const handleComment = (e:any) => {
-      const limit = 120;
-  
-      // 👇️ only take 50 characters
-      setComment(e.target.value.slice(0, limit));
-    };
+    // 👇️ only take 50 characters
+    setComment(e.target.value.slice(0, limit));
+  };
 
-    const handleClick = (value: any) => {
-        setRating(value);
-    }
-    const handleMouseOver = (newHoverValue: any) => {
-        setHoverValue(newHoverValue);
-    }
+  const handleClick = (value: any) => {
+    setRating(value);
+  }
+  const handleMouseOver = (newHoverValue: any) => {
+    setHoverValue(newHoverValue);
+  }
 
-    const handleMouseLeave = () => {
-        setHoverValue(undefined);
-    }
-    if(loading) {
-        return <Loading/>
-    }
+  const handleMouseLeave = () => {
+    setHoverValue(undefined);
+  }
+  if (loading) {
+    return <Loading />
+  }
 
-    const onSubmit = (data: any) => {
-       const email = user?.email;
-       const photoURL = user?.photoURL;
-       const displayName = user?.displayName;
-       const review = { ...data, rating, email, photoURL, displayName}
-       console.log(review);
+  const onSubmit = (data: any) => {
+    setLoading(true);
+    const email = user?.email;
+    const photoURL = user?.photoURL;
+    const displayName = user?.displayName;
+    const review = { ...data, rating, email, photoURL, displayName }
+    console.log(review);
 
-       fetch("http://localhost:5000/add-review", {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(review)
-       })
-       .then((res) => {
-        res.json()
-        if(res.status === 200){
-          
-          toast(`You Are Adding ${rating} Reviews`)
+    fetch("https://dry-eyrie-76820.herokuapp.com/add-review", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(review)
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setLoading(false);
+        if (data.message === 'review inserted successfully') {
+          swal("Thanks For Your Feedback", `You Are Adding ${rating} Star Reviews`, "success");
+        } else {
+          setLoading(true);
+          swal("You Are Fetching", "server side error", "error");
+          setLoading(false);
+
         }
-       })
-       .then((data) => {
-        // console.log(data)
+      })
+    reset()
+  }
+  return (
+    <div className='w-full p-10 lg:w-1/2 mx-auto'>
+      <h2 className='text-[#00AAB3] text-center text-3xl font-bold'>Add Your Review</h2>
 
-       })
-       reset()
-    }
-    return (
-        <div className='w-full p-10 lg:w-1/2 mx-auto'>
-  <h2 className='text-[#00AAB3] text-center text-3xl font-bold'>Add Your Review</h2>
-     
-        <form onSubmit={handleSubmit(onSubmit)} className='card-body pb-0'>
+      <form onSubmit={handleSubmit(onSubmit)} className='card-body pb-0'>
         <div className="avatar mx-auto flex-col items-center gap-3">
           <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-            <img src={`${user?.photoURL ? user?.photoURL : 'https://i.pravatar.cc/300'}`} alt={`${user?.displayName}`}  />
+            <img src={`${user?.photoURL ? user?.photoURL : 'https://i.pravatar.cc/300'}`} alt={`${user?.displayName}`} />
           </div>
           <h2 className="text-2xl font-bold">{user?.displayName}</h2>
         </div>
@@ -107,24 +111,22 @@ const { register, handleSubmit, reset } = useForm();
           })}
         </div>
 
-          <textarea 
-          {...register("review", { required: false, maxLength:  500 })}
+        <textarea
+          {...register("review", { required: false, maxLength: 500 })}
           className="textarea textarea-primary h-40 my-3 w-full"
           value={comment}
           onChange={handleComment}
           placeholder="Please Your Feedback only take 120 characters"
-          ></textarea>
-          {/* <input type="submit" className='btn btn-primary' value='Add Review' disabled={!rating} /> */}
-    
-        <Motion defaultStyle={{x: 0}} style={{x: spring(10)}}>
-  {value =>  
-             <input type="submit" className='btn btn-primary' value='Add Review' disabled={!rating} />
-  }
-</Motion>
-        </form>
+        ></textarea>
+        {/* <input type="submit" className='btn btn-primary' value='Add Review' disabled={!rating} /> */}
 
-        </div>
-    );
+
+        <input type="submit" className='btn btn-primary' value='Add Review' disabled={!rating} />
+
+      </form>
+
+    </div>
+  );
 };
 
 export default AddReviews;

@@ -98,7 +98,6 @@ const CheckoutForm: React.FC<props> = ({ name, email }) => {
                     console.log(data)
                 }
                 )
-
         }
     }
 
