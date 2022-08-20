@@ -76,6 +76,7 @@ const ViewProfile = () => {
               <div className=" w-36 mask mask-hexagon">
                 <img src={userInfo?.photoURL} alt={userInfo?.displayName} />
               </div>
+     
             </div>
             {/* Name Section  */}
             <div>
@@ -85,6 +86,35 @@ const ViewProfile = () => {
           </div>
 
           {/* Aditional Info  */}
+
+        
+
+          <div className="w-full flex flex-row">
+              <div className=" px-5 lg:px-10 w-1/6 lg:w-2/12 py-5">
+                <div className="font-bold">Name</div>
+              </div>
+            
+            </div>
+
+          <div className="w-full flex flex-row">
+              <div className=" px-5 lg:px-10 w-1/6 lg:w-2/12 py-5">
+                <div className="font-bold">Name</div>
+              </div>
+              <div className=" px-10 py-5 w-5/6 lg:w-10/12">
+                {isEdit ? (
+                  <input
+                    type="text"
+                    className="input input-bordered input-secondary w-full"
+                    defaultValue={userInfo?.name}
+                    {...register("name", { maxLength: 20 })}
+                  />
+                ) : (
+                  <div>{userInfo?.name}</div>
+                
+                )}
+              </div>
+            </div>
+
           <div className="overflow-x-auto w-full">
             {/* <!-- row 1 --> */}
             <div className="w-full flex flex-row">
