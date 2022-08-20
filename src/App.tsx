@@ -41,7 +41,7 @@ import Messages from './Pages/Dashboard/Projects/MyProject/Messages';
 import ProjectCalendar from './Pages/Dashboard/Projects/MyProject/ProjectCalendar';
 import { ToastContainer } from 'react-toastify';
 import Board from './Pages/Dashboard/Projects/MyProject/Board';
-import List from './Pages/Dashboard/Projects/MyProject/List';
+
 
 
 type stateProps = {
@@ -92,7 +92,6 @@ function App() {
           <Route path='myProject' element={<MyProject />} >
             <Route path='overview' element={<Overview />} />
             <Route path='projectCalendar' element={<ProjectCalendar />} />
-            <Route path='list' element={<List />} />
             <Route path='board' element={<Board />} />
             <Route path='summary' element={<Summary />} />
             <Route path='messages' element={<Messages />} />

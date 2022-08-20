@@ -84,7 +84,6 @@ const MyProject = () => {
                             <ul className="menu menu-horizontal text-sm ml-18">
                                 <li><Link className="focus:text-red-600 focus:text-decoration:underline  bg-transparent" to="/dashboard/myProject/overview">Overview</Link></li>
                                 <li><Link className="focus:text-red-600 focus:text-decoration:underline  bg-transparent" to="/dashboard/myProject/projectCalendar">Calendar</Link></li>
-                                <li><Link className="focus:text-red-600 focus:text-decoration:underline  bg-transparent" to="/dashboard/myProject/list">List</Link></li>
                                 <li><Link className="focus:text-red-600 focus:text-decoration:underline  bg-transparent" to="/dashboard/myProject/board">Board</Link></li>
                                 <li><Link className="focus:text-red-600  bg-transparent" to="/dashboard/myProject/summary">Summary</Link></li>
                                 <li><Link className="focus:text-red-600  bg-transparent" to="/dashboard/myProject/messages">Messages</Link></li>
