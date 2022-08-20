@@ -17,7 +17,7 @@ const Navbar = () => {
     if (user) {
         console.log(user)
     }
-
+    
     const menuItem =
         <>
             <li><Link to='/'>Home</Link></li>
