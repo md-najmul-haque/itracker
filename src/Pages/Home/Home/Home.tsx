@@ -5,6 +5,7 @@ import Banner from '../Banner/Banner';
 import FAQ from '../FAQ/FAQ';
 import TrustedCompany from '../TrustedCompany/TrustedCompany';
 import IssueManagement from '../../IssueManagement/IssueManagement';
+import SocialShare from '../../Shared/SocialShare/SocialShare';
 
 
 
@@ -13,6 +14,7 @@ const Home = () => {
     return (
         <div>
             <Banner />
+            <SocialShare/>
             <Teamwork />
             <IssueManagement />
             <Bugsearch />

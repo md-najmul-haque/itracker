@@ -4,6 +4,7 @@ import teamwork from '../../../Assets/teamwork.gif';
 const Teamwork = () => {
 
   return (
+    <>
     <div className="hero bg-secondary py-10">
       <div className="hero-content container mx-auto text-center">
         <div className='lg:w-4/6'>
@@ -15,6 +16,7 @@ const Teamwork = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
