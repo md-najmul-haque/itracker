@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { DragDropContext, Draggable, Droppable, DropResult } from 'react-beautiful-dnd';
+import AddTask from './AddTask';
+import AddTaskInput from './AddTaskInput';
 import TaskCard from './TaskCard';
 import Title from './Title';
 
@@ -36,6 +38,9 @@ const Board = () => {
             <TaskCard />
             <TaskCard />
             <TaskCard />
+
+            <AddTask />
+
         </div>
     );
 };
