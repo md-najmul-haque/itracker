@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { DragDropContext, Draggable, Droppable, DropResult } from 'react-beautiful-dnd';
+import TaskCard from './TaskCard';
 import Title from './Title';
 
 
@@ -17,7 +18,7 @@ const Board = () => {
     //     .then(data => setLists(data))
 
     return (
-        <div className="">
+        <div className="max-w-xs ml-5 border-4 border-secondary bg-secondary p-2">
             {/* <DragDropContext onDragEnd={onDragEnd}>
                 <Droppable droppableId="app" type='list' direction='horizontal'>
                     {(provided) => (
@@ -32,6 +33,9 @@ const Board = () => {
                 </Droppable>
             </DragDropContext> */}
             <Title />
+            <TaskCard />
+            <TaskCard />
+            <TaskCard />
         </div>
     );
 };

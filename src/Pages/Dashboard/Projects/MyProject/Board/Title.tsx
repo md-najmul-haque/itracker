@@ -11,14 +11,14 @@ const Title = () => {
 
     return (
 
-        <div className='max-w-xs ml-5 border-4 border-secondary bg-secondary p-2'>
+        <div className=''>
             {
                 open ?
                     (<div className=''>
                         <input className='bg-secondary-focus border-none py-1 w-full' onBlur={() => setOpen(!open)} value={'To Do'} />
                     </div>) :
                     (<div className='flex justify-between items-center px-1'>
-                        <h2 className='pr-5' onClick={() => { setOpen(!open) }}>Open</h2>
+                        <h2 className='pr-5 font-bold text-xl' onClick={() => { setOpen(!open) }}>To Do</h2>
                         <BsThreeDotsVertical />
                     </div>)
             }
