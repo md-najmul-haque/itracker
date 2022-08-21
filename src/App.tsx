@@ -69,9 +69,6 @@ function App() {
         <Route path="/viewProfile" element={<ViewProfile />} />
 
 
-        <Route path="/pricing" element={<Pricing />} />
-        <Route path="/payment" element={<Payment />} />
-
 
         <Route path='/dashboard' element={
           <RequireAuth>
