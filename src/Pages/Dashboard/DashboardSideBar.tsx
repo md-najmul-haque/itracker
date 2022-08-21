@@ -16,7 +16,7 @@ type Project = {
 const DashboardSideBar = ({ children }: DashboardSideBarProps) => {
 
     const { data: projects, isLoading, error, refetch } = useQuery(['projects'], () =>
-        fetch('http://localhost:5000/getProject')
+        fetch('https://dry-eyrie-76820.herokuapp.com/getProject')
             .then(res => res.json())
     )
 

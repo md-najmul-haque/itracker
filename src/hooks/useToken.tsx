@@ -23,7 +23,7 @@ const useToken = (user: useTokenProps) => {
 
     useEffect(() => {
 
-        fetch('http://localhost:5000/signup',
+        fetch('https://dry-eyrie-76820.herokuapp.com/signup',
             {
                 method: "POST",
                 headers: {
@@ -38,7 +38,7 @@ const useToken = (user: useTokenProps) => {
     }, [user])
 
     // const { data: token, isLoading, error, refetch } = useQuery(['token'], () =>
-    //     fetch('http://localhost:5000/signup')
+    //     fetch('https://dry-eyrie-76820.herokuapp.com/signup')
     //         .then(res => res.json(createUser))
     // )
 

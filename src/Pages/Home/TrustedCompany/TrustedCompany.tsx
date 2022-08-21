@@ -9,10 +9,10 @@ import logo6 from "../../../Assets/features/g2-leader-winter-2022.svg";
 const TrustedCompany = () => {
 
     return (
-        <div className='my-28 max-w-7xl mx-auto px-12 text-center'>
-            <h2 className='text-primary text-center text-4xl font-bold uppercase my-10'>TRUSTED BY</h2>
+        <div className='py-28 max-w-7xl mx-auto px-12 text-center dark:bg-black'>
+            <h2 className='text-primary dark:text-white text-center text-4xl font-bold uppercase py-10'>TRUSTED BY</h2>
             <h2 className='text-center text-2xl font-bold uppercase mt-10 mb-12'>OVER 90% OF FORTUNE 100 COMPANIES</h2>
-            <div className="stats stats-vertical lg:stats-horizontal shadow">
+            <div className="stats stats-vertical lg:stats-horizontal shadow dark:bg-black">
                 <div className="stat mr-32 justify-items-center">
                     <img src={logo1} className="w-32" alt="" />
                 </div> 
