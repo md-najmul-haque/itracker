@@ -8,10 +8,10 @@ type AddTaskInputProps = {
 const AddTaskInput = ({ setOpen }: AddTaskInputProps) => {
     return (
         <div>
-            <textarea className='mb-2 w-full p-1' placeholder='Enter your task description here' />
+            <textarea onBlur={() => setOpen(false)} className='mb-2 w-full p-1' placeholder='Enter your task description here' />
             <div className='flex items-center'>
                 <button onClick={() => setOpen(false)} className='btn-primary btn-sm'>Add Card</button>
-                <AiOutlineCloseSquare className='text-2xl' />
+                <AiOutlineCloseSquare onClick={() => setOpen(false)} className='text-2xl' />
             </div>
         </div>
 
