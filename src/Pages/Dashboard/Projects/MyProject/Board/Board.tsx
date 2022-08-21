@@ -1,24 +1,24 @@
 import { useState } from 'react';
 import { DragDropContext, Draggable, Droppable, DropResult } from 'react-beautiful-dnd';
-import TaskList from './TaskList';
-import { List } from './list.type'
+import Title from './Title';
+
 
 const Board = () => {
 
-    const [lists, setLists] = useState([])
+    // const [lists, setLists] = useState([])
 
-    const onDragEnd = (result: DropResult) => {
-        const { source, destination } = result
-        if (!destination) return
-    }
+    // const onDragEnd = (result: DropResult) => {
+    //     const { source, destination } = result
+    //     if (!destination) return
+    // }
 
-    fetch('/lists.json')
-        .then(res => res.json())
-        .then(data => setLists(data))
+    // fetch('/lists.json')
+    //     .then(res => res.json())
+    //     .then(data => setLists(data))
 
     return (
         <div className="">
-            <DragDropContext onDragEnd={onDragEnd}>
+            {/* <DragDropContext onDragEnd={onDragEnd}>
                 <Droppable droppableId="app" type='list' direction='horizontal'>
                     {(provided) => (
                         <div className="wrapper" ref={provided.innerRef}>
@@ -30,7 +30,8 @@ const Board = () => {
                         </div>
                     )}
                 </Droppable>
-            </DragDropContext>
+            </DragDropContext> */}
+            <Title />
         </div>
     );
 };

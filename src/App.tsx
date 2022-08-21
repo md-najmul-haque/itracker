@@ -30,7 +30,8 @@ import Overview from './Pages/Dashboard/Projects/MyProject/Overview';
 import Summary from './Pages/Dashboard/Projects/MyProject/Summary';
 import Messages from './Pages/Dashboard/Projects/MyProject/Messages';
 import ProjectCalendar from './Pages/Dashboard/Projects/MyProject/ProjectCalendar';
-import Board from './Pages/Dashboard/Projects/MyProject/Board';
+import Board from './Pages/Dashboard/Projects/MyProject/Board/Board';
+
 
 type stateProps = {
   lists: any

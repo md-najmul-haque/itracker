@@ -1,9 +1,9 @@
 
 export type List = {
     title: string,
-    id: number,
+    id: any,
     cards: {
-        id: number,
+        id: any,
         text: string
     }
 }
@@ -11,9 +11,9 @@ export type List = {
 export type TaskListPros = {
     list: {
         title: string,
-        id: number,
+        id: any,
         cards: {
-            id: number,
+            id: any,
             text: string
         }
     }
