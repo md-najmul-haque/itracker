@@ -1,4 +1,4 @@
-import { useState } from "react";
+import {  useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
 import swal from "sweetalert";
@@ -25,6 +25,7 @@ const ViewProfile = () => {
   const [user, loading, error] = useAuthState(auth);
   const [userInfo, setUserInfo] = useState({});
   const [isEdit, setIsEdit] = useState(false);
+  const [image, setImage] = useState('');
 
   const { register, handleSubmit } = useForm();
 
@@ -33,19 +34,42 @@ const ViewProfile = () => {
   }
   if (user) {
     const email = user.email;
-    fetch(`http://localhost:5000/userInfo/${email}`)
-      .then((res) => res.json())
-      .then((data) => {
-        setUserInfo(data);
-      });
+    // fetch(`http://localhost:5000/userInfo/${email}`)
+    //   .then((res) => res.json())
+    //   .then((data) => {
+    //     setUserInfo(data);
+    //   });
   }
 
   const handleEdit = () => {
     setIsEdit(true);
   };
-
+  const imgStoreKey = "0a489a5f81e1a77f2b17492e627939c3";
   const onSubmit = (data) => {
-    console.log(data)
+    const image = data.image[0];
+
+
+    const formData = new FormData();
+    formData.append("image", image);
+    const url = `https://api.imgbb.com/1/upload?key=${imgStoreKey}`;
+    fetch(url, {
+      method: "POST",
+      body: formData,
+    })
+
+    .then(res => res.json())
+    .then(result => {
+      if(result.success) {
+        const img = result.data.url
+        console.log(img)
+      }
+    })
+    // .then(res => res.json())
+    // .then(async result => {
+    //   if (result.success) {
+    //     const img = result.data.url;
+    //     // console.log(img);
+
     const email = user?.email;
     // send user Info to database
     if (email !== null) {
@@ -89,13 +113,31 @@ const ViewProfile = () => {
 
         
 
+
           <div className="w-full flex flex-row">
               <div className=" px-5 lg:px-10 w-1/6 lg:w-2/12 py-5">
-                <div className="font-bold">Name</div>
+                <div className="font-bold">photo</div>
               </div>
-            
-            </div>
+              <div className=" px-10 py-5 w-5/6 lg:w-10/12">
+                {isEdit ? (
 
+                  <input
+                    type="file"
+                    className="input input-bordered input-secondary w-full"
+                    defaultValue={userInfo?.photoURL}
+                    {...register("image")}
+                  />
+                ) : (
+                <div class="avatar">
+              <div class="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                <img src={image} />
+              </div>
+            </div>
+                
+                )}
+              </div>
+            </div>
+       
           <div className="w-full flex flex-row">
               <div className=" px-5 lg:px-10 w-1/6 lg:w-2/12 py-5">
                 <div className="font-bold">Name</div>
