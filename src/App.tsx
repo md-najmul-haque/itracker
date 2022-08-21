@@ -34,8 +34,7 @@ import SelectedMeeting from './Pages/Dashboard/Meeting/SelectedMeeting';
 import Meeting from './Pages/Dashboard/Meeting/Meeting';
 import MyProject from './Pages/Dashboard/Projects/MyProject/MyProject';
 import Overview from './Pages/Dashboard/Projects/MyProject/Overview';
-import Pricing from './Pages/Home/Pricing/Pricing';
-import Payment from './Pages/Home/Pricing/Payment';
+
 import Summary from './Pages/Dashboard/Projects/MyProject/Summary';
 import Messages from './Pages/Dashboard/Projects/MyProject/Messages';
 import ProjectCalendar from './Pages/Dashboard/Projects/MyProject/ProjectCalendar';

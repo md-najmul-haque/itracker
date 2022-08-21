@@ -52,7 +52,7 @@ const client: string = uniqueNamesGenerator({
 
   return (
 
-    <div className='pt-14 px-10 '>
+    <div className='pt-14 px-10 dark:bg-black'>
    
         <div className="w-full lg:w-2/5 mx-auto ">
           <h1 className="text-5xl font-bold text-center mb-20 lg:mb-0 py-4" data-aos="zoom-in"
@@ -109,7 +109,7 @@ const client: string = uniqueNamesGenerator({
     >
      
      <div className=" ">
-     <div className="card card-compact w-72 h-96 bg-base-100 shadow-xl flex py-10 items-center mx-16 md:mx-28 lg:mx-0">
+     <div className="card card-compact w-72 h-96 bg-base-100 shadow-xl flex py-10 items-center mx-16 md:mx-28 lg:mx-0 dark:bg-accent dark:text-white">
         <div className="avatar">
           <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
             <img src='https://i.pravatar.cc/300' alt='avatar' />
