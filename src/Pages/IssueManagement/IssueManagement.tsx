@@ -16,13 +16,13 @@ import img from '../../Assets/features/chart.jpg'
 import { Link } from 'react-router-dom';
 const IssueManagement = () => {
     return (
-        <div className='bg-accent bg-opacity-75 py-16'>
+        <div className='bg-accent bg-opacity-75 py-16 dark:bg-black'>
             <div className='grid lg:grid-cols-2 gap-12 container mx-auto'>
                 <div className='flex justify-center items-center'>
                     <div className="text-white p-5">
                         <h1 className='uppercase text-4xl mb-8'>Issue management</h1>
                         <p className='text-xl text-justify mr-5'>Record bugs easily, and track them based on desired criteria. Create custom views for your issue tracking software to focus on bugs that are the most time sensitive. See how many bugs have been logged, if they've been resolved, and more with reports.</p>
-                        <Link to='/features' className="btn mt-5 text-white px-8 btn-primary">ALL features</Link>
+                        <Link to='/features' className="btn mt-5 text-white px-8 btn-primary dark:btn dark:btn-accent">ALL features</Link>
                     </div>
                 </div>
                 <div>
