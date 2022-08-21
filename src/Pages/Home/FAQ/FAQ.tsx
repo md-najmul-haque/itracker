@@ -26,7 +26,7 @@ const FAQ = () => {
     };
 
     return (
-        <div id='contact' className='bg-white p-5'>
+        <div id='contact' className='bg-white p-5 dark:bg-black'>
             <h1 className='text-center text-3xl font-bold mt-6 uppercase'>GET IN TOUCh</h1>
             <div className='grid lg:grid-cols-2 gap-12  lg:mx-20  my-16'>
                 <div className=' mt-12'>

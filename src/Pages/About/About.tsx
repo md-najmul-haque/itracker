@@ -9,7 +9,7 @@ const About = () => {
           .then(data=>setTeams(data))
   },[])
     return (
-        <div className='bg-white'>
+        <div className='bg-white dark:bg-black dark:text-white'>
     <div className="hero min-h-screen bg-base-10 ">
   <div className="hero-content flex-col lg:flex-row-reverse">
       <div>
@@ -18,7 +18,7 @@ const About = () => {
     <div style={{width:"50%"}}>
       <h1 className="text-5xl font-bold">What is iTracker ?</h1>
       <p className="py-6">iTracker is a powerful, feature-rich and mature error-tracking system, or bug-tracking system. Defect-tracking systems allow teams of developers to effectively track outstanding bugs, issues, problems, enhancements, and other change requests in their products. Simple bug-tracking capabilities are often built into integrated source code management environments such as Github or other web-based or locally installed equivalents.</p>
-      <button className="btn btn-primary ease-in duration-300 ">Explore</button>
+      <button className="btn btn-primary dark:btn dark:btn-accent ease-in duration-300 ">Explore</button>
             </div>
             
        </div>   

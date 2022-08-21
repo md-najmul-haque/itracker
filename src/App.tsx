@@ -21,28 +21,16 @@ import About from './Pages/About/About';
 import { connect } from 'react-redux'
 import Projects from './Pages/Dashboard/Projects/Projects';
 import Calendar from './Pages/Dashboard/Calendar/Calendar';
-
 import { MessengerCustomerChat } from "typescript-react-facebook-messenger";
-import ViewProfile from './Pages/ViewProfile/ViewProfile';
-
-
-
-
-// import AOS from 'aos';
 import 'aos/dist/aos.css';
 import SelectedMeeting from './Pages/Dashboard/Meeting/SelectedMeeting';
 import Meeting from './Pages/Dashboard/Meeting/Meeting';
 import MyProject from './Pages/Dashboard/Projects/MyProject/MyProject';
 import Overview from './Pages/Dashboard/Projects/MyProject/Overview';
-import Pricing from './Pages/Home/Pricing/Pricing';
-import Payment from './Pages/Home/Pricing/Payment';
 import Summary from './Pages/Dashboard/Projects/MyProject/Summary';
 import Messages from './Pages/Dashboard/Projects/MyProject/Messages';
 import ProjectCalendar from './Pages/Dashboard/Projects/MyProject/ProjectCalendar';
-import { ToastContainer } from 'react-toastify';
 import Board from './Pages/Dashboard/Projects/MyProject/Board';
-
-
 
 type stateProps = {
   lists: any
@@ -59,20 +47,10 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
-
         <Route path="/features" element={<Features />} />
         <Route path="/about" element={<About />} />
-
         <Route path="/signin" element={<SingIn />} />
         <Route path="/signup" element={<SignUp />} />
-
-        <Route path="/viewProfile" element={<ViewProfile />} />
-
-
-        <Route path="/pricing" element={<Pricing />} />
-        <Route path="/payment" element={<Payment />} />
-
-
         <Route path='/dashboard' element={
           <RequireAuth>
             <Dashboard />
@@ -87,7 +65,6 @@ function App() {
           <Route path='project' element={<Projects />} />
           <Route path='meeting' element={<Meeting />} />
           <Route path='meeting/:id' element={<SelectedMeeting />} />
-
           <Route path='calendar' element={<Calendar />} />
           <Route path='myProject' element={<MyProject />} >
             <Route path='overview' element={<Overview />} />
@@ -97,17 +74,12 @@ function App() {
             <Route path='messages' element={<Messages />} />
           </Route>
         </Route>
-
-
         <Route path="*" element={<Notfound />} />
       </Routes>
       {!pathname.includes('dashboard') && <Footer />}
 
       <ScrollToTop />
-
       <MessengerCustomerChat pageId="100457816122808" appId="553013519763702" />
-      <ToastContainer />
-
     </div>
   );
 }

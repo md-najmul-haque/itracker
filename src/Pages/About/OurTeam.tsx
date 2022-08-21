@@ -5,10 +5,10 @@ const OurTeam = ({ team }: any) => {
 
     const { name, position, img, facebook, github, linkedin, email } = team;
     return (
-        <div className='text-center'>
+        <div className='text-center dark:bg-black dark:text-white'>
 <div className="card w-96 bg-white shadow-xl">
     
-  <div className="card-body  hover:bg-sky-700 hover:text-white ease-in duration-300 " >
+  <div className="card-body  hover:bg-sky-700 hover:text-white ease-in duration-300 dark:bg-accent" >
   <div className="avatar">  
   <div className="w-24 ml-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
     <img src={img} alt='' />
