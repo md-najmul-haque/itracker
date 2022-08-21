@@ -46,17 +46,17 @@ const DarkMode = () => {
 <label class="swap swap-rotate" >
   
   {/* <!-- this hidden checkbox controls the state --> */}
-  <input type="checkbox"     id="darkMode"
-     onClick={e => switchTheme(e)}/>
+  <input type="checkbox" id="darkMode"
+     onClick={e => switchTheme(e)}
+     className={theme === "dark" ? clickedClass : ""}
+     />
   
   {/* <!-- sun icon --> */}
-    {/* <!-- sun icon --> */}
     <BsSun class="swap-on fill-current w-5 h-5 text-orange-300 "/>  
-
-  
+ 
     {/* <!-- moon icon --> */}
     <BsMoonStars class="swap-off fill-current w-5 h-5 text-green-300" />
-
+   
   
 </label>
     
