@@ -1,0 +1,58 @@
+
+  
+  body {
+    font-family: sans;
+    margin: 0 auto;
+    background-color: white;
+ 
+  }
+  
+ 
+  .item {
+    position: relative;
+
+  }
+
+  .item:after {
+    content: "";
+    display: block;
+    height: 100vh;
+    margin-bottom: -100vh;
+  }
+  
+  .item:last-of-type {
+    margin-bottom: 0;
+   
+  }
+ 
+  .item:last-of-type:after {
+    display: none;
+  }
+  
+  .item .image-holder {
+    position: sticky;
+    top: 0;
+    float: left;
+    overflow: hidden;
+    width: 50%;
+    padding: 15px;
+    
+  }
+   
+  .item .image-holder img {
+    position: relative;
+    height: 100%;  width: auto;
+    left: 50%;
+    margin-top: 50px;
+    transform: translateX(-50%);
+  }
+   
+  .item .text-holder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+    margin-left: 50%;
+    padding: 2em;
+  }  
+

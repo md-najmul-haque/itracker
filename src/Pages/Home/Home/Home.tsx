@@ -6,6 +6,7 @@ import FAQ from '../FAQ/FAQ';
 import TrustedCompany from '../TrustedCompany/TrustedCompany';
 import IssueManagement from '../../IssueManagement/IssueManagement';
 import SocialShare from '../../Shared/SocialShare/SocialShare';
+import ScrollingImage from '../ScrollingImage/ScrollingImage';
 
 
 
@@ -18,6 +19,7 @@ const Home = () => {
             <Teamwork />
             <IssueManagement />
             <Bugsearch />
+            <ScrollingImage/>
             <Testimonial />
             <TrustedCompany />
             <FAQ />
