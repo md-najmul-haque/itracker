@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Indecator from '../Home/Home/Indecator';
 import Counter from './Counter';
 import MeetOurTem from './OurTeam';
 const About = () => {
@@ -9,7 +10,8 @@ const About = () => {
           .then(data=>setTeams(data))
   },[])
     return (
-        <div className='bg-white dark:bg-black dark:text-white'>
+      <div className='bg-white dark:bg-black dark:text-white'>
+        <Indecator/>
     <div className="hero min-h-screen bg-base-10 ">
   <div className="hero-content flex-col lg:flex-row-reverse">
       <div>
