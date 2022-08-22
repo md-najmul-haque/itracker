@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
+import { AiOutlineCloseSquare } from "react-icons/ai";
 import { BsThreeDotsVertical } from "react-icons/bs";
 
 type List = {
@@ -47,9 +48,20 @@ const TaskList = () => {
                         }
 
                     </div >
+                    <div>
+                        {
+                            open ? <div>
+                                <textarea onBlur={() => setOpen(false)} className='mb-2 w-full p-1' placeholder='Enter your task description here' />
+                                <div className='flex items-center'>
+                                    <button onClick={() => setOpen(false)} className='btn-primary btn-sm'>Add Card</button>
+                                    <AiOutlineCloseSquare onClick={() => setOpen(false)} className='text-2xl' />
+                                </div>
+                            </div> : ''
+                        }
+                        <p onClick={() => setOpen(!open)} className='hover:bg-secondary-focus p-1'>+ Add Card</p>
+                    </div>
 
                 </div>
-
 
             })
         }
