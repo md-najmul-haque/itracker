@@ -8,12 +8,11 @@ import BookData from '../../../Shared/SearchAll/Data.json'
 import NavDashBoard from "../../../Shared/Navbar/NavDashBoard";
 
 const MyProject = () => {
- 
-  
+
+
 
     return (
         <div >
-           <NavDashBoard/>
             <div className="drawer">
                 <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
                 <div className="drawer-content flex flex-col">
@@ -40,7 +39,7 @@ const MyProject = () => {
 
     </div> */}
             </div>
-         
+
         </div>
     );
 };

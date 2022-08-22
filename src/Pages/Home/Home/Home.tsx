@@ -17,7 +17,6 @@ const Home = () => {
             <Indecator />
             <Banner />
             <SocialShare />
-
             <Teamwork />
             <IssueManagement />
             <Bugsearch />

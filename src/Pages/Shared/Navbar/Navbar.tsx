@@ -5,7 +5,8 @@ import { Link, useLocation } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import Loading from '../Loading/Loading';
 import useNav from '../../../hooks/useNav';
-import DarkMode from './../DarkMode/DarkMode';
+import DarkMode from '../DarkMode/DarkMode';
+
 
 const Navbar = () => {
     const { pathname } = useLocation()
@@ -30,7 +31,7 @@ const Navbar = () => {
             }
             <li><Link to='/about'>About</Link></li>
             <div className='mx-8 mt-3'>
-            <DarkMode/>
+                <DarkMode />
             </div>
             {
                 user ? <>
@@ -75,12 +76,12 @@ const Navbar = () => {
                     </div>
                     <Link to='/' className="btn btn-ghost normal-case text-xl">iTracker</Link>
                 </div>
-                           
+
                 <div className="navbar-end hidden lg:flex">
                     <ul className="menu menu-horizontal p-0">
                         {menuItem}
-                           
-                              
+
+
                     </ul>
                 </div>
                 <div className="navbar-end block md:hidden flex">
