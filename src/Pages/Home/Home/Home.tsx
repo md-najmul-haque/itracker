@@ -6,6 +6,8 @@ import FAQ from '../FAQ/FAQ';
 import TrustedCompany from '../TrustedCompany/TrustedCompany';
 import IssueManagement from '../../IssueManagement/IssueManagement';
 import SocialShare from '../../Shared/SocialShare/SocialShare';
+import ScrollingImage from '../ScrollingImage/ScrollingImage';
+import Indecator from './Indecator';
 
 
 
@@ -13,11 +15,13 @@ const Home = () => {
 
     return (
         <div>
+            <Indecator/>
             <Banner />
             <SocialShare/>
             <Teamwork />
             <IssueManagement />
             <Bugsearch />
+            <ScrollingImage/>
             <Testimonial />
             <TrustedCompany />
             <FAQ />
