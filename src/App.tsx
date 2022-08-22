@@ -31,6 +31,7 @@ import Summary from './Pages/Dashboard/Projects/MyProject/Summary';
 import Messages from './Pages/Dashboard/Projects/MyProject/Messages';
 import ProjectCalendar from './Pages/Dashboard/Projects/MyProject/ProjectCalendar';
 import Board from './Pages/Dashboard/Projects/MyProject/Board/Board';
+import NavDashBoard from './Pages/Shared/Navbar/NavDashBoard';
 
 
 type stateProps = {
@@ -45,7 +46,7 @@ function App() {
   return (
     <div>
       {!pathname.includes('dashboard') && <Navbar />}
-
+      {pathname.includes('dashboard') && <NavDashBoard />}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/features" element={<Features />} />
@@ -78,6 +79,7 @@ function App() {
         <Route path="*" element={<Notfound />} />
       </Routes>
       {!pathname.includes('dashboard') && <Footer />}
+     
 
       <ScrollToTop />
       <MessengerCustomerChat pageId="100457816122808" appId="553013519763702" />

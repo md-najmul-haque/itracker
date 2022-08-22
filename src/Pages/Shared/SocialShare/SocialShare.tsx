@@ -39,7 +39,7 @@ const SocialShare = () => {
           <LinkedinIcon size={40} round={true} />
         </LinkedinShareButton>
         </a>
-        <a href="#" id="contact">
+        <a href="#" id="el">
         <EmailShareButton	
           url={shareUrl}
      
