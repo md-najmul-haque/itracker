@@ -56,11 +56,8 @@
     "react-toastify": "^9.0.7",
     "redux-typescript": "^1.2.1",
     "styled-components": "^5.3.5",
-<<<<<<< HEAD
-    "sweetalert2": "^11.4.28",
-=======
     "sweetalert": "^2.1.2",
->>>>>>> e40e82eee76d77432c98b7283ef2900cb0c68c90
+    "sweetalert2": "^11.4.28",
     "swiper": "^8.3.2",
     "typescript": "^4.7.4",
     "typescript-react-facebook-messenger": "^0.0.4",

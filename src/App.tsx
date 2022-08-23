@@ -31,6 +31,8 @@ import Summary from './Pages/Dashboard/Projects/MyProject/Summary';
 import Messages from './Pages/Dashboard/Projects/MyProject/Messages';
 import ProjectCalendar from './Pages/Dashboard/Projects/MyProject/ProjectCalendar';
 import Board from './Pages/Dashboard/Projects/MyProject/Board';
+import Pricing from './Pages/Home/Pricing/Pricing';
+import Payment from './Pages/Home/Pricing/Payment';
 
 type stateProps = {
   lists: any
@@ -48,6 +50,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/features" element={<Features />} />
+        <Route path="/pricing" element={<Pricing/>} />
+        <Route path="/payment" element={<Payment/>} />
+
         <Route path="/about" element={<About />} />
         <Route path="/signin" element={<SingIn />} />
         <Route path="/signup" element={<SignUp />} />
