@@ -1,29 +1,29 @@
 [
     {
         "title": "To Do",
-        "id": 0,
+        "id": "0",
         "cards": [
             {
-                "id": 0,
-                "text": "issue description-1"
+                "id": "0",
+                "task": "issue description-1"
             },
             {
-                "id": 1,
-                "text": "issue description-2"
+                "id": "1",
+                "task": "issue description-2"
             }
         ]
     },
     {
         "title": "In Progress",
-        "id": 1,
+        "id": "1",
         "cards": [
             {
-                "id": 0,
-                "text": "issue description-1"
+                "id": "0",
+                "task": "issue description-3"
             },
             {
-                "id": 1,
-                "text": "issue description-2"
+                "id": "1",
+                "task": "issue description-4"
             }
         ]
     }

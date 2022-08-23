@@ -1,34 +1,35 @@
-import { Dispatch, SetStateAction } from 'react';
+import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import swal from 'sweetalert';
-import auth from '../../../firebase.init';
-import Loading from '../../Shared/Loading/Loading';
+import auth from '../../../../../firebase.init';
+import Loading from '../../../../Shared/Loading/Loading';
 
 interface IFormInput {
-    projectName: string,
-    projectDescription: string,
+    issueName: string,
+    description: string,
     email: string,
-    startingDate: string,
-    endData: string
+    dueData: string,
+    priority: string
+
 }
 
-type AddProjectProps = {
-    setModal: Dispatch<SetStateAction<boolean>>
+type AddIssueProps = {
+    setModal: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-const AddProject = ({ setModal }: AddProjectProps) => {
+const AddIssue = ({ setModal }: AddIssueProps) => {
     const { register, handleSubmit } = useForm<IFormInput>();
     const onSubmit: SubmitHandler<IFormInput> = async (data) => {
         const project = {
-            projectName: data.projectName,
-            projectDescription: data.projectDescription,
+            issueName: data.issueName,
+            description: data.description,
             email: data.email,
-            startingDate: data.startingDate,
-            endData: data.endData
+            dueData: data.dueData,
+            priority: data.priority
         }
 
-        fetch('https://dry-eyrie-76820.herokuapp.com/addProject', {
+        fetch('http://localhost:5000/addIssue', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -39,7 +40,7 @@ const AddProject = ({ setModal }: AddProjectProps) => {
             .then(project => console.log(project))
         swal({
             title: "Congrats!",
-            text: "Project Added Successfully!",
+            text: "Meeting Updated Successfully!",
             icon: "success",
         });
         setModal(false);
@@ -53,23 +54,23 @@ const AddProject = ({ setModal }: AddProjectProps) => {
     }
 
     return (
-        <div>
-            <input type="checkbox" id="add-project" className="modal-toggle" />
+        <div className=''>
+            <input type="checkbox" id="add-issue" className="modal-toggle" />
             <div className="modal modal-bottom sm:modal-middle">
-                <div className="modal-box">
-                    <label htmlFor="add-project" className="btn btn-sm bg-accent text-white btn-square absolute right-2 top-2">✕</label>
+                <div className="modal-box h-screen">
+                    <label htmlFor="add-issue" className="btn btn-sm bg-accent text-white btn-square absolute right-2 top-2">✕</label>
                     <h3 className="font-bold text-lg">Hi <span className='text-primary'>{user?.displayName}</span>! Create your new projects.</h3>
 
                     <form onSubmit={handleSubmit(onSubmit)} className="bg-secondary mx-auto p-5">
                         <div className="form-control w-full mx-auto">
                             <label className="label">
-                                <span className="label-text">Project Name</span>
+                                <span className="label-text">Issue Title</span>
                             </label>
                             <input
                                 type="text"
-                                placeholder="Project Name"
+                                placeholder="Enter Issue Title"
                                 className="input input-bordered bg-white w-full"
-                                {...register("projectName", {
+                                {...register("issueName", {
                                     required: {
                                         value: true,
                                         message: "name is required"
@@ -80,18 +81,18 @@ const AddProject = ({ setModal }: AddProjectProps) => {
 
                         <div className="form-control w-full mx-auto">
                             <label className="label">
-                                <span className="label-text">Project Description</span>
+                                <span className="label-text">Description</span>
                             </label>
                             <textarea
-                                placeholder="Project Description"
+                                placeholder="Enter Description"
                                 className="input input-bordered bg-white w-full"
-                                {...register("projectDescription")}
+                                {...register("description")}
                             />
                         </div>
 
                         <div className="form-control w-full mx-auto">
                             <label className="label">
-                                <span className="label-text">Invite Your Team Member</span>
+                                <span className="label-text">Assign Member</span>
                             </label>
                             <input
                                 type="email"
@@ -105,34 +106,35 @@ const AddProject = ({ setModal }: AddProjectProps) => {
                                 })} />
                         </div>
 
+
                         <div className="form-control w-full mx-auto">
                             <label className="label">
-                                <span className="label-text">Starting Date</span>
+                                <span className="label-text">Due Date</span>
                             </label>
                             <input
                                 type="date"
                                 className="input input-bordered bg-white w-full"
-                                {...register("startingDate", {
+                                {...register("dueData", {
                                     required: {
                                         value: true,
-                                        message: "name is required"
+                                        message: "Due is required"
 
                                     }
                                 })}
                             />
                         </div>
+
                         <div className="form-control w-full mx-auto">
                             <label className="label">
-                                <span className="label-text">End Date</span>
+                                <span className="label-text">Priority</span>
                             </label>
                             <input
-                                type="date"
+                                type="text"
                                 className="input input-bordered bg-white w-full"
-                                {...register("endData", {
+                                {...register("priority", {
                                     required: {
                                         value: true,
-                                        message: "name is required"
-
+                                        message: "priority is required"
                                     }
                                 })}
                             />
@@ -148,4 +150,4 @@ const AddProject = ({ setModal }: AddProjectProps) => {
     );
 };
 
-export default AddProject;
+export default AddIssue;
