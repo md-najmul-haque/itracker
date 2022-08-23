@@ -6,11 +6,12 @@ import auth from '../../../../../firebase.init';
 import Loading from '../../../../Shared/Loading/Loading';
 
 interface IFormInput {
-    projectName: string,
-    projectDescription: string,
+    issueName: string,
+    description: string,
     email: string,
-    startingDate: string,
-    endData: string
+    dueData: string,
+    priority: string
+
 }
 
 type AddIssueProps = {
@@ -21,11 +22,11 @@ const AddIssue = ({ setModal }: AddIssueProps) => {
     const { register, handleSubmit } = useForm<IFormInput>();
     const onSubmit: SubmitHandler<IFormInput> = async (data) => {
         const project = {
-            projectName: data.projectName,
-            projectDescription: data.projectDescription,
+            issueName: data.issueName,
+            description: data.description,
             email: data.email,
-            startingDate: data.startingDate,
-            endData: data.endData
+            dueData: data.dueData,
+            priority: data.priority
         }
 
         fetch('http://localhost:5000/addIssue', {
@@ -53,23 +54,23 @@ const AddIssue = ({ setModal }: AddIssueProps) => {
     }
 
     return (
-        <div>
+        <div className=''>
             <input type="checkbox" id="add-issue" className="modal-toggle" />
             <div className="modal modal-bottom sm:modal-middle">
-                <div className="modal-box">
+                <div className="modal-box h-screen">
                     <label htmlFor="add-issue" className="btn btn-sm bg-accent text-white btn-square absolute right-2 top-2">✕</label>
                     <h3 className="font-bold text-lg">Hi <span className='text-primary'>{user?.displayName}</span>! Create your new projects.</h3>
 
                     <form onSubmit={handleSubmit(onSubmit)} className="bg-secondary mx-auto p-5">
                         <div className="form-control w-full mx-auto">
                             <label className="label">
-                                <span className="label-text">Project Name</span>
+                                <span className="label-text">Issue Title</span>
                             </label>
                             <input
                                 type="text"
-                                placeholder="Project Name"
+                                placeholder="Enter Issue Title"
                                 className="input input-bordered bg-white w-full"
-                                {...register("projectName", {
+                                {...register("issueName", {
                                     required: {
                                         value: true,
                                         message: "name is required"
@@ -80,18 +81,18 @@ const AddIssue = ({ setModal }: AddIssueProps) => {
 
                         <div className="form-control w-full mx-auto">
                             <label className="label">
-                                <span className="label-text">Project Description</span>
+                                <span className="label-text">Description</span>
                             </label>
                             <textarea
-                                placeholder="Project Description"
+                                placeholder="Enter Description"
                                 className="input input-bordered bg-white w-full"
-                                {...register("projectDescription")}
+                                {...register("description")}
                             />
                         </div>
 
                         <div className="form-control w-full mx-auto">
                             <label className="label">
-                                <span className="label-text">Invite Your Team Member</span>
+                                <span className="label-text">Assign Member</span>
                             </label>
                             <input
                                 type="email"
@@ -105,34 +106,35 @@ const AddIssue = ({ setModal }: AddIssueProps) => {
                                 })} />
                         </div>
 
+
                         <div className="form-control w-full mx-auto">
                             <label className="label">
-                                <span className="label-text">Starting Date</span>
+                                <span className="label-text">Due Date</span>
                             </label>
                             <input
                                 type="date"
                                 className="input input-bordered bg-white w-full"
-                                {...register("startingDate", {
+                                {...register("dueData", {
                                     required: {
                                         value: true,
-                                        message: "name is required"
+                                        message: "Due is required"
 
                                     }
                                 })}
                             />
                         </div>
+
                         <div className="form-control w-full mx-auto">
                             <label className="label">
-                                <span className="label-text">End Date</span>
+                                <span className="label-text">Priority</span>
                             </label>
                             <input
-                                type="date"
+                                type="text"
                                 className="input input-bordered bg-white w-full"
-                                {...register("endData", {
+                                {...register("priority", {
                                     required: {
                                         value: true,
-                                        message: "name is required"
-
+                                        message: "priority is required"
                                     }
                                 })}
                             />
