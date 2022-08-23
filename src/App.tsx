@@ -30,8 +30,9 @@ import Overview from './Pages/Dashboard/Projects/MyProject/Overview';
 import Summary from './Pages/Dashboard/Projects/MyProject/Summary';
 import Messages from './Pages/Dashboard/Projects/MyProject/Messages';
 import ProjectCalendar from './Pages/Dashboard/Projects/MyProject/ProjectCalendar';
-import Board from './Pages/Dashboard/Projects/MyProject/Board/Board';
 import NavDashBoard from './Pages/Shared/Navbar/NavDashBoard';
+import List from './Pages/Dashboard/Projects/MyProject/List/List';
+
 
 
 type stateProps = {
@@ -71,7 +72,7 @@ function App() {
           <Route path='myProject' element={<MyProject />} >
             <Route path='overview' element={<Overview />} />
             <Route path='projectCalendar' element={<ProjectCalendar />} />
-            <Route path='board' element={<Board />} />
+            <Route path='board' element={<List />} />
             <Route path='summary' element={<Summary />} />
             <Route path='messages' element={<Messages />} />
           </Route>
@@ -79,7 +80,7 @@ function App() {
         <Route path="*" element={<Notfound />} />
       </Routes>
       {!pathname.includes('dashboard') && <Footer />}
-     
+
 
       <ScrollToTop />
       <MessengerCustomerChat pageId="100457816122808" appId="553013519763702" />

@@ -1,15 +1,11 @@
-import { signOut } from "firebase/auth";
-import { useAuthState } from "react-firebase-hooks/auth";
-import { Link, Outlet, useLocation } from "react-router-dom";
-import auth from "../../../../firebase.init";
-import Loading from "../../../Shared/Loading/Loading";
-import SearchAll from "../../../Shared/SearchAll/SearchAll";
-import BookData from '../../../Shared/SearchAll/Data.json'
-import NavDashBoard from "../../../Shared/Navbar/NavDashBoard";
+import { useState } from "react";
+import { Link, Outlet } from "react-router-dom";
+import AddIssue from "./List/AddIssue";
+
 
 const MyProject = () => {
 
-
+    const [modal, setModal] = useState(false)
 
     return (
         <div >
@@ -21,11 +17,23 @@ const MyProject = () => {
                             <ul className="menu menu-horizontal text-sm ml-18">
                                 <li><Link className="focus:text-red-600 focus:text-decoration:underline  bg-transparent" to="/dashboard/myProject/overview">Overview</Link></li>
                                 <li><Link className="focus:text-red-600 focus:text-decoration:underline  bg-transparent" to="/dashboard/myProject/projectCalendar">Calendar</Link></li>
-                                <li><Link className="focus:text-red-600 focus:text-decoration:underline  bg-transparent" to="/dashboard/myProject/board">Board</Link></li>
+                                <li><Link className="focus:text-red-600 focus:text-decoration:underline  bg-transparent" to="/dashboard/myProject/board">List</Link></li>
                                 <li><Link className="focus:text-red-600  bg-transparent" to="/dashboard/myProject/summary">Summary</Link></li>
                                 <li><Link className="focus:text-red-600  bg-transparent" to="/dashboard/myProject/messages">Messages</Link></li>
                             </ul>
                         </div>
+                        <div>
+                            <button className="inline-flex sm:ml-3 mt-4 sm:mt-0 items-start justify-start bg-accent hover:bg-accent-focus focus:outline-none rounded">
+                                <label htmlFor="add-issue" onClick={() => setModal(true)} className="text-sm px-6 py-3 font-medium leading-none text-white">+ Create Projects </label>
+                            </button>
+                        </div>
+
+                        <div>
+                            {
+                                modal && <AddIssue setModal={setModal} />
+                            }
+                        </div>
+
                     </div>
 
                     <Outlet />
