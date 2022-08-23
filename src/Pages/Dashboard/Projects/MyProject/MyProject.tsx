@@ -1,11 +1,9 @@
 import { useState } from "react";
 import { Link, Outlet } from "react-router-dom";
-import AddIssue from "./List/AddIssue";
+
 
 
 const MyProject = () => {
-
-    const [modal, setModal] = useState(false)
 
     return (
         <div >
@@ -21,17 +19,6 @@ const MyProject = () => {
                                 <li><Link className="focus:text-red-600  bg-transparent" to="/dashboard/myProject/summary">Summary</Link></li>
                                 <li><Link className="focus:text-red-600  bg-transparent" to="/dashboard/myProject/messages">Messages</Link></li>
                             </ul>
-                        </div>
-                        <div>
-                            <button className="inline-flex sm:ml-3 mt-4 sm:mt-0 items-start justify-start bg-accent hover:bg-accent-focus focus:outline-none rounded">
-                                <label htmlFor="add-issue" onClick={() => setModal(true)} className="text-sm px-6 py-3 font-medium leading-none text-white">+ Create Projects </label>
-                            </button>
-                        </div>
-
-                        <div>
-                            {
-                                modal && <AddIssue setModal={setModal} />
-                            }
                         </div>
 
                     </div>

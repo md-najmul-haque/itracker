@@ -39,7 +39,7 @@ const AddProject = ({ setModal }: AddProjectProps) => {
             .then(project => console.log(project))
         swal({
             title: "Congrats!",
-            text: "Meeting Updated Successfully!",
+            text: "Project Added Successfully!",
             icon: "success",
         });
         setModal(false);
