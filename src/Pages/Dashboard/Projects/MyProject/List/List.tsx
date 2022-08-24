@@ -69,6 +69,7 @@ const List = () => {
                         <tr className="h-16 w-full font-semibold text-left text-sm leading-none text-gray-800">
                             <th className="pl-12">Issue Name</th>
                             <th className="pl-12">Issue Description</th>
+                            <th className="pl-20">Stage</th>
                             <th className="pl-20">Priority</th>
                             <th className="pl-16">Status</th>
                             <th className="pl-20">Due Date</th>
@@ -85,6 +86,10 @@ const List = () => {
                                 </td>
                                 <td className="pl-12">
                                     <p className="font-medium">{issue.description}</p>
+                                </td>
+
+                                <td className="pl-20">
+                                    <p className="font-medium">{issue.stage}</p>
                                 </td>
 
                                 <td className="pl-20">
