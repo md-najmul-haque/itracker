@@ -2,23 +2,22 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import AddIssue from './AddIssue';
 
+
 const List = () => {
 
     const [modal, setModal] = useState(false)
 
     const menuItem =
         <div className='flex items-center'>
-            <li><Link to='#'>Dummy</Link></li>
+
             <li>
-                <button className="inline-flex sm:ml-3 sm:mt-0 items-start justify-start  focus:outline-none rounded">
-                    <label htmlFor="add-issue" onClick={() => setModal(true)} className="text-sm btn-accent px-6 py-2 rounded text-white font-medium">+ Add Issue </label>
-                </button>
+                <button onClick={() => setModal(true)} className="inline-block px-6 py-2.5 text-white font-medium text-xs leading-tight uppercase rounded shadow-md  hover:shadow-lg btn-secondary hover:bg-secondary-focus focus:shadow-lg  focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out mr-1.5" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">+ Add Issue</button>
             </li>
         </div>
 
     return (
         <div>
-            <div className='navbar text-accent sticky z-50'>
+            <div className='navbar text-secondary sticky'>
                 <div className='container mx-auto'>
                     <div className="navbar-start">
                         <div className="dropdown">
@@ -29,7 +28,7 @@ const List = () => {
                                 {menuItem}
                             </ul>
                         </div>
-                        <Link to='/' className="btn btn-ghost normal-case text-xl">Project</Link>
+                        <Link to='/' className="normal-case px-5 py-2 font-medium text-xl">Project Name</Link>
                     </div>
 
                     <div className="navbar-end lg:flex">
@@ -45,6 +44,7 @@ const List = () => {
                     modal && <AddIssue setModal={setModal} />
                 }
             </div>
+
         </div>
     );
 };

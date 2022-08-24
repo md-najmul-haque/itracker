@@ -36,6 +36,7 @@ import Payment from './Pages/Home/Pricing/Payment';
 import NavDashBoard from './Pages/Shared/Navbar/NavDashBoard';
 import List from './Pages/Dashboard/Projects/MyProject/List/List';
 
+
 type stateProps = {
   lists: any
 }
@@ -48,7 +49,7 @@ function App() {
   return (
     <div>
       {!pathname.includes('dashboard') && <Navbar />}
-      {pathname.includes('dashboard') && <NavDashBoard />}
+      {pathname.includes('dashboard') && <NavDashBoard/>}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/features" element={<Features />} />

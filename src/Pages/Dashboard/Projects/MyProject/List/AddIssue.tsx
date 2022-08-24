@@ -5,20 +5,22 @@ import swal from 'sweetalert';
 import auth from '../../../../../firebase.init';
 import Loading from '../../../../Shared/Loading/Loading';
 
+type AddIssueProps = {
+    setModal: React.Dispatch<React.SetStateAction<boolean>>
+}
+
 interface IFormInput {
     issueName: string,
     description: string,
     email: string,
     dueData: string,
-    priority: string
+    priority: string,
+    status: string
 
-}
-
-type AddIssueProps = {
-    setModal: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 const AddIssue = ({ setModal }: AddIssueProps) => {
+
     const { register, handleSubmit } = useForm<IFormInput>();
     const onSubmit: SubmitHandler<IFormInput> = async (data) => {
         const project = {
@@ -26,7 +28,8 @@ const AddIssue = ({ setModal }: AddIssueProps) => {
             description: data.description,
             email: data.email,
             dueData: data.dueData,
-            priority: data.priority
+            priority: data.priority,
+            status: data.status
         }
 
         fetch('http://localhost:5000/addIssue', {
@@ -40,7 +43,7 @@ const AddIssue = ({ setModal }: AddIssueProps) => {
             .then(project => console.log(project))
         swal({
             title: "Congrats!",
-            text: "Meeting Updated Successfully!",
+            text: "Task added Successfully!",
             icon: "success",
         });
         setModal(false);
@@ -54,14 +57,13 @@ const AddIssue = ({ setModal }: AddIssueProps) => {
     }
 
     return (
-        <div className=''>
-            <input type="checkbox" id="add-issue" className="modal-toggle" />
-            <div className="modal modal-bottom sm:modal-middle">
-                <div className="modal-box h-screen">
-                    <label htmlFor="add-issue" className="btn btn-sm bg-accent text-white btn-square absolute right-2 top-2">✕</label>
-                    <h3 className="font-bold text-lg">Hi <span className='text-primary'>{user?.displayName}</span>! Create your new projects.</h3>
-
-                    <form onSubmit={handleSubmit(onSubmit)} className="bg-secondary mx-auto p-5">
+        <div>
+            <div className="offcanvas offcanvas-end fixed bottom-0 flex flex-col max-w-full bg-white invisible bg-clip-padding shadow-sm outline-none transition duration-300 ease-in-out text-gray-700 top-0 right-0 border-none w-2/5" tabIndex={-1} id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                <div className="offcanvas-header flex items-center justify-between p-4">
+                    <h5 className="offcanvas-title mt-10 ml-5 text-xl leading-normal" id="offcanvasRightLabel"><span className='text-secondary font-semibold'>{user?.displayName}!</span> Create your new issue here.</h5>
+                </div>
+                <div className="offcanvas-body flex-grow px-4 overflow-y-auto">
+                    <form onSubmit={handleSubmit(onSubmit)} className="mx-auto p-5">
                         <div className="form-control w-full mx-auto">
                             <label className="label">
                                 <span className="label-text">Issue Title</span>
@@ -69,7 +71,7 @@ const AddIssue = ({ setModal }: AddIssueProps) => {
                             <input
                                 type="text"
                                 placeholder="Enter Issue Title"
-                                className="input input-bordered bg-white w-full"
+                                className="input input-bordered focus:outline-0 focus:border-secondary rounded-sm bg-white w-full"
                                 {...register("issueName", {
                                     required: {
                                         value: true,
@@ -83,9 +85,10 @@ const AddIssue = ({ setModal }: AddIssueProps) => {
                             <label className="label">
                                 <span className="label-text">Description</span>
                             </label>
+
                             <textarea
                                 placeholder="Enter Description"
-                                className="input input-bordered bg-white w-full"
+                                className="input input-bordered focus:outline-0 focus:border-secondary rounded-sm bg-white w-full"
                                 {...register("description")}
                             />
                         </div>
@@ -97,7 +100,7 @@ const AddIssue = ({ setModal }: AddIssueProps) => {
                             <input
                                 type="email"
                                 placeholder="Invite Your Team Member"
-                                className="input input-bordered bg-white w-full"
+                                className="input input-bordered focus:outline-0 focus:border-secondary rounded-sm bg-white w-full"
                                 {...register("email", {
                                     pattern: {
                                         value: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
@@ -113,7 +116,7 @@ const AddIssue = ({ setModal }: AddIssueProps) => {
                             </label>
                             <input
                                 type="date"
-                                className="input input-bordered bg-white w-full"
+                                className="input input-bordered focus:outline-0 focus:border-secondary rounded-sm bg-white w-full"
                                 {...register("dueData", {
                                     required: {
                                         value: true,
@@ -130,7 +133,7 @@ const AddIssue = ({ setModal }: AddIssueProps) => {
                             </label>
                             <input
                                 type="text"
-                                className="input input-bordered bg-white w-full"
+                                className="input input-bordered focus:outline-0 focus:border-secondary rounded-sm bg-white w-full"
                                 {...register("priority", {
                                     required: {
                                         value: true,
@@ -140,13 +143,29 @@ const AddIssue = ({ setModal }: AddIssueProps) => {
                             />
                         </div>
 
-                        <div className="modal-action w-full mx-auto m-5">
-                            <input className='btn btn-accent text-white w-full' type="submit" value="Add Project" />
+                        <div className="form-control w-full mx-auto">
+                            <label className="label">
+                                <span className="label-text">Status</span>
+                            </label>
+                            <input
+                                type="text"
+                                className="input input-bordered focus:outline-0 focus:border-secondary rounded-sm bg-white w-full"
+                                {...register("status", {
+                                    required: {
+                                        value: false,
+                                        message: "priority is required"
+                                    }
+                                })} />
+                        </div>
+
+                        <div className="w-full mx-auto m-5">
+                            <input className='btn-secondary rounded-sm text-white py-2 font-medium px-6' type="submit" value="Add Issue" />
+                            <button onClick={() => setModal(false)} className='btn-secondary ml-5 rounded-sm text-white py-2 font-medium px-6'>Cancel</button>
                         </div>
                     </form>
                 </div>
             </div>
-        </div >
+        </div>
     );
 };
 

@@ -4,7 +4,6 @@ import { signOut } from 'firebase/auth';
 import { Link, useLocation } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import Loading from '../Loading/Loading';
-import useNav from '../../../hooks/useNav';
 import DarkMode from '../DarkMode/DarkMode';
 
 

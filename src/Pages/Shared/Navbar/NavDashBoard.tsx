@@ -6,10 +6,11 @@ import auth from '../../../firebase.init';
 import Loading from '../Loading/Loading';
 import SearchAll from '../SearchAll/SearchAll';
 import BookData from '../../Shared/SearchAll/Data.json'
+
+
 const NavDashBoard = () => {
     const { pathname } = useLocation()
     const [user, loading, error] = useAuthState(auth)
-
 
     if (loading) {
         return <Loading />
@@ -48,9 +49,9 @@ const NavDashBoard = () => {
     return (
         <div className='relative'>
             <div className='navbar bg-transparent text-accent sticky font-semibold z-50 py-3 shadow-md'>
+            <div className='navbar bg-transparent text-accent sticky font-semibold py-3 shadow-md'>
                 <div className='container mx-auto'>
                     <div className="navbar-start">
-
                         <div className="dropdown">
                             <label tabIndex={0} className="btn btn-ghost lg:hidden">
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
@@ -81,11 +82,18 @@ const NavDashBoard = () => {
                 </div>
 
             </div >
+
             <div className='absolute top-3 right-28 z-50 hidden lg:block'>
+
+            <div className='absolute top-3 right-28 hidden lg:block'>
+
                 <SearchAll placeholder="what do you think.?" data={BookData} />
             </div>
         </div>
+        </div>
+        </div>
     );
-};
+}
+
 
 export default NavDashBoard;

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 type ShowProjectProps = {
     project: {
@@ -10,6 +11,11 @@ type ShowProjectProps = {
 }
 
 const ShowProject = ({ project }: ShowProjectProps) => {
+
+
+
+
+
     const { projectName, projectDescription, email, startingDate, endData } = project;
     return (
         <div className='bg-white rounded-lg text-center shadow-2xl px-10 py-5'>
@@ -20,6 +26,7 @@ const ShowProject = ({ project }: ShowProjectProps) => {
                 <p>Starting Date:{startingDate}</p>
                 <p>End Data: {endData}</p>
             </div>
+            <Link to='/dashboard/myProject/issues' className='hover:bg-slate-600 transition-all py-1 text-secondary'>Details</Link>
         </div>
     );
 };

@@ -7,7 +7,7 @@ import auth from '../../../firebase.init';
 import Loading from '../../Shared/Loading/Loading';
 
 const Pricing = () => {
-    const [user,loading] = useAuthState(auth)
+    const [user,loading,error] = useAuthState(auth)
     const [paymentId, setPaymentId] = useState('')
     console.log(paymentId) 
    
