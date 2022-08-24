@@ -120,6 +120,22 @@ const AddIssue = ({ setModal }: AddIssueProps) => {
 
                         <div className="form-control w-full mx-auto">
                             <label className="label">
+                                <span className="label-text">Working Stage</span>
+                            </label>
+                            <input
+                                type="text"
+                                className="input input-bordered focus:outline-0 focus:border-secondary rounded-sm bg-white w-full"
+                                {...register("stage", {
+                                    required: {
+                                        value: true,
+                                        message: "Stage is required"
+                                    }
+                                })}
+                            />
+                        </div>
+
+                        <div className="form-control w-full mx-auto">
+                            <label className="label">
                                 <span className="label-text">Priority</span>
                             </label>
                             <input

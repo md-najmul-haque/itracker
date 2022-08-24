@@ -3,6 +3,7 @@ export interface Issue {
     description: string,
     email: string,
     dueData: string,
+    stage: string,
     priority: string,
-    status: string
+    status: string,
 }
