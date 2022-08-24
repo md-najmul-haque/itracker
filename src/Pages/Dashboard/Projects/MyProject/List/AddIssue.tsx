@@ -23,7 +23,7 @@ const AddIssue = ({ setModal }: AddIssueProps) => {
             status: data.status
         }
 
-        fetch('http://localhost:5000/addIssue', {
+        fetch('http://localhost:5000/addTask', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
