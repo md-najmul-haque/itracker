@@ -72,7 +72,7 @@ const AddIssue = ({ setModal }: AddIssueProps) => {
                             <input
                                 type="text"
                                 placeholder="Enter Issue Title"
-                                className="input input-bordered focus:border-secondary outline-hidden rounded-sm bg-white w-full focus:w-full"
+                                className="input input-bordered focus:outline-0 focus:border-secondary rounded-sm bg-white w-full"
                                 {...register("issueName", {
                                     required: {
                                         value: true,
@@ -88,7 +88,7 @@ const AddIssue = ({ setModal }: AddIssueProps) => {
                             </label>
                             <textarea
                                 placeholder="Enter Description"
-                                className="input input-bordered bg-white w-full"
+                                className="input input-bordered focus:outline-0 focus:border-secondary rounded-sm bg-white w-full"
                                 {...register("description")}
                             />
                         </div>
@@ -100,7 +100,7 @@ const AddIssue = ({ setModal }: AddIssueProps) => {
                             <input
                                 type="email"
                                 placeholder="Invite Your Team Member"
-                                className="input input-bordered bg-white w-full"
+                                className="input input-bordered focus:outline-0 focus:border-secondary rounded-sm bg-white w-full"
                                 {...register("email", {
                                     pattern: {
                                         value: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
@@ -116,7 +116,7 @@ const AddIssue = ({ setModal }: AddIssueProps) => {
                             </label>
                             <input
                                 type="date"
-                                className="input input-bordered bg-white w-full"
+                                className="input input-bordered focus:outline-0 focus:border-secondary rounded-sm bg-white w-full"
                                 {...register("dueData", {
                                     required: {
                                         value: true,
@@ -133,7 +133,7 @@ const AddIssue = ({ setModal }: AddIssueProps) => {
                             </label>
                             <input
                                 type="text"
-                                className="input input-bordered bg-white w-full"
+                                className="input input-bordered focus:outline-0 focus:border-secondary rounded-sm bg-white w-full"
                                 {...register("priority", {
                                     required: {
                                         value: true,
@@ -149,7 +149,7 @@ const AddIssue = ({ setModal }: AddIssueProps) => {
                             </label>
                             <input
                                 type="text"
-                                className="input input-bordered bg-white w-full"
+                                className="input input-bordered focus:outline-0 focus:border-secondary rounded-sm bg-white w-full"
                                 {...register("status", {
                                     required: {
                                         value: false,
