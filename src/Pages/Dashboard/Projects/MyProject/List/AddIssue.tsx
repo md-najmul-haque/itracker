@@ -86,6 +86,7 @@ const AddIssue = ({ setModal }: AddIssueProps) => {
                             <label className="label">
                                 <span className="label-text">Description</span>
                             </label>
+
                             <textarea
                                 placeholder="Enter Description"
                                 className="input input-bordered focus:outline-0 focus:border-secondary rounded-sm bg-white w-full"
@@ -158,8 +159,9 @@ const AddIssue = ({ setModal }: AddIssueProps) => {
                                 })} />
                         </div>
 
-                        <div className="modal-action w-full mx-auto m-5">
-                            <input className='btn btn-accent text-white w-full' type="submit" value="Add Issue" />
+                        <div className="w-full mx-auto m-5">
+                            <input className='btn-secondary rounded-sm text-white py-2 font-medium px-6' type="submit" value="Add Issue" />
+                            <button onClick={() => setModal(false)} className='btn-secondary ml-5 rounded-sm text-white py-2 font-medium px-6'>Cancel</button>
                         </div>
                     </form>
                 </div>
