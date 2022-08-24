@@ -49,6 +49,8 @@ const Projects = () => {
                         <ShowProject project={project} />
                     </>)
                 }
+
+                
             </div>
 
             <div>

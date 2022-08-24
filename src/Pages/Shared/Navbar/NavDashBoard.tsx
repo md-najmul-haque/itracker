@@ -21,36 +21,36 @@ const NavDashBoard = () => {
 
 
     const menuItem =
-    <>
-        {
-            user ? <>
-                <div className="dropdown dropdown-end">
-                    <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                        <div className="w-10 rounded-full">
-                            <img src={`${user?.photoURL}` || 'https://i.ibb.co/1fcM35N/default-User.png'} alt='user-img' />
-                        </div>
-                    </label>
-                    <ul tabIndex={0} className="menu menu-compact dropdown-content p-2 shadow bg-secondary w-52">
-                        <li>
-                            <Link to='/viewProfile' className="justify-between">
-                                View Profile
-                            </Link>
-                        </li>
-                        <li><Link to='/updateProfile'>Update Profile</Link></li>
-                        <li><Link onClick={() => signOut(auth)} to='/'>Sign Out</Link></li>
-                    </ul>
-                </div>
-            </> : ''
-        }
+        <>
+            {
+                user ? <>
+                    <div className="dropdown dropdown-end">
+                        <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                            <div className="w-10 rounded-full">
+                                <img src={`${user?.photoURL}` || 'https://i.ibb.co/1fcM35N/default-User.png'} alt='user-img' />
+                            </div>
+                        </label>
+                        <ul tabIndex={0} className="menu menu-compact dropdown-content p-2 shadow bg-secondary w-52">
+                            <li>
+                                <Link to='/viewProfile' className="justify-between">
+                                    View Profile
+                                </Link>
+                            </li>
+                            <li><Link to='/updateProfile'>Update Profile</Link></li>
+                            <li><Link onClick={() => signOut(auth)} to='/'>Sign Out</Link></li>
+                        </ul>
+                    </div>
+                </> : ''
+            }
 
-    </>
+        </>
 
     return (
         <div className='relative'>
-        <div className='navbar bg-transparent text-accent sticky font-semibold z-50 py-3 shadow-md'>
+            <div className='navbar bg-transparent text-accent sticky font-semibold py-3 shadow-md'>
                 <div className='container mx-auto'>
                     <div className="navbar-start">
-          
+
                         <div className="dropdown">
                             <label tabIndex={0} className="btn btn-ghost lg:hidden">
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
@@ -60,9 +60,9 @@ const NavDashBoard = () => {
                             </ul>
                         </div>
                         <Link to='/' className="btn btn-ghost normal-case text-xl">iTracker</Link>
-                       
+
                     </div>
-                  
+
                     <div className="navbar-end hidden lg:flex">
 
                         <ul className="menu menu-horizontal p-0">
@@ -79,10 +79,10 @@ const NavDashBoard = () => {
 
                     </div>
                 </div>
-                
+
             </div >
-            <div className='absolute top-3 right-28 z-50 hidden lg:block'>
-                <SearchAll placeholder="what do you think.?" data={BookData}/>
+            <div className='absolute top-3 right-28 hidden lg:block'>
+                <SearchAll placeholder="what do you think.?" data={BookData} />
             </div>
         </div>
     );

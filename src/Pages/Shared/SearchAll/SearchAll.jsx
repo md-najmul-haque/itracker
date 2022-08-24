@@ -29,7 +29,7 @@ function SearchAll({ placeholder, data }) {
   };
 
   return (
-    <div className="search max-w-md mx-auto z-50">
+    <div className="search max-w-md mx-auto">
       <div className="searchInputs">
         <input
           type="text"
