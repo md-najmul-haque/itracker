@@ -58,13 +58,13 @@ const AddIssue = ({ setModal }: AddIssueProps) => {
 
     return (
         <div>
-            <div className="offcanvas offcanvas-end fixed bottom-0 flex flex-col max-w-full bg-white invisible bg-clip-padding shadow-sm outline-none transition duration-300 ease-in-out text-gray-700 top-0 right-0 border-none w-96" tabIndex={-1} id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+            <div className="offcanvas offcanvas-end fixed bottom-0 flex flex-col max-w-full bg-white invisible bg-clip-padding shadow-sm outline-none transition duration-300 ease-in-out text-gray-700 top-0 right-0 border-none w-2/5" tabIndex={-1} id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
                 <div className="offcanvas-header flex items-center justify-between p-4">
                     <h5 className="offcanvas-title mb-0 leading-normal font-semibold" id="offcanvasRightLabel"><span className='text-primary'>{user?.displayName}</span>! Create your new issue here.</h5>
                     <button type="button" className="btn-close box-content w-4 h-4 p-2 -my-5 -mr-2 text-black border-none rounded-none opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-black hover:opacity-75 hover:no-underline" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
                 <div className="offcanvas-body flex-grow p-4 overflow-y-auto">
-                    <form onSubmit={handleSubmit(onSubmit)} className="bg-secondary mx-auto p-5">
+                    <form onSubmit={handleSubmit(onSubmit)} className="mx-auto p-5">
                         <div className="form-control w-full mx-auto">
                             <label className="label">
                                 <span className="label-text">Issue Title</span>
@@ -72,7 +72,7 @@ const AddIssue = ({ setModal }: AddIssueProps) => {
                             <input
                                 type="text"
                                 placeholder="Enter Issue Title"
-                                className="input input-bordered bg-white w-full focus:w-full"
+                                className="input input-bordered focus:border-secondary outline-hidden rounded-sm bg-white w-full focus:w-full"
                                 {...register("issueName", {
                                     required: {
                                         value: true,

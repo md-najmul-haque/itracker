@@ -5,7 +5,7 @@ const Teamwork = () => {
 
   return (
 
-    <div className="hero bg-secondary dark:bg-black py-10">
+    <div className="hero bg-base-100 dark:bg-black py-10">
       <div className="hero-content container mx-auto text-center">
         <div className='lg:w-4/6 dark:text-white'>
           <h1 className="text-3xl uppercase font-bold py-3">Work on team project work</h1>

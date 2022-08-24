@@ -9,11 +9,10 @@ module.exports = {
       {
         theme: {
           primary: "#1976d2",
-          secondary: "#f2f2f2",
+          secondary: "#ff6400",
           accent: "#06283D",
           neutral: "#002B5B",
-          "orange": "#ff6400",
-          "base-100": "#F5F5F5",
+          "base-100": "#f2f2f2",
         },
       },
       // "dark",
