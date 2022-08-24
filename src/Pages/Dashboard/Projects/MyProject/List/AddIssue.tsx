@@ -41,12 +41,6 @@ const AddIssue = ({ setModal }: AddIssueProps) => {
         })
             .then(res => res.json())
             .then(project => console.log(project))
-        swal({
-            title: "Congrats!",
-            text: "Meeting Updated Successfully!",
-            icon: "success",
-        });
-        setModal(false);
 
     };
 
