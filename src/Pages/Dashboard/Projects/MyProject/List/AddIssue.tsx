@@ -13,14 +13,15 @@ type AddIssueProps = {
 const AddIssue = ({ setModal }: AddIssueProps) => {
 
     const { register, handleSubmit } = useForm<Issue>();
-    const onSubmit: SubmitHandler<Issue> = async (data) => {
+    const onSubmit: SubmitHandler<Issue> = async (data, e) => {
         const issue = {
             issueName: data.issueName,
             description: data.description,
             email: data.email,
             dueData: data.dueData,
-            priority: data.priority,
-            status: data.status
+            stage: e?.target.stage.value,
+            priority: e?.target.priority.value,
+            status: e?.target.status.value,
         }
 
         fetch('http://localhost:5000/addTask', {
@@ -122,47 +123,35 @@ const AddIssue = ({ setModal }: AddIssueProps) => {
                             <label className="label">
                                 <span className="label-text">Working Stage</span>
                             </label>
-                            <input
-                                type="text"
-                                className="input input-bordered focus:outline-0 focus:border-secondary rounded-sm bg-white w-full"
-                                {...register("stage", {
-                                    required: {
-                                        value: true,
-                                        message: "Stage is required"
-                                    }
-                                })}
-                            />
+                            <select name='stage' className="select select-bordered focus:outline-0 focus:border-secondary rounded-sm bg-white w-full">
+                                <option>To Do</option>
+                                <option>In Progress</option>
+                                <option>At Risk</option>
+                            </select>
                         </div>
 
                         <div className="form-control w-full mx-auto">
                             <label className="label">
                                 <span className="label-text">Priority</span>
                             </label>
-                            <input
-                                type="text"
-                                className="input input-bordered focus:outline-0 focus:border-secondary rounded-sm bg-white w-full"
-                                {...register("priority", {
-                                    required: {
-                                        value: true,
-                                        message: "priority is required"
-                                    }
-                                })}
-                            />
+
+                            <select name='priority' className="select select-bordered focus:outline-0 focus:border-secondary rounded-sm bg-white w-full">
+                                <option>Low</option>
+                                <option>Medium</option>
+                                <option>High</option>
+                            </select>
+
                         </div>
 
                         <div className="form-control w-full mx-auto">
                             <label className="label">
                                 <span className="label-text">Status</span>
                             </label>
-                            <input
-                                type="text"
-                                className="input input-bordered focus:outline-0 focus:border-secondary rounded-sm bg-white w-full"
-                                {...register("status", {
-                                    required: {
-                                        value: false,
-                                        message: "priority is required"
-                                    }
-                                })} />
+                            <select name='status' className="select select-bordered focus:outline-0 focus:border-secondary rounded-sm bg-white w-full">
+                                <option>On Track</option>
+                                <option>At Risk</option>
+                                <option>Off Track</option>
+                            </select>
                         </div>
 
                         <div className="w-full mx-auto m-5">

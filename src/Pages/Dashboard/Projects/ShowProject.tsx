@@ -12,11 +12,8 @@ type ShowProjectProps = {
 
 const ShowProject = ({ project }: ShowProjectProps) => {
 
-
-
-
-
     const { projectName, projectDescription, email, startingDate, endData } = project;
+
     return (
         <div className='bg-white rounded-lg text-center shadow-2xl px-10 py-5'>
             <p className='text-2xl font-semibold'>{projectName}</p>
