@@ -9,13 +9,13 @@ const OurTeam = ({ team }: any) => {
 <div className="card w-96 bg-white shadow-xl">
     
   <div className="card-body  hover:bg-sky-700 hover:text-white ease-in duration-300 dark:bg-accent" >
-  <div className="avatar">  
-  <div className="w-24 ml-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+  <div className="avatar  justify-center align-middle">  
+  <div className="w-24 rounded-full ring ring-primary  ring-offset-base-100 ring-offset-2">
     <img src={img} alt='' />
   </div>
 </div>
-    <h2 className="card-title ml-20"> {name} </h2>
-    <p> {position} </p>
+    <h2 className="card-title justify-center align-middle"> {name} </h2>
+    <p className='justify-center align-middle'> {position} </p>
             <div className='icon '>
             <a href={facebook} rel='noreferrer'><i className="fa-brands ease-in duration-100 fa-facebook "></i></a>
               <a href={linkedin} rel='noreferrer'> <i className="fa-brands ml-3 ease-in duration-150  fa-linkedin"></i></a>

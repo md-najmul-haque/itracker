@@ -95,7 +95,6 @@ const CheckoutForm: React.FC<props> = ({ name, email }) => {
                 .then(res => res.json())
                 .then(data => {
                     setProcessing(false)
-                    console.log(data)
                 }
                 )
         }

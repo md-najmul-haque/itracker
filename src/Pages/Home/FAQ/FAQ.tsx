@@ -31,7 +31,6 @@ const FAQ = () => {
             <div className='grid lg:grid-cols-2 gap-12  lg:mx-20  my-16'>
                 <div className=' mt-12'>
                     <h1 className='text-2xl font-bold mb-5'>Frequently Asked Questions</h1>
-
                     <Accordion allowZeroExpanded className='shadow-md'>
                         <AccordionItem style={{ backgroundColor: "#F1F1F1", color: "black" }}>
                             <AccordionItemHeading >

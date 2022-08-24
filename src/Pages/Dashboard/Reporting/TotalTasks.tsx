@@ -1,6 +1,21 @@
+import { useQuery } from '@tanstack/react-query';
 import React from 'react';
-import { FaGreaterThan } from 'react-icons/fa';
+import ShowTotalTask from './ShowTotalTask';
+
+interface Project {
+    projectName: string,
+    projectDescription: string,
+    email: string,
+    startingDate: string,
+    endData: string
+}
+
 const TotalTasks = () => {
+    const { data: projects, isLoading, error, refetch } = useQuery(['projects'], () =>
+        fetch('http://localhost:5000//getProject')
+            .then(res => res.json())
+    )
+    console.log(projects)
     return (
         <div className='overflow-x-auto'>
             <div className='my-5'>
@@ -10,37 +25,21 @@ const TotalTasks = () => {
                 <table className="table w-full">
                     <thead >
                         <tr>
-                            <th></th>
-                            <th>Task Name</th>
-                            <th>Assignee</th>
-                            <th>Due Date</th>
-                            <th>Project</th>
+                            <th>ProjectName</th>
+                            <th>ProjectDescription</th>
+                            <th>Email</th>
+                            <th>StartingDate</th>
+                            <th>EndData</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <th>1</th>
-                            <td >
-                                <div className='flex justify-between items-center'>
-                                    <h1>Deploy the Server Site in a Live link</h1>
-
-                                    <p className='flex items-center gap-2 cursor-pointer'>Details <FaGreaterThan/></p>
-                                </div>
-                            </td>
-                            <td className='flex items-center gap-2'>
-                                <div className="avatar placeholder">
-                                    <div className="bg-neutral-focus text-neutral-content rounded-full w-12">
-                                        <span><img src="https://placeimg.com/192/192/people" /></span>
-                                    </div>
-                                </div>
-                                <div>
-                                    <p>Shuvo</p>
-                                </div>
-                            </td>
-                            <td>22 jul</td>
-                            <td>Itracker</td>
-                        </tr>
-
+                        {
+                            projects?.map((project: Project) => <>
+                                <ShowTotalTask 
+                                project={project} 
+                                />
+                            </>)
+                        }
                     </tbody>
                 </table>
             </div>

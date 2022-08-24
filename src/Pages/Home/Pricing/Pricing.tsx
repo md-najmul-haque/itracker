@@ -4,17 +4,25 @@ import { BsCheck2 } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
+import Loading from '../../Shared/Loading/Loading';
+
 const Pricing = () => {
-    const [user] = useAuthState(auth)
-    const [orders, setOrder] = useState([])
-    console.log(orders)
+    const [user,loading] = useAuthState(auth)
+    const [paymentId, setPaymentId] = useState('')
+    console.log(paymentId) 
+   
     useEffect(() => {
         if (user) {
             fetch(`http://localhost:5000/getUserPayment?email=${user.email}`)
                 .then(res => res.json())
-                .then(data => setOrder(data));
+                .then(data => {
+                    setPaymentId(data[0].paymentId)
+                });
         }
     }, [user])
+    if (loading) {
+        return <Loading/>;
+      }
     return (
         <div className='my-24 lg:mx-80 mx-5'>
             <h1 className='text-5xl uppercase text-center'>Pricing:</h1>
@@ -27,7 +35,7 @@ const Pricing = () => {
                         <p className='headding'>For individuals or teams just getting started with project management.</p>
                         <p className='text-5xl mt-5'>US$0</p>
                         <p className='mt-4'> <small>Free forever</small></p>
-                        <p className='button2'><Link to="/payment">Purchase Now</Link></p>
+                        <p className='button2'>Free</p>
                         <div className='mt-12'>
                             <p className='text-xl font-medium'>Manage tasks and personal to-dos:</p>
                             <p className='my-3 text-lg flex items-center'><BsCheck2 className='mr-3' /> Unlimited tasks</p>
@@ -46,7 +54,7 @@ const Pricing = () => {
                         <h1 className='title'>Premium</h1>
                         <p className='headding'>For individuals or teams just getting started with project management.</p>
                         <p className='text-5xl mt-5 mb-16'>US$20.66</p>
-                        <p className='button2'><Link to="/payment">Purchase Now</Link></p>
+                        {paymentId?<p className='button2 text-red-400'>Payment Done</p>:<p className='button2'><Link to="/payment">Purchase Now</Link></p>}
                     </div>
                     <div className='mt-12'>
                         <p className='text-xl font-medium'>Track team projects with features and resources like:</p>
