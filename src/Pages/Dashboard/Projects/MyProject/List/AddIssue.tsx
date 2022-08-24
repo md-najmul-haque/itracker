@@ -4,26 +4,17 @@ import { SubmitHandler, useForm } from 'react-hook-form';
 import swal from 'sweetalert';
 import auth from '../../../../../firebase.init';
 import Loading from '../../../../Shared/Loading/Loading';
+import { Issue } from './issue.type'
 
 type AddIssueProps = {
     setModal: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-interface IFormInput {
-    issueName: string,
-    description: string,
-    email: string,
-    dueData: string,
-    priority: string,
-    status: string
-
-}
-
 const AddIssue = ({ setModal }: AddIssueProps) => {
 
-    const { register, handleSubmit } = useForm<IFormInput>();
-    const onSubmit: SubmitHandler<IFormInput> = async (data) => {
-        const project = {
+    const { register, handleSubmit } = useForm<Issue>();
+    const onSubmit: SubmitHandler<Issue> = async (data) => {
+        const issue = {
             issueName: data.issueName,
             description: data.description,
             email: data.email,
@@ -37,10 +28,10 @@ const AddIssue = ({ setModal }: AddIssueProps) => {
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(project)
+            body: JSON.stringify(issue)
         })
             .then(res => res.json())
-            .then(project => console.log(project))
+            .then(issue => console.log(issue))
         swal({
             title: "Congrats!",
             text: "Task added Successfully!",
