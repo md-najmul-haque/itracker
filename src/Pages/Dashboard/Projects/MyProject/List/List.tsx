@@ -78,30 +78,28 @@ const List = () => {
                         <tbody className="w-full">
                             <tr className="h-20 text-sm leading-none text-gray-800 bg-white hover:bg-gray-100 border-b border-t border-gray-100">
                                 <td className="pl-12">
-                                    <p className="text-sm font-medium leading-none text-gray-800">{issues.issueName}</p>
+                                    <p className="text-sm font-medium leading-none text-gray-800">{issue.issueName}</p>
                                 </td>
                                 <td className="pl-12">
-                                    <p className="font-medium">{issues.description}</p>
+                                    <p className="font-medium">{issue.description}</p>
                                 </td>
 
                                 <td className="pl-20">
-                                    <p className="font-medium">{issues.priority}</p>
+                                    <p className="font-medium">{issue.priority}</p>
                                 </td>
 
                                 <td className="pl-20">
-                                    <p className="font-medium">{issues.time}</p>
+                                    <p className="font-medium">{issue.status}</p>
                                 </td>
 
                                 <td className="pl-20">
-                                    <p className="font-medium">{issues.time}</p>
+                                    <p className="font-medium">{issue.dueData}</p>
                                 </td>
 
                                 <td className="pl-16">
                                     <div className="flex items-center">
                                         <img className="shadow-md w-8 h-8 rounded-full" src="https://cdn.tuk.dev/assets/templates/olympus/projects(8).png" alt='' />
                                         <img className="shadow-md w-8 h-8 rounded-full -ml-2" src="https://cdn.tuk.dev/assets/templates/olympus/projects(9).png" alt='' />
-                                        <img className="shadow-md w-8 h-8 rounded-full -ml-2" src="https://cdn.tuk.dev/assets/templates/olympus/projects(10).png" alt='' />
-                                        <img className="shadow-md w-8 h-8 rounded-full -ml-2" src="https://cdn.tuk.dev/assets/templates/olympus/projects(11).png" alt='' />
                                     </div>
                                 </td>
 
