@@ -17,7 +17,7 @@ const CheckoutForm: React.FC<props> = ({ name, email }) => {
     const price = 20.66;
 
     useEffect(() => {
-        fetch('http://localhost:5000/create', {
+        fetch('https://dry-eyrie-76820.herokuapp.com/create', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -85,7 +85,7 @@ const CheckoutForm: React.FC<props> = ({ name, email }) => {
                 paymentId: paymentIntent.id,
                 amount: paymentIntent.amount
             }
-            fetch('http://localhost:5000/storePayment', {
+            fetch('https://dry-eyrie-76820.herokuapp.com/storePayment', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

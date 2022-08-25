@@ -7,13 +7,13 @@ import auth from '../../../firebase.init';
 import Loading from '../../Shared/Loading/Loading';
 
 const Pricing = () => {
-    const [user,loading,error] = useAuthState(auth)
+    const [user, loading, error] = useAuthState(auth)
     const [paymentId, setPaymentId] = useState('')
-    console.log(paymentId) 
-   
+    console.log(paymentId)
+
     useEffect(() => {
         if (user) {
-            fetch(`http://localhost:5000/getUserPayment?email=${user.email}`)
+            fetch(`https://dry-eyrie-76820.herokuapp.com/getUserPayment?email=${user.email}`)
                 .then(res => res.json())
                 .then(data => {
                     setPaymentId(data[0].paymentId)
@@ -21,8 +21,8 @@ const Pricing = () => {
         }
     }, [user])
     if (loading) {
-        return <Loading/>;
-      }
+        return <Loading />;
+    }
     return (
         <div className='my-24 lg:mx-80 mx-5'>
             <h1 className='text-5xl uppercase text-center'>Pricing:</h1>
@@ -54,7 +54,7 @@ const Pricing = () => {
                         <h1 className='title'>Premium</h1>
                         <p className='headding'>For individuals or teams just getting started with project management.</p>
                         <p className='text-5xl mt-5 mb-16'>US$20.66</p>
-                        {paymentId?<p className='button2 text-red-400'>Payment Done</p>:<p className='button2'><Link to="/payment">Purchase Now</Link></p>}
+                        {paymentId ? <p className='button2 text-red-400'>Payment Done</p> : <p className='button2'><Link to="/payment">Purchase Now</Link></p>}
                     </div>
                     <div className='mt-12'>
                         <p className='text-xl font-medium'>Track team projects with features and resources like:</p>
