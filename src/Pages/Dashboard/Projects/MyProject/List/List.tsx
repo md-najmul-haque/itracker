@@ -1,13 +1,10 @@
 import { useQuery } from '@tanstack/react-query';
-import { RefAttributes, useState } from 'react';
+import { ReactNode, RefAttributes, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Loading from '../../../../Shared/Loading/Loading';
 import AddIssue from './AddIssue';
 import { Issue } from './issue.type'
 
-type ListProps = {
-    projectName: RefAttributes<HTMLAnchorElement>
-}
 
 const List = () => {
 
