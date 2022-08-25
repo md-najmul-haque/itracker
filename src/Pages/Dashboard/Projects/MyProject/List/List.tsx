@@ -89,19 +89,39 @@ const List = () => {
                                 </td>
 
                                 <td className="pl-20">
-                                    <p className="font-medium">{issue.stage}</p>
+                                    <select name='status' className="select bg-inherit font-medium focus:outline-0 focus:border-secondary">
+                                        <option>{issue.stage}</option>
+                                        <option>To Do</option>
+                                        <option>In Progress</option>
+                                        <option>Done</option>
+                                    </select>
                                 </td>
 
                                 <td className="pl-20">
-                                    <p className="font-medium">{issue.priority}</p>
+                                    <select name='status' className="select bg-inherit font-medium focus:outline-0 focus:border-secondary">
+                                        <option>{issue.priority}</option>
+                                        <option>Low</option>
+                                        <option>Normal</option>
+                                        <option>High</option>
+                                    </select>
                                 </td>
 
                                 <td className="pl-20">
-                                    <p className="font-medium">{issue.status}</p>
+                                    <select name='status' className="select bg-inherit font-medium focus:outline-0 focus:border-secondary">
+                                        <option>{issue.status}</option>
+                                        <option>On Track</option>
+                                        <option>At Risk</option>
+                                        <option>Off Track</option>
+                                    </select>
                                 </td>
 
                                 <td className="pl-20">
                                     <p className="font-medium">{issue.dueData}</p>
+                                    {/* <input
+                                        type="date"
+                                        className="input font-medium focus:outline-0 focus:border-secondary rounded-sm bg-inherit"
+                                        value={issue.dueData}
+                                    /> */}
                                 </td>
 
                                 <td className="pl-16">

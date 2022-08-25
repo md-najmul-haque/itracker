@@ -33,8 +33,9 @@ import ProjectCalendar from './Pages/Dashboard/Projects/MyProject/ProjectCalenda
 /* import Board from './Pages/Dashboard/Projects/MyProject/Board'; */
 import Pricing from './Pages/Home/Pricing/Pricing';
 import Payment from './Pages/Home/Pricing/Payment';
-import NavDashBoard from './Pages/Shared/Navbar/NavDashBoard';
 import List from './Pages/Dashboard/Projects/MyProject/List/List';
+import NavDashBoard from './Pages/Shared/Navbar/NavDashBoard';
+
 
 
 type stateProps = {
@@ -49,12 +50,12 @@ function App() {
   return (
     <div>
       {!pathname.includes('dashboard') && <Navbar />}
-      {pathname.includes('dashboard') && <NavDashBoard/>}
+      {pathname.includes('dashboard') && <NavDashBoard />}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/features" element={<Features />} />
-        <Route path="/pricing" element={<Pricing/>} />
-        <Route path="/payment" element={<Payment/>} />
+        <Route path="/pricing" element={<Pricing />} />
+        <Route path="/payment" element={<Payment />} />
 
         <Route path="/about" element={<About />} />
         <Route path="/signin" element={<SingIn />} />
@@ -64,6 +65,7 @@ function App() {
             <Dashboard />
           </RequireAuth>
         }>
+
           <Route path='repoting' element={<Reporting />} />
           <Route path='add-reviews' element={<AddReviews />} />
           <Route path='completedTasks' element={<CompletedTasks />} />
