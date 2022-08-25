@@ -10,7 +10,8 @@ interface Project {
     projectDescription: string,
     email: string,
     startingDate: string,
-    endData: string
+    endData: string,
+    _id: string
 }
 
 const Projects = () => {
@@ -50,7 +51,7 @@ const Projects = () => {
                     </>)
                 }
 
-                
+
             </div>
 
             <div>

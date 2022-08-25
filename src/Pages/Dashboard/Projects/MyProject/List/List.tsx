@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import { ReactNode, RefAttributes, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import Loading from '../../../../Shared/Loading/Loading';
 import AddIssue from './AddIssue';
 import { Issue } from './issue.type'
@@ -10,7 +10,17 @@ const List = () => {
 
     const [modal, setModal] = useState(false)
 
-    const { data: issues, isLoading, error, refetch } = useQuery(['issues'], () =>
+    const { id } = useParams()
+    console.log(id)
+
+    const { data: selectedProject, isLoading, refetch } = useQuery(['selectedProject'], () =>
+        fetch(`http://localhost:5000/selectedProject/${id}`)
+            .then(res => res.json())
+    )
+
+    console.log(selectedProject)
+
+    const { data: issues, error, } = useQuery(['issues'], () =>
         fetch('http://localhost:5000/getTask')
             .then(res => res.json())
     )
@@ -41,7 +51,7 @@ const List = () => {
                                     {menuItem}
                                 </ul>
                             </div>
-                            <Link to='/' className="normal-case px-5 py-2 font-medium text-xl">Project Name</Link>
+                            <Link to='/' className="normal-case px-5 py-2 font-medium text-xl">{selectedProject.projectName} dfgdg</Link>
                         </div>
 
                         <div className="navbar-end lg:flex">

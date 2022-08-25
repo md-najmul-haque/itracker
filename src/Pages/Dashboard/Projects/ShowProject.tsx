@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 type ShowProjectProps = {
     project: {
@@ -6,13 +6,20 @@ type ShowProjectProps = {
         projectDescription: string,
         email: string,
         startingDate: string,
-        endData: string
+        endData: string,
+        _id: string
     }
 }
 
 const ShowProject = ({ project }: ShowProjectProps) => {
 
-    const { projectName, projectDescription, email, startingDate, endData } = project;
+    const { _id, projectName, projectDescription, email, startingDate, endData } = project;
+
+    const navigate = useNavigate()
+
+    const navigateToList = (id: string) => {
+        navigate(`/dashboard/myProject/list/${id}`)
+    }
 
     return (
         <div className='bg-white rounded-lg text-center shadow-2xl px-10 py-5'>
@@ -26,7 +33,7 @@ const ShowProject = ({ project }: ShowProjectProps) => {
                 </div>
             </div>
             <div className="mt-2.5">
-                <Link to='/dashboard/myProject/list' className='btn-accent transition-all text-white font-medium py-2 px-6'>Details</Link>
+                <button onClick={() => navigateToList(_id)} className='btn-accent transition-all text-white font-medium py-2 px-6'>Details</button>
             </div>
         </div>
     );

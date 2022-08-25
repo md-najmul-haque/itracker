@@ -79,7 +79,7 @@ function App() {
           <Route path='myProject' element={<MyProject />} >
             <Route path='overview' element={<Overview />} />
             <Route path='projectCalendar' element={<ProjectCalendar />} />
-            <Route path='list' element={<List />} />
+            <Route path='list/:id' element={<List />} />
             <Route path='summary' element={<Summary />} />
             <Route path='messages' element={<Messages />} />
           </Route>
