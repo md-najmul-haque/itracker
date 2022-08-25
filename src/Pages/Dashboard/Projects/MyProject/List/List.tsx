@@ -14,14 +14,14 @@ const List = () => {
     console.log(id)
 
     const { data: selectedProject, isLoading, refetch } = useQuery(['selectedProject'], () =>
-        fetch(`http://localhost:5000/selectedProject/${id}`)
+        fetch(`https://dry-eyrie-76820.herokuapp.com/selectedProject/${id}`)
             .then(res => res.json())
     )
 
     console.log(selectedProject)
 
     const { data: issues, error, } = useQuery(['issues'], () =>
-        fetch('http://localhost:5000/getTask')
+        fetch('https://dry-eyrie-76820.herokuapp.com/getTask')
             .then(res => res.json())
     )
     refetch();

@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
 const ReportCard = () => {
     const { data: projects, isLoading, error, refetch } = useQuery(['projects'], () =>
-        fetch('http://localhost:5000//getProject')
+        fetch('https://dry-eyrie-76820.herokuapp.com//getProject')
             .then(res => res.json())
     )
     return (
@@ -23,7 +23,7 @@ const ReportCard = () => {
                     <p className='mb-5 font-medium'><Link to='/dashboard/incompleteTasks'>7</Link></p>
                 </div>
             </div>
-            
+
             <div className='hover:border-2 hover:rounded-lg hover:border-slate-500 shadow-md'>
                 <Link to='/dashboard/totalTasks'>
                     <div className='text-center py-8'>
