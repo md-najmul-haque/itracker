@@ -51,7 +51,7 @@ const Testimonial = () => {
 
     <div className='pt-14 px-10 dark:bg-black'>
       <div className="w-full lg:w-2/5 mx-auto ">
-        <h1 className="text-5xl font-bold text-center text-white mb-20 lg:mb-0 py-4">
+        <h1 className="text-5xl font-bold text-center dark:text-white mb-20 lg:mb-0 py-4">
           Our Client’s Speak
         </h1>
       </div>
