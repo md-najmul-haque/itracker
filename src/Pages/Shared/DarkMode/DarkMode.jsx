@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import "./DarkMode.css";
 import { BsMoonStars } from 'react-icons/bs';
 import { BsSun } from 'react-icons/bs';
@@ -37,11 +36,6 @@ const DarkMode = () => {
   }
   return (
     <>
-
-      {/* <button
-    //  className={` toggle ${theme === "dark" ? clickedClass : ""}`}
- 
-      >click</button> */}
 
       <label class="swap swap-rotate" >
 

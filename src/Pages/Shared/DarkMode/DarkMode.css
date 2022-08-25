@@ -1,44 +1,22 @@
-/* #darkMode {
-    background: transparent url("../../../Assets/features/moon.png") no-repeat center;
-    background-size: 30px 30px;
-    width: 45px;
-    height: 45px;
-    filter: grayscale(100%);
-    border: none;
-    border-radius: 50%; 
-    transition: background-color 0.3s ease-in-out, filter 0.3s ease-in-out;
-  } */
-    
-  /* #darkMode:hover,
-  #darkMode:focus {
-    filter: none;
-    background-color: black;
-    cursor: pointer;
-  } */
-  
-  /* #darkMode.clicked {
-    filter: none !important;
-    background-color: black;
-  } */
-
-
-  .toggle{
+  .toggle {
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
     border: 3px solid var(--orange);
     border-radius: 1rem;
     position: relative;
     padding: 2px;
     cursor: pointer;
 
-}
-.toggle>*{
+  }
+
+  .toggle>* {
     width: 1rem;
     height: 1rem;
     color: var(--orange);
-}
-.t-button{
+  }
+
+  .t-button {
     border-radius: 100%;
     background: var(--orange);
     position: absolute;
-}
+  }
