@@ -35,6 +35,7 @@ import Pricing from './Pages/Home/Pricing/Pricing';
 import Payment from './Pages/Home/Pricing/Payment';
 import NavDashBoard from './Pages/Shared/Navbar/NavDashBoard';
 import List from './Pages/Dashboard/Projects/MyProject/List/List';
+import Users from './Pages/Dashboard/Users/Users';
 
 
 type stateProps = {
@@ -74,6 +75,7 @@ function App() {
           <Route path='meeting' element={<Meeting />} />
           <Route path='meeting/:id' element={<SelectedMeeting />} />
           <Route path='calendar' element={<Calendar />} />
+          <Route path='users' element={<Users />} />
           <Route path='myProject' element={<MyProject />} >
             <Route path='overview' element={<Overview />} />
             <Route path='projectCalendar' element={<ProjectCalendar />} />

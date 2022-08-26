@@ -4,6 +4,7 @@ import { MdOutlineTaskAlt, MdOutlineVideoCall, MdVideoCall } from 'react-icons/m
 import { AiFillHome } from 'react-icons/ai';
 import { AiFillProject } from 'react-icons/ai';
 import { RiUserStarLine } from 'react-icons/ri';
+import { FaUsers } from 'react-icons/fa';
 import Loading from '../Shared/Loading/Loading';
 import { useQuery } from '@tanstack/react-query';
 
@@ -57,6 +58,9 @@ const DashboardSideBar = ({ children }: DashboardSideBarProps) => {
                     </li>
                     <li className=' hover:bg-slate-600 transition-all rounded-lg'>
                         <Link className='bg-transparent text-white' to="/dashboard/project"><AiFillProject />Projects</Link>
+                    </li>
+                    <li className=' hover:bg-slate-600 transition-all rounded-lg'>
+                        <Link className='bg-transparent text-white' to="/dashboard/users"><FaUsers />Members</Link>
                     </li>
                 </ul>
                 <ul className='mx-auto'>

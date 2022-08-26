@@ -51,6 +51,7 @@ const Navbar = () => {
 
                             {/* no need this route */}
                             {/* <li><Link to='/updateProfile'>Update Profile</Link></li> */}
+                            <li><Link to='/dashboard/users'>Admin Console</Link></li>
                             <li><Link onClick={() => signOut(auth)} to='/'>Sign Out</Link></li>
                         </ul>
                     </div>
