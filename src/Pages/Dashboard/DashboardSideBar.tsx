@@ -60,12 +60,15 @@ const DashboardSideBar = ({ children }: DashboardSideBarProps) => {
                         paymentId && <li className=' hover:bg-slate-600 transition-all rounded-lg'>
                             <Link className='bg-transparent text-white' to="/dashboard/repoting"><MdOutlineTaskAlt /> Repoting</Link>
                         </li>
-                        }
+                    }
                     <li className=' hover:bg-slate-600 transition-all rounded-lg'>
                         <Link className='bg-transparent text-white' to="/dashboard/add-reviews"><RiUserStarLine /> Add Reviews</Link>
                     </li>
                     <li className=' hover:bg-slate-600 transition-all rounded-lg'>
                         <Link className='bg-transparent text-white' to="/dashboard/calendar"><AiFillProject />Calendar</Link>
+                    </li>
+                    <li className=' hover:bg-slate-600 transition-all rounded-lg'>
+                        <Link className='bg-transparent text-white' to="/dashboard/admin"><AiFillProject />Admin</Link>
                     </li>
                     <li className=' hover:bg-slate-600 transition-all rounded-lg'>
                         <Link className='bg-transparent text-white' to="/dashboard/meeting"><MdVideoCall />Meeting</Link>

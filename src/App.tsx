@@ -36,6 +36,7 @@ import Payment from './Pages/Home/Pricing/Payment';
 import List from './Pages/Dashboard/Projects/MyProject/List/List';
 import NavDashBoard from './Pages/Shared/Navbar/NavDashBoard';
 import TotalUsers from './Pages/Dashboard/Reporting/TotalUsers';
+import Admin from './Pages/Dashboard/Admin/Admin';
 
 
 
@@ -77,6 +78,7 @@ function App() {
           <Route path='meeting' element={<Meeting />} />
           <Route path='meeting/:id' element={<SelectedMeeting />} />
           <Route path='calendar' element={<Calendar />} />
+          <Route path='admin' element={<Admin />} />
           <Route path='myProject' element={<MyProject />} >
             <Route path='overview' element={<Overview />} />
             <Route path='projectCalendar' element={<ProjectCalendar />} />

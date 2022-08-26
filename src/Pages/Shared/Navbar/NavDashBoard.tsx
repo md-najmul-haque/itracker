@@ -16,20 +16,11 @@ const NavDashBoard = () => {
         return <Loading />
     }
 
-    if (user) {
-        console.log(user)
-    }
-
 
     const menuItem =
         <>
-
-            <div className='absolute mr-5 right-28 hidden lg:block'>
-
-                <div className='absolute right-28 hidden lg:block'>
-
-                    <SearchAll placeholder="what do you think.?" data={BookData} />
-                </div>
+            <div className='mr-5 right-28 hidden lg:block'>
+                <SearchAll placeholder="what do you think.?" data={BookData} />
             </div>
 
             {
@@ -41,11 +32,8 @@ const NavDashBoard = () => {
                             </div>
                         </label>
                         <ul tabIndex={0} className="menu menu-compact dropdown-content p-2 shadow bg-base-100 w-52">
-                            <li>
-                                <Link to='/viewProfile' className="justify-between">
-                                    View Profile
-                                </Link>
-                            </li>
+                            <li><Link to='/dashboard/admin'>Admin Console</Link></li>
+                            <li><Link to='/viewProfile'>View Profile</Link></li>
                             <li><Link to='/updateProfile'>Update Profile</Link></li>
                             <li><Link onClick={() => signOut(auth)} to='/'>Sign Out</Link></li>
                         </ul>
@@ -56,43 +44,40 @@ const NavDashBoard = () => {
         </>
 
     return (
-        <div className='relative'>
-            <div className='navbar text-accent sticky top-0 mt-1 font-semibold'>
-                <div className='container mx-auto'>
-                    <div className="navbar-start">
-                        <div className="dropdown">
-                            <label tabIndex={0} className="btn btn-ghost lg:hidden">
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
-                            </label>
-                            <ul tabIndex={0} className="menu bg-primary menu-compact dropdown-content mt-3 p-2 shadow rounded-box w-52">
-                                {menuItem}
-                            </ul>
-                        </div>
-                        <Link to='/' className="btn btn-ghost normal-case text-xl">iTracker</Link>
 
-                    </div>
-
-                    <div className="navbar-end hidden lg:flex">
-
-                        <ul className="menu menu-horizontal p-0">
+        <div className='navbar text-accent sticky top-0 mt-1 font-semibold'>
+            <div className='container mx-auto'>
+                <div className="navbar-start">
+                    <div className="dropdown">
+                        <label tabIndex={0} className="btn btn-ghost lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                        </label>
+                        <ul tabIndex={0} className="menu bg-primary menu-compact dropdown-content mt-3 p-2 shadow rounded-box w-52">
                             {menuItem}
                         </ul>
                     </div>
+                    <Link to='/' className="btn btn-ghost normal-case text-xl">iTracker</Link>
 
-                    <div className="navbar-end md:hidden flex">
-                        {pathname.includes('dashboard') && <label htmlFor="my-drawer-2" className="btn btn-ghost btn-circle drawer-button lg:hidden">
-
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" /></svg>
-
-                        </label>}
-
-                    </div>
                 </div>
 
-            </div >
+                <div className="navbar-end hidden lg:flex">
 
+                    <ul className="menu menu-horizontal p-0">
+                        {menuItem}
+                    </ul>
+                </div>
 
-        </div>
+                <div className="navbar-end md:hidden flex">
+                    {pathname.includes('dashboard') && <label htmlFor="my-drawer-2" className="btn btn-ghost btn-circle drawer-button lg:hidden">
+
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" /></svg>
+
+                    </label>}
+
+                </div>
+            </div>
+
+        </div >
 
     );
 }
