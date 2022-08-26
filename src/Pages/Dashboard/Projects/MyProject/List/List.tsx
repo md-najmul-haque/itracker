@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import { ReactNode, RefAttributes, useState } from 'react';
+import { useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import Loading from '../../../../Shared/Loading/Loading';
 import AddIssue from './AddIssue';
@@ -11,16 +11,13 @@ const List = () => {
     const [modal, setModal] = useState(false)
 
     const { id } = useParams()
-    console.log(id)
 
     const { data: selectedProject, isLoading, refetch } = useQuery(['selectedProject'], () =>
         fetch(`https://dry-eyrie-76820.herokuapp.com/selectedProject/${id}`)
             .then(res => res.json())
     )
 
-    console.log(selectedProject)
-
-    const { data: issues, error, } = useQuery(['issues'], () =>
+    const { data: issues } = useQuery(['issues'], () =>
         fetch('https://dry-eyrie-76820.herokuapp.com/getTask')
             .then(res => res.json())
     )
@@ -51,7 +48,7 @@ const List = () => {
                                     {menuItem}
                                 </ul>
                             </div>
-                            <Link to='/' className="normal-case px-5 py-2 font-medium text-xl">{selectedProject.projectName} dfgdg</Link>
+                            <Link to='/' className="normal-case px-5 py-2 font-medium text-xl">{selectedProject.projectName}</Link>
                         </div>
 
                         <div className="navbar-end lg:flex">
@@ -85,7 +82,7 @@ const List = () => {
                         </tr>
                     </thead>
 
-                    {issues.map((issue: Issue) => <>
+                    {issues?.map((issue: Issue) => <>
                         <tbody className="w-full">
                             <tr className="h-20 text-sm leading-none text-gray-800 bg-white hover:bg-gray-100 border-b border-t border-gray-100">
                                 <td className="pl-12">

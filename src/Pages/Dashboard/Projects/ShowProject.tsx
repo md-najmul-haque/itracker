@@ -19,6 +19,7 @@ const ShowProject = ({ project }: ShowProjectProps) => {
 
     const navigateToList = (id: string) => {
         navigate(`/dashboard/myProject/list/${id}`)
+        console.log(id)
     }
 
     return (
