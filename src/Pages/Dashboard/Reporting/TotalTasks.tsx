@@ -1,5 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../../firebase.init';
 import ShowTotalTask from './ShowTotalTask';
 
 interface Project {
@@ -11,10 +13,18 @@ interface Project {
 }
 
 const TotalTasks = () => {
-    const { data: projects, isLoading, error, refetch } = useQuery(['projects'], () =>
-        fetch('https://dry-eyrie-76820.herokuapp.com//getProject')
-            .then(res => res.json())
-    )
+    const [user, loading] = useAuthState(auth)
+    const [projects, setProjects] = useState([])
+    useEffect(() => {
+        if (user) {
+            fetch(`https://dry-eyrie-76820.herokuapp.com/totalProject?email=${user.email}`)
+                .then(res => res.json())
+                .then(data => {
+                    setProjects(data)
+                });
+        }
+    }, [user])
+
     console.log(projects)
     return (
         <div className='overflow-x-auto'>

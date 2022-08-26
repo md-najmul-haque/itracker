@@ -36,9 +36,6 @@ const NavbarMain = () => {
                 user ? <li><Link to='/dashboard'>Dashboard</Link></li> : ''
             }
             <li><Link to='/about'>About</Link></li>
-            <div className='mx-8 mt-3'>
-                <DarkMode />
-            </div>
             {
                 user ? <>
                     <div className="dropdown dropdown-end">
@@ -48,14 +45,8 @@ const NavbarMain = () => {
                             </div>
                         </label>
                         <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-primary text-white rounded-box w-52">
-                            <li>
-                                <Link to='/viewProfile' className="justify-between">
-                                    View Profile
-                                </Link>
-                            </li>
-
-                            {/* no need this route */}
-                            {/* <li><Link to='/updateProfile'>Update Profile</Link></li> */}
+                            <li><Link to='/dashboard/admin'>Admin Console</Link></li>
+                            <li><Link to='/viewProfile'>View Profile</Link></li>
                             <li><Link onClick={() => signOut(auth)} to='/'>Sign Out</Link></li>
                         </ul>
                     </div>
@@ -63,7 +54,11 @@ const NavbarMain = () => {
                     <li><Link to='/signin'>Sign In</Link></li>
                     <li><Link to='/signup'>Get Started</Link></li>
                 </>
+
             }
+            <div className='mx-8 mt-3'>
+                <DarkMode />
+            </div>
 
         </>
 

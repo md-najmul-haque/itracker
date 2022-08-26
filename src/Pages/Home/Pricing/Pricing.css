@@ -1,17 +1,14 @@
 .Basic{
     border: 2px solid black;
     padding: 10px;
+    background-color: #EAE3D2;
 }
 .Premium{
     border: 2px solid blue;
     padding: 10px;
-    background-color: #1C3879;
+    background-color: #59CE8F;
     color: white;
     transform: scaleY(1.12); 
-}
-.Business{
-    border: 2px solid goldenrod;
-    padding: 10px;
 }
 .title{
     font-size: 28px;
@@ -28,32 +25,22 @@
 }
 .button1{
     margin-top: 30px;
-    background-color: #002B5B;
+    background-color: #E8F9FD;
     text-align: center;
     padding: 10px;
     font-size: 15px;
     cursor: pointer;
     font-weight: bold;
-    color: white;
+    color: black;
 }
 .button2{
     margin-top: 30px;
-    background-color: #100720;
+    background-color: #E8F9FD;
     text-align: center;
     padding: 10px;
     font-size: 15px;
     cursor: pointer;
     font-weight: bold;
-    color: white;
+    color: black;
     
-}
-.button3{
-    margin-top: 30px;
-    background-color: #2B4865;
-    text-align: center;
-    padding: 10px;
-    font-size: 15px;
-    cursor: pointer;
-    font-weight: bold;
-    color: white;
 }

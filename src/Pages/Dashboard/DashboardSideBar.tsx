@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { MdOutlineTaskAlt, MdOutlineVideoCall, MdVideoCall } from 'react-icons/md';
 import { AiFillHome } from 'react-icons/ai';
@@ -6,19 +6,32 @@ import { AiFillProject } from 'react-icons/ai';
 import { RiUserStarLine } from 'react-icons/ri';
 import Loading from '../Shared/Loading/Loading';
 import { useQuery } from '@tanstack/react-query';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
 
 type DashboardSideBarProps = React.PropsWithChildren<{}>;
 
 type Project = {
     projectName: string,
+    _id: string
 }
 
 const DashboardSideBar = ({ children }: DashboardSideBarProps) => {
-
+    const [user, loading] = useAuthState(auth)
+    const [paymentId, setPaymentId] = useState('')
     const { data: projects, isLoading, error, refetch } = useQuery(['projects'], () =>
         fetch('https://dry-eyrie-76820.herokuapp.com/getProject')
             .then(res => res.json())
     )
+    useEffect(() => {
+        if (user) {
+            fetch(`https://dry-eyrie-76820.herokuapp.com/getUserPayment?email=${user.email}`)
+                .then(res => res.json())
+                .then(data => {
+                    setPaymentId(data[0].paymentId)
+                });
+        }
+    }, [user])
 
     if (isLoading) {
         return <Loading />
@@ -43,14 +56,19 @@ const DashboardSideBar = ({ children }: DashboardSideBarProps) => {
                         <Link className='bg-transparent text-white' to='/'> <AiFillHome />HOME</Link>
                     </li>
 
-                    <li className=' hover:bg-slate-600 transition-all rounded-lg'>
-                        <Link className='bg-transparent text-white' to="/dashboard/repoting"><MdOutlineTaskAlt /> Repoting</Link>
-                    </li>
+                    {
+                        paymentId && <li className=' hover:bg-slate-600 transition-all rounded-lg'>
+                            <Link className='bg-transparent text-white' to="/dashboard/repoting"><MdOutlineTaskAlt /> Repoting</Link>
+                        </li>
+                    }
                     <li className=' hover:bg-slate-600 transition-all rounded-lg'>
                         <Link className='bg-transparent text-white' to="/dashboard/add-reviews"><RiUserStarLine /> Add Reviews</Link>
                     </li>
                     <li className=' hover:bg-slate-600 transition-all rounded-lg'>
                         <Link className='bg-transparent text-white' to="/dashboard/calendar"><AiFillProject />Calendar</Link>
+                    </li>
+                    <li className=' hover:bg-slate-600 transition-all rounded-lg'>
+                        <Link className='bg-transparent text-white' to="/dashboard/admin"><AiFillProject />Admin</Link>
                     </li>
                     <li className=' hover:bg-slate-600 transition-all rounded-lg'>
                         <Link className='bg-transparent text-white' to="/dashboard/meeting"><MdVideoCall />Meeting</Link>
@@ -69,14 +87,7 @@ const DashboardSideBar = ({ children }: DashboardSideBarProps) => {
                         </ul>)
                     }
 
-                    <ul className='mx-auto lg:pt-10'>
-                        <h3 className='text-secondary text-xl font-semibold'>My Projects</h3>
-                        {
-                            projects?.map((project: Project) => <ul>
-                                <Link to='myProject/list' className='hover:bg-slate-600 transition-all py-1 text-white'>{project.projectName}</Link>
-                            </ul>)
-                        }
-                    </ul>
+                   
 
                 </ul>
 

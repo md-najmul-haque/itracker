@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import './App.css';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import Home from './Pages/Home/Home/Home';
@@ -10,7 +10,7 @@ import Dashboard from './Pages/Dashboard/Dashboard';
 import Reporting from './Pages/Dashboard/Reporting/Reporting';
 import CompletedTasks from './Pages/Dashboard/Reporting/CompletedTasks';
 import IncompleteTasks from './Pages/Dashboard/Reporting/IncompleteTasks';
-import OverdueTasks from './Pages/Dashboard/Reporting/OverdueTasks';
+
 import TotalTasks from './Pages/Dashboard/Reporting/TotalTasks';
 import Features from './Pages/Features/Features/Features';
 import AddReviews from './Pages/Dashboard/AddReviews/AddReviews';
@@ -35,6 +35,8 @@ import Pricing from './Pages/Home/Pricing/Pricing';
 import Payment from './Pages/Home/Pricing/Payment';
 import List from './Pages/Dashboard/Projects/MyProject/List/List';
 import NavDashBoard from './Pages/Shared/Navbar/NavDashBoard';
+import TotalUsers from './Pages/Dashboard/Reporting/TotalUsers';
+import Admin from './Pages/Dashboard/Admin/Admin';
 
 import Board from './components/firstScreen/Board';
 import HomeScreen from './components/firstScreen/HomeScreen';
@@ -135,13 +137,14 @@ function App() {
           <Route path='add-reviews' element={<AddReviews />} />
           <Route path='completedTasks' element={<CompletedTasks />} />
           <Route path='incompleteTasks' element={<IncompleteTasks />} />
-          <Route path='overdueTasks' element={<OverdueTasks />} />
+          <Route path='totalUser' element={<TotalUsers />} />
           <Route path='totalTasks' element={<TotalTasks />} />
           <Route path='project' element={<Projects />} />
           <Route path='meeting' element={<Meeting />} />
           <Route path='meeting/:id' element={<SelectedMeeting />} />
           <Route path='calendar' element={<Calendar />} />
           
+          <Route path='admin' element={<Admin />} />
           <Route path='myProject' element={<MyProject />} >
             <Route path='overview' element={<Overview />} />
             <Route path='projectCalendar' element={<ProjectCalendar />} />
