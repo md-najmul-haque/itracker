@@ -52,6 +52,7 @@ import WorkFlow from './Pages/WorkFlow/WorkFlow';
 import auth from './firebase.init';
 import Bar from './components/modalInfo/Bar';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import ViewProfile from './Pages/ViewProfile/ViewProfile';
 
 
 
@@ -80,6 +81,8 @@ function App() {
         <Route path="/payment" element={<Payment />} />
 
         <Route path="/about" element={<About />} />
+        <Route path="/viewProfile" element={<ViewProfile />} />
+       
         <Route path="/signin" element={<SingIn />} />
         <Route path="/signup" element={<SignUp />} />
 
