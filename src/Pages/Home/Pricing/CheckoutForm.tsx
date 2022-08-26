@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
-
+import swal from 'sweetalert';
 
 interface props {
     name: String | any;
@@ -76,6 +76,11 @@ const CheckoutForm: React.FC<props> = ({ name, email }) => {
             //     showConfirmButton: false,
             //     timer: 2000
             // })
+            swal({
+                title: "Congrats!",
+                text: "Your payment is completed!",
+                icon: "success",
+            });
             setSuccess('congrate!,Your payment is completed')
 
             //store payment data
