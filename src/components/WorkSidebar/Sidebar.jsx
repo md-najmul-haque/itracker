@@ -22,10 +22,7 @@ const Sidebar = () => {
   // console.log(data);
   const dispatch = useDispatch();
 
-  // const [user] = useAuthState(auth);
-  // const email = user?.email;
 
-  // const data = useSelector(state => state.workspace)
 
   return (
     <div>
