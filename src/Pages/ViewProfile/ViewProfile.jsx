@@ -34,11 +34,11 @@ const ViewProfile = () => {
   }
   if (user) {
     const email = user.email;
-    // fetch(`https://dry-eyrie-76820.herokuapp.com/userInfo/${email}`)
-    //   .then((res) => res.json())
-    //   .then((data) => {
-    //     setUserInfo(data);
-    //   });
+    fetch(`https://dry-eyrie-76820.herokuapp.com/userInfo/${email}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setUserInfo(data);
+      });
   }
 
   const handleEdit = () => {
@@ -115,9 +115,6 @@ const ViewProfile = () => {
 
 
         <div className="w-full flex flex-row">
-          <div className=" px-5 lg:px-10 w-1/6 lg:w-2/12 py-5">
-            <div className="font-bold">photo</div>
-          </div>
           <div className=" px-10 py-5 w-5/6 lg:w-10/12">
             {isEdit ? (
 
@@ -128,7 +125,7 @@ const ViewProfile = () => {
                 {...register("image")}
               />
             ) : (
-              <div class="avatar">
+              <div class="avatar flex items-center justify-center">
                 <div class="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
                   <img src={image} />
                 </div>
