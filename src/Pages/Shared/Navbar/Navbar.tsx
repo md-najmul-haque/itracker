@@ -1,4 +1,3 @@
-import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { signOut } from 'firebase/auth';
 import { Link, useLocation } from 'react-router-dom';
@@ -18,7 +17,7 @@ const Navbar = () => {
     if (user) {
         // console.log(user)
     }
-    
+
     const menuItem =
         <>
             <li><Link to='/'>Home</Link></li>

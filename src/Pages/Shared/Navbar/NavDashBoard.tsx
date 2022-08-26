@@ -23,6 +23,15 @@ const NavDashBoard = () => {
 
     const menuItem =
         <>
+
+            <div className='absolute mr-5 right-28 hidden lg:block'>
+
+                <div className='absolute right-28 hidden lg:block'>
+
+                    <SearchAll placeholder="what do you think.?" data={BookData} />
+                </div>
+            </div>
+
             {
                 user ? <>
                     <div className="dropdown dropdown-end">
@@ -31,7 +40,7 @@ const NavDashBoard = () => {
                                 <img src={`${user?.photoURL}` || 'https://i.ibb.co/1fcM35N/default-User.png'} alt='user-img' />
                             </div>
                         </label>
-                        <ul tabIndex={0} className="menu menu-compact dropdown-content p-2 shadow bg-secondary w-52">
+                        <ul tabIndex={0} className="menu menu-compact dropdown-content p-2 shadow bg-base-100 w-52">
                             <li>
                                 <Link to='/viewProfile' className="justify-between">
                                     View Profile
@@ -48,8 +57,7 @@ const NavDashBoard = () => {
 
     return (
         <div className='relative'>
-            <div className='navbar bg-transparent text-accent sticky font-semibold z-50 py-3 shadow-md'>
-            <div className='navbar bg-transparent text-accent sticky font-semibold py-3 shadow-md'>
+            <div className='navbar text-accent sticky top-0 mt-1 font-semibold'>
                 <div className='container mx-auto'>
                     <div className="navbar-start">
                         <div className="dropdown">
@@ -83,15 +91,9 @@ const NavDashBoard = () => {
 
             </div >
 
-            <div className='absolute top-3 right-28 z-50 hidden lg:block'>
 
-            <div className='absolute top-3 right-28 hidden lg:block'>
+        </div>
 
-                <SearchAll placeholder="what do you think.?" data={BookData} />
-            </div>
-        </div>
-        </div>
-        </div>
     );
 }
 

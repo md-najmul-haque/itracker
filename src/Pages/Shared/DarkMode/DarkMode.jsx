@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import "./DarkMode.css";
 import { BsMoonStars } from 'react-icons/bs';
 import { BsSun } from 'react-icons/bs';
@@ -6,7 +5,7 @@ import { BsSun } from 'react-icons/bs';
 const DarkMode = () => {
 
 
-    let clickedClass = "clicked"
+  let clickedClass = "clicked"
   const body = document.body
   const lightTheme = "light"
   const darkTheme = "dark"
@@ -35,33 +34,28 @@ const DarkMode = () => {
       theme = darkTheme
     }
   }
-    return (
-      <>
-      
-        {/* <button
-    //  className={` toggle ${theme === "dark" ? clickedClass : ""}`}
- 
-      >click</button> */}
+  return (
+    <>
 
-<label class="swap swap-rotate" >
-  
-  {/* <!-- this hidden checkbox controls the state --> */}
-  <input type="checkbox" id="darkMode"
-     onClick={e => switchTheme(e)}
-     className={theme === "dark" ? clickedClass : ""}
-     />
-  
-  {/* <!-- sun icon --> */}
-    <BsSun class="swap-on fill-current w-5 h-5 text-orange-300 "/>  
- 
-    {/* <!-- moon icon --> */}
-    <BsMoonStars class="swap-off fill-current w-5 h-5 text-green-300" />
-   
-  
-</label>
-    
-      </>
-    );
+      <label class="swap swap-rotate" >
+
+        {/* <!-- this hidden checkbox controls the state --> */}
+        <input type="checkbox" id="darkMode"
+          onClick={e => switchTheme(e)}
+          className={theme === "dark" ? clickedClass : ""}
+        />
+
+        {/* <!-- sun icon --> */}
+        <BsSun class="swap-on fill-current w-5 h-5 text-orange-300 " />
+
+        {/* <!-- moon icon --> */}
+        <BsMoonStars class="swap-off fill-current w-5 h-5 text-white" />
+
+
+      </label>
+
+    </>
+  );
 };
 
 export default DarkMode;

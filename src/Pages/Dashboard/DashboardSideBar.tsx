@@ -35,10 +35,10 @@ const DashboardSideBar = ({ children }: DashboardSideBarProps) => {
                 {/*  <!-- Page content here --> */}
                 {children}
             </div>
-            <div className="drawer-side bg-accent">
+            <div className="drawer-side">
                 <label form="my-drawer-2" className="drawer-overlay"></label>
-                <ul className="menu p-4 overflow-y-auto w-60 text-base-content">
-                    <h1 className='mb-4 text-center text-white font-bold text-2xl'>ITRACKER</h1>
+                <ul className="menu p-4 bg-accent overflow-y-auto w-60 text-base-content">
+                    <h1 className='mb-4 text-center text-white font-bold text-xl'>ITRACKER</h1>
                     {/*   Sidebar content here */}
                     <li className=' hover:bg-slate-600 transition-all rounded-lg'>
                         <Link className='bg-transparent text-white' to='/'> <AiFillHome />HOME</Link>

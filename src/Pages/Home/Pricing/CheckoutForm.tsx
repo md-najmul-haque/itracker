@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
-import Swal from 'sweetalert2'
+
 
 interface props {
     name: String | any;
@@ -69,13 +69,13 @@ const CheckoutForm: React.FC<props> = ({ name, email }) => {
             setCardError('')
             console.log(paymentIntent)
             setTransactionId(paymentIntent.id)
-            Swal.fire({
-                position: 'center',
-                icon: 'success',
-                title: 'congrate!,Your payment is completed',
-                showConfirmButton: false,
-                timer: 2000
-            })
+            // Swal.fire({
+            //     position: 'center',
+            //     icon: 'success',
+            //     title: 'congrate!,Your payment is completed',
+            //     showConfirmButton: false,
+            //     timer: 2000
+            // })
             setSuccess('congrate!,Your payment is completed')
 
             //store payment data
@@ -120,7 +120,7 @@ const CheckoutForm: React.FC<props> = ({ name, email }) => {
                     }}
                 />
                 {
-                   transactionId?<p className='text-white mt-8'>payment done</p>: <button className='btn btn-success  mt-12 text-lg' type="submit" disabled={!stripe || !clientSecret}>
+                    transactionId ? <p className='text-white mt-8'>payment done</p> : <button className='btn btn-success  mt-12 text-lg' type="submit" disabled={!stripe || !clientSecret}>
                         Pay<span className='ml-3'>${price}</span>
                     </button>
                 }

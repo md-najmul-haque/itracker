@@ -1,19 +1,26 @@
 import { useQuery } from '@tanstack/react-query';
-import { RefAttributes, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { ReactNode, RefAttributes, useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
 import Loading from '../../../../Shared/Loading/Loading';
 import AddIssue from './AddIssue';
 import { Issue } from './issue.type'
 
-type ListProps = {
-    projectName: RefAttributes<HTMLAnchorElement>
-}
 
 const List = () => {
 
     const [modal, setModal] = useState(false)
 
-    const { data: issues, isLoading, error, refetch } = useQuery(['issues'], () =>
+    const { id } = useParams()
+    console.log(id)
+
+    const { data: selectedProject, isLoading, refetch } = useQuery(['selectedProject'], () =>
+        fetch(`http://localhost:5000/selectedProject/${id}`)
+            .then(res => res.json())
+    )
+
+    console.log(selectedProject)
+
+    const { data: issues, error, } = useQuery(['issues'], () =>
         fetch('http://localhost:5000/getTask')
             .then(res => res.json())
     )
@@ -44,7 +51,7 @@ const List = () => {
                                     {menuItem}
                                 </ul>
                             </div>
-                            <Link to='/' className="normal-case px-5 py-2 font-medium text-xl">Project Name</Link>
+                            <Link to='/' className="normal-case px-5 py-2 font-medium text-xl">{selectedProject.projectName} dfgdg</Link>
                         </div>
 
                         <div className="navbar-end lg:flex">
@@ -89,19 +96,39 @@ const List = () => {
                                 </td>
 
                                 <td className="pl-20">
-                                    <p className="font-medium">{issue.stage}</p>
+                                    <select name='status' className="select bg-inherit font-medium focus:outline-0 focus:border-secondary">
+                                        <option>{issue.stage}</option>
+                                        <option>To Do</option>
+                                        <option>In Progress</option>
+                                        <option>Done</option>
+                                    </select>
                                 </td>
 
                                 <td className="pl-20">
-                                    <p className="font-medium">{issue.priority}</p>
+                                    <select name='status' className="select bg-inherit font-medium focus:outline-0 focus:border-secondary">
+                                        <option>{issue.priority}</option>
+                                        <option>Low</option>
+                                        <option>Normal</option>
+                                        <option>High</option>
+                                    </select>
                                 </td>
 
                                 <td className="pl-20">
-                                    <p className="font-medium">{issue.status}</p>
+                                    <select name='status' className="select bg-inherit font-medium focus:outline-0 focus:border-secondary">
+                                        <option>{issue.status}</option>
+                                        <option>On Track</option>
+                                        <option>At Risk</option>
+                                        <option>Off Track</option>
+                                    </select>
                                 </td>
 
                                 <td className="pl-20">
                                     <p className="font-medium">{issue.dueData}</p>
+                                    {/* <input
+                                        type="date"
+                                        className="input font-medium focus:outline-0 focus:border-secondary rounded-sm bg-inherit"
+                                        value={issue.dueData}
+                                    /> */}
                                 </td>
 
                                 <td className="pl-16">

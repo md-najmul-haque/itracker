@@ -6,21 +6,18 @@ import FAQ from '../FAQ/FAQ';
 import TrustedCompany from '../TrustedCompany/TrustedCompany';
 import IssueManagement from '../../IssueManagement/IssueManagement';
 import SocialShare from '../../Shared/SocialShare/SocialShare';
-import ScrollingImage from '../ScrollingImage/ScrollingImage';
-import Indecator from './Indecator';
-import SearchAll from '../../Shared/SearchAll/SearchAll';
+import Indicator from './Indicator';
 
 const Home = () => {
 
     return (
-        <div>
-            <Indecator />
+        <div className='dark:bg-black'>
+            <Indicator />
             <Banner />
             <SocialShare />
             <Teamwork />
             <IssueManagement />
             <Bugsearch />
-            <ScrollingImage />
             <Testimonial />
             <TrustedCompany />
             <FAQ />

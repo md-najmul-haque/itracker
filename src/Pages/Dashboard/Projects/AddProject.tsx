@@ -57,10 +57,10 @@ const AddProject = ({ setModal }: AddProjectProps) => {
             <input type="checkbox" id="add-project" className="modal-toggle" />
             <div className="modal modal-bottom sm:modal-middle">
                 <div className="modal-box">
-                    <label htmlFor="add-project" className="btn btn-sm bg-base-100 text-white btn-square absolute right-2 top-2">✕</label>
+                    <label htmlFor="add-project" className="btn btn-sm text-white btn-square absolute right-2 top-2">✕</label>
                     <h3 className="font-bold text-lg">Hi <span className='text-primary'>{user?.displayName}</span>! Create your new projects.</h3>
 
-                    <form onSubmit={handleSubmit(onSubmit)} className="bg-secondary mx-auto p-5">
+                    <form onSubmit={handleSubmit(onSubmit)} className="bg-base-100 mx-auto p-5">
                         <div className="form-control w-full mx-auto">
                             <label className="label">
                                 <span className="label-text">Project Name</span>
