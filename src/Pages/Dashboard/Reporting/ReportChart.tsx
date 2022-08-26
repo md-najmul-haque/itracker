@@ -42,20 +42,20 @@ const ReportChart = () => {
         <div className='grid lg:grid-cols-2 md:grid-cols-1 gap-12 mt-12'>
             <div>
                 <h1 className='ml-5'>Incomplete task by project</h1>
-                <ReactApexChart
+                <ReactApexChart className="lg:w-full"
                     options={state.options}
                     series={state.series}
                     type="bar"
-                    height={320}
+                    height="450px"
                 />
             </div>
             <div className=''>
                 <h1 className='ml-5'>Tasks by completetion statuse this month</h1>
-                <ReactApexChart 
+                <ReactApexChart className="lg:w-full" 
                 options={data.options}
                 series={data.series} 
                 type="pie"
-                 width={450} />
+                />
             </div>
 
         </div>
