@@ -5,7 +5,6 @@ import Loading from '../../../../Shared/Loading/Loading';
 import AddIssue from './AddIssue';
 import { Issue } from './issue.type'
 
-
 const List = () => {
 
     const [modal, setModal] = useState(false)
@@ -61,7 +60,7 @@ const List = () => {
 
                 <div>
                     {
-                        modal && <AddIssue setModal={setModal} />
+                        modal && <AddIssue projectName={selectedProject.projectName} setModal={setModal} />
                     }
                 </div>
 

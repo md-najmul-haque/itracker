@@ -1,5 +1,3 @@
-import { useEffect } from 'react';
-import './App.css';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import Home from './Pages/Home/Home/Home';
 import Footer from './Pages/Shared/Footer';
@@ -10,7 +8,6 @@ import Dashboard from './Pages/Dashboard/Dashboard';
 import Reporting from './Pages/Dashboard/Reporting/Reporting';
 import CompletedTasks from './Pages/Dashboard/Reporting/CompletedTasks';
 import IncompleteTasks from './Pages/Dashboard/Reporting/IncompleteTasks';
-
 import TotalTasks from './Pages/Dashboard/Reporting/TotalTasks';
 import Features from './Pages/Features/Features/Features';
 import AddReviews from './Pages/Dashboard/AddReviews/AddReviews';
@@ -30,7 +27,6 @@ import Overview from './Pages/Dashboard/Projects/MyProject/Overview';
 import Summary from './Pages/Dashboard/Projects/MyProject/Summary';
 import Messages from './Pages/Dashboard/Projects/MyProject/Messages';
 import ProjectCalendar from './Pages/Dashboard/Projects/MyProject/ProjectCalendar';
-/* import Board from './Pages/Dashboard/Projects/MyProject/Board'; */
 import Pricing from './Pages/Home/Pricing/Pricing';
 import Payment from './Pages/Home/Pricing/Payment';
 import List from './Pages/Dashboard/Projects/MyProject/List/List';
@@ -63,17 +59,15 @@ type stateProps = {
 
 function App() {
   const { pathname } = useLocation()
+
   const [user, loading, error] = useAuthState(auth);
- 
-  useEffect(() => {
-    // AOS.init();
-  })
+
   return (
     <div>
       {!pathname.includes('dashboard') && <NavbarMain />}
-      
+
       {pathname.includes('dashboard') && <NavDashBoard />}
-    
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/features" element={<Features />} />
@@ -82,7 +76,7 @@ function App() {
 
         <Route path="/about" element={<About />} />
         <Route path="/viewProfile" element={<ViewProfile />} />
-       
+
         <Route path="/signin" element={<SingIn />} />
         <Route path="/signup" element={<SignUp />} />
 
@@ -97,8 +91,8 @@ function App() {
           }
         >
         </Route>
-          <Route path="/allTask" element={<Board />}></Route>
-          <Route path="/createTask" element={<HomeScreen />}></Route>
+        <Route path="/allTask" element={<Board />}></Route>
+        <Route path="/createTask" element={<HomeScreen />}></Route>
 
 
 
@@ -125,11 +119,6 @@ function App() {
           ></Route>
         </Route>
 
-
-
-
-
-
         <Route path='/dashboard' element={
           <RequireAuth>
             <Dashboard />
@@ -146,7 +135,7 @@ function App() {
           <Route path='meeting' element={<Meeting />} />
           <Route path='meeting/:id' element={<SelectedMeeting />} />
           <Route path='calendar' element={<Calendar />} />
-          
+
           <Route path='admin' element={<Admin />} />
           <Route path='myProject' element={<MyProject />} >
             <Route path='overview' element={<Overview />} />
@@ -158,7 +147,7 @@ function App() {
         </Route>
         <Route path="*" element={<Notfound />} />
       </Routes>
-      {user && <Bar  />}
+      {user && <Bar />}
       {!pathname.includes('dashboard') && <Footer />}
 
       <ScrollToTop />
