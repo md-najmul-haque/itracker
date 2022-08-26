@@ -7,7 +7,7 @@ import Loading from '../Loading/Loading';
 import DarkMode from '../DarkMode/DarkMode';
 
 
-const Navbar = () => {
+const NavbarMain = () => {
     const { pathname } = useLocation()
     const [user, loading, error] = useAuthState(auth)
 
@@ -22,9 +22,11 @@ const Navbar = () => {
     const menuItem =
         <>
             <li><Link to='/'>Home</Link></li>
+            <li><Link to='/workflow'>Workflow</Link></li>
             <li><Link to='/features'>Features</Link></li>
             <li><a href="#contact">Contact</a></li>
             <li><Link to='/pricing'>Pricing</Link></li>
+         
             {
                 user ? <li><Link to='/dashboard'>Dashboard</Link></li> : ''
             }
@@ -97,4 +99,4 @@ const Navbar = () => {
     );
 };
 
-export default Navbar;
+export default NavbarMain;
