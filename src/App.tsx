@@ -10,7 +10,7 @@ import Dashboard from './Pages/Dashboard/Dashboard';
 import Reporting from './Pages/Dashboard/Reporting/Reporting';
 import CompletedTasks from './Pages/Dashboard/Reporting/CompletedTasks';
 import IncompleteTasks from './Pages/Dashboard/Reporting/IncompleteTasks';
-import OverdueTasks from './Pages/Dashboard/Reporting/OverdueTasks';
+
 import TotalTasks from './Pages/Dashboard/Reporting/TotalTasks';
 import Features from './Pages/Features/Features/Features';
 import AddReviews from './Pages/Dashboard/AddReviews/AddReviews';
@@ -35,6 +35,7 @@ import Pricing from './Pages/Home/Pricing/Pricing';
 import Payment from './Pages/Home/Pricing/Payment';
 import List from './Pages/Dashboard/Projects/MyProject/List/List';
 import NavDashBoard from './Pages/Shared/Navbar/NavDashBoard';
+import TotalUsers from './Pages/Dashboard/Reporting/TotalUsers';
 
 
 
@@ -70,7 +71,7 @@ function App() {
           <Route path='add-reviews' element={<AddReviews />} />
           <Route path='completedTasks' element={<CompletedTasks />} />
           <Route path='incompleteTasks' element={<IncompleteTasks />} />
-          <Route path='overdueTasks' element={<OverdueTasks />} />
+          <Route path='totalUser' element={<TotalUsers />} />
           <Route path='totalTasks' element={<TotalTasks />} />
           <Route path='project' element={<Projects />} />
           <Route path='meeting' element={<Meeting />} />
