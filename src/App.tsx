@@ -30,8 +30,11 @@ import Overview from './Pages/Dashboard/Projects/MyProject/Overview';
 import Summary from './Pages/Dashboard/Projects/MyProject/Summary';
 import Messages from './Pages/Dashboard/Projects/MyProject/Messages';
 import ProjectCalendar from './Pages/Dashboard/Projects/MyProject/ProjectCalendar';
-import NavDashBoard from './Pages/Shared/Navbar/NavDashBoard';
+/* import Board from './Pages/Dashboard/Projects/MyProject/Board'; */
+import Pricing from './Pages/Home/Pricing/Pricing';
+import Payment from './Pages/Home/Pricing/Payment';
 import List from './Pages/Dashboard/Projects/MyProject/List/List';
+import NavDashBoard from './Pages/Shared/Navbar/NavDashBoard';
 
 import Board from './components/firstScreen/Board';
 import HomeScreen from './components/firstScreen/HomeScreen';
@@ -71,6 +74,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/features" element={<Features />} />
+        <Route path="/pricing" element={<Pricing />} />
+        <Route path="/payment" element={<Payment />} />
+
         <Route path="/about" element={<About />} />
         <Route path="/signin" element={<SingIn />} />
         <Route path="/signup" element={<SignUp />} />
@@ -124,6 +130,7 @@ function App() {
             <Dashboard />
           </RequireAuth>
         }>
+
           <Route path='repoting' element={<Reporting />} />
           <Route path='add-reviews' element={<AddReviews />} />
           <Route path='completedTasks' element={<CompletedTasks />} />
@@ -138,7 +145,7 @@ function App() {
           <Route path='myProject' element={<MyProject />} >
             <Route path='overview' element={<Overview />} />
             <Route path='projectCalendar' element={<ProjectCalendar />} />
-            <Route path='list' element={<List />} />
+            <Route path='list/:id' element={<List />} />
             <Route path='summary' element={<Summary />} />
             <Route path='messages' element={<Messages />} />
           </Route>

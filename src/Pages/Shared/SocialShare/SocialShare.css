@@ -1,8 +1,9 @@
 .sidenav {
-  position:fixed;
-  top:30%;
+  position: fixed;
+  top: 30%;
   z-index: 999;
 }
+
 #mySidenav a {
   position: absolute;
   left: -80px;
@@ -14,28 +15,28 @@
   color: white;
   border-radius: 0 25px 24px 0;
 }
-  
+
 #mySidenav a:hover {
   left: 0;
-  width: 52px;
+  width: 60px;
 }
-  
+
 #fb {
   top: 10px;
   background-color: #3b5998;
 }
-  
-  #wp {
-    top: 60px;
-    background-color: #25d366;
-  }
-  
-  #ln {
-    top: 110px;
-    background-color: #007FB1;
-  }
-  
-  #el {
-    top: 160px;
-    background-color: #7F7F7F
-  }
+
+#wp {
+  top: 60px;
+  background-color: #25d366;
+}
+
+#ln {
+  top: 110px;
+  background-color: #007FB1;
+}
+
+#el {
+  top: 160px;
+  background-color: #7F7F7F
+}

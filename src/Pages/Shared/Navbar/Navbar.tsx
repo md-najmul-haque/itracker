@@ -1,4 +1,3 @@
-import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { signOut } from 'firebase/auth';
 import { Link, useLocation } from 'react-router-dom';
@@ -25,8 +24,14 @@ const NavbarMain = () => {
             <li><Link to='/workflow'>Workflow</Link></li>
             <li><Link to='/features'>Features</Link></li>
             <li><a href="#contact">Contact</a></li>
+
             <li><Link to='/pricing'>Pricing</Link></li>
          
+
+            {
+                user && <li><Link to='/pricing'>Pricing</Link></li>
+            }
+
             {
                 user ? <li><Link to='/dashboard'>Dashboard</Link></li> : ''
             }

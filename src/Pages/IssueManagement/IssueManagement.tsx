@@ -1,4 +1,3 @@
-import React from 'react';
 import './IssueManagement.css'
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -22,7 +21,7 @@ const IssueManagement = () => {
                     <div className="text-white p-5">
                         <h1 className='uppercase text-4xl mb-8'>Issue management</h1>
                         <p className='text-xl text-justify mr-5'>Record bugs easily, and track them based on desired criteria. Create custom views for your issue tracking software to focus on bugs that are the most time sensitive. See how many bugs have been logged, if they've been resolved, and more with reports.</p>
-                        <Link to='/features' className="btn mt-5 text-white px-8 btn-primary dark:btn dark:btn-accent">ALL features</Link>
+                        <Link to='/features' className="btn mt-5 text-white px-8 btn-primary dark:btn dark:btn-secondary">ALL features</Link>
                     </div>
                 </div>
                 <div>
@@ -39,16 +38,16 @@ const IssueManagement = () => {
                         modules={[EffectCube, Pagination]}
                         className="mySwiper lg:w-[600px] lg:h-[500px] w-[400px] h-[300px]">
                         <SwiperSlide className='swiper-slider'>
-                            <img src={img} />
+                            <img src={img} alt='' />
                         </SwiperSlide>
                         <SwiperSlide className='swiper-slider'>
-                            <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+                            <img src="https://swiperjs.com/demos/images/nature-2.jpg" alt='' />
                         </SwiperSlide>
                         <SwiperSlide className='swiper-slider'>
-                            <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+                            <img src="https://swiperjs.com/demos/images/nature-3.jpg" alt='' />
                         </SwiperSlide>
                         <SwiperSlide className='swiper-slider'>
-                            <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+                            <img src="https://swiperjs.com/demos/images/nature-4.jpg" alt='' />
                         </SwiperSlide>
                     </Swiper>
                 </div>

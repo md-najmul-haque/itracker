@@ -16,8 +16,8 @@ const Banner = () => {
                         <p className="mb-10 text-xl lg:text-2xl p-5 lg:p-0">We help to track your issue, add your project and team member in iTracker then create an issue with deadline, then assign your team member do solve this issue. Finally you can track it.You can also set priority like, low, medium and high. Yep, it’s very easy to use.</p>
 
                         <div className="flex justify-center pb-10">
-                            <Link to='/signup' className="btn dark:btn text-white btn-primary dark:btn-accent">Get Started</Link>
-                            <Link to='/signin' className="btn ml-5 text-white px-8 btn-primary dark:btn dark:btn-accent">Sing In</Link>
+                            <Link to='/signup' className="btn dark:btn text-white btn-primary dark:btn-secondary">Get Started</Link>
+                            <Link to='/signin' className="btn ml-5 text-white px-8 btn-primary dark:btn dark:btn-secondary">Sing In</Link>
                         </div>
                     </div>
 
