@@ -1,5 +1,4 @@
-import { useEffect } from 'react';
-import './App.css';
+import { Dispatch, SetStateAction, useState } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import Home from './Pages/Home/Home/Home';
 import Footer from './Pages/Shared/Footer';
@@ -10,7 +9,6 @@ import Dashboard from './Pages/Dashboard/Dashboard';
 import Reporting from './Pages/Dashboard/Reporting/Reporting';
 import CompletedTasks from './Pages/Dashboard/Reporting/CompletedTasks';
 import IncompleteTasks from './Pages/Dashboard/Reporting/IncompleteTasks';
-
 import TotalTasks from './Pages/Dashboard/Reporting/TotalTasks';
 import Features from './Pages/Features/Features/Features';
 import AddReviews from './Pages/Dashboard/AddReviews/AddReviews';
@@ -30,7 +28,6 @@ import Overview from './Pages/Dashboard/Projects/MyProject/Overview';
 import Summary from './Pages/Dashboard/Projects/MyProject/Summary';
 import Messages from './Pages/Dashboard/Projects/MyProject/Messages';
 import ProjectCalendar from './Pages/Dashboard/Projects/MyProject/ProjectCalendar';
-/* import Board from './Pages/Dashboard/Projects/MyProject/Board'; */
 import Pricing from './Pages/Home/Pricing/Pricing';
 import Payment from './Pages/Home/Pricing/Payment';
 import List from './Pages/Dashboard/Projects/MyProject/List/List';
@@ -46,9 +43,7 @@ type stateProps = {
 
 function App() {
   const { pathname } = useLocation()
-  useEffect(() => {
-    // AOS.init();
-  })
+
   return (
     <div>
       {!pathname.includes('dashboard') && <Navbar />}

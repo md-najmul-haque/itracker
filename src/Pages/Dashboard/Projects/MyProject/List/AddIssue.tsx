@@ -8,13 +8,15 @@ import { Issue } from './issue.type'
 
 type AddIssueProps = {
     setModal: React.Dispatch<React.SetStateAction<boolean>>
+    projectName: string
 }
 
-const AddIssue = ({ setModal }: AddIssueProps) => {
+const AddIssue = ({ projectName, setModal }: AddIssueProps) => {
 
     const { register, handleSubmit } = useForm<Issue>();
     const onSubmit: SubmitHandler<Issue> = async (data, e) => {
         const issue = {
+            projectName: projectName,
             issueName: data.issueName,
             description: data.description,
             email: data.email,
