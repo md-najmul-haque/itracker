@@ -35,7 +35,9 @@ const Pricing = () => {
                         <p className='headding'>For individuals or teams just getting started with project management.</p>
                         <p className='text-5xl mt-5'>US$0</p>
                         <p className='mt-4'> <small>Free forever</small></p>
-                        <p className='button2'>Free</p>
+                        <Link to='/dashboard/project'>
+                        <p className='button1'>Free</p>
+                        </Link>
                         <div className='mt-12'>
                             <p className='text-xl font-medium'>Manage tasks and personal to-dos:</p>
                             <p className='my-3 text-lg flex items-center'><BsCheck2 className='mr-3' /> Unlimited tasks</p>
@@ -54,7 +56,9 @@ const Pricing = () => {
                         <h1 className='title'>Premium</h1>
                         <p className='headding'>For individuals or teams just getting started with project management.</p>
                         <p className='text-5xl mt-5 mb-16'>US$20.66</p>
-                        {paymentId ? <p className='button2 text-red-400'>Payment Done</p> : <p className='button2'><Link to="/payment">Purchase Now</Link></p>}
+                        {paymentId ? <p className='button2 text-red-400'>Payment Done</p> : <Link to="/payment">
+                        <p className='button2'>Purchase Now</p>
+                        </Link>}
                     </div>
                     <div className='mt-12'>
                         <p className='text-xl font-medium'>Track team projects with features and resources like:</p>
