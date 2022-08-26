@@ -9,7 +9,7 @@ interface User {
 const Admin = () => {
 
     const { data: users, isLoading, refetch } = useQuery(['users'], () =>
-        fetch(`http://localhost:5000/user`)
+        fetch(`https://dry-eyrie-76820.herokuapp.com/user`)
             .then(res => res.json())
     )
 

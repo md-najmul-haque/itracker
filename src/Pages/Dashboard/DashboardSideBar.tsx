@@ -25,7 +25,7 @@ const DashboardSideBar = ({ children }: DashboardSideBarProps) => {
     )
     useEffect(() => {
         if (user) {
-            fetch(`http://localhost:5000/getUserPayment?email=${user.email}`)
+            fetch(`https://dry-eyrie-76820.herokuapp.com/getUserPayment?email=${user.email}`)
                 .then(res => res.json())
                 .then(data => {
                     setPaymentId(data[0].paymentId)

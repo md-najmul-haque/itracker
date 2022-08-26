@@ -8,9 +8,9 @@ interface user {
 const TotalUsers = () => {
     const [users, setUsers] = useState([])
     useEffect(() => {
-        fetch("http://localhost:5000/getUser")
+        fetch("https://dry-eyrie-76820.herokuapp.com/getUser")
             .then(res => res.json())
-            .then(data =>setUsers(data));
+            .then(data => setUsers(data));
     }, [])
     console.log(users)
     return (
@@ -28,9 +28,9 @@ const TotalUsers = () => {
                     </thead>
                     <tbody>
                         {
-                            users?.map((user:user) => <>
-                                <ShowUsers 
-                                user={user} 
+                            users?.map((user: user) => <>
+                                <ShowUsers
+                                    user={user}
                                 />
                             </>)
                         }

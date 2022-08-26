@@ -12,18 +12,18 @@ const ReportCard = () => {
     const [users, setUsers] = useState([])
     useEffect(() => {
         if (user) {
-            fetch(`http://localhost:5000/totalProject?email=${user.email}`)
+            fetch(`https://dry-eyrie-76820.herokuapp.com/totalProject?email=${user.email}`)
                 .then(res => res.json())
                 .then(data => {
                     setProjects(data)
                 });
         }
     }, [user])
-    
+
     useEffect(() => {
-        fetch("http://localhost:5000/getUser")
+        fetch("https://dry-eyrie-76820.herokuapp.com/getUser")
             .then(res => res.json())
-            .then(data =>setUsers(data))
+            .then(data => setUsers(data))
     }, [])
     return (
         <div className='grid lg:grid-cols-4 gap-6 md:grid-cols-2'>

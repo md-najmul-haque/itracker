@@ -13,18 +13,18 @@ interface Project {
 }
 
 const TotalTasks = () => {
-    const [user,loading] = useAuthState(auth)
+    const [user, loading] = useAuthState(auth)
     const [projects, setProjects] = useState([])
     useEffect(() => {
         if (user) {
-            fetch(`http://localhost:5000/totalProject?email=${user.email}`)
+            fetch(`https://dry-eyrie-76820.herokuapp.com/totalProject?email=${user.email}`)
                 .then(res => res.json())
                 .then(data => {
                     setProjects(data)
                 });
         }
     }, [user])
-    
+
     console.log(projects)
     return (
         <div className='overflow-x-auto'>
