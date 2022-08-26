@@ -68,13 +68,13 @@ const Sidebar = () => {
                             <FaBoxes className="mr-1 text-sm text-primary"></FaBoxes>{" "}
                             My Task
                           </Link>
-                          <Link
+                          {/* <Link
                             to=""
                             className="sidebar-workspace-toggle-button mb-2 flex items-center w-5/6"
                           >
                             <HiViewGridAdd className="mr-1 text-sm text-primary"></HiViewGridAdd>{" "}
                             Views
-                          </Link>
+                          </Link> */}
                           <span className="sidebar-workspace-toggle-button mb-2 w-5/6 flex justify-between">
                             <Link
                               onClick={() => {
