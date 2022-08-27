@@ -1,7 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import { useState } from 'react';
 import Loading from '../../Shared/Loading/Loading';
-import DashboardSideBar from '../DashboardSideBar';
 import AddProject from './AddProject';
 import ShowProject from './ShowProject';
 

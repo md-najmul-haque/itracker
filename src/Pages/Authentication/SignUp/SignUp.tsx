@@ -5,7 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import Loading from '../../Shared/Loading/Loading';
-import useToken from '../../../hooks/useToken';
+
 
 interface IFormInput {
     name: string;
@@ -23,7 +23,7 @@ function SignUp() {
 
     const navigate = useNavigate()
 
-    // const [token] = useToken(user|| gUser || gitUser)
+    // const [token] = useToken(user)
 
     const { register, formState: { errors }, handleSubmit, reset } = useForm<IFormInput>();
 
@@ -34,26 +34,27 @@ function SignUp() {
         await createUserWithEmailAndPassword(email, password);
         await updateProfile({ displayName: data.name });
 
-        // const createUser = {
-        //     userName: data.name,
-        //     email: email
-        // }
+        const createUser = {
+            userName: data.name,
+            email: email
+        }
 
-        // fetch('https://dry-eyrie-76820.herokuapp.com/signup',
-        //     {
-        //         method: "POST",
-        //         headers: {
-        //             'content-type': 'application/json'
-        //         },
-        //         body: JSON.stringify(createUser)
-        //     })
-        //     .then(res => res.json())
-        //     .then(data => {
-        //         console.log(data)
-        //     })
+        fetch('https://dry-eyrie-76820.herokuapp.com/signup',
+            {
+                method: "POST",
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(createUser)
+            })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+            })
         // toast('You have successfully create your account')
         reset()
 
+        console.log(createUser)
 
     }
 

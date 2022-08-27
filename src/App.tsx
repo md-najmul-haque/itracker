@@ -44,7 +44,6 @@ import Guests from './components/Workspace/Member/Guests';
 import Pending from './components/Workspace/Member/Pending';
 import Account from './components/Workspace/Account';
 import BoardDetails from './components/boardDetails/BoardDetails';
-import WorkFlow from './Pages/WorkFlow/WorkFlow';
 import auth from './firebase.init';
 import Bar from './components/modalInfo/Bar';
 import { useAuthState } from 'react-firebase-hooks/auth';
@@ -80,17 +79,6 @@ function App() {
         <Route path="/signin" element={<SingIn />} />
         <Route path="/signup" element={<SignUp />} />
 
-
-
-        <Route
-          path="/workflow"
-          element={
-            <RequireAuth>
-              <WorkFlow />
-            </RequireAuth>
-          }
-        >
-        </Route>
         <Route path="/allTask" element={<Board />}></Route>
         <Route path="/createTask" element={<HomeScreen />}></Route>
 
