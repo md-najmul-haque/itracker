@@ -59,7 +59,7 @@ const AddMeeting = ({ setModal }: addMeetingProps) => {
                     <label htmlFor="add-meeting" className="btn btn-sm bg-accent text-white btn-square absolute right-2 top-2">✕</label>
                     <h3 className="font-bold text-lg">Hi <span className="text-primary">{user?.displayName}</span>! Create your new meeting schedule.</h3>
 
-                    <form onSubmit={handleSubmit(onSubmit)} className="bg-secondary mx-auto p-5">
+                    <form onSubmit={handleSubmit(onSubmit)} className="bg-base-100 mx-auto p-5">
                         <div className="form-control w-full mx-auto">
                             <label className="label">
                                 <span className="label-text">Meeting Title</span>
