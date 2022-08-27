@@ -33,28 +33,10 @@ import List from './Pages/Dashboard/Projects/MyProject/List/List';
 import NavDashBoard from './Pages/Shared/Navbar/NavDashBoard';
 import TotalUsers from './Pages/Dashboard/Reporting/TotalUsers';
 import Admin from './Pages/Dashboard/Admin/Admin';
-
-import Board from './components/firstScreen/Board';
-import HomeScreen from './components/firstScreen/HomeScreen';
-import Workspace from './components/Workspace/Workspace';
-import Boards from './components/Workspace/Boards';
-import Members from './components/Workspace/Members';
-import WorkspaceMembers from './components/Workspace/Member/WorkspaceMembers';
-import Guests from './components/Workspace/Member/Guests';
-import Pending from './components/Workspace/Member/Pending';
-import Account from './components/Workspace/Account';
-import BoardDetails from './components/boardDetails/BoardDetails';
 import auth from './firebase.init';
-import Bar from './components/modalInfo/Bar';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import ViewProfile from './Pages/ViewProfile/ViewProfile';
 
-
-
-
-type stateProps = {
-  lists: any
-}
 
 function App() {
   const { pathname } = useLocation()
@@ -78,34 +60,6 @@ function App() {
 
         <Route path="/signin" element={<SingIn />} />
         <Route path="/signup" element={<SignUp />} />
-
-        <Route path="/allTask" element={<Board />}></Route>
-        <Route path="/createTask" element={<HomeScreen />}></Route>
-
-
-
-        <Route path="/:shortname" element={<Workspace />}>
-          <Route path="/:shortname/" element={<Boards />}></Route>
-          <Route path="/:shortname/members" element={<Members />}>
-            <Route
-              path="/:shortname/members"
-              element={<WorkspaceMembers></WorkspaceMembers>}
-            ></Route>
-            <Route
-              path="/:shortname/members/guests"
-              element={<Guests></Guests>}
-            ></Route>
-            <Route
-              path="/:shortname/members/pending"
-              element={<Pending></Pending>}
-            ></Route>
-          </Route>
-          <Route path="/:shortname/account" element={<Account />}></Route>
-          <Route
-            path="/:shortname/:id"
-            element={<BoardDetails></BoardDetails>}
-          ></Route>
-        </Route>
 
         <Route path='/dashboard' element={
           <RequireAuth>
@@ -135,7 +89,6 @@ function App() {
         </Route>
         <Route path="*" element={<Notfound />} />
       </Routes>
-      {user && <Bar />}
       {!pathname.includes('dashboard') && <Footer />}
 
       <ScrollToTop />
@@ -144,9 +97,4 @@ function App() {
   );
 }
 
-
-const mapStateToProps = (state: stateProps) => ({
-  lists: state.lists
-})
-
-export default connect(mapStateToProps)(App);
+export default App;
