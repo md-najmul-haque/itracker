@@ -80,7 +80,7 @@ const DashboardSideBar = ({ children }: DashboardSideBarProps) => {
                         <h3 className='text-secondary text-xl font-semibold'>My Projects</h3>
                         {
                             projects?.map((project: Project) => <ul>
-                                <Link to='myProject/list' className='hover:bg-slate-600 transition-all py-1 text-white'>{project.projectName}</Link>
+                                <Link to={`myProject/list/${project._id}`} className='hover:bg-slate-600 transition-all py-1 text-white'>{project.projectName}</Link>
                             </ul>)
                         }
 

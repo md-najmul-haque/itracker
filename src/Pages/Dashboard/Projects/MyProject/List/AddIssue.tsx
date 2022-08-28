@@ -26,6 +26,8 @@ const AddIssue = ({ projectName, setModal }: AddIssueProps) => {
             status: e?.target.status.value,
         }
 
+        console.log(issue)
+
         fetch('https://dry-eyrie-76820.herokuapp.com/addTask', {
             method: 'POST',
             headers: {
@@ -34,7 +36,7 @@ const AddIssue = ({ projectName, setModal }: AddIssueProps) => {
             body: JSON.stringify(issue)
         })
             .then(res => res.json())
-            .then(issue => console.log(issue))
+
         swal({
             title: "Congrats!",
             text: "Task added Successfully!",

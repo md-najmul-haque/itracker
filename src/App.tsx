@@ -15,7 +15,6 @@ import SingIn from './Pages/Authentication/SignIn/SingIn';
 import SignUp from './Pages/Authentication/SignUp/SignUp';
 import RequireAuth from './Pages/Authentication/RequireAuth/RequireAuth';
 import About from './Pages/About/About';
-import { connect } from 'react-redux'
 import Projects from './Pages/Dashboard/Projects/Projects';
 import Calendar from './Pages/Dashboard/Calendar/Calendar';
 import { MessengerCustomerChat } from "typescript-react-facebook-messenger";
@@ -40,8 +39,6 @@ import ViewProfile from './Pages/ViewProfile/ViewProfile';
 
 function App() {
   const { pathname } = useLocation()
-
-  const [user, loading, error] = useAuthState(auth);
 
   return (
     <div>
