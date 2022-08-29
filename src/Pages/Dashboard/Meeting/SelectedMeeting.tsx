@@ -58,11 +58,11 @@ const SelectedMeeting = () => {
     }
 
     return (
-        <div className="bg-secondary h-screen">
+        <div className="bg-white h-screen">
             <div className="container max-w-2xl pt-12 mx-auto">
                 <h3 className="font-bold mb-7 text-lg">Hi <span className="text-primary">{user?.displayName}</span>! Update your meeting.</h3>
 
-                <form onSubmit={handleSubmit(onSubmit)} className="bg-secondary mx-auto p-5 lg:p-0">
+                <form onSubmit={handleSubmit(onSubmit)} className="bg-white mx-auto p-5 lg:p-0">
                     <div className="form-control w-full mx-auto">
                         <label className="label">
                             <span className="label-text">Meeting Title</span>

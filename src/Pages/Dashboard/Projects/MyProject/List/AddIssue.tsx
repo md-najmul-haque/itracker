@@ -7,16 +7,16 @@ import Loading from '../../../../Shared/Loading/Loading';
 import { Issue } from './issue.type'
 
 type AddIssueProps = {
-    setModal: React.Dispatch<React.SetStateAction<boolean>>
-    projectName: string
+    setModal: React.Dispatch<React.SetStateAction<boolean>>,
+    projectId: string
 }
 
-const AddIssue = ({ projectName, setModal }: AddIssueProps) => {
+const AddIssue = ({ projectId, setModal }: AddIssueProps) => {
 
     const { register, handleSubmit } = useForm<Issue>();
     const onSubmit: SubmitHandler<Issue> = async (data, e) => {
         const issue = {
-            projectName: projectName,
+            projectId: projectId,
             issueName: data.issueName,
             description: data.description,
             email: data.email,
@@ -26,7 +26,9 @@ const AddIssue = ({ projectName, setModal }: AddIssueProps) => {
             status: e?.target.status.value,
         }
 
-        fetch('https://dry-eyrie-76820.herokuapp.com/addTask', {
+        console.log(issue)
+
+        fetch('http://localhost:5000/addTask', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

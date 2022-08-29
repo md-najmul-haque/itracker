@@ -1,16 +1,16 @@
 export type Issues = {
-    projectName: string,
+    projectId: string,
     issueName: string,
     description: string,
     email: string,
-    dueData: Date | any,
+    dueData: Date,
     stage: string,
     priority: string,
     status: string,
 }[]
 
 export type Issue = {
-    projectName: string,
+    projectId: string,
     issueName: string,
     description: string,
     email: string,

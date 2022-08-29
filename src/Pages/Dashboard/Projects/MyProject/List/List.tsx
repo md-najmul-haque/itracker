@@ -25,12 +25,37 @@ const List = () => {
     }, [])
 
 
+    const handleIssue = (e: React.BaseSyntheticEvent<object, any, any>) => {
+        e.stopPropagation();
+        console.log(e.target.value)
+
+        const issue = {
+            projectId: id,
+            // dueData: e?.target.data.dueData,
+            stage: e?.target.value,
+            priority: e?.target.value,
+            status: e?.target.value,
+        }
+        console.log(issue)
+
+        fetch('http://localhost:5000/addTask', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(issue)
+        })
+            .then(res => res.json())
+    }
+
     // const { data: issues } = useQuery(['issues'], () =>
     //     fetch(`http://localhost:5000/getTask?${selectedProject.projectName}`)
     //         .then(res => res.json())
     //         .then(data => console.log(data))
     // )
     refetch();
+
+
 
     if (isLoading) {
         return <Loading />
@@ -70,7 +95,7 @@ const List = () => {
 
                 <div>
                     {
-                        modal && <AddIssue projectName={selectedProject.projectName} setModal={setModal} />
+                        modal && <AddIssue projectId={selectedProject._id} setModal={setModal} />
                     }
                 </div>
 
@@ -102,39 +127,39 @@ const List = () => {
                                 </td>
 
                                 <td className="pl-20">
-                                    <select name='status' className="select bg-inherit font-medium focus:outline-0 focus:border-secondary">
-                                        <option>{issue.stage}</option>
-                                        <option>To Do</option>
-                                        <option>In Progress</option>
-                                        <option>Done</option>
+                                    <select name='stage' onChange={handleIssue} className="select bg-inherit font-medium focus:outline-0 focus:border-secondary">
+                                        <option value={issue.stage}>{issue.stage}</option>
+                                        <option value='To Do'>To Do</option>
+                                        <option value='In Progress'>In Progress</option>
+                                        <option value='Done'>Done</option>
                                     </select>
                                 </td>
 
                                 <td className="pl-20">
-                                    <select name='status' className="select bg-inherit font-medium focus:outline-0 focus:border-secondary">
-                                        <option>{issue.priority}</option>
-                                        <option>Low</option>
-                                        <option>Normal</option>
-                                        <option>High</option>
+                                    <select name='priority' onChange={handleIssue} className="select bg-inherit font-medium focus:outline-0 focus:border-secondary">
+                                        <option value={issue.priority}>{issue.priority}</option>
+                                        <option value='Low'>Low</option>
+                                        <option value='Normal'>Normal</option>
+                                        <option value='High'>High</option>
                                     </select>
                                 </td>
 
                                 <td className="pl-20">
-                                    <select name='status' className="select bg-inherit font-medium focus:outline-0 focus:border-secondary">
-                                        <option>{issue.status}</option>
-                                        <option>On Track</option>
-                                        <option>At Risk</option>
-                                        <option>Off Track</option>
+                                    <select name='status' onChange={handleIssue} className="select bg-inherit font-medium focus:outline-0 focus:border-secondary">
+                                        <option value={issue.status}>{issue.status}</option>
+                                        <option value='On Track'>On Track</option>
+                                        <option value='At Risk'>At Risk</option>
+                                        <option value='Off Track'>Off Track</option>
                                     </select>
                                 </td>
 
                                 <td className="pl-20">
-                                    <p className="font-medium">{issue.dueData}</p>
-                                    {/* <input
+                                    {/* <p className="font-medium">{issue.dueData}</p> */}
+                                    <input
                                         type="date"
                                         className="input font-medium focus:outline-0 focus:border-secondary rounded-sm bg-inherit"
-                                        value={issue.dueData}
-                                    /> */}
+                                        defaultValue={issue.dueData}
+                                    />
                                 </td>
 
                                 <td className="pl-16">
