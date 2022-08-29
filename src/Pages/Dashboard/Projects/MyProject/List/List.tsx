@@ -17,7 +17,8 @@ const List = () => {
             .then(res => res.json())
     )
 
-    const url = `http://localhost:5000/getTask?${id}`
+    const url = `http://localhost:5000/getTask?projectId=${id}`
+    console.log(url)
     useEffect(() => {
         fetch(url)
             .then(res => res.json())
