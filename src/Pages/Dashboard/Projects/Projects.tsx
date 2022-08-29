@@ -1,5 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import { useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../../firebase.init';
 import Loading from '../../Shared/Loading/Loading';
 import AddProject from './AddProject';
 import ShowProject from './ShowProject';
@@ -15,13 +17,18 @@ interface Project {
 
 const Projects = () => {
     const [modal, setModal] = useState(false)
+    const [user, loading] = useAuthState(auth)
+
+    const userEmail = user?.email;
+
 
     const { data: projects, isLoading, error, refetch } = useQuery(['projects'], () =>
-        fetch('https://dry-eyrie-76820.herokuapp.com/getProject')
+        fetch(`http://localhost:5000/getProject?userEmail=${userEmail}`)
+
             .then(res => res.json())
     )
 
-    if (isLoading) {
+    if (loading || isLoading) {
         return <Loading />
     }
 
