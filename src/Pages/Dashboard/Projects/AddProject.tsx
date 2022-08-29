@@ -18,17 +18,25 @@ type AddProjectProps = {
 }
 
 const AddProject = ({ setModal }: AddProjectProps) => {
+    const [user, loading] = useAuthState(auth)
+
+    if (loading) {
+        <Loading />
+    }
+
     const { register, handleSubmit } = useForm<IFormInput>();
     const onSubmit: SubmitHandler<IFormInput> = async (data) => {
         const project = {
+            userEmail: user?.email,
             projectName: data.projectName,
             projectDescription: data.projectDescription,
             email: data.email,
             startingDate: data.startingDate,
             endData: data.endData
         }
+        console.log(project)
 
-        fetch('https://dry-eyrie-76820.herokuapp.com/addProject', {
+        fetch('http://localhost:5000/addProject', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -46,11 +54,6 @@ const AddProject = ({ setModal }: AddProjectProps) => {
 
     };
 
-    const [user, loading] = useAuthState(auth)
-
-    if (loading) {
-        <Loading />
-    }
 
     return (
         <div>
