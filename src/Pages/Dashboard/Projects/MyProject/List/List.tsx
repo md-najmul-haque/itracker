@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import Loading from '../../../../Shared/Loading/Loading';
 import AddIssue from './AddIssue';
@@ -8,6 +8,7 @@ import { Issue } from './issue.type'
 const List = () => {
 
     const [modal, setModal] = useState(false)
+    const [issues, setIssues] = useState([])
 
     const { id } = useParams()
 
@@ -15,11 +16,19 @@ const List = () => {
         fetch(`https://dry-eyrie-76820.herokuapp.com/selectedProject/${id}`)
             .then(res => res.json())
     )
-
-    const { data: issues } = useQuery(['issues'], () =>
-        fetch('https://dry-eyrie-76820.herokuapp.com/getTask')
+    const url = `http://localhost:5000/getTask?${selectedProject.projectName}`
+    useEffect(() => {
+        fetch(url)
             .then(res => res.json())
-    )
+            .then(data => setIssues(data))
+    }, [])
+
+
+    // const { data: issues } = useQuery(['issues'], () =>
+    //     fetch(`http://localhost:5000/getTask?${selectedProject.projectName}`)
+    //         .then(res => res.json())
+    //         .then(data => console.log(data))
+    // )
     refetch();
 
     if (isLoading) {

@@ -26,8 +26,6 @@ const AddIssue = ({ projectName, setModal }: AddIssueProps) => {
             status: e?.target.status.value,
         }
 
-        console.log(issue)
-
         fetch('https://dry-eyrie-76820.herokuapp.com/addTask', {
             method: 'POST',
             headers: {

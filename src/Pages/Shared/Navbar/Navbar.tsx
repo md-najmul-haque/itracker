@@ -25,9 +25,6 @@ const NavbarMain = () => {
             <li><a href="#contact">Contact</a></li>
             <li><Link to='/pricing'>Pricing</Link></li>
             {
-                user && <li><Link to='/pricing'>Pricing</Link></li>
-            }
-            {
                 user ? <li><Link to='/dashboard'>Dashboard</Link></li> : ''
             }
             <li><Link to='/about'>About</Link></li>
@@ -36,7 +33,7 @@ const NavbarMain = () => {
                     <div className="dropdown dropdown-end">
                         <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                             <div className="w-10 rounded-full">
-                                <img src={`${user?.photoURL}` || 'https://i.ibb.co/1fcM35N/default-User.png'} alt='user-img' />
+                                <img src={`${user?.photoURL}`} alt='user-img' />
                             </div>
                         </label>
                         <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-primary text-white rounded-box w-52">

@@ -8,11 +8,6 @@ type useTokenProps = {
         email: string
     }
 }
-// interface createUser {
-//     userName: string,
-//     email: string
-// }
-
 const useToken = (user: useTokenProps) => {
     const [token, setToken] = useState('')
 
@@ -23,17 +18,19 @@ const useToken = (user: useTokenProps) => {
 
     useEffect(() => {
 
-        fetch('https://dry-eyrie-76820.herokuapp.com/signup',
-            {
-                method: "POST",
-                headers: {
-                    'content-type': 'application/json'
-                },
-                body: JSON.stringify(createUser)
-            })
-            .then(res => res.json())
-            .then(data => console.log('data inside use token', data))
+        if (user) {
+            fetch('https://dry-eyrie-76820.herokuapp.com/signup',
+                {
+                    method: "PUT",
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(createUser)
+                })
+                .then(res => res.json())
+                .then(data => console.log('data inside use token', data))
 
+        }
 
     }, [user])
 

@@ -28,7 +28,7 @@ const NavDashBoard = () => {
                     <div className="dropdown dropdown-end">
                         <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                             <div className="w-10 rounded-full">
-                                <img src={`${user?.photoURL}` || 'https://i.ibb.co/1fcM35N/default-User.png'} alt='user-img' />
+                                <img src={`${user?.photoURL}`} alt='user-img' />
                             </div>
                         </label>
                         <ul tabIndex={0} className="menu menu-compact dropdown-content p-2 shadow bg-base-100 w-52">
@@ -45,7 +45,7 @@ const NavDashBoard = () => {
 
     return (
 
-        <div className='navbar text-accent sticky top-10 mt-1 font-semibold'>
+        <div className='navbar text-accent top-10 mt-1 font-semibold'>
             <div className='container mx-auto'>
                 <div className="navbar-start">
                     <div className="dropdown">
