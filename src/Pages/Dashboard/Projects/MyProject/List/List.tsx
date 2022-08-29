@@ -12,11 +12,12 @@ const List = () => {
 
     const { id } = useParams()
 
-    const { data: selectedProject, isLoading, refetch } = useQuery(['selectedProject'], () =>
-        fetch(`https://dry-eyrie-76820.herokuapp.com/selectedProject/${id}`)
+    const { data: selectedProject, isLoading, refetch } = useQuery(['selectedProject'], async () =>
+        await fetch(`https://dry-eyrie-76820.herokuapp.com/selectedProject/${id}`)
             .then(res => res.json())
     )
-    const url = `http://localhost:5000/getTask?${selectedProject.projectName}`
+
+    const url = `http://localhost:5000/getTask?${id}`
     useEffect(() => {
         fetch(url)
             .then(res => res.json())
@@ -50,7 +51,7 @@ const List = () => {
                         <div className="navbar-start">
                             <div className="dropdown">
                                 <label tabIndex={0} className="btn btn-ghost lg:hidden">
-                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                                 </label>
                                 <ul tabIndex={0} className="menu-compact dropdown-content mt-3 p-2 rounded-box w-52">
                                     {menuItem}
