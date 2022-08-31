@@ -1,7 +1,7 @@
 export type Task = {
     _id: string,
     projectId: string,
-    issueName: string,
+    taskName: string,
     description: string,
     email: string,
     dueData: Date | any,
@@ -14,7 +14,7 @@ export type AllTaskProps = {
     task: {
         _id: string,
         projectId: string,
-        issueName: string,
+        taskName: string,
         description: string,
         email: string,
         dueData: Date | any,

@@ -17,7 +17,7 @@ const AddTask = ({ projectId, setModal }: AddTaskProps) => {
     const onSubmit: SubmitHandler<Task> = async (data, e) => {
         const task = {
             projectId: projectId,
-            issueName: data.issueName,
+            taskName: data.taskName,
             description: data.description,
             email: data.email,
             dueData: data.dueData,
@@ -28,7 +28,7 @@ const AddTask = ({ projectId, setModal }: AddTaskProps) => {
 
         console.log(task)
 
-        fetch('https://dry-eyrie-76820.herokuapp.com/addTask', {
+        fetch('http://localhost:5000/addTask', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -68,7 +68,7 @@ const AddTask = ({ projectId, setModal }: AddTaskProps) => {
                                 type="text"
                                 placeholder="Enter Task Title"
                                 className="input input-bordered focus:outline-0 focus:border-secondary rounded-sm bg-white w-full"
-                                {...register("issueName", {
+                                {...register("taskName", {
                                     required: {
                                         value: true,
                                         message: "Name is required"
