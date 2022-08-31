@@ -26,8 +26,6 @@ const AddTask = ({ projectId, setModal }: AddTaskProps) => {
             status: e?.target.status.value,
         }
 
-        console.log(task)
-
         fetch('http://localhost:5000/addTask', {
             method: 'POST',
             headers: {

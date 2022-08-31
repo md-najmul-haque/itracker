@@ -4,8 +4,9 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import swal from "sweetalert";
 import auth from "../../../firebase.init";
-import Loading from "../../Shared/Loading/Loading";
 import { MeetingType } from "../../../types/Meeting.type";
+import Loading from "../../Shared/Loading/Loading";
+
 
 type addMeetingProps = {
     setModal: Dispatch<SetStateAction<boolean>>

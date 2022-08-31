@@ -85,7 +85,7 @@ const Meeting = () => {
                                     </td>
 
                                     <td className="pl-20">
-                                        <p className="font-medium">{meeting.date}</p>
+                                        <p className="font-medium">{meeting.date.slice(0, 10)}</p>
                                     </td>
                                     <td className="pl-16">
                                         <div className="flex items-center">
