@@ -4,18 +4,19 @@ import { SubmitHandler, useForm } from 'react-hook-form';
 import swal from 'sweetalert';
 import auth from '../../../../../firebase.init';
 import Loading from '../../../../Shared/Loading/Loading';
-import { Issue } from './issue.type'
+import { Task } from './task.type';
 
-type AddIssueProps = {
+
+type AddTaskProps = {
     setModal: React.Dispatch<React.SetStateAction<boolean>>,
     projectId: string
 }
 
-const AddIssue = ({ projectId, setModal }: AddIssueProps) => {
+const AddTask = ({ projectId, setModal }: AddTaskProps) => {
 
-    const { register, handleSubmit } = useForm<Issue>();
-    const onSubmit: SubmitHandler<Issue> = async (data, e) => {
-        const issue = {
+    const { register, handleSubmit } = useForm<Task>();
+    const onSubmit: SubmitHandler<Task> = async (data, e) => {
+        const task = {
             projectId: projectId,
             issueName: data.issueName,
             description: data.description,
@@ -26,14 +27,14 @@ const AddIssue = ({ projectId, setModal }: AddIssueProps) => {
             status: e?.target.status.value,
         }
 
-        console.log(issue)
+        console.log(task)
 
         fetch('http://localhost:5000/addTask', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(issue)
+            body: JSON.stringify(task)
         })
             .then(res => res.json())
 
@@ -62,16 +63,16 @@ const AddIssue = ({ projectId, setModal }: AddIssueProps) => {
                     <form onSubmit={handleSubmit(onSubmit)} className="mx-auto p-5">
                         <div className="form-control w-full mx-auto">
                             <label className="label">
-                                <span className="label-text">Issue Title</span>
+                                <span className="label-text">Task Title</span>
                             </label>
                             <input
                                 type="text"
-                                placeholder="Enter Issue Title"
+                                placeholder="Enter Task Title"
                                 className="input input-bordered focus:outline-0 focus:border-secondary rounded-sm bg-white w-full"
                                 {...register("issueName", {
                                     required: {
                                         value: true,
-                                        message: "name is required"
+                                        message: "Name is required"
                                     }
                                 })}
                             />
@@ -169,4 +170,4 @@ const AddIssue = ({ projectId, setModal }: AddIssueProps) => {
     );
 };
 
-export default AddIssue;
+export default AddTask;
