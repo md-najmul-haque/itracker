@@ -70,24 +70,28 @@ function SignUp() {
         return <Loading />
     }
 
-    // if (gUser || gitUser) {
+    if (gUser || gitUser) {
 
-    //     const createUser = {
-    //         userName: gUser?.user.displayName || gitUser?.user.displayName,
-    //         email: gUser?.user.email || gitUser?.user.email,
-    //     }
+        const createUser = {
+            userName: gUser?.user.displayName || gitUser?.user.displayName,
+            email: gUser?.user.email || gitUser?.user.email,
+        }
 
-    //     fetch('https://dry-eyrie-76820.herokuapp.com/signup',
-    //         {
-    //             method: "POST",
-    //             headers: {
-    //                 'content-type': 'application/json'
-    //             },
-    //             body: JSON.stringify(createUser)
-    //         })
-    //         .then(res => res.json())
+        fetch('https://dry-eyrie-76820.herokuapp.com/signup',
+            {
+                method: "POST",
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(createUser)
+            })
+            .then(res => res.json())
 
-    // }
+    }
+
+    if (user || gUser || gitUser) {
+        navigate('/dashboard/project')
+    }
 
     // if (token) {
     //     navigate('/dashboard')
