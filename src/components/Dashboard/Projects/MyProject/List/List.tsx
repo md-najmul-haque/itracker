@@ -11,24 +11,37 @@ import AllTask from './AllTask';
 const List = () => {
 
     const [modal, setModal] = useState(false)
-    const [tasks, setTasks] = useState([])
+    // const [tasks, setTasks] = useState([])
+    // const [selectedProject, setSelectedProject] = useState({})
+    // console.log(selectedProject)
 
     const { id } = useParams()
 
-    const { data: selectedProject, isLoading, refetch } = useQuery(['selectedProject'], async () =>
+    // console.log(url)
+    // useEffect(() => {
+    //     fetch(`https://dry-eyrie-76820.herokuapp.com/getTask?projectId=${id}`)
+    //         .then(res => res.json())
+    //         .then(data => setTasks(data))
+    // }, [id])
+
+
+    // useEffect(() => {
+    //     fetch(`https://dry-eyrie-76820.herokuapp.com/selectedProject/${id}`)
+    //         .then(res => res.json())
+    //         .then(data => setSelectedProject(data))
+    // }, [id])
+
+    const { data: selectedProject, isLoading } = useQuery(['selectedProject'], async () =>
         await fetch(`https://dry-eyrie-76820.herokuapp.com/selectedProject/${id}`)
             .then(res => res.json())
+
     )
 
-    const url = `https://dry-eyrie-76820.herokuapp.com/getTask?projectId=${id}`
-    // console.log(url)
-    useEffect(() => {
-        fetch(url)
+    const { data: tasks, refetch } = useQuery(['tasks'], async () =>
+        await fetch(`https://dry-eyrie-76820.herokuapp.com/getTask?projectId=${id}`)
             .then(res => res.json())
-            .then(data => setTasks(data))
-    }, [])
 
-
+    )
     refetch();
 
 
