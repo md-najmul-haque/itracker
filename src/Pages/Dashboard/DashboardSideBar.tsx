@@ -20,9 +20,10 @@ type Project = {
 
 const DashboardSideBar = ({ children }: DashboardSideBarProps) => {
     const [user, loading] = useAuthState(auth)
+    const userEmail = user?.email;
     const [paymentId, setPaymentId] = useState('')
     const { data: projects, isLoading, error, refetch } = useQuery(['projects'], () =>
-        fetch('https://dry-eyrie-76820.herokuapp.com/getProject')
+        fetch(`https://dry-eyrie-76820.herokuapp.com/getProject?userEmail=${userEmail}`)
             .then(res => res.json())
     )
     useEffect(() => {
@@ -35,7 +36,7 @@ const DashboardSideBar = ({ children }: DashboardSideBarProps) => {
         }
     }, [user])
 
-    if (isLoading) {
+    if (loading || isLoading) {
         return <Loading />
     }
 
