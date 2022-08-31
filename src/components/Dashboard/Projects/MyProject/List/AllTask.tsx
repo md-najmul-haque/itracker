@@ -1,3 +1,4 @@
+import React from "react";
 import { Link } from "react-router-dom";
 import { AllTaskProps } from "../../../../../types/task.type";
 
@@ -5,9 +6,12 @@ const AllTask = ({ task }: AllTaskProps) => {
 
     const { _id, projectId, taskName, description, email, dueData, stage, priority, status } = task
 
-    const handleIssue = (e: React.BaseSyntheticEvent<object, any, any>) => {
 
-        console.log(e.target.value)
+    const handleIssue = (e: React.BaseSyntheticEvent<object, any, any>, id: string) => {
+        e.preventDefault()
+        e.stopPropagation();
+
+        console.log((e.target as HTMLInputElement).value)
 
         const task = {
             projectId: projectId,
@@ -15,26 +19,18 @@ const AllTask = ({ task }: AllTaskProps) => {
             description: description,
             email: email,
             dueData: dueData,
-            stage: e?.target.stage.value,
-            priority: e?.target.priority.value,
-            status: e?.target.status.value,
-        }
-
-        const issue = {
-            projectId: projectId,
-            // dueData: e?.target.data.dueData,
             stage: e?.target.value,
             priority: e?.target.value,
             status: e?.target.value,
         }
 
-
-        fetch(`http://localhost:5000/addTask/${_id}`, {
-            method: 'PUT',
+        console.log(task)
+        fetch(`http://localhost:5000/addTask/${id}`, {
+            method: 'PATCH',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(issue)
+            body: JSON.stringify(task)
         })
             .then(res => res.json())
     }
@@ -50,7 +46,7 @@ const AllTask = ({ task }: AllTaskProps) => {
                 </td>
 
                 <td className="pl-20">
-                    <select name='stage' onChange={handleIssue} className="select bg-inherit font-medium focus:outline-0 focus:border-secondary">
+                    <select name='stage' onChange={(e) => handleIssue(e, _id)} className="select bg-inherit font-medium focus:outline-0 focus:border-secondary">
                         <option value={stage}>{stage}</option>
                         <option value='To Do'>To Do</option>
                         <option value='In Progress'>In Progress</option>
@@ -59,7 +55,7 @@ const AllTask = ({ task }: AllTaskProps) => {
                 </td>
 
                 <td className="pl-20">
-                    <select name='priority' onChange={handleIssue} className="select bg-inherit font-medium focus:outline-0 focus:border-secondary">
+                    <select name='priority' onChange={(e) => handleIssue(e, _id)} className="select bg-inherit font-medium focus:outline-0 focus:border-secondary">
                         <option value={priority}>{priority}</option>
                         <option value='Low'>Low</option>
                         <option value='Normal'>Normal</option>
@@ -68,7 +64,7 @@ const AllTask = ({ task }: AllTaskProps) => {
                 </td>
 
                 <td className="pl-20">
-                    <select name='status' onChange={handleIssue} className="select bg-inherit font-medium focus:outline-0 focus:border-secondary">
+                    <select name='status' onChange={(e) => handleIssue(e, _id)} className="select bg-inherit font-medium focus:outline-0 focus:border-secondary">
                         <option value={status}>{status}</option>
                         <option value='On Track'>On Track</option>
                         <option value='At Risk'>At Risk</option>
@@ -97,8 +93,11 @@ const AllTask = ({ task }: AllTaskProps) => {
                         <Link to={`#`} className="btn btn-sm btn-secondary">Edit</Link>
                     </div>
                 </td>
+
             </tr>
+
         </tbody>
+
     );
 };
 

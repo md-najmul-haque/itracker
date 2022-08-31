@@ -21,7 +21,7 @@ const List = () => {
     )
 
     const url = `https://dry-eyrie-76820.herokuapp.com/getTask?projectId=${id}`
-    console.log(url)
+    // console.log(url)
     useEffect(() => {
         fetch(url)
             .then(res => res.json())
