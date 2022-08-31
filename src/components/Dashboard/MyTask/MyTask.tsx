@@ -7,12 +7,15 @@ import auth from "../../../firebase.init";
 
 const MyTask = () => {
     const [user, loading] = useAuthState(auth)
-    const userEmail = user?.email;
+    const email = user?.email;
 
     const { data: tasks, isLoading, refetch } = useQuery(['tasks'], async () =>
-        await fetch(`https://dry-eyrie-76820.herokuapp.com/getTask?userEmail=${userEmail}`)
+        await fetch(`http://localhost:5000/getMyTask?email=${email}`)
             .then(res => res.json())
     )
+
+    console.log(tasks)
+
     refetch();
 
     if (loading || isLoading) {
@@ -30,7 +33,6 @@ const MyTask = () => {
                         <th className="pl-20">Priority</th>
                         <th className="pl-16">Status</th>
                         <th className="pl-20">Due Date</th>
-                        <th className="pl-20">Assigned Person</th>
                         <th className="pl-20">Action</th>
                     </tr>
                 </thead>

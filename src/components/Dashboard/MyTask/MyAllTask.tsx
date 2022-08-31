@@ -54,13 +54,6 @@ const MyAllTask = ({ task }: AllTaskProps) => {
                 /> */}
                 </td>
 
-                <td className="pl-16">
-                    <div className="flex items-center">
-                        <img className="shadow-md w-8 h-8 rounded-full" src="https://cdn.tuk.dev/assets/templates/olympus/projects(8).png" alt='' />
-                        <img className="shadow-md w-8 h-8 rounded-full -ml-2" src="https://cdn.tuk.dev/assets/templates/olympus/projects(9).png" alt='' />
-                    </div>
-                </td>
-
                 <td className="pl-20">
                     <div className="font-medium">
                         <Link to={`#`} className="btn btn-sm btn-secondary">Edit</Link>
