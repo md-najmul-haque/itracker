@@ -1,4 +1,4 @@
-import './Indicator.css'
+import '../../../styles/Indicator.css'
 import './IndicatorAnimation'
 
 const Indicator = () => {

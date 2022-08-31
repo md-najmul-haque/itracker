@@ -1,4 +1,4 @@
-import "./DarkMode.css";
+import "../../../styles/DarkMode.css";
 import { BsMoonStars } from 'react-icons/bs';
 import { BsSun } from 'react-icons/bs';
 

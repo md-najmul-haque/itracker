@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import Indicator from '../Home/Indicator';
+import Indicator from '../../components/Shared/Indicator/Indicator';
 
 
 import Counter from './Counter';

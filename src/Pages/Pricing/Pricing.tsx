@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
-import './Pricing.css'
+import '../../styles/Pricing.css'
 import { BsCheck2 } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
-
 import Loading from '../../components/Shared/Loading/Loading';
 import auth from '../../firebase.init';
+
 
 const Pricing = () => {
     const [user, loading, error] = useAuthState(auth)

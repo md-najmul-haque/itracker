@@ -1,9 +1,7 @@
-import React, { useState } from "react";
-import "./SearchAll.css"
+import { useState } from "react";
+import "../../../styles/SearchAll.css"
 import { BiSearch } from 'react-icons/bi';
 import { IoIosClose } from 'react-icons/io';
-import { Link } from "react-router-dom";
-
 
 function SearchAll({ placeholder, data }) {
   const [filteredData, setFilteredData] = useState([]);

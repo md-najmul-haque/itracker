@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import './ScrollToTop.css';
+import '../../../styles/ScrollToTop.css';
 
 const ScrollToTop = () => {
 

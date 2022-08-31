@@ -1,4 +1,3 @@
-import React from 'react';
 import {
     Accordion,
     AccordionItem,
@@ -10,7 +9,7 @@ import {
 // Demo styles, see 'Styles' section below for some notes on use.
 import 'react-accessible-accordion/dist/fancy-example.css';
 import emailjs from '@emailjs/browser';
-import { toast } from 'react-toastify';
+
 const FAQ = () => {
     const sendEmail = (event: any) => {
         event.preventDefault();
