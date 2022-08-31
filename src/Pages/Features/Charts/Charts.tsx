@@ -1,5 +1,4 @@
-import React from 'react'
-import chart from '../../../Assets/features/chart1.jpg';
+import chart from '../../../assets/features/chart1.jpg';
 
 const Charts = () => {
   return (

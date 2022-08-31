@@ -1,40 +1,37 @@
-import { Route, Routes, useLocation } from 'react-router-dom';
-import Home from './Pages/Home/Home/Home';
-import Footer from './Pages/Shared/Footer';
-import NavbarMain from './Pages/Shared/Navbar/Navbar';
-import ScrollToTop from './Pages/Shared/ScrollToTop/ScrollToTop';
-import Notfound from './Pages/Shared/Notfound/Notfound';
-import Dashboard from './Pages/Dashboard/Dashboard';
-import Reporting from './Pages/Dashboard/Reporting/Reporting';
-import CompletedTasks from './Pages/Dashboard/Reporting/CompletedTasks';
-import IncompleteTasks from './Pages/Dashboard/Reporting/IncompleteTasks';
-import TotalTasks from './Pages/Dashboard/Reporting/TotalTasks';
-import Features from './Pages/Features/Features/Features';
-import AddReviews from './Pages/Dashboard/AddReviews/AddReviews';
-import SingIn from './Pages/Authentication/SignIn/SingIn';
-import SignUp from './Pages/Authentication/SignUp/SignUp';
-import RequireAuth from './Pages/Authentication/RequireAuth/RequireAuth';
-import About from './Pages/About/About';
-import Projects from './Pages/Dashboard/Projects/Projects';
-import Calendar from './Pages/Dashboard/Calendar/Calendar';
-import { MessengerCustomerChat } from "typescript-react-facebook-messenger";
-import 'aos/dist/aos.css';
-import SelectedMeeting from './Pages/Dashboard/Meeting/SelectedMeeting';
-import Meeting from './Pages/Dashboard/Meeting/Meeting';
-import MyProject from './Pages/Dashboard/Projects/MyProject/MyProject';
-import Overview from './Pages/Dashboard/Projects/MyProject/Overview';
-import Summary from './Pages/Dashboard/Projects/MyProject/Summary';
-import Messages from './Pages/Dashboard/Projects/MyProject/Messages';
-import ProjectCalendar from './Pages/Dashboard/Projects/MyProject/ProjectCalendar';
-import Pricing from './Pages/Home/Pricing/Pricing';
-import Payment from './Pages/Home/Pricing/Payment';
-import List from './Pages/Dashboard/Projects/MyProject/List/List';
-import NavDashBoard from './Pages/Shared/Navbar/NavDashBoard';
-import TotalUsers from './Pages/Dashboard/Reporting/TotalUsers';
-import Admin from './Pages/Dashboard/Admin/Admin';
-import auth from './firebase.init';
-import { useAuthState } from 'react-firebase-hooks/auth';
-import ViewProfile from './Pages/ViewProfile/ViewProfile';
+import { Route, Routes, useLocation } from "react-router-dom";
+import RequireAuth from "./components/Authentication/RequireAuth/RequireAuth";
+import SingIn from "./components/Authentication/SignIn/SingIn";
+import SignUp from "./components/Authentication/SignUp/SignUp";
+import AddReviews from "./components/Dashboard/AddReviews/AddReviews";
+import Admin from "./components/Dashboard/Admin/Admin";
+import Calendar from "./components/Dashboard/Calendar/Calendar";
+import Meeting from "./components/Dashboard/Meeting/Meeting";
+import SelectedMeeting from "./components/Dashboard/Meeting/SelectedMeeting";
+import List from "./components/Dashboard/Projects/MyProject/List/List";
+import Messages from "./components/Dashboard/Projects/MyProject/Messages";
+import MyProject from "./components/Dashboard/Projects/MyProject/MyProject";
+import Overview from "./components/Dashboard/Projects/MyProject/Overview";
+import ProjectCalendar from "./components/Dashboard/Projects/MyProject/ProjectCalendar";
+import Summary from "./components/Dashboard/Projects/MyProject/Summary";
+import Projects from "./components/Dashboard/Projects/Projects";
+import CompletedTasks from "./components/Dashboard/Reporting/CompletedTasks";
+import IncompleteTasks from "./components/Dashboard/Reporting/IncompleteTasks";
+import Reporting from "./components/Dashboard/Reporting/Reporting";
+import TotalTasks from "./components/Dashboard/Reporting/TotalTasks";
+import TotalUsers from "./components/Dashboard/Reporting/TotalUsers";
+import Footer from "./components/Shared/Footer";
+import Navbar from "./components/Shared/Navbar/Navbar";
+import NavDashBoard from "./components/Shared/Navbar/NavDashBoard";
+import NotFound from "./components/Shared/NotFound/NotFound";
+import ScrollToTop from "./components/Shared/ScrollToTop/ScrollToTop";
+import ViewProfile from "./components/Shared/ViewProfile/ViewProfile";
+import About from "./Pages/About/About";
+import Dashboard from "./Pages/Dashboard/Dashboard";
+import Features from "./Pages/Features/Features/Features";
+import Home from "./Pages/Home/Home";
+import Payment from "./Pages/Pricing/Payment";
+import Pricing from "./Pages/Pricing/Pricing";
+
 
 
 function App() {
@@ -42,7 +39,7 @@ function App() {
 
   return (
     <div>
-      {!pathname.includes('dashboard') && <NavbarMain />}
+      {!pathname.includes('dashboard') && <Navbar />}
 
       {pathname.includes('dashboard') && <NavDashBoard />}
 
@@ -51,13 +48,10 @@ function App() {
         <Route path="/features" element={<Features />} />
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/payment" element={<Payment />} />
-
         <Route path="/about" element={<About />} />
         <Route path="/viewProfile" element={<ViewProfile />} />
-
         <Route path="/signin" element={<SingIn />} />
         <Route path="/signup" element={<SignUp />} />
-
         <Route path='/dashboard' element={
           <RequireAuth>
             <Dashboard />
@@ -84,12 +78,12 @@ function App() {
             <Route path='messages' element={<Messages />} />
           </Route>
         </Route>
-        <Route path="*" element={<Notfound />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       {!pathname.includes('dashboard') && <Footer />}
 
       <ScrollToTop />
-      <MessengerCustomerChat pageId="100457816122808" appId="553013519763702" />
+      {/* <MessengerCustomerChat pageId="100457816122808" appId="553013519763702" /> */}
     </div>
   );
 }

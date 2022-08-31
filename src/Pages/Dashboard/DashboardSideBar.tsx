@@ -4,10 +4,12 @@ import { MdOutlineTaskAlt, MdVideoCall } from 'react-icons/md';
 import { AiFillHome } from 'react-icons/ai';
 import { AiFillProject } from 'react-icons/ai';
 import { RiUserStarLine } from 'react-icons/ri';
-import Loading from '../Shared/Loading/Loading';
+
 import { useQuery } from '@tanstack/react-query';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
+import Loading from '../../components/Shared/Loading/Loading';
+
 
 type DashboardSideBarProps = React.PropsWithChildren<{}>;
 

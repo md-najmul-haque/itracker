@@ -1,4 +1,5 @@
-import Indicator from '../../Home/Home/Indicator';
+
+import Indicator from '../../Home/Indicator';
 import Charts from '../Charts/Charts';
 import Communication from '../Communication/Communication';
 import Fixissue from '../Fixissue/Fixissue';

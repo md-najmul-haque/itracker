@@ -1,5 +1,4 @@
-import React from 'react';
-import task from '../../../Assets/features/task.jpg';
+import task from '../../../assets/features/task.jpg';
 
 const Iprocesses = () => {
 

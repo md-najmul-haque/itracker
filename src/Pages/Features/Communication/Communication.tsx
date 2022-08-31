@@ -1,4 +1,3 @@
-import React from 'react';
 import { FaRegComment } from 'react-icons/fa';
 import { MdNotificationsNone } from 'react-icons/md';
 import { MdOutlineNotificationsActive } from 'react-icons/md';

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import Indicator from '../Home/Home/Indicator';
+import Indicator from '../Home/Indicator';
+
 
 import Counter from './Counter';
 import MeetOurTem from './OurTeam';
