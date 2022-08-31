@@ -24,7 +24,7 @@ const Projects = () => {
 
 
     const { data: projects, isLoading, error, refetch } = useQuery(['projects'], () =>
-        fetch(`http://localhost:5000/getProject?userEmail=${userEmail}`)
+        fetch(`https://dry-eyrie-76820.herokuapp.com/getProject?userEmail=${userEmail}`)
 
             .then(res => res.json())
     )

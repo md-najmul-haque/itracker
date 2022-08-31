@@ -20,7 +20,7 @@ const List = () => {
             .then(res => res.json())
     )
 
-    const url = `http://localhost:5000/getTask?projectId=${id}`
+    const url = `https://dry-eyrie-76820.herokuapp.com/getTask?projectId=${id}`
     console.log(url)
     useEffect(() => {
         fetch(url)

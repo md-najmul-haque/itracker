@@ -18,7 +18,7 @@ const AllTask = ({ task }: AllTaskProps) => {
         }
 
 
-        fetch(`http://localhost:5000/addTask/${_id}`, {
+        fetch(`https://dry-eyrie-76820.herokuapp.com/addTask/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

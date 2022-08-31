@@ -1,9 +1,8 @@
 import { useEffect, useState } from 'react';
 import Indicator from '../../components/Shared/Indicator/Indicator';
-
-
 import Counter from './Counter';
 import MeetOurTem from './OurTeam';
+
 const About = () => {
   const [teams, setTeams] = useState([])
   useEffect(() => {
