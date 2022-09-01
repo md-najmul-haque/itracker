@@ -1,4 +1,4 @@
-import issue from '../../../assets/monitoring.gif'
+import issue from '../../../Assets/monitoring.gif'
 
 const BugSearch = () => {
 

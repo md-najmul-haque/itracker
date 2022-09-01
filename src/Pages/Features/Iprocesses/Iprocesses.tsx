@@ -1,4 +1,4 @@
-import task from '../../../assets/features/task.jpg';
+import task from '../../../Assets/features/task.jpg';
 
 const Iprocesses = () => {
 

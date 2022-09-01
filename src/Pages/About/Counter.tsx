@@ -1,7 +1,6 @@
-import CountUp, { useCountUp } from 'react-countup';
-import './Counter.css'
+import CountUp from 'react-countup';
+import '../../styles/Counter.css'
 const Counter = () => {
-
 
 
     return (

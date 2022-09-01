@@ -11,7 +11,7 @@ import "swiper/css/pagination";
 import { EffectCube, Pagination } from "swiper";
 
 
-import img from '../../../assets/features/chart.jpg'
+import img from '../../../Assets/features/chart.jpg'
 import { Link } from 'react-router-dom';
 const IssueManagement = () => {
     return (

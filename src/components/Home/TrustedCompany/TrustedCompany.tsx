@@ -1,9 +1,9 @@
-import logo1 from "../../../assets/features/LEGO_logo.svg";
-import logo2 from "../../../assets/features/Gamble_logo_1.svg";
-import logo3 from "../../../assets/features/United_States_Department.png";
-import logo4 from "../../../assets/features/american-express-logo_1.svg";
-import logo5 from "../../../assets/features/FedRAMP-logo.png";
-import logo6 from "../../../assets/features/g2-leader-winter-2022.svg";
+import logo1 from "../../../Assets/features/LEGO_logo.svg";
+import logo2 from "../../../Assets/features/Gamble_logo_1.svg";
+import logo3 from "../../../Assets/features/United_States_Department.png";
+import logo4 from "../../../Assets/features/american-express-logo_1.svg";
+import logo5 from "../../../Assets/features/FedRAMP-logo.png";
+import logo6 from "../../../Assets/features/g2-leader-winter-2022.svg";
 
 const TrustedCompany = () => {
 
