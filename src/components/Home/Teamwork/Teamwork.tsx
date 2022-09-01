@@ -1,5 +1,4 @@
-
-import teamwork from '../../../assets/teamwork.gif';
+import teamwork from '../../../Assets/features/teamwork.gif';
 
 const Teamwork = () => {
 
