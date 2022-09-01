@@ -1,21 +1,19 @@
 import { useQuery } from '@tanstack/react-query';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import swal from 'sweetalert';
 import { MeetingType } from '../../../types/Meeting.type';
 import Loading from '../../Shared/Loading/Loading';
-import AddMeeting from './AddMeeting';
-
-
+import AddMeeting from './AddMeeting'
 
 const Meeting = () => {
     const [modal, setModal] = useState(false)
 
-    const { data: meetings, isLoading, error, refetch } = useQuery(['meetings'], () =>
+    const { data: meetings, isLoading, refetch } = useQuery(['meetings'], () =>
         fetch('https://dry-eyrie-76820.herokuapp.com/getMeeting')
             .then(res => res.json())
     )
-    refetch();
+
 
     const handleDelete = (_id: string) => {
         fetch(`https://dry-eyrie-76820.herokuapp.com/deleteMeeting/${_id}`,
@@ -34,7 +32,7 @@ const Meeting = () => {
 
     }
 
-
+    refetch();
 
     if (isLoading) {
         return <Loading />

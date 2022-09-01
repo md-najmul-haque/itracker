@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { Task } from '../../../../../types/task.type';
 import Loading from '../../../../Shared/Loading/Loading';
@@ -9,29 +9,21 @@ import AllTask from './AllTask';
 
 
 const List = () => {
-
     const [modal, setModal] = useState(false)
-    const [tasks, setTasks] = useState([])
-
     const { id } = useParams()
 
-    const { data: selectedProject, isLoading, refetch } = useQuery(['selectedProject'], async () =>
+    const { data: selectedProject, isLoading } = useQuery(['selectedProject'], async () =>
         await fetch(`https://dry-eyrie-76820.herokuapp.com/selectedProject/${id}`)
             .then(res => res.json())
+
     )
 
-    const url = `https://dry-eyrie-76820.herokuapp.com/getTask?projectId=${id}`
-    // console.log(url)
-    useEffect(() => {
-        fetch(url)
+    const { data: tasks, refetch } = useQuery(['tasks'], async () =>
+        await fetch(`https://dry-eyrie-76820.herokuapp.com/getTask?projectId=${id}`)
             .then(res => res.json())
-            .then(data => setTasks(data))
-    }, [])
 
-
+    )
     refetch();
-
-
 
     if (isLoading) {
         return <Loading />
@@ -98,8 +90,6 @@ const List = () => {
 
                 </table>
             </div>
-
-
         </div>
     );
 };

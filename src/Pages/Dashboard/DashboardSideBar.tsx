@@ -20,9 +20,10 @@ type Project = {
 
 const DashboardSideBar = ({ children }: DashboardSideBarProps) => {
     const [user, loading] = useAuthState(auth)
+    const userEmail = user?.email;
     const [paymentId, setPaymentId] = useState('')
     const { data: projects, isLoading, error, refetch } = useQuery(['projects'], () =>
-        fetch('https://dry-eyrie-76820.herokuapp.com/getProject')
+        fetch(`https://dry-eyrie-76820.herokuapp.com/getProject?userEmail=${userEmail}`)
             .then(res => res.json())
     )
     useEffect(() => {
@@ -35,7 +36,7 @@ const DashboardSideBar = ({ children }: DashboardSideBarProps) => {
         }
     }, [user])
 
-    if (isLoading) {
+    if (loading || isLoading) {
         return <Loading />
     }
 
@@ -74,6 +75,9 @@ const DashboardSideBar = ({ children }: DashboardSideBarProps) => {
                     </li>
                     <li className=' hover:bg-slate-600 transition-all rounded-lg'>
                         <Link className='bg-transparent text-white' to="/dashboard/meeting"><MdVideoCall />Meeting</Link>
+                    </li>
+                    <li className=' hover:bg-slate-600 transition-all rounded-lg'>
+                        <Link className='bg-transparent text-white' to="/dashboard/myTask"><AiFillProject />My Task</Link>
                     </li>
                     <li className=' hover:bg-slate-600 transition-all rounded-lg'>
                         <Link className='bg-transparent text-white' to="/dashboard/project"><AiFillProject />Projects</Link>

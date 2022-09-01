@@ -73,12 +73,12 @@ const AllTask = ({ task }: AllTaskProps) => {
                 </td>
 
                 <td className="pl-20">
-                    {/* <p className="font-medium">{issue.dueData}</p> */}
-                    <input
+                    <p className="font-medium">{dueData.slice(0, 10)}</p>
+                    {/* <input
                         type="date"
                         className="input font-medium focus:outline-0 focus:border-secondary rounded-sm bg-inherit"
                         defaultValue={dueData}
-                    />
+                    /> */}
                 </td>
 
                 <td className="pl-16">

@@ -7,6 +7,7 @@ import Admin from "./components/Dashboard/Admin/Admin";
 import Calendar from "./components/Dashboard/Calendar/Calendar";
 import Meeting from "./components/Dashboard/Meeting/Meeting";
 import SelectedMeeting from "./components/Dashboard/Meeting/SelectedMeeting";
+import MyTask from "./components/Dashboard/MyTask/MyTask";
 import List from "./components/Dashboard/Projects/MyProject/List/List";
 import Messages from "./components/Dashboard/Projects/MyProject/Messages";
 import MyProject from "./components/Dashboard/Projects/MyProject/MyProject";
@@ -65,6 +66,7 @@ function App() {
           <Route path='totalUser' element={<TotalUsers />} />
           <Route path='totalTasks' element={<TotalTasks />} />
           <Route path='project' element={<Projects />} />
+          <Route path='myTask' element={<MyTask />} />
           <Route path='meeting' element={<Meeting />} />
           <Route path='meeting/:id' element={<SelectedMeeting />} />
           <Route path='calendar' element={<Calendar />} />
