@@ -23,17 +23,17 @@ const Projects = () => {
     const userEmail = user?.email;
 
 
-    const { data: projects, isLoading, error, refetch } = useQuery(['projects'], () =>
+    const { data: projects, isLoading, refetch } = useQuery(['projects'], () =>
         fetch(`https://dry-eyrie-76820.herokuapp.com/getProject?userEmail=${userEmail}`)
 
             .then(res => res.json())
     )
 
+    refetch()
+
     if (loading || isLoading) {
         return <Loading />
     }
-
-    refetch()
 
     return (
         <div className='mt-20 mx-10'>
