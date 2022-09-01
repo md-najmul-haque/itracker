@@ -10,7 +10,7 @@ const MyTask = () => {
     const email = user?.email;
 
     const { data: tasks, isLoading, refetch } = useQuery(['tasks'], async () =>
-        await fetch(`http://localhost:5000/getMyTask?email=${email}`)
+        await fetch(`https://dry-eyrie-76820.herokuapp.com/getMyTask?email=${email}`)
             .then(res => res.json())
     )
 
@@ -23,7 +23,7 @@ const MyTask = () => {
     }
 
     return (
-        <div className="bg-white shadow px-4 md:px-10 pt-4 md:pt-7 pb-5 overflow-y-auto">
+        <div className="bg-white shadow px-4 md:px-10 pt-4 overflow-y-auto">
             <table className="w-full whitespace-nowrap">
                 <thead>
                     <tr className="h-16 w-full font-semibold text-left text-sm leading-none text-gray-800">

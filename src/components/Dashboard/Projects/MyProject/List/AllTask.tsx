@@ -25,7 +25,7 @@ const AllTask = ({ task }: AllTaskProps) => {
         }
 
         console.log(task)
-        fetch(`http://localhost:5000/addTask/${id}`, {
+        fetch(`https://dry-eyrie-76820.herokuapp.com/addTask/${id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'

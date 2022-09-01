@@ -26,7 +26,7 @@ const AddTask = ({ projectId, setModal }: AddTaskProps) => {
             status: e?.target.status.value,
         }
 
-        fetch('http://localhost:5000/addTask', {
+        fetch('https://dry-eyrie-76820.herokuapp.com/addTask', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
