@@ -1,4 +1,4 @@
-import fixissue from '../../../Assets/features/issue.webp';
+import fixissue from '../../../Assets/features/Screenshot_69.png';
 
 const Fixissue = () => {
 

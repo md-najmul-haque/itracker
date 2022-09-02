@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { MdOutlineTaskAlt, MdVideoCall } from 'react-icons/md';
 import { AiFillHome } from 'react-icons/ai';
 import { AiFillProject } from 'react-icons/ai';
-import { RiUserStarLine } from 'react-icons/ri';
+import { RiUserStarLine,RiAdminFill } from 'react-icons/ri';
 
 import { useQuery } from '@tanstack/react-query';
 import { useAuthState } from 'react-firebase-hooks/auth';
@@ -71,7 +71,7 @@ const DashboardSideBar = ({ children }: DashboardSideBarProps) => {
                         <Link className='bg-transparent text-white' to="/dashboard/calendar"><AiFillProject />Calendar</Link>
                     </li>
                     <li className=' hover:bg-slate-600 transition-all rounded-lg'>
-                        <Link className='bg-transparent text-white' to="/dashboard/admin"><AiFillProject />Admin</Link>
+                        <Link className='bg-transparent text-white' to="/dashboard/admin"><RiAdminFill />Admin</Link>
                     </li>
                     <li className=' hover:bg-slate-600 transition-all rounded-lg'>
                         <Link className='bg-transparent text-white' to="/dashboard/meeting"><MdVideoCall />Meeting</Link>

@@ -1,6 +1,5 @@
 import Indicator from '../../../components/Shared/Indicator/Indicator';
 import Charts from '../Charts/Charts';
-import Communication from '../Communication/Communication';
 import Fixissue from '../Fixissue/Fixissue';
 import Iprocesses from '../Iprocesses/Iprocesses';
 import Viewrepoting from '../Viewrepoting/Viewrepoting';
@@ -11,7 +10,6 @@ const Features = () => {
             <Indicator />
             <Iprocesses />
             <Charts />
-            <Communication />
             <Fixissue />
             <Viewrepoting />
         </>
