@@ -1,64 +1,35 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import ReactApexChart from "react-apexcharts";
-import { ApexOptions } from "apexcharts";
-import { width } from '@mui/system';
+
 const ReportChart = () => {
-    const [state, setState] = useState<any>({
 
-        options: {
-            colors: ['#E91E63', '#FF9800'],
-            chart: {
-                id: "basic-bar",
-            },
-        plotOptions: {
-            bar: {
-                columnWidth: '10%',
-                borderRadius: 10,
-            }
-            
-        },
-
-            xaxis: {
-                categories: ['project1'],
-            }
-        },
-        series: [
-            {
-                name: "series-1",
-                data: [30],
-            }
-        ]
-    })
     const [data, setData] = useState<any>({
 
         series: [44, 55, 13],
         options: {
-            labels: ['Team A', 'Team B', 'Team C'], 
+            labels: ['Pending Task', 'Inprogress Task', 'Complete Task'],
         }
     })
 
 
     return (
-        <div className='grid lg:grid-cols-2 md:grid-cols-1 gap-12 mt-12'>
-            <div>
-                <h1 className='ml-5'>Incomplete task by project</h1>
+        <div className='mt-10'>
+
+            <h1 className='ml-5 text-xl font-semibold text-center text-secondary'>Total Task Status</h1>
+
+            <div className='flex justify-center items-center w-75 mx-auto'>
                 <ReactApexChart className="lg:w-full"
-                    options={state.options}
-                    series={state.series}
-                    type="bar"
-                    height="450px"
-                />
-            </div>
-            <div className=''>
-                <h1 className='ml-5'>Tasks by completetion statuse this month</h1>
-                <ReactApexChart className="lg:w-full" 
-                options={data.options}
-                series={data.series} 
-                type="pie"
+                    options={data.options}
+                    series={data.series}
+                    type="pie"
+                    width="40%"
                 />
             </div>
 
+
         </div>
+
+
 
     );
 };
