@@ -7,18 +7,17 @@ import AddTask from './AddTask';
 import AllTask from './AllTask';
 
 
-
 const List = () => {
     const [modal, setModal] = useState(false)
     const { id } = useParams()
 
-    const { data: selectedProject, refetch } = useQuery(['selectedProject'], async () =>
+    const { data: selectedProject, isLoading } = useQuery(['selectedProject'], async () =>
         await fetch(`https://dry-eyrie-76820.herokuapp.com/selectedProject/${id}`)
             .then(res => res.json())
 
     )
 
-    const { data: tasks, isLoading } = useQuery(['tasks'], async () =>
+    const { data: tasks, refetch } = useQuery(['tasks'], async () =>
         await fetch(`https://dry-eyrie-76820.herokuapp.com/getTask?projectId=${id}`)
             .then(res => res.json())
 

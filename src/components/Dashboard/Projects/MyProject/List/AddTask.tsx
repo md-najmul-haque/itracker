@@ -51,7 +51,7 @@ const AddTask = ({ projectId, setModal }: AddTaskProps) => {
     }
 
     return (
-        <div>
+        <div className='relative'>
             <div className="offcanvas offcanvas-end fixed bottom-0 flex flex-col max-w-full bg-white invisible bg-clip-padding shadow-sm outline-none transition duration-300 ease-in-out text-gray-700 top-0 right-0 border-none w-full lg:w-2/5" tabIndex={-1} id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
                 <div className="offcanvas-header flex items-center justify-between p-4">
                     <h5 className="offcanvas-title mt-10 ml-5 text-xl leading-normal" id="offcanvasRightLabel"><span className='text-secondary font-semibold'>{user?.displayName}!</span> Create your new issue here.</h5>

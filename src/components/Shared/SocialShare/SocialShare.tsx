@@ -11,7 +11,7 @@ import {
 } from 'react-share';
 const SocialShare = () => {
 
-  const shareUrl = "https://fir-f28fd.web.app/"
+  const shareUrl = "https://itracker-d0330.web.app/"
   return (
     <div id="mySidenav" className="sidenav">
       <a href="#" id="fb">

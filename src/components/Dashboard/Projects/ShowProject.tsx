@@ -1,15 +1,6 @@
 import { useNavigate } from "react-router-dom";
+import { ShowProjectProps } from "../../../types/ShowProject.type";
 
-type ShowProjectProps = {
-    project: {
-        projectName: string,
-        projectDescription: string,
-        email: string,
-        startingDate: string,
-        endData: string,
-        _id: string
-    }
-}
 
 const ShowProject = ({ project }: ShowProjectProps) => {
 

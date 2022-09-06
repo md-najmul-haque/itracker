@@ -7,7 +7,9 @@ import SearchAll from '../SearchAll/SearchAll';
 import BookData from '../../Shared/SearchAll/Data.json'
 
 
+
 const NavDashBoard = () => {
+
     const { pathname } = useLocation()
     const [user, loading, error] = useAuthState(auth)
 
@@ -18,9 +20,11 @@ const NavDashBoard = () => {
 
     const menuItem =
         <>
-            <div className='mr-5 right-28 hidden lg:block'>
+
+            <div className='absolute z-40 lg:mr-40 right-28 hidden lg:block'>
                 <SearchAll placeholder="what do you think.?" data={BookData} />
             </div>
+
 
             {
                 user ? <>
@@ -44,7 +48,7 @@ const NavDashBoard = () => {
 
     return (
 
-        <div className='navbar text-accent top-10 mt-1 font-semibold'>
+        <div className='navbar relative z-10 text-accent top-0 mt-1 font-semibold'>
             <div className='container mx-auto'>
                 <div className="navbar-start">
                     <div className="dropdown">

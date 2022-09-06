@@ -32,6 +32,7 @@ import Features from "./Pages/Features/Features/Features";
 import Home from "./Pages/Home/Home";
 import Payment from "./Pages/Pricing/Payment";
 import Pricing from "./Pages/Pricing/Pricing";
+import { MessengerCustomerChat } from "typescript-react-facebook-messenger";
 
 
 
@@ -85,7 +86,7 @@ function App() {
       {!pathname.includes('dashboard') && <Footer />}
 
       <ScrollToTop />
-      {/* <MessengerCustomerChat pageId="100457816122808" appId="553013519763702" /> */}
+      <MessengerCustomerChat pageId="100457816122808" appId="493612085772000" />
     </div>
   );
 }
