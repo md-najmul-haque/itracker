@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useSignInWithGithub, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
+import { useSignInWithFacebook, useSignInWithGithub, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
@@ -18,6 +18,7 @@ function SignUp() {
     const [createUserWithEmailAndPassword, user, loading, error] = useCreateUserWithEmailAndPassword(auth);
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
     const [signInWithGithub, gitUser, gitLoading, gitError] = useSignInWithGithub(auth);
+    const [signInWithFacebook, fbUser, fbLoading, fbError] = useSignInWithFacebook(auth);
     const [displayName, setDisplayName] = useState('');
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
 
@@ -179,6 +180,7 @@ function SignUp() {
                     <div className="divider">or</div>
                     <button onClick={() => signInWithGoogle()} className="btn btn-primary text-white">Continue with Google</button>
                     <button onClick={() => signInWithGithub()} className="btn btn-primary text-white">Continue with Github</button>
+                    <button onClick={() => signInWithFacebook()} className="btn btn-primary text-white">Continue with Facebook</button>
                 </div>
             </div>
         </div>
