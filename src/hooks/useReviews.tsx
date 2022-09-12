@@ -4,7 +4,7 @@ const useReviews = () => {
   const [reviews, setReviews] = useState<any>([]);
 
   useEffect(() => {
-    fetch('https://dry-eyrie-76820.herokuapp.com/showReview')
+    fetch('https://itracker-server.vercel.app/showReview')
       .then((res) => res.json())
       .then(data => setReviews(data))
   }, []);

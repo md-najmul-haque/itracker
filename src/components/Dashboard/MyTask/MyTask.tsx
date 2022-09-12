@@ -10,7 +10,7 @@ const MyTask = () => {
     const email = user?.email;
 
     const { data: tasks, isLoading, refetch } = useQuery(['tasks'], async () =>
-        await fetch(`https://dry-eyrie-76820.herokuapp.com/getMyTask?email=${email}`)
+        await fetch(`https://itracker-server.vercel.app/getMyTask?email=${email}`)
             .then(res => res.json())
     )
 

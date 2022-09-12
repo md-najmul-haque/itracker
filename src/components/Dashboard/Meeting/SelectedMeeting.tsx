@@ -18,7 +18,7 @@ const SelectedMeeting = () => {
     const navigate = useNavigate()
 
     const { data: selectedMeeting, isLoading, error, refetch } = useQuery(['selectedMeeting'], () =>
-        fetch(`https://dry-eyrie-76820.herokuapp.com/selectedMeeting/${id}`)
+        fetch(`https://itracker-server.vercel.app/selectedMeeting/${id}`)
             .then(res => res.json())
     )
 
@@ -35,7 +35,7 @@ const SelectedMeeting = () => {
             time: data.time
         }
 
-        fetch(`https://dry-eyrie-76820.herokuapp.com/updateMeeting/${id}`,
+        fetch(`https://itracker-server.vercel.app/updateMeeting/${id}`,
             {
                 method: "PATCH",
                 headers: {

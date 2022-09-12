@@ -40,7 +40,7 @@ function SignUp() {
             email: email
         }
 
-        fetch('https://dry-eyrie-76820.herokuapp.com/signup',
+        fetch('https://itracker-server.vercel.app/signup',
             {
                 method: "POST",
                 headers: {
@@ -78,7 +78,7 @@ function SignUp() {
             email: gUser?.user.email || gitUser?.user.email,
         }
 
-        fetch('https://dry-eyrie-76820.herokuapp.com/signup',
+        fetch('https://itracker-server.vercel.app/signup',
             {
                 method: "POST",
                 headers: {

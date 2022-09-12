@@ -26,7 +26,7 @@ const AddTask = ({ projectId, setModal }: AddTaskProps) => {
             status: e?.target.status.value,
         }
 
-        fetch('https://dry-eyrie-76820.herokuapp.com/addTask', {
+        fetch('https://itracker-server.vercel.app/addTask', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

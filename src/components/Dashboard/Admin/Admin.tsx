@@ -9,7 +9,7 @@ interface User {
 const Admin = () => {
 
     const { data: users, isLoading, refetch } = useQuery(['users'], () =>
-        fetch(`https://dry-eyrie-76820.herokuapp.com/user`)
+        fetch(`https://itracker-server.vercel.app/user`)
             .then(res => res.json())
     )
 

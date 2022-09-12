@@ -25,7 +25,7 @@ const AllTask = ({ task }: AllTaskProps) => {
         }
 
         console.log(task)
-        fetch(`https://dry-eyrie-76820.herokuapp.com/addTask/${id}`, {
+        fetch(`https://itracker-server.vercel.app/addTask/${id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'

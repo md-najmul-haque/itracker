@@ -12,13 +12,13 @@ const List = () => {
     const { id } = useParams()
 
     const { data: selectedProject, isLoading } = useQuery(['selectedProject'], async () =>
-        await fetch(`https://dry-eyrie-76820.herokuapp.com/selectedProject/${id}`)
+        await fetch(`https://itracker-server.vercel.app/selectedProject/${id}`)
             .then(res => res.json())
 
     )
 
     const { data: tasks, refetch } = useQuery(['tasks'], async () =>
-        await fetch(`https://dry-eyrie-76820.herokuapp.com/getTask?projectId=${id}`)
+        await fetch(`https://itracker-server.vercel.app/getTask?projectId=${id}`)
             .then(res => res.json())
 
     )

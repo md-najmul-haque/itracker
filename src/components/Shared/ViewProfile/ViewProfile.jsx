@@ -19,8 +19,8 @@ import Loading from "../Loading/Loading";
 //   linkedin?: string;
 //   twitter?: string;
 // }
-// https://dry-eyrie-76820.herokuapp.com/updateProfile/${email}
-// `https://dry-eyrie-76820.herokuapp.com/userInfo/${email}`
+// https://itracker-server.vercel.app/updateProfile/${email}
+// `https://itracker-server.vercel.app/userInfo/${email}`
 
 const ViewProfile = () => {
   const [user, loading, error] = useAuthState(auth);
@@ -35,7 +35,7 @@ const ViewProfile = () => {
   }
   if (user) {
     const email = user.email;
-    fetch(`https://dry-eyrie-76820.herokuapp.com/userInfo/${email}`)
+    fetch(`https://itracker-server.vercel.app/userInfo/${email}`)
       .then((res) => res.json())
       .then((data) => {
         setUserInfo(data);
@@ -74,7 +74,7 @@ const ViewProfile = () => {
     const email = user?.email;
     // send user Info to database
     if (email !== null) {
-      fetch(`https://dry-eyrie-76820.herokuapp.com/updateProfile/${email}`, {
+      fetch(`https://itracker-server.vercel.app/updateProfile/${email}`, {
         method: "PUT",
         headers: {
           "content-type": "application/json",
@@ -98,14 +98,14 @@ const ViewProfile = () => {
       <div className="card flex-shrink-0 shadow-2xl bg-base-100 w-3/4 lg:w-2/3 justify-center items-center">
         <div className="flex items-center bg-slate-200 w-full">
           <div className="avatar p-5 pr-0 w-1/4">
-            <div className=" w-36 mask mask-hexagon">
+            <div className="mask mask-hexagon">
               <img src={userInfo?.photoURL} alt={userInfo?.displayName} />
             </div>
 
           </div>
           {/* Name Section  */}
           <div>
-            <h1 className="text-4xl font-bold">{userInfo?.displayName}</h1>
+            <h1 className="text-xl font-bold">{userInfo?.displayName}</h1>
             <p>{userInfo?.email}</p>
           </div>
         </div>

@@ -8,7 +8,7 @@ interface user {
 const TotalUsers = () => {
     const [users, setUsers] = useState([])
     useEffect(() => {
-        fetch("https://dry-eyrie-76820.herokuapp.com/getUser")
+        fetch("https://itracker-server.vercel.app/getUser")
             .then(res => res.json())
             .then(data => setUsers(data));
     }, [])

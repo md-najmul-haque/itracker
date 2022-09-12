@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { MdOutlineTaskAlt, MdVideoCall } from 'react-icons/md';
 import { AiFillHome } from 'react-icons/ai';
 import { AiFillProject } from 'react-icons/ai';
-import { RiUserStarLine,RiAdminFill } from 'react-icons/ri';
+import { RiUserStarLine, RiAdminFill } from 'react-icons/ri';
 
 import { useQuery } from '@tanstack/react-query';
 import { useAuthState } from 'react-firebase-hooks/auth';
@@ -23,12 +23,12 @@ const DashboardSideBar = ({ children }: DashboardSideBarProps) => {
     const userEmail = user?.email;
     const [paymentId, setPaymentId] = useState('')
     const { data: projects, isLoading, error, refetch } = useQuery(['projects'], () =>
-        fetch(`https://dry-eyrie-76820.herokuapp.com/getProject?userEmail=${userEmail}`)
+        fetch(`https://itracker-server.vercel.app/getProject?userEmail=${userEmail}`)
             .then(res => res.json())
     )
     useEffect(() => {
         if (user) {
-            fetch(`https://dry-eyrie-76820.herokuapp.com/getUserPayment?email=${user.email}`)
+            fetch(`https://itracker-server.vercel.app/getUserPayment?email=${user.email}`)
                 .then(res => res.json())
                 .then(data => {
                     setPaymentId(data[0].paymentId)

@@ -24,7 +24,7 @@ const Projects = () => {
 
 
     const { data: projects, isLoading, refetch } = useQuery(['projects'], () =>
-        fetch(`https://dry-eyrie-76820.herokuapp.com/getProject?userEmail=${userEmail}`)
+        fetch(`https://itracker-server.vercel.app/getProject?userEmail=${userEmail}`)
 
             .then(res => res.json())
     )

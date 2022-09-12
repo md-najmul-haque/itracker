@@ -17,7 +17,7 @@ const TotalTasks = () => {
     const [projects, setProjects] = useState([])
     useEffect(() => {
         if (user) {
-            fetch(`https://dry-eyrie-76820.herokuapp.com/totalProject?email=${user.email}`)
+            fetch(`https://itracker-server.vercel.app/totalProject?email=${user.email}`)
                 .then(res => res.json())
                 .then(data => {
                     setProjects(data)

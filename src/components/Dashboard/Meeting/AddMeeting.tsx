@@ -26,7 +26,7 @@ const AddMeeting = ({ setModal }: addMeetingProps) => {
             time: data.time
         }
 
-        fetch('https://dry-eyrie-76820.herokuapp.com/addMeeting',
+        fetch('https://itracker-server.vercel.app/addMeeting',
             {
                 method: "POST",
                 headers: {

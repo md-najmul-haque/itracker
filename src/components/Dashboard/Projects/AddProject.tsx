@@ -36,7 +36,7 @@ const AddProject = ({ setModal }: AddProjectProps) => {
         }
         console.log(project)
 
-        fetch('https://dry-eyrie-76820.herokuapp.com/addProject', {
+        fetch('https://itracker-server.vercel.app/addProject', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

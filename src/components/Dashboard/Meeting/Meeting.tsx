@@ -10,13 +10,13 @@ const Meeting = () => {
     const [modal, setModal] = useState(false)
 
     const { data: meetings, isLoading, refetch } = useQuery(['meetings'], () =>
-        fetch('https://dry-eyrie-76820.herokuapp.com/getMeeting')
+        fetch('https://itracker-server.vercel.app/getMeeting')
             .then(res => res.json())
     )
 
 
     const handleDelete = (_id: string) => {
-        fetch(`https://dry-eyrie-76820.herokuapp.com/deleteMeeting/${_id}`,
+        fetch(`https://itracker-server.vercel.app/deleteMeeting/${_id}`,
             {
                 method: "DELETE",
                 headers: {

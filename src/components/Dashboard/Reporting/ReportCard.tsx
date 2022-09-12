@@ -12,7 +12,7 @@ const ReportCard = () => {
     const [users, setUsers] = useState([])
     useEffect(() => {
         if (user) {
-            fetch(`https://dry-eyrie-76820.herokuapp.com/totalProject?email=${user.email}`)
+            fetch(`https://itracker-server.vercel.app/totalProject?email=${user.email}`)
                 .then(res => res.json())
                 .then(data => {
                     setProjects(data)
@@ -21,7 +21,7 @@ const ReportCard = () => {
     }, [user])
 
     useEffect(() => {
-        fetch("https://dry-eyrie-76820.herokuapp.com/getUser")
+        fetch("https://itracker-server.vercel.app/getUser")
             .then(res => res.json())
             .then(data => setUsers(data))
     }, [])

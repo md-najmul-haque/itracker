@@ -57,7 +57,7 @@ const AddReviews = () => {
     const review = { ...data, rating, email, photoURL, displayName }
     console.log(review);
 
-    fetch("https://dry-eyrie-76820.herokuapp.com/add-review", {
+    fetch("https://itracker-server.vercel.app/add-review", {
       method: "POST",
       headers: {
         "content-type": "application/json",

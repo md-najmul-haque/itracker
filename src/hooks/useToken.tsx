@@ -19,7 +19,7 @@ const useToken = (user: useTokenProps) => {
     useEffect(() => {
 
         if (user) {
-            fetch('https://dry-eyrie-76820.herokuapp.com/signup',
+            fetch('https://itracker-server.vercel.app/signup',
                 {
                     method: "PUT",
                     headers: {
@@ -35,7 +35,7 @@ const useToken = (user: useTokenProps) => {
     }, [user])
 
     // const { data: token, isLoading, error, refetch } = useQuery(['token'], () =>
-    //     fetch('https://dry-eyrie-76820.herokuapp.com/signup')
+    //     fetch('https://itracker-server.vercel.app/signup')
     //         .then(res => res.json(createUser))
     // )
 
