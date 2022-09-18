@@ -28,7 +28,7 @@ const SingIn = () => {
 
     if (error) {
         return (
-            errorMessage = <p>Error: {error?.message}</p>
+            errorMessage = <p className='text-error'>Error: {error?.message}</p>
         )
     }
 

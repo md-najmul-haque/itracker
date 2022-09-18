@@ -13,7 +13,7 @@ const SocialLogin = () => {
 
     if (gError || gitError || fbError) {
         return (
-            errorMessage = <p>Error: {gError?.message} {gitError?.message}</p>
+            errorMessage = <p className="text-error">Error: {gError?.message} || {gitError?.message} ||{fbError?.message} </p>
         )
     }
 
@@ -43,9 +43,11 @@ const SocialLogin = () => {
     return (
         <div>
             <p>{errorMessage}</p>
-            <button onClick={() => signInWithGoogle()} className="btn btn-primary w-full text-white">Continue with Google</button> <br />
-            <button onClick={() => signInWithGithub()} className="btn btn-primary w-full my-2 text-white">Continue with Github</button>
-            <button onClick={() => signInWithFacebook()} className="btn btn-primary w-full text-white">Continue with Facebook</button>
+            <div>
+                <button onClick={() => signInWithGoogle()} className="btn btn-primary w-full text-white">Continue with Google</button> <br />
+                <button onClick={() => signInWithGithub()} className="btn btn-primary w-full my-2 text-white">Continue with Github</button>
+                <button onClick={() => signInWithFacebook()} className="btn btn-primary w-full text-white">Continue with Facebook</button>
+            </div>
         </div>
     );
 };
