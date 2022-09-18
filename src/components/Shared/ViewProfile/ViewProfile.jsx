@@ -126,8 +126,8 @@ const ViewProfile = () => {
                 {...register("image")}
               />
             ) : (
-              <div class="avatar flex items-center justify-center">
-                <div class="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+              <div className="avatar flex items-center justify-center">
+                <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
                   <img src={image} />
                 </div>
               </div>
