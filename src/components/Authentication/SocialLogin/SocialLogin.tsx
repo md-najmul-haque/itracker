@@ -1,5 +1,4 @@
 import { useSignInWithFacebook, useSignInWithGithub, useSignInWithGoogle } from "react-firebase-hooks/auth";
-import { Navigate } from "react-router-dom";
 import auth from "../../../firebase.init";
 import Loading from "../../Shared/Loading/Loading";
 
@@ -40,10 +39,6 @@ const SocialLogin = () => {
             .then(res => res.json())
 
     }
-
-    // if (gUser || gitUser || fbUser) {
-    //     Navigate('/dashboard/project')
-    // }
 
     return (
         <div>

@@ -1,12 +1,10 @@
-import React from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
-
-import { useSignInWithGoogle, useSignInWithGithub, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
-
+import { useSignInWithEmailAndPassword, useAuthState } from 'react-firebase-hooks/auth';
 import { BiLock } from 'react-icons/bi';
 import auth from '../../../firebase.init';
 import Loading from '../../Shared/Loading/Loading';
+import SocialLogin from '../SocialLogin/SocialLogin';
 
 interface IFormInput {
     email: string;
@@ -14,53 +12,31 @@ interface IFormInput {
 }
 
 const SingIn = () => {
-    const [email, setEmail] = React.useState<string>('');
-    const [password, setPassword] = React.useState<string>('');
     const { register, formState: { errors }, handleSubmit } = useForm<IFormInput>();
     const [signInWithEmailAndPassword, user, loading, error,] = useSignInWithEmailAndPassword(auth);
-    const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
-    const [signInWithGithub, gitUser, gitLoading, gitError] = useSignInWithGithub(auth);
+    const [socialUser, socialLoading] = useAuthState(auth)
 
     const navigate = useNavigate()
 
     const onSubmit: SubmitHandler<IFormInput> = data => {
         const email = data.email;
         const password = data.password;
-
         signInWithEmailAndPassword(email, password)
     }
 
-    if (error || gError || gitError) {
+    let errorMessage;
+
+    if (error) {
         return (
-            <div>
-                <p>Error: {gError?.message} {gitError?.message}</p>
-            </div>)
+            errorMessage = <p>Error: {error?.message}</p>
+        )
     }
 
-    if (loading || gLoading || gitLoading) {
+    if (loading || socialLoading) {
         return <Loading />
     }
 
-    if (gUser || gitUser) {
-
-        const createUser = {
-            userName: gUser?.user.displayName || gitUser?.user.displayName,
-            email: gUser?.user.email || gitUser?.user.email,
-        }
-
-        fetch('https://itracker-server.vercel.app/signup',
-            {
-                method: "POST",
-                headers: {
-                    'content-type': 'application/json'
-                },
-                body: JSON.stringify(createUser)
-            })
-            .then(res => res.json())
-
-    }
-
-    if (user || gUser || gitUser) {
+    if (user || socialUser) {
         navigate('/dashboard/project')
     }
 
@@ -122,14 +98,12 @@ const SingIn = () => {
                         <input type="submit" className="btn btn-primary w-full max-w-xs text-white mb-2" value='Sign In' />
                         <small>New in iTracker?<Link to='/signup' className="text-blue-600 pl-2">Create New Account</Link></small>
                     </form>
-
+                    <p>{errorMessage}</p>
                     <div className="divider">or</div>
-                    <button onClick={() => signInWithGoogle()} className="btn btn-primary text-white">Continue with Google</button>
-                    <button onClick={() => signInWithGithub()} className="btn btn-primary text-white">Continue with Github</button>
+                    <SocialLogin />
                 </div>
             </div>
         </div>
-
     );
 };
 

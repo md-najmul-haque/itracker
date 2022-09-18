@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { useAuthState, useSignInWithFacebook, useSignInWithGithub, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
+import { useAuthState, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
@@ -17,7 +16,6 @@ interface IFormInput {
 
 function SignUp() {
     const [createUserWithEmailAndPassword, user, loading, error] = useCreateUserWithEmailAndPassword(auth);
-    const [displayName, setDisplayName] = useState('');
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
     const [socialUser, socialLoading] = useAuthState(auth)
 
@@ -56,6 +54,10 @@ function SignUp() {
 
     }
 
+    if (loading || socialLoading || updating) {
+        return <Loading />
+    }
+
     let errorMessage;
 
     if (error) {
@@ -63,12 +65,6 @@ function SignUp() {
             errorMessage = <p>Error: {error?.message}</p>
         )
     }
-
-    if (loading || socialLoading) {
-        return <Loading />
-    }
-
-
 
     if (user || socialUser) {
         navigate('/dashboard/project')
