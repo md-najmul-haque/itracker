@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { useSignInWithFacebook, useSignInWithGithub, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
+import { useAuthState, useSignInWithFacebook, useSignInWithGithub, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import Loading from '../../Shared/Loading/Loading';
+import SocialLogin from '../SocialLogin/SocialLogin';
 
 
 interface IFormInput {
@@ -16,15 +17,11 @@ interface IFormInput {
 
 function SignUp() {
     const [createUserWithEmailAndPassword, user, loading, error] = useCreateUserWithEmailAndPassword(auth);
-    const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
-    const [signInWithGithub, gitUser, gitLoading, gitError] = useSignInWithGithub(auth);
-    const [signInWithFacebook, fbUser, fbLoading, fbError] = useSignInWithFacebook(auth);
     const [displayName, setDisplayName] = useState('');
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
+    const [socialUser, socialLoading] = useAuthState(auth)
 
     const navigate = useNavigate()
-
-    // const [token] = useToken(user)
 
     const { register, formState: { errors }, handleSubmit, reset } = useForm<IFormInput>();
 
@@ -61,42 +58,21 @@ function SignUp() {
 
     let errorMessage;
 
-    if (error || gError || gitError) {
+    if (error) {
         return (
-            errorMessage = <p>Error: {gError?.message} {gitError?.message}</p>
+            errorMessage = <p>Error: {error?.message}</p>
         )
     }
 
-    if (loading || gLoading || gitLoading) {
+    if (loading || socialLoading) {
         return <Loading />
     }
 
-    if (gUser || gitUser) {
 
-        const createUser = {
-            userName: gUser?.user.displayName || gitUser?.user.displayName,
-            email: gUser?.user.email || gitUser?.user.email,
-        }
 
-        fetch('https://itracker-server.vercel.app/signup',
-            {
-                method: "POST",
-                headers: {
-                    'content-type': 'application/json'
-                },
-                body: JSON.stringify(createUser)
-            })
-            .then(res => res.json())
-
-    }
-
-    if (user || gUser || gitUser) {
+    if (user || socialUser) {
         navigate('/dashboard/project')
     }
-
-    // if (token) {
-    //     navigate('/dashboard')
-    // }
 
     return (
         <div className='h-screen bg-slate-50 flex justify-center items-center'>
@@ -175,12 +151,10 @@ function SignUp() {
                         <small>Already have an account?<Link to='/signin' className="text-blue-600 pl-2">Sign In</Link></small>
                     </form>
 
-                    {errorMessage}
+                    <p>{errorMessage}</p>
 
                     <div className="divider">or</div>
-                    <button onClick={() => signInWithGoogle()} className="btn btn-primary text-white">Continue with Google</button>
-                    <button onClick={() => signInWithGithub()} className="btn btn-primary text-white">Continue with Github</button>
-                    <button onClick={() => signInWithFacebook()} className="btn btn-primary text-white">Continue with Facebook</button>
+                    <SocialLogin />
                 </div>
             </div>
         </div>
