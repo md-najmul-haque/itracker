@@ -1,5 +1,3 @@
-import React from "react";
-import { Link } from "react-router-dom";
 import { AllTaskProps } from "../../../../../types/task.type";
 
 const AllTask = ({ task }: AllTaskProps) => {
@@ -13,7 +11,7 @@ const AllTask = ({ task }: AllTaskProps) => {
                 stage: e.target.value
               } 
        
-        fetch(`http://localhost:5000/updateTask/${_id}`, {
+        fetch(`https://itracker-server.vercel.app/updateTask/${_id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'
@@ -31,7 +29,7 @@ const AllTask = ({ task }: AllTaskProps) => {
             priority: e.target.value
               } 
        
-        fetch(`http://localhost:5000/updateTask/${_id}`, {
+        fetch(`https://itracker-server.vercel.app/updateTask/${_id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'
@@ -49,7 +47,7 @@ const AllTask = ({ task }: AllTaskProps) => {
                 status: e.target.value
               } 
        
-        fetch(`http://localhost:5000/updateTask/${_id}`, {
+        fetch(`https://itracker-server.vercel.app/updateTask/${_id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'
