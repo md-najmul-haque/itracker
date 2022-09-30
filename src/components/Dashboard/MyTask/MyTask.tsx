@@ -31,8 +31,7 @@ const MyTask = () => {
                         <th className="pl-20">Stage</th>
                         <th className="pl-20">Priority</th>
                         <th className="pl-16">Status</th>
-                        <th className="pl-20">Due Date</th>
-                        <th className="pl-20">Action</th>
+                        <th className="pl-20">Due Date</th>                        
                     </tr>
                 </thead>
 

@@ -104,13 +104,7 @@ const MyAllTask = ({ task }: AllTaskProps) => {
                     className="input font-medium focus:outline-0 focus:border-secondary rounded-sm bg-inherit"
                     defaultValue={dueData}
                 /> */}
-                </td>
-
-                <td className="pl-20">
-                    <div className="font-medium">
-                        <Link to={`#`} className="btn btn-sm btn-secondary">Edit</Link>
-                    </div>
-                </td>
+                </td>               
 
             </tr>
 
