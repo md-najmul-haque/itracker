@@ -6,7 +6,59 @@ const MyAllTask = ({ task }: AllTaskProps) => {
 
     const { _id, projectId, taskName, description, email, dueData, stage, priority, status } = task
 
+    const handleStage = (e:any) => {
+        e.preventDefault()
 
+        const updateStage = {
+                stage: e.target.value
+              } 
+       
+        fetch(`http://localhost:5000/updateTask/${_id}`, {
+            method: 'PATCH',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(updateStage)
+        })
+            .then(res => res.json())             
+
+    }
+
+    const handlePriority = (e:any) => {
+        e.preventDefault()
+
+        const updatePriority = {
+            priority: e.target.value
+              } 
+       
+        fetch(`http://localhost:5000/updateTask/${_id}`, {
+            method: 'PATCH',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(updatePriority)
+        })
+            .then(res => res.json())             
+
+    }
+
+    const handleStatus = (e:any) => {
+        e.preventDefault()
+
+        const updateStatus = {
+                status: e.target.value
+              } 
+       
+        fetch(`http://localhost:5000/updateTask/${_id}`, {
+            method: 'PATCH',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(updateStatus)
+        })
+            .then(res => res.json())             
+
+    }
 
     return (
         <tbody className="w-full">
@@ -19,7 +71,7 @@ const MyAllTask = ({ task }: AllTaskProps) => {
                 </td>
 
                 <td className="pl-20">
-                    <select name='stage' className="select bg-inherit font-medium focus:outline-0 focus:border-secondary">
+                    <select name='stage' onChange={handleStage}  className="select bg-inherit font-medium focus:outline-0 focus:border-secondary">
                         <option value={stage}>{stage}</option>
                         <option value='To Do'>To Do</option>
                         <option value='In Progress'>In Progress</option>
@@ -28,16 +80,16 @@ const MyAllTask = ({ task }: AllTaskProps) => {
                 </td>
 
                 <td className="pl-20">
-                    <select name='priority' className="select bg-inherit font-medium focus:outline-0 focus:border-secondary">
+                    <select name='priority' onChange={handlePriority}  className="select bg-inherit font-medium focus:outline-0 focus:border-secondary">
                         <option value={priority}>{priority}</option>
                         <option value='Low'>Low</option>
-                        <option value='Normal'>Normal</option>
+                        <option value='Medium'>Medium</option>
                         <option value='High'>High</option>
                     </select>
                 </td>
 
                 <td className="pl-20">
-                    <select name='status' className="select bg-inherit font-medium focus:outline-0 focus:border-secondary">
+                    <select name='status' onChange={handleStatus}  className="select bg-inherit font-medium focus:outline-0 focus:border-secondary">
                         <option value={status}>{status}</option>
                         <option value='On Track'>On Track</option>
                         <option value='At Risk'>At Risk</option>

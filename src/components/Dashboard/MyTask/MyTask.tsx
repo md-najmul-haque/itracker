@@ -14,8 +14,7 @@ const MyTask = () => {
             .then(res => res.json())
     )
 
-    console.log(tasks)
-
+   
     refetch();
 
     if (loading || isLoading) {
