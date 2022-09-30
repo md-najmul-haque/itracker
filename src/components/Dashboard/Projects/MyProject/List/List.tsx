@@ -78,8 +78,7 @@ const List = () => {
                             <th className="pl-20">Priority</th>
                             <th className="pl-16">Status</th>
                             <th className="pl-20">Due Date</th>
-                            <th className="pl-20">Assigned Person</th>
-                            <th className="pl-20">Action</th>
+                            <th className="pl-20">Assigned Person</th>                         
                         </tr>
                     </thead>
 
