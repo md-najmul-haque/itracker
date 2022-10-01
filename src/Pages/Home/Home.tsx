@@ -1,7 +1,6 @@
 import Banner from '../../components/Home/Banner/Banner';
 import BugSearch from '../../components/Home/BugSearch/BugSearch';
 import FAQ from '../../components/Home/FAQ/FAQ';
-import Indicator from '../../components/Shared/Indicator/Indicator';
 import IssueManagement from '../../components/Home/IssueManagement/IssueManagement';
 import Teamwork from '../../components/Home/Teamwork/Teamwork';
 import Testimonial from '../../components/Home/Testimonial/Testimonial';
@@ -13,7 +12,6 @@ const Home = () => {
 
     return (
         <div className='dark:bg-black'>
-            <Indicator />
             <Banner />
             <SocialShare />
             <Teamwork />
