@@ -26,7 +26,7 @@ const Pricing = () => {
     }
     return (
         <div className='my-24 lg:mx-80 mx-5'>
-            <h1 className='text-5xl uppercase text-center'>Pricing:</h1>
+            <h1 className='text-5xl uppercase text-center'>Pricing</h1>
             <p className='text-2xl text-center mt-5 mb-12'>Get the power, control, and customization you need to manage <br /> your team’s and organization’s projects.</p>
             <div className='grid lg:grid-cols-2 gap-12'>
                 {/*  Basic  pricing*/}
@@ -74,7 +74,7 @@ const Pricing = () => {
                 </div>
 
             </div>
-        </div>
+        </div>       
     );
 };
 
